@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class Bridge : MonoBehaviour
@@ -16,6 +17,8 @@ public class Bridge : MonoBehaviour
     public float startTime2;
     public float duration2;
     //Don't write the code same with other name. 
+
+    public bool test2;
     
     void Start()
     {
@@ -37,10 +40,16 @@ public class Bridge : MonoBehaviour
 
                 Vector2 startPost2 = startPoint2.transform.position;
                 Vector2 targetPost2 = endPoint2.transform.position;
-                Vector2 originpo2 = (startPost2 + (targetPost2 - startPost2) * progress + new Vector2(0, -1f) * speed);
-                transform.position = originpo2;
+                //Vector2 originpo2 = (startPost2 + (targetPost2 - startPost2) * progress + new Vector2(0, -1f) * speed);
+                //transform.position = originpo2;
+                test2 = true;
 
             }
+        }
+        
+        if (test2 == true)
+        {
+            transform.position = Vector3.Lerp(transform.position, endPoint2.transform.position, speed);
         }
     }
 }

@@ -16,6 +16,8 @@ public class OperaHouse1 : MonoBehaviour
     public float startTime;
     public float duration;
 
+    public bool test;
+
     void Start()
     {
         startTime = Time.time;
@@ -24,7 +26,6 @@ public class OperaHouse1 : MonoBehaviour
     
     void Update()
     {
-        //마우스가 이 오브젝트를 클릭했을시, 이 오브젝트는 5초동안 지정한 거리로 속도에 비례해 이동한다.
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -38,10 +39,16 @@ public class OperaHouse1 : MonoBehaviour
 
                 Vector2 startPost = startPoint.transform.position;
                 Vector2 targetPost = endPoint.transform.position;
-                Vector2 originpo = (startPost + (targetPost - startPost) * progress + new Vector2(-1f, 0) * speed);
-                transform.position = originpo;
+                //Vector2 originpo = (startPost + (targetPost - startPost) * progress + new Vector2(-1f, 0) * speed);
+                //transform.position = originpo;
+                //transform.position = endPoint.transform.position;
+                test = true;
             }
         }
 
+        if (test == true)
+        {
+            transform.position = Vector3.Lerp(transform.position, endPoint.transform.position, speed);
+        }
     }
 }

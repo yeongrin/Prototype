@@ -24,6 +24,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        this.transform.position = DefaultPos;
+        Vector2 currentPos = eventData.position;
+        this.transform.position = currentPos;
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Object2
   - Object1
   - Object3
+  - Object4
   layers:
   - Default
   - TransparentFX
