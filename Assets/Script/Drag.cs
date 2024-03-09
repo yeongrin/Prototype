@@ -2,29 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 
 {
-    public static Vector2 DefaultPos;
-
+    private Transform canvas;
+    private Transform previousParants;
+    private RectTransform rect;
+    private CanvasGroup canvasGroup;
     
-    void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
+    private void Awake()
     {
-        DefaultPos = this.transform.position;   
+        canvas = FindObjectOfType<Canvas>().transform;
+        rect = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
+           
+    }
+    
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        previousParants = transform.parent;
+
+        transform.SetParent(canvas);
+        transform.SetAsLastSibling();
+
+        canvasGroup.alpha = 0.6f;
+        canvasGroup.blocksRaycasts = false;
     }
 
-    // Update is called once per frame
-    void IDragHandler.OnDrag(PointerEventData eventData)
+   
+    public void OnDrag(PointerEventData eventData)
     {
-        Vector2 currentPos = eventData.position;
-        this.transform.position = currentPos;
+        rect.position = eventData.position;
     }
 
-    void IEndDragHandler.OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 currentPos = eventData.position;
-        this.transform.position = currentPos;
+        if(transform.parent == canvas)
+        {
+            transform.SetParent(previousParants);
+            rect.position = previousParants.GetComponent<RectTransform>().position;
+        }
+
+        canvasGroup.alpha = 1.0f;
+        canvasGroup.blocksRaycasts = true;
     }
 }

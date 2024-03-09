@@ -49,9 +49,9 @@ TagManager:
   - name: Scene
     uniqueID: 689962221
     locked: 0
-  - name: UI
-    uniqueID: 2667226029
-    locked: 0
   - name: Object
     uniqueID: 1101952423
+    locked: 0
+  - name: UI
+    uniqueID: 2667226029
     locked: 0
