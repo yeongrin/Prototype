@@ -249,8 +249,8 @@ GameObject:
   - component: {fileID: 306795178}
   m_Layer: 0
   m_Name: SP1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: EnemySpawn
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -369,8 +369,8 @@ GameObject:
   - component: {fileID: 591786070}
   m_Layer: 0
   m_Name: SP1 (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: EnemySpawn
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -400,8 +400,8 @@ GameObject:
   - component: {fileID: 609478733}
   m_Layer: 0
   m_Name: SP1 (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: EnemySpawn
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -431,8 +431,8 @@ GameObject:
   - component: {fileID: 702799442}
   m_Layer: 0
   m_Name: SP1 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: EnemySpawn
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1063,8 +1063,8 @@ GameObject:
   - component: {fileID: 1343768327}
   m_Layer: 0
   m_Name: SP1 (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: EnemySpawn
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1459,8 +1459,8 @@ GameObject:
   - component: {fileID: 1889490539}
   m_Layer: 0
   m_Name: SP1 (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: EnemySpawn
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lin
+  m_text: Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -9,6 +9,7 @@ TagManager:
   - Object1
   - Object3
   - Object4
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX
