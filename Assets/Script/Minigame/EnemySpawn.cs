@@ -12,22 +12,27 @@ public class EnemySpawn : MonoBehaviour
         public string name;
         public Transform enemy;
         public int count;
-        public float rates;
+        public float rate;
     }
 
-    // Start is called before the first frame update
     public Wave[] waves;
     private int nextWave = 0;
 
+    public Transform[] spawnPoints;
+
     public float timeBetweenWaves = 5f;
-    public float waveCountdown;
+    private float waveCountdown;
 
     private float searchCountdown = 1f;
 
-    public SpawnState state = SpawnState.COUNTING;
+    private SpawnState state = SpawnState.COUNTING;
 
     void Start()
     {
+        if (spawnPoints.Length == 0)
+        {
+            Debug.LogError("No spawn points referenced.");
+        }
         waveCountdown = timeBetweenWaves;
     }
 
@@ -39,10 +44,11 @@ public class EnemySpawn : MonoBehaviour
             if (!EnemyIsAlive ())
             {
                 //Begin a new round
+                WaveCompleted();
             }
             else
             {
-
+                return;
             }
         }
 
@@ -61,12 +67,32 @@ public class EnemySpawn : MonoBehaviour
 
     }
 
+    void WaveCompleted()
+    {
+        Debug.Log("Wave Completed");
+        state = SpawnState.COUNTING;
+        waveCountdown = timeBetweenWaves;
+
+        if (nextWave + 1 > waves.Length - 1)
+        {
+            nextWave = 0;
+            Debug.Log("ALL WAVES COMEPLETED.");
+        }
+        else
+        {
+            nextWave++;
+        }    
+
+        nextWave++;
+    }
+
     bool EnemyIsAlive()
     {
         searchCountdown -= Time.deltaTime;
 
         if (searchCountdown <= 0)
-        { 
+        {
+            searchCountdown = 1f;
             if (GameObject.FindGameObjectsWithTag ("Enemy") == null)
         {
             return false;
@@ -79,12 +105,14 @@ public class EnemySpawn : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _waves)
     {
+        Debug.Log("Spawning Wave:" + _waves.name);
         state = SpawnState.SPAWNING;
         //Spawn
 
         for (int i = 0; i < _waves.count; i++)
         {
             SpawnEnemy(_waves.enemy);
+            yield return new WaitForSeconds( 1f/_waves.rate);
         }
 
         state = SpawnState.WAITING;
@@ -94,7 +122,8 @@ public class EnemySpawn : MonoBehaviour
 
     void SpawnEnemy(Transform _enemy)
     {
-        //Spawn.enemy
         Debug.Log("Spawning enemy!:" + _enemy.name);
+        Transform _sp = spawnPoints[Random.Range (0, spawnPoints.Length)];
+        Instantiate(_enemy, _sp.position, _sp.rotation);
     }
 }

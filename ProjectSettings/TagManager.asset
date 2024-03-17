@@ -10,6 +10,13 @@ TagManager:
   - Object3
   - Object4
   - EnemySpawn
+  - Enemy
+  - Target
+  - elements
+  - elements2
+  - elements3
+  - elements4
+  - elements5
   layers:
   - Default
   - TransparentFX
@@ -47,11 +54,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Scene
-    uniqueID: 689962221
+  - name: Elements
+    uniqueID: 1101952423
     locked: 0
   - name: Object
-    uniqueID: 1101952423
+    uniqueID: 689962221
     locked: 0
   - name: UI
     uniqueID: 2667226029

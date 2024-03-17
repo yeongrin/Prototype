@@ -12,7 +12,8 @@ public enum Seagulls
 public class Seagull : MonoBehaviour
 {
     public Seagulls seaqullState;
-    public int seagullHealth;
+    public int seaguelHealth;
+    public int seaguealDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -26,16 +27,36 @@ public class Seagull : MonoBehaviour
         switch (seaqullState)
         {
             case Seagulls.Big:
-                seagullHealth = 200;
+                seaguelHealth = 200;
+                seaguealDamage = 20;
                 break;
 
             case Seagulls.Medium:
-                seagullHealth = 100;
+                seaguelHealth = 100;
+                seaguealDamage = 15;
                 break;
 
             case Seagulls.Small:
-                seagullHealth = 50;
+                seaguelHealth = 5;
+                seaguealDamage = 10;
                 break;
         }
+
+
+
     }
+
+    void hitSeaguel(int _hammerDamage)
+    {
+        seaguelHealth -= _hammerDamage;
+    }
+
+
+    void SeaguelDie(int _)
+    {
+        StopAllCoroutines();
+        Destroy(this.gameObject);
+        Debug.Log("Die!");
+    }
+
 }
