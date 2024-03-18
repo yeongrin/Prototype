@@ -48,7 +48,7 @@ public class Bridge : MonoBehaviour
 
             if (!isOneClick)
             {
-                print("firstone");
+                //print("firstone");
                 Timer2 = Time.time;
                 isOneClick = true;
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -68,7 +68,7 @@ public class Bridge : MonoBehaviour
                 }
             }else
             {
-                print("secondone");
+                //print("secondone");
                 Timer2 = Time.time;
                 isOneClick = false;
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -92,13 +92,13 @@ public class Bridge : MonoBehaviour
 
         if (test == true && test2 == false)
         {
-            //print("jjgjgejge");
+            
             transform.position = Vector3.Lerp(transform.position, endPoint2.transform.position, speed);
         }
 
         if (test2 == true && test == false)
         {
-            //print("jjgjgejge");
+            
             transform.position = Vector3.Lerp(transform.position, startPoint2.transform.position, speed);
         }
     }

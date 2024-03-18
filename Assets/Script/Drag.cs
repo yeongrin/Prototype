@@ -11,7 +11,10 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     private Transform previousParants;
     private RectTransform rect;
     private CanvasGroup canvasGroup;
-    
+
+    public int slot = 0;
+
+
     private void Awake()
     {
         canvas = FindObjectOfType<Canvas>().transform;
@@ -43,9 +46,18 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         {
             transform.SetParent(previousParants);
             rect.position = previousParants.GetComponent<RectTransform>().position;
+
         }
 
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.name == "Equipment Slot Variant")
+    //    {
+    //        slot = 1;
+    //    }
+    //}
 }

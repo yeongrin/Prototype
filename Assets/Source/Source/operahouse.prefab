@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 9139104218999364129}
   - component: {fileID: 3743921873821543310}
   - component: {fileID: 1200796513308844185}
-  - component: {fileID: 8145580552934825033}
   - component: {fileID: 595617540019092130}
+  - component: {fileID: 8145580552934825033}
+  - component: {fileID: 7756575973357768528}
   m_Layer: 0
   m_Name: operahouse
   m_TagString: Object2
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 689962221
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 396342014, guid: 1014b9a034323a845a83eb4c5654c6e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110,6 +111,41 @@ MonoBehaviour:
   test: 0
   test2: 0
   DoubleClickSpeed: 0.25
+--- !u!70 &595617540019092130
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168993705877919580}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.37118772, y: -1.3392944}
+  m_Size: {x: 20.94242, y: 4.43297}
+  m_Direction: 1
 --- !u!61 &8145580552934825033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,7 +191,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.210001, y: 0.73484683}
   m_EdgeRadius: 0
---- !u!70 &595617540019092130
+--- !u!70 &7756575973357768528
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,6 +223,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08347576, y: -0.47579473}
-  m_Size: {x: 21.517797, y: 6.1599455}
+  m_Offset: {x: -4.0147457, y: -0.067279294}
+  m_Size: {x: 9.335719, y: 6.3187914}
   m_Direction: 1

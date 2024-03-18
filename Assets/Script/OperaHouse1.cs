@@ -48,7 +48,7 @@ public class OperaHouse1 : MonoBehaviour
 
             if (!isOneClick)
             {
-                print("firstone");
+                //print("firstone");
                 Timer = Time.time;
                 isOneClick = true;
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -69,7 +69,7 @@ public class OperaHouse1 : MonoBehaviour
                 }
             } else
             {
-                print("secondone");
+                //print("secondone");
                 Timer = Time.time;
                 isOneClick = false;
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

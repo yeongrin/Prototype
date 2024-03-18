@@ -14,8 +14,6 @@ public class Human1 : MonoBehaviour
     
     void Update()
     {
-        
-        //마우스가 이 오브젝트를 클릭했을 시, 이 오브젝트는 검은색으로 변한뒤 3초 뒤에 사라진다.
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -44,7 +42,7 @@ public class Human1 : MonoBehaviour
             c.a = f;
             _render.material.color = c;
             yield return new WaitForSeconds(0.05f);
-            Destroy(gameObject, 3);
+            Destroy(gameObject, 1);
         }
     }
 }
