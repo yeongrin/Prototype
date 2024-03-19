@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 using System;
@@ -73,6 +74,7 @@ public class GameController : MonoBehaviour
 
     public void AddElement1()
     {
+        //print("TESTIN");
         element1.SetActive(true);
         Destroy(inGameElements[0]);
         GetScore();
