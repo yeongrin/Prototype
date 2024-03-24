@@ -8,12 +8,19 @@ public class VideoManager : MonoBehaviour
     public int numberValue;
     int currentNumber;
     public VideoPlayer vid;
+    public VideoPlayer backvid;
 
     void Start() 
     { 
         
-        vid.loopPointReached += CheckOver; 
+        vid.loopPointReached += CheckOver;
+        Invoke("OnInvoke", 0.5f);
     
+    }
+
+    void OnInvoke()
+    {
+        vid.Play();
     }
 
     private void Update()

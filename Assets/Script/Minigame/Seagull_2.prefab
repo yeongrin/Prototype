@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 913789479424827330}
   - component: {fileID: 5267755753508304361}
-  - component: {fileID: 5532063956548494734}
   - component: {fileID: 1889686721406835002}
   - component: {fileID: -9092792161212402011}
+  - component: {fileID: 5532063956548494734}
   m_Layer: 0
   m_Name: Seagull_2
   m_TagString: Enemy
@@ -87,20 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5532063956548494734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156616198580412054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8eeb0f7c47d47846a1a7d9dcb4e498e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seaqullState: 1
-  seagullHealth: 0
 --- !u!70 &1889686721406835002
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +135,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &5532063956548494734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156616198580412054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8eeb0f7c47d47846a1a7d9dcb4e498e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seaqullState: 1
+  seaguelHealth: 0
+  seaguealDamage: 0

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public enum Seagulls
 {
@@ -9,19 +11,20 @@ public enum Seagulls
     Small
 }
 
-public class Seagull : MonoBehaviour
+public class Seagull : Singleton<Seagull>
 {
     public Seagulls seaqullState;
     public int seaguelHealth;
     public int seaguealDamage;
+    public bool isDamage = false;
+    public bool isDead { get; private set; } = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         switch (seaqullState)
@@ -42,17 +45,41 @@ public class Seagull : MonoBehaviour
                 break;
         }
 
-
+        
 
     }
 
-    void hitSeaguel(int _hammerDamage)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
-        seaguelHealth -= _hammerDamage;
+        if (collision.collider.tag == "Player" && !isDamage)
+        {
+            isDamage = true;
+            int hammerDamage = collision.gameObject.GetComponent<Hammer>().hammerDamage;
+            seaguelHealth -= hammerDamage;
+            Debug.Log("Hit!");
+
+            if (seaguelHealth <= 0)
+            {
+                isDead = true;
+                Destroy(gameObject);
+            }
+        }
+
+    }*/
+
+    public void SeagueHit(int hammerDamage)
+    {
+        
+        seaguelHealth -= hammerDamage;
+
+        if (seaguelHealth <= 0)
+        {
+            Debug.Log("GoodBYE");
+            SeaguelDie();
+        }
     }
 
-
-    void SeaguelDie(int _)
+    void SeaguelDie()
     {
         StopAllCoroutines();
         Destroy(this.gameObject);

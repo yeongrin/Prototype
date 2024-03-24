@@ -17,6 +17,7 @@ TagManager:
   - elements3
   - elements4
   - elements5
+  - BackgroundVideo
   layers:
   - Default
   - TransparentFX
