@@ -9,6 +9,8 @@ public class VideoManager : MonoBehaviour
     int currentNumber;
     public VideoPlayer vid;
     public VideoPlayer backvid;
+    public GameObject vidOb;
+    public GameObject backvidOb;
 
     void Start() 
     { 
@@ -45,6 +47,7 @@ public class VideoManager : MonoBehaviour
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         print("Video Is Over");
-        Destroy(gameObject);
+        vidOb.SetActive(false);
+        Destroy(vid);
     }
 }

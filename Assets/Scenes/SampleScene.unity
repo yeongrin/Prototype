@@ -7781,7 +7781,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5465958252662938980, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_LocalPosition.x
