@@ -48,6 +48,5 @@ public class VideoManager : MonoBehaviour
     {
         print("Video Is Over");
         vidOb.SetActive(false);
-        Destroy(vid);
     }
 }
