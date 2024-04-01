@@ -21,7 +21,7 @@ public class ObstacleCar : MonoBehaviour
     void Start()
     {
         Button = GameObject.FindGameObjectWithTag("Object1").transform;
-        color = GameObject.Find("Car").GetComponent<SpriteRenderer>();
+        //color = GameObject.Find("Car").GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -54,6 +54,11 @@ public class ObstacleCar : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(this.transform.position, Button.position, speed * Time.deltaTime);
-        color.color = new Color(Random.value, Random.value, Random.value, 1f);
+        //color.color = new Color(Random.value, Random.value, Random.value, 1f);
+    }
+
+    public void DestroyObj()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("Enemy"));
     }
 }

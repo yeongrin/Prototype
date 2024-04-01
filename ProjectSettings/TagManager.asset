@@ -18,6 +18,9 @@ TagManager:
   - elements4
   - elements5
   - BackgroundVideo
+  - Enemy2
+  - Enemy4
+  - Enemy3
   layers:
   - Default
   - TransparentFX

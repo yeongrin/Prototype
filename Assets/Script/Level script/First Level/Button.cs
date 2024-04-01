@@ -34,6 +34,8 @@ public class Button : MonoBehaviour
                 GameObject click_button = hit.transform.gameObject;
                 //_render.color = Color.black;
 
+                
+
                 if(!check)
                 {
                     StartCoroutine("EButton", button);
@@ -42,7 +44,7 @@ public class Button : MonoBehaviour
                 }
                 else
                 {
-                    StopCoroutine("Blink");
+                    StopCoroutine("EButton");
                     button.GetComponent<SpriteRenderer>().color = orgColor;
                     check = false;
                 }
@@ -76,9 +78,11 @@ public class Button : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().color = tempColor;
                 yield return new WaitForSeconds(0.01f);
             }
+            break;
             yield return new WaitForSeconds(0.1f);
+            
         }
-
+        
     }
 
 }
