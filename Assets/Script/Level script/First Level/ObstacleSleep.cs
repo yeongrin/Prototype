@@ -9,7 +9,6 @@ public class ObstacleSleep : MonoBehaviour
 
     void Start()
     {
-        //버튼을 누르면 린이 잠에서 깨는 애니메이션이 재생된다.
         Button3 = GameObject.FindGameObjectWithTag("Object3").transform;
         animator = GetComponent<Animator>();
     }
@@ -18,7 +17,6 @@ public class ObstacleSleep : MonoBehaviour
     public void StartAnimation()
     {
         
-
     }
 }
 

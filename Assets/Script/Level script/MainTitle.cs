@@ -29,6 +29,6 @@ public class MainTitle : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("FirstLevel");
     }
 }
