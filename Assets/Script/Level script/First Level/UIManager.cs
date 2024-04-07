@@ -26,14 +26,14 @@ public class UIManager : MonoBehaviour
         SetText();
     }
 
-    
+
     void Update()
     {
         goTime += Time.deltaTime;
 
-     if (t1 <= 0)
+        if (t1 <= 0)
 
-        lives -= 1;
+            lives -= 1;
         SetText();
 
 
@@ -42,13 +42,14 @@ public class UIManager : MonoBehaviour
             GameOver();
         }
 
-        else 
+        else
         {
             if (goTime >= overTime)
             {
                 gameOverPanel.SetActive(true);
             }
         }
+
     }
 
     public void SetText()

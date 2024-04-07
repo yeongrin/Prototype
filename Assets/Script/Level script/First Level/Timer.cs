@@ -6,10 +6,10 @@ using UnityEngine.UI;
 using TMPro;
 
 public class Timer : MonoBehaviour
-{   
+{
     //Timer
     public float Timer1;
-   //public float Timer2;
+    //public float Timer2;
     //public float Timer3;
     //public float Timer4;
     float TimeOver;
@@ -44,8 +44,8 @@ public class Timer : MonoBehaviour
 
         UM.t1 = Timer1;
 
-         if (Timer1 <= TimeOver)
-        { 
+        if (Timer1 <= TimeOver)
+        {
             //lives -= 1;
             //SetText();
 
@@ -55,56 +55,68 @@ public class Timer : MonoBehaviour
             {
               GameOver();
             }*/
-        
-        }
-         else
-        {
-            
-        }
-         /*else if (Timer2 <= TimeOver)
-        {
-            lives -= 1;
-            //Debug.Log("Late");
-            SetText();
 
-            Timer2 = 5f;
-            if (lives == 0)
+        }
+        else if (Timer1 > TimeOver)
+        {
+            if (Input.GetMouseButtonDown(0))
             {
-                GameOver();
+                Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+
+                if (hit.transform.gameObject.tag == "Object1" && hit.collider != null)
+                {
+                    GameObject click_button = hit.transform.gameObject;
+                    Timer1 = 5f;
+
+
+                }
+                /*else if (Timer2 <= TimeOver)
+               {
+                   lives -= 1;
+                   //Debug.Log("Late");
+                   SetText();
+
+                   Timer2 = 5f;
+                   if (lives == 0)
+                   {
+                       GameOver();
+                   }
+               }
+                else if (Timer3 <= TimeOver)
+               {
+                   lives -= 1;
+                   SetText();
+
+                   Timer3 = 5f;
+                   if (lives == 0)
+                   {
+                       GameOver();
+                   }
+               }
+                else if(Timer4 <= TimeOver)
+               {
+                   lives -= 1;
+                   SetText();
+
+                   Timer4 = 5f;
+                   if (lives == 0)
+                   {
+                       GameOver();
+                   }
+               }*/
+
             }
         }
-         else if (Timer3 <= TimeOver)
-        {
-            lives -= 1;
-            SetText();
 
-            Timer3 = 5f;
-            if (lives == 0)
-            {
-                GameOver();
-            }
+        /*public void SetText()
+        {
+            livesText.text = "Lives:" + lives.ToString();
         }
-         else if(Timer4 <= TimeOver)
-        {
-            lives -= 1;
-            SetText();
 
-            Timer4 = 5f;
-            if (lives == 0)
-            {
-                GameOver();
-            }
+        public void GameOver()
+        {
+            gameOverPanel.SetActive(false);
         }*/
-         
     }
-
-    /*public void SetText()
-    {
-        livesText.text = "Lives:" + lives.ToString();
-    }
-
-    public void GameOver()
-    {
-        gameOverPanel.SetActive(false);
-    }*/
 }
