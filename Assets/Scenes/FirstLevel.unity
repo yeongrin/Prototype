@@ -2282,6 +2282,7 @@ GameObject:
   - component: {fileID: 668444379}
   - component: {fileID: 668444378}
   - component: {fileID: 668444377}
+  - component: {fileID: 668444380}
   m_Layer: 5
   m_Name: Pay
   m_TagString: Object4
@@ -2403,6 +2404,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668444375}
   m_CullTransparentMesh: 1
+--- !u!60 &668444380
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668444375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -38.57388, y: 26.972954}
+      - {x: 36.882233, y: 104.94889}
+      - {x: 128.40384, y: 42.461887}
+      - {x: 105.386314, y: 20.29352}
+      - {x: 125.15013, y: -1.1634619}
+      - {x: -63.140785, y: -100.95387}
+      - {x: -125.31856, y: -24.628246}
+  m_UseDelaunayMesh: 1
 --- !u!1 &685229911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,6 +2843,7 @@ GameObject:
   - component: {fileID: 853765379}
   - component: {fileID: 853765378}
   - component: {fileID: 853765377}
+  - component: {fileID: 853765381}
   m_Layer: 5
   m_Name: Coffee
   m_TagString: Object3
@@ -2911,6 +2965,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853765375}
   m_CullTransparentMesh: 1
+--- !u!60 &853765381
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853765375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -85.48724, y: -51.764194}
+      - {x: -68.96804, y: -66.508835}
+      - {x: -29.761675, y: -81.99367}
+      - {x: 50.8263, y: -82.09424}
+      - {x: 94.36903, y: -49.952507}
+      - {x: 98.65816, y: -24.528101}
+      - {x: 80.67856, y: -0.6228254}
+      - {x: 80.2286, y: 2.5528202}
+      - {x: 78.75996, y: 24.118788}
+      - {x: 74.61438, y: 59.365524}
+      - {x: 34.05174, y: 81.019714}
+      - {x: -11.674343, y: 84.94447}
+      - {x: -47.832355, y: 75.69486}
+      - {x: -72.22551, y: 86.83666}
+      - {x: -90.63382, y: 79.98883}
+      - {x: -98.77129, y: 69.75418}
+      - {x: -95.309326, y: 33.352844}
+      - {x: -69.80635, y: 3.3318121}
+      - {x: -85.7651, y: -8.369885}
+      - {x: -90.18214, y: -34.581993}
+  m_UseDelaunayMesh: 1
 --- !u!1 &859546879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3814,6 +3933,7 @@ GameObject:
   - component: {fileID: 949985112}
   - component: {fileID: 949985111}
   - component: {fileID: 949985110}
+  - component: {fileID: 949985113}
   m_Layer: 5
   m_Name: Button
   m_TagString: Object2
@@ -3935,6 +4055,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949985108}
   m_CullTransparentMesh: 1
+--- !u!61 &949985113
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949985108}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00002670288, y: 0.20540619}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 157.11194, y: 48.244423}
+  m_EdgeRadius: 0
 --- !u!1 &953757634
 GameObject:
   m_ObjectHideFlags: 0
@@ -7305,8 +7470,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Before the game start/ you must setactive(false) this object.
 
-    All
-    timer is reset(0 to 5), when player press the button (1 is work, 2,3,4 start)'
+    Fixing
+    the Spawn bug'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7892,7 +8057,7 @@ MonoBehaviour:
     enemy: {fileID: 2789924473951524928, guid: 20740c47ce975c840926951837b755f3, type: 3}
     count: 5
     rate: 2
-  - name: Car4
+  - name: File5
     enemy: {fileID: 2789924473951524928, guid: 20740c47ce975c840926951837b755f3, type: 3}
     count: 5
     rate: 2
@@ -9436,6 +9601,7 @@ GameObject:
   - component: {fileID: 2136756110}
   - component: {fileID: 2136756109}
   - component: {fileID: 2136756112}
+  - component: {fileID: 2136756113}
   m_Layer: 5
   m_Name: Canvas4
   m_TagString: Untagged
@@ -9539,6 +9705,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611e9f700cdf55144b52bcd0e6982201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2136756113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136756107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760563fb64693304ca8390a628347ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer4: 0
 --- !u!1001 &8760783815858620794
 PrefabInstance:
   m_ObjectHideFlags: 0
