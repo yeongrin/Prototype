@@ -7,7 +7,7 @@ using TMPro;
 using System;
 
 
-public class GameController : MonoBehaviour
+public class GameController2 : MonoBehaviour
 {
     //public TMP_Text Daytext;
     public TMP_Text scoretext;
@@ -74,7 +74,6 @@ public class GameController : MonoBehaviour
 
     public void AddElement1()
     {
-        //print("TESTIN");
         element1.SetActive(true);
         Destroy(inGameElements[0]);
         GetScore();
@@ -107,8 +106,7 @@ public class GameController : MonoBehaviour
 
     void LevelEnd()
     {
-        
-      GameObject.Find("Canvas").transform.Find("GameEndPanel").gameObject.SetActive(true);
+       
       print("LevelEnd");
 
     }

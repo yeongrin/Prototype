@@ -66,6 +66,7 @@ public class OperaHouse1 : MonoBehaviour
                     //transform.position = endPoint.transform.position;
                     test = true;
                     test2 = false;
+                   
                 }
             } else
             {

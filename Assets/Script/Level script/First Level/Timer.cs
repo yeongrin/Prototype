@@ -20,6 +20,7 @@ public class Timer : MonoBehaviour
     public int lives;
     public GameObject gameOverPanel;*/
 
+    public TMP_Text timerText;
     private UIManager UM;
     private ObstacleCar OC;
 
@@ -38,6 +39,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         Timer1 -= Time.deltaTime;
+        SetText();
         //Timer2 -= Time.deltaTime;
         //Timer3 -= Time.deltaTime;
         //Timer4 -= Time.deltaTime;
@@ -46,8 +48,6 @@ public class Timer : MonoBehaviour
 
         if (Timer1 <= TimeOver)
         {
-            //lives -= 1;
-            //SetText();
 
             Timer1 = 5f;
 
@@ -108,15 +108,15 @@ public class Timer : MonoBehaviour
 
             }
         }
-
-        /*public void SetText()
-        {
-            livesText.text = "Lives:" + lives.ToString();
-        }
-
-        public void GameOver()
-        {
-            gameOverPanel.SetActive(false);
-        }*/
     }
+
+    public void SetText()
+    {
+        timerText.text = Timer1.ToString();
+    }
+
+    /* public void GameOver()
+     {
+         gameOverPanel.SetActive(false);
+     }*/
 }

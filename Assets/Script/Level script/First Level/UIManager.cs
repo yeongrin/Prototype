@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text livesText;
     public int lives;
     public GameObject gameOverPanel;
+    public GameObject EndingPanel;
+    public TMP_Text overallTimetext;
 
     public float goTime;
     public float overTime;
@@ -55,10 +57,12 @@ public class UIManager : MonoBehaviour
     public void SetText()
     {
         livesText.text = "Lives:" + lives.ToString();
+        overallTimetext.text = goTime.ToString();
+ 
     }
 
     public void GameOver()
     {
-        gameOverPanel.SetActive(true);
+        EndingPanel.SetActive(true);
     }
 }
