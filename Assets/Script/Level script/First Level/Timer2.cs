@@ -10,6 +10,7 @@ public class Timer2 : MonoBehaviour
     public float timer2;
     float TimeOver;
     private UIManager UM;
+    public TMP_Text timerText;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class Timer2 : MonoBehaviour
     void Update()
     {
         timer2 -= Time.deltaTime;
+        SetText2();
 
         if (timer2 <= TimeOver)
         {
@@ -42,5 +44,10 @@ public class Timer2 : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetText2()
+    {
+        timerText.text = timer2.ToString();
     }
 }

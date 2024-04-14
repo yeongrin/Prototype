@@ -10,6 +10,7 @@ public class Timer3 : MonoBehaviour
 
     public float timer3;
     float TimeOver;
+    public TMP_Text timerText;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class Timer3 : MonoBehaviour
     void Update()
     {
         timer3 -= Time.deltaTime;
+        SetText3();
 
         if (timer3 <= TimeOver)
         {
@@ -40,6 +42,11 @@ public class Timer3 : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetText3()
+    {
+        timerText.text = timer3.ToString();
     }
 
 }
