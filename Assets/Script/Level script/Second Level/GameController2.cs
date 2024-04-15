@@ -108,6 +108,8 @@ public class GameController2 : MonoBehaviour
     {
        
       print("LevelEnd");
+      GameObject.Find("AllMap").transform.Find("2").gameObject.SetActive(true);
+        GameObject.Find("AllMap").transform.Find("1.5").gameObject.SetActive(false);
 
     }
 }

@@ -6793,6 +6793,10 @@ MonoBehaviour:
     enemy: {fileID: 2351727483009751040, guid: c117dc46653e84145bf492652f182e2c, type: 3}
     count: 3
     rate: 3
+  - name: Car4
+    enemy: {fileID: 2351727483009751040, guid: c117dc46653e84145bf492652f182e2c, type: 3}
+    count: 3
+    rate: 3
   spawnPoints:
   - {fileID: 1878404030}
   - {fileID: 1763778474}
