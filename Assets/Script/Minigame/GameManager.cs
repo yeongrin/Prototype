@@ -8,7 +8,7 @@ public class GameManager : Singleton<GameManager>
 {
     public GameState gameState;
     public int score = 0;
-    int scoreMultiplier = 1;
+    //int scoreMultiplier = 1;
 
 
     void Start()

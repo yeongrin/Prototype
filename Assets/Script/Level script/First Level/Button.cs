@@ -79,7 +79,7 @@ public class Button : MonoBehaviour
                 yield return new WaitForSeconds(0.01f);
             }
             break;
-            yield return new WaitForSeconds(0.1f);
+            
             
         }
         

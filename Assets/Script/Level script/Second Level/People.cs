@@ -65,6 +65,7 @@ public class People : MonoBehaviour
                         }
                     }
                     break;
+             
 
             }
         } 
