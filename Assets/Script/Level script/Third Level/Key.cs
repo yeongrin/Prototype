@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    Animator ani;
+    public Animator ani;
     private Transform Button;
+
     void Start()
     {
         Button = GameObject.FindGameObjectWithTag("Object1").transform;
@@ -16,6 +17,11 @@ public class Key : MonoBehaviour
     // Update is called once per frame
     public void StartAnimation()
     {
+        ani.Play("Key2");
+    }
 
+    public void NextScene2()
+    {
+        GameObject.Find("Canvas").transform.Find("Video").gameObject.SetActive(true);
     }
 }

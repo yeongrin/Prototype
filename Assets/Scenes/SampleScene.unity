@@ -1468,7 +1468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42148fba7b145b4b81fd9387b149c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Daytext: {fileID: 1648826207}
   scoretext: {fileID: 1024488058}
   score: 0
   createPoint: {x: 0, y: 0}
