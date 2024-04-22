@@ -19,7 +19,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     {
         canvas = FindObjectOfType<Canvas>().transform;
         rect = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
+        //canvasGroup = GetComponent<CanvasGroup>();
            
     }
     
@@ -30,8 +30,8 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         transform.SetParent(canvas);
         transform.SetAsLastSibling();
 
-        canvasGroup.alpha = 0.6f;
-        canvasGroup.blocksRaycasts = false;
+        //canvasGroup.alpha = 0.6f;
+        //canvasGroup.blocksRaycasts = false;
     }
 
    
@@ -49,8 +49,8 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
 
         }
 
-        canvasGroup.alpha = 1.0f;
-        canvasGroup.blocksRaycasts = true;
+        //canvasGroup.alpha = 1.0f;
+        //canvasGroup.blocksRaycasts = true;
     }
 
     //private void OnTriggerEnter(Collider other)
