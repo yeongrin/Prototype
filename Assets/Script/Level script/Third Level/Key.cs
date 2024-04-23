@@ -23,5 +23,7 @@ public class Key : MonoBehaviour
     public void NextScene2()
     {
         GameObject.Find("Canvas").transform.Find("Video").gameObject.SetActive(true);
+        GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(true);
+        GameObject.Find("StartScene").gameObject.SetActive(false);
     }
 }
