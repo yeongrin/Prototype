@@ -51,7 +51,7 @@ public class Photo : MonoBehaviour
             {
                 raycastEvent.Invoke(takePhoto.transform);
                 Debug.Log("attack!");
-                StartCoroutine("Fade");
+                //StartCoroutine("Fade");
             }
 
             /*if (Physics.Raycast(ray, out hit, Mathf.Infinity))
@@ -64,7 +64,7 @@ public class Photo : MonoBehaviour
 
     }
 
-    IEnumerator Fade()
+   /* IEnumerator Fade()
     {
         Color tempColor = orgColor;
         gameObject.GetComponent<SpriteRenderer>().color = tempColor;
@@ -84,5 +84,5 @@ public class Photo : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         
-    }
+    }*/
 }
