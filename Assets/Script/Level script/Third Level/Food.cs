@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Type
 {
     Koala,
     Food,
-        Photo
+        Photo,
+    None
 
 }
 public class Food : MonoBehaviour
@@ -22,15 +24,27 @@ public class Food : MonoBehaviour
     private bool isOneClick = false;
     private double Timer2 = 0;
 
+    public Slider slider;
+    private int maxScore = 6;
+    public int score;
+    
+
     void Start()
     {
+        slider.value = 0;
         ani = GetComponent<Animator>();
+
+        ScoreSlider();
     }
 
     void Update()
     {
+       
             switch(type)
             {
+            case Type.None:
+                break;
+
             case Type.Koala:
                 {
                     if (Input.GetMouseButtonDown(0))
@@ -46,7 +60,7 @@ public class Food : MonoBehaviour
                             if (hit.transform.gameObject.tag == "elements" && hit.collider != null)
                             {
                                 ani.SetTrigger("Pet");
-                               
+                                ScoreLevel();
 
                             }
                         }
@@ -62,7 +76,8 @@ public class Food : MonoBehaviour
                             {
 
                                 ani.SetTrigger("Pet2");
-
+                                ScoreLevel();
+                                
 
                             }
                         }
@@ -85,9 +100,9 @@ public class Food : MonoBehaviour
                                 if (hit.transform.gameObject.tag == "elements2" && hit.collider != null)
                                 {
                                 ani.SetTrigger("Eating");
-                              
-
-                                }
+                                ScoreLevel();
+                                
+                            }
                             }
                             else
                             {
@@ -101,7 +116,8 @@ public class Food : MonoBehaviour
                                 {
 
                                 ani.SetTrigger("Eating2");
-                               
+                                ScoreLevel();
+                                
                             }
                             }
 
@@ -127,7 +143,7 @@ public class Food : MonoBehaviour
                             {
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
-
+                                ScoreLevel();
                             }
                         }
                         else
@@ -142,7 +158,8 @@ public class Food : MonoBehaviour
                             {
 
                                 ani.SetTrigger("Shot2");
-
+                                ScoreLevel();
+                               
                             }
                         }
 
@@ -153,5 +170,24 @@ public class Food : MonoBehaviour
             }
        
         
+    }
+
+    void ScoreLevel()
+    {
+        score += 1;
+        ScoreSlider();
+
+        if (score == 6)
+        {
+            GameObject.Find("Game").transform.Find("Scene2").gameObject.SetActive(true);
+            GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
+        }
+    }
+    
+
+
+    void ScoreSlider()
+    {
+        slider.value = score;
     }
 }
