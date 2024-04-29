@@ -51,4 +51,11 @@ public class PhotoController : MonoBehaviour
         print("LevelEnd");
     }
 
+   void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "Photo1")
+        {
+            GetScore();
+        }
+    }
 }

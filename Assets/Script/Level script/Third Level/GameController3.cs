@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public enum Type
     None
 
 }
-public class Food : MonoBehaviour
+public class GameController3 : MonoBehaviour
 {
     public Animator ani;
     public Type type;
@@ -27,22 +28,52 @@ public class Food : MonoBehaviour
     public Slider slider;
     private int maxScore = 6;
     public int score;
-    
 
     void Start()
     {
         slider.value = 0;
         ani = GetComponent<Animator>();
-
+      
         ScoreSlider();
     }
 
+    void ScoreLevel()
+    {
+        score += 1;
+        ScoreSlider();
+
+        if (score == 6)
+        {
+            GameObject.Find("Game").transform.Find("Scene2").gameObject.SetActive(true);
+            GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
+        }
+    }
     void Update()
     {
-       
+        
             switch(type)
             {
             case Type.None:
+                {
+                    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if(hit.transform.gameObject.tag == "elements" && hit.collider != null)
+                        {
+                            ScoreLevel();
+                        }
+                        else if(hit.transform.gameObject.tag == "elements2" && hit.collider != null)
+                        {
+                            ScoreLevel();
+                        }
+                        else if(hit.transform.gameObject.tag == "elements3" && hit.collider != null)
+                        {
+                            ScoreLevel();
+                        }
+                    }
+                   
+                }
                 break;
 
             case Type.Koala:
@@ -60,8 +91,8 @@ public class Food : MonoBehaviour
                             if (hit.transform.gameObject.tag == "elements" && hit.collider != null)
                             {
                                 ani.SetTrigger("Pet");
-                                ScoreLevel();
-
+                                //ScoreLevel();
+                               
                             }
                         }
                         else
@@ -76,7 +107,9 @@ public class Food : MonoBehaviour
                             {
 
                                 ani.SetTrigger("Pet2");
-                                ScoreLevel();
+                               // ScoreLevel();
+                                gameObject.GetComponent<GameController3>().enabled = false;
+                          
                                 
 
                             }
@@ -100,7 +133,7 @@ public class Food : MonoBehaviour
                                 if (hit.transform.gameObject.tag == "elements2" && hit.collider != null)
                                 {
                                 ani.SetTrigger("Eating");
-                                ScoreLevel();
+                                //ScoreLevel();
                                 
                             }
                             }
@@ -116,8 +149,9 @@ public class Food : MonoBehaviour
                                 {
 
                                 ani.SetTrigger("Eating2");
-                                ScoreLevel();
-                                
+                                //ScoreLevel();
+                                gameObject.GetComponent<GameController3>().enabled = false;
+
                             }
                             }
 
@@ -143,7 +177,7 @@ public class Food : MonoBehaviour
                             {
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
-                                ScoreLevel();
+                                //ScoreLevel();
                             }
                         }
                         else
@@ -158,8 +192,9 @@ public class Food : MonoBehaviour
                             {
 
                                 ani.SetTrigger("Shot2");
-                                ScoreLevel();
-                               
+                                //ScoreLevel();
+                                gameObject.GetComponent<GameController3>().enabled = false;
+
                             }
                         }
 
@@ -171,20 +206,6 @@ public class Food : MonoBehaviour
        
         
     }
-
-    void ScoreLevel()
-    {
-        score += 1;
-        ScoreSlider();
-
-        if (score == 6)
-        {
-            GameObject.Find("Game").transform.Find("Scene2").gameObject.SetActive(true);
-            GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
-        }
-    }
-    
-
 
     void ScoreSlider()
     {
