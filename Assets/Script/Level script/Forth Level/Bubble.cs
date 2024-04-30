@@ -4,126 +4,49 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-    public enum BubbleState { SPAWNING, WAITING, COUNTING };
+    public GameObject questions;
+    public GameObject nextquestions;
+    public GameObject before;
+    public GameObject bubble;
+    //control the bubble
+    //Click bubble1/bubble 1 disappears and bubble 2 apear(setActiveTRUE)
 
-    [System.Serializable]
-    public class Wave
+    public void nextbubble()
     {
-        public string name;
-        public Transform bubble;
-        public int count;
-        public float rate;
+        bubble.SetActive(true);
+        before.SetActive(false);
+        nextquestions.SetActive(true);
+        questions.SetActive(false);
     }
 
-    public Wave[] waves;
-    private int nextWave = 0;
-
-    public Transform[] spawnPoints;
-
-    public float timeBetweenWaves = 5f;
-    private float waveCountdown;
-
-    private float searchCountdown = 1f;
-
-    private BubbleState state = BubbleState.COUNTING;
-
-    void Start()
+    public void Destroy()
     {
-        if (spawnPoints.Length == 0)
-        {
-            Debug.LogError("No spawn points referenced.");
-        }
-        waveCountdown = timeBetweenWaves;
+        Destroy(this.gameObject);
     }
 
-
-    void Update()
+    public void True1()
     {
-        if (state == BubbleState.WAITING)
-        {
-            if (!EnemyIsAlive())
-            {
-                //Begin a new round
-                WaveCompleted();
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        if (waveCountdown <= 0)
-        {
-            if (state != BubbleState.SPAWNING)
-            {
-                StartCoroutine(SpawnWave(waves[nextWave]));
-            }
-        }
-
-        else
-        {
-            waveCountdown -= Time.deltaTime;
-        }
 
     }
 
-    void WaveCompleted()
-    {
-        Debug.Log("Wave Completed");
-        state = BubbleState.COUNTING;
-        waveCountdown = timeBetweenWaves;
-
-        if (nextWave + 1 > waves.Length - 1)
-        {
-            nextWave = 0;
-            Debug.Log("ALL WAVES COMEPLETED.");
-        }
-        else
-        {
-            nextWave++;
-        }
-
-        nextWave++;
+    public void True2()
+    { 
     }
 
-    bool EnemyIsAlive()
+    public void True3()
+
     {
-        searchCountdown -= Time.deltaTime;
 
-        if (searchCountdown <= 0)
-        {
-            searchCountdown = 1f;
-            if (GameObject.FindGameObjectsWithTag("Enemy") == null)
-            {
-                return false;
-            }
-
-
-        }
-        return true;
     }
 
-    IEnumerator SpawnWave(Wave _waves)
+    public void Wrong()
     {
-        Debug.Log("Spawning Wave:" + _waves.name);
-        state = BubbleState.SPAWNING;
-        //Spawn
-
-        for (int i = 0; i < _waves.count; i++)
-        {
-            SpawnEnemy(_waves.bubble);
-            yield return new WaitForSeconds(1f / _waves.rate);
-        }
-
-        state = BubbleState.WAITING;
-
-        yield break;
+        Debug.Log("Wrong answer");
     }
 
-    void SpawnEnemy(Transform _enemy)
+    public void NextScene()
     {
-        Debug.Log("Spawning enemy!:" + _enemy.name);
-        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+        GameObject.Find("Game").transform.Find("Scene2").gameObject.SetActive(true);
+        GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
     }
 }

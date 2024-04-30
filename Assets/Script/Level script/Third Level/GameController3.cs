@@ -9,7 +9,7 @@ public enum Type
 {
     Koala,
     Food,
-        Photo,
+    Photo,
     None
 
 }
@@ -44,8 +44,8 @@ public class GameController3 : MonoBehaviour
 
         if (score == 6)
         {
-            GameObject.Find("Game").transform.Find("Scene2").gameObject.SetActive(true);
-            GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
+            //GameObject.Find("Game").transform.Find("Scene2").gameObject.SetActive(true);
+            //GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
         }
     }
     void Update()

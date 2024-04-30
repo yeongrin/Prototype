@@ -55,8 +55,8 @@ public class Fly : MonoBehaviour
         switch (flyState)
         {
             case FlyType.Big:
-                flyHealth = 5;
-                flyDamage = 3;
+                flyHealth = 1;
+                flyDamage = 1;
                 if (Input.GetMouseButtonDown(0))
                 {
                     Vector2 player = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -83,8 +83,8 @@ public class Fly : MonoBehaviour
                 break;
 
             case FlyType.Medium:
-                flyHealth = 3;
-                flyDamage = 2;
+                flyHealth = 1;
+                flyDamage = 1;
                 if (Input.GetMouseButtonDown(0))
                 {
                     Vector2 player = Camera.main.ScreenToWorldPoint(Input.mousePosition);

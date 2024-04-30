@@ -5,57 +5,96 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
+public enum Moving
+{
+    nothing,
+    moving
+}
 public class PhotoController : MonoBehaviour
 {
-    public TMP_Text score_Text;
-    public int score = 0;
+    public int moving;
+    int currentState;
+
+    public Image image1;
+    public Image image2;
+
+    private bool move;
 
     public GameObject canvas;
     public GameObject endingCanvas;
 
-    public GameObject photo1;
-    public GameObject photo2;
-    public GameObject photo3;
-    public GameObject photo4;
-    public GameObject photo5;
+    public int score;
 
     void Start()
     {
-        SetText2();
+        move = false;
+        score = 0;
+
+        if (moving != currentState)
+        { 
+            switch (moving)
+            {
+            case 1:
+            {
+                    move = false;
+
+            }
+                break;
+
+            case 2:
+                {
+                    move = true;
+                }
+                break;
+
+        }
+
+        }
+
     }
 
-    public void GetScore()
+
+    void Update()
     {
+       
+    }
+
+    /*public void OnDrop(PointerEventData eventData)
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            print("m1");
+
+            Vector2 player = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(player, Vector2.zero, 0f);
+
+            print(hit.ToString());
+
+            if (eventData.pointerDrag != null)
+            {
+                print("clicked");
+                Score();
+            }
+        }
+
+    }*/
+
+    public void Score()
+    {  
         score += 1;
-        SetText2();
+        Debug.Log("add");
+       
         if (score == 5)
         {
             LevelEnd2();
         }
     }
 
-    void Update()
-    {
-        
-    }
-
-    public void SetText2()
-    {
-        score_Text.text = "Photo:" + score.ToString();
-    }
 
     void LevelEnd2()
     {
 
         GameObject.Find("Scene3").transform.Find("EndingPanel").gameObject.SetActive(true);
-        print("LevelEnd");
-    }
 
-   void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.name == "Photo1")
-        {
-            GetScore();
-        }
     }
 }
