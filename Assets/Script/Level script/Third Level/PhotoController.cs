@@ -15,13 +15,10 @@ public class PhotoController : MonoBehaviour
     public int moving;
     int currentState;
 
-    public Image image1;
-    public Image image2;
-
     private bool move;
 
     public GameObject canvas;
-    public GameObject endingCanvas;
+    public GameObject GameEndPanel;
 
     public int score;
 
@@ -94,7 +91,8 @@ public class PhotoController : MonoBehaviour
     void LevelEnd2()
     {
 
-        GameObject.Find("Scene3").transform.Find("EndingPanel").gameObject.SetActive(true);
+        //GameObject.Find("Scene3").transform.Find("EndingPanel").gameObject.SetActive(true);
+        GameEndPanel.SetActive(true);
 
     }
 }
