@@ -14,6 +14,9 @@ public class Parking : MonoBehaviour
     private double Timer2 = 0;
     private double Timer3 = 0;
 
+    public GameObject Scene;
+    public GameObject NextScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,5 +83,11 @@ public class Parking : MonoBehaviour
     public void Bonk()
     {
         GameObject.Find("Scene3").transform.Find("CRASH").gameObject.SetActive(true);
+    }
+
+    public void SceneChange()
+    {
+        NextScene.SetActive(true);
+        Scene.SetActive(false);
     }
 }

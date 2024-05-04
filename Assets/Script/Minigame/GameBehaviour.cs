@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameBehaviour : MonoBehaviour
 {
-    protected static GameManager _GM { get { return GameManager.INSTANCE; } }
+    //protected static GameManager _GM { get { return GameManager.INSTANCE; } }
     protected static Hammer _HAMMER { get { return Hammer.INSTANCE; } }
     protected static Seagull _SG { get { return Seagull.INSTANCE; } }
 

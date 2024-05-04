@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         goTime = 0f;
-        overTime = 60f;
+        overTime = 50f;
         lives = 5;
         t1 = 5f;
         SetText();
