@@ -4214,13 +4214,14 @@ GameObject:
   - component: {fileID: 809188904}
   - component: {fileID: 809188903}
   - component: {fileID: 809188905}
+  - component: {fileID: 809188906}
   m_Layer: 0
   m_Name: DialogueSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &809188903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4264,6 +4265,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logueStart: 0
+--- !u!320 &809188906
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809188902}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 91411914023e10b4c8b7677ecc236d03, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &815957658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9848,6 +9866,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948754033}
   m_CullTransparentMesh: 1
+--- !u!1 &1973508329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1973508331}
+  - component: {fileID: 1973508330}
+  m_Layer: 0
+  m_Name: Timeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!320 &1973508330
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973508329}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: f1099bb8e44f8fe48808db2094e30b85, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -6244021823755284076, guid: f1099bb8e44f8fe48808db2094e30b85, type: 2}
+    value: {fileID: 2048364579}
+  - key: {fileID: -4508621885929906091, guid: f1099bb8e44f8fe48808db2094e30b85, type: 2}
+    value: {fileID: 1244229493}
+  - key: {fileID: 9166437287772362067, guid: f1099bb8e44f8fe48808db2094e30b85, type: 2}
+    value: {fileID: 2080136152}
+  m_ExposedReferences:
+    m_References:
+    - 97cf4cb5b0b00e44197480951e4281f8: {fileID: 2080136152}
+--- !u!4 &1973508331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973508329}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1979613239
 GameObject:
   m_ObjectHideFlags: 0
@@ -10395,6 +10469,7 @@ GameObject:
   - component: {fileID: 2048364582}
   - component: {fileID: 2048364581}
   - component: {fileID: 2048364580}
+  - component: {fileID: 2048364584}
   m_Layer: 5
   m_Name: Video
   m_TagString: Untagged
@@ -10485,6 +10560,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2048364584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048364579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 2633e8d2652af50478857538cc015ad3, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2048364579}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2049307564
 GameObject:
   m_ObjectHideFlags: 0
@@ -12093,3 +12198,4 @@ SceneRoots:
   - {fileID: 1856746197}
   - {fileID: 2080136156}
   - {fileID: 1672744353}
+  - {fileID: 1973508331}

@@ -17,4 +17,9 @@ public class UITitle : MonoBehaviour
     {
         
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
