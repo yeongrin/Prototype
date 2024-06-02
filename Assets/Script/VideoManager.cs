@@ -28,8 +28,7 @@ public class VideoManager : MonoBehaviour
 
     private void Update()
     {
-        backvid.Play();
-
+        
         if (numberValue != currentNumber)
         {
             switch (numberValue)
