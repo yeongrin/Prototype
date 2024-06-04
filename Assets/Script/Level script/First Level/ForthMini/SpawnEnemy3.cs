@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawn : MonoBehaviour
+public class SpawnEnemy3 : MonoBehaviour
 {
     public enum SpawnState { SPAWNING, WAITING, COUNTING};
 
@@ -21,7 +21,7 @@ public class EnemySpawn : MonoBehaviour
     public Transform[] spawnPoints;
 
     public float timeBetweenWaves = 5f;
-    private float waveCountdown;
+    public float waveCountdown;
 
     private float searchCountdown = 1f;
 
@@ -43,8 +43,8 @@ public class EnemySpawn : MonoBehaviour
         { 
             if (!EnemyIsAlive ())
             {
-                //Begin a new round
-                WaveCompleted();
+               
+               WaveCompleted();
             }
             else
             {
@@ -70,18 +70,19 @@ public class EnemySpawn : MonoBehaviour
     void WaveCompleted()
     {
         Debug.Log("Wave Completed");
+
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
         if (nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
-            Debug.Log("ALL WAVES COMEPLETED.");
+            Debug.Log("ALL WAVES COMEPLETED!! Looping...");
         }
         else
         {
             nextWave++;
-        }    
+        }
 
         nextWave++;
     }
@@ -93,12 +94,13 @@ public class EnemySpawn : MonoBehaviour
         if (searchCountdown <= 0)
         {
             searchCountdown = 1f;
-            if (GameObject.FindGameObjectsWithTag ("Enemy") == null)
-        {
-            return false;
-        }
+            if (GameObject.FindGameObjectWithTag ("Enemy4") == null)
 
-           
+            {
+               
+            return false;
+
+            }           
         }
        return true;
     }
@@ -107,7 +109,7 @@ public class EnemySpawn : MonoBehaviour
     {
         Debug.Log("Spawning Wave:" + _waves.name);
         state = SpawnState.SPAWNING;
-        //Spawn
+        
 
         for (int i = 0; i < _waves.count; i++)
         {
@@ -124,6 +126,6 @@ public class EnemySpawn : MonoBehaviour
     {
         Debug.Log("Spawning enemy!:" + _enemy.name);
         Transform _sp = spawnPoints[Random.Range (0, spawnPoints.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+        Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation);
     }
 }

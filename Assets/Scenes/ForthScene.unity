@@ -1135,7 +1135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &287080876
 Transform:
   m_ObjectHideFlags: 0
@@ -7011,19 +7011,19 @@ MonoBehaviour:
     rate: 2
   - name: Fly2
     enemy: {fileID: 972657048}
-    count: 2
+    count: 3
     rate: 2
   - name: Fly3
     enemy: {fileID: 972657048}
-    count: 2
+    count: 3
     rate: 2
   - name: Fly4
     enemy: {fileID: 972657048}
-    count: 2
+    count: 3
     rate: 2
   - name: Fly4
     enemy: {fileID: 972657048}
-    count: 1
+    count: 3
     rate: 2
   spawnPoints:
   - {fileID: 676036929}
@@ -7031,6 +7031,7 @@ MonoBehaviour:
   - {fileID: 38376128}
   - {fileID: 1618577650}
   timeBetweenWaves: 3
+  waveCountdown: 0
 --- !u!1 &1732733678
 GameObject:
   m_ObjectHideFlags: 0
@@ -8468,7 +8469,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4318718842964846934, guid: b2d09829e4aa23942ac5ca9aac5241e4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
 
         if (lives == 0)
         {
-            GameOver();
+            GameEnding();
         }
 
         else
@@ -58,10 +58,15 @@ public class UIManager : MonoBehaviour
     {
         livesText.text = "Lives:" + lives.ToString();
         overallTimetext.text = goTime.ToString();
+
+        if (lives == 0)
+        {
+            livesText.text = "Lives: 0";
+        }
  
     }
 
-    public void GameOver()
+    public void GameEnding()
     {
         EndingPanel.SetActive(true);
     }

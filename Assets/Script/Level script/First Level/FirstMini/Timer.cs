@@ -53,7 +53,7 @@ public class Timer : MonoBehaviour
 
             /*if (lives == 0)
             {
-              GameOver();
+              GameEnding();
             }*/
 
         }
@@ -80,7 +80,7 @@ public class Timer : MonoBehaviour
                    Timer2 = 5f;
                    if (lives == 0)
                    {
-                       GameOver();
+                       GameEnding();
                    }
                }
                 else if (Timer3 <= TimeOver)
@@ -91,7 +91,7 @@ public class Timer : MonoBehaviour
                    Timer3 = 5f;
                    if (lives == 0)
                    {
-                       GameOver();
+                       GameEnding();
                    }
                }
                 else if(Timer4 <= TimeOver)
@@ -102,7 +102,7 @@ public class Timer : MonoBehaviour
                    Timer4 = 5f;
                    if (lives == 0)
                    {
-                       GameOver();
+                       GameEnding();
                    }
                }*/
 
@@ -115,7 +115,7 @@ public class Timer : MonoBehaviour
         timerText.text = Timer1.ToString();
     }
 
-    /* public void GameOver()
+    /* public void GameEnding()
      {
          gameOverPanel.SetActive(false);
      }*/

@@ -16,15 +16,16 @@ public class VideoManager : MonoBehaviour
     { 
         
         vid.loopPointReached += CheckOver;
-        Invoke("OnInvoke", 0.5f);
+        vid.Play();
+        //Invoke("OnInvoke", 0.5f);
 
 
     }
 
-    void OnInvoke()
+   /* void OnInvoke()
     {
         vid.Play();
-    }
+    }*/
 
     private void Update()
     {
@@ -49,6 +50,6 @@ public class VideoManager : MonoBehaviour
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         print("Video Is Over");
-        //vidOb.SetActive(false);
+        vidOb.SetActive(false);
     }
 }
