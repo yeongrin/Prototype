@@ -9,6 +9,10 @@ public class Flyswatter : MonoBehaviour
     public int swatterDamage;
     public GameObject swatter;
 
+    public float fadeSpeed, fadeAmount;
+    float original;
+    Material Mat;
+    public bool DoFade = false;
 
     [System.Serializable]
     public class RaycastEvent : UnityEvent<Transform> { }
@@ -34,10 +38,22 @@ public class Flyswatter : MonoBehaviour
         swatterDamage = 1;
         fly = GameObject.FindObjectOfType<Fly>().GetComponent<Fly>();
 
+        Mat = GetComponent<SpriteRenderer>().material;
+        original = Mat.color.a;
+
   }
 
     void Update()
     {
+        if (DoFade)
+
+            FadeNow();
+
+        else
+            ResetFade();
+
+
+
         Vector2 findFly = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         swatter.transform.position = new Vector2(findFly.x, findFly.y);
        
@@ -51,12 +67,25 @@ public class Flyswatter : MonoBehaviour
                 raycastEvent.Invoke(hitFly.transform);
                // fly.AttackFly();
 
-
             }
 
         
         }
 
+    }
+
+    void FadeNow()
+    {
+        Color currentColor = Mat.color;
+        Color smoothColor = new Color(currentColor.r, currentColor.g, currentColor.b, Mathf.Lerp(currentColor.a, fadeAmount, fadeSpeed * Time.deltaTime));
+        Mat.color = smoothColor;
+    }
+
+    void ResetFade()
+    {
+        Color currentColor = Mat.color;
+        Color smoothColor = new Color(currentColor.r, currentColor.g, currentColor.b, Mathf.Lerp(currentColor.a, original, fadeSpeed * Time.deltaTime));
+        Mat.color = smoothColor;
     }
 
 }

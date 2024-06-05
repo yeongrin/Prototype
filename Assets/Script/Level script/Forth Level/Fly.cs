@@ -29,6 +29,8 @@ public class Fly : MonoBehaviour
     private RaycastHit hit;
     private Camera mainCamera;
 
+    public Animator ani;
+
    /* private void SetEnemyState(int _swatterDamage)
     {
         swatterDamage = _swatterDamage;
@@ -44,6 +46,8 @@ public class Fly : MonoBehaviour
     {
         swatter = GameObject.FindObjectOfType<Flyswatter>().GetComponent<Flyswatter>();
         swatterDamage = 1;
+
+        ani = GetComponent<Animator>();
 
 
     }
@@ -131,7 +135,8 @@ public class Fly : MonoBehaviour
 
                         if (flyHealth <= 0)
                         {
-                            FlyDie();
+                            ani.SetTrigger("Death");
+                            Invoke("FlyDie", 3f);
                         }
                     }
 
@@ -172,8 +177,9 @@ public class Fly : MonoBehaviour
 
     void FlyDie()
     {
+        
         Destroy(this.gameObject);
-        Debug.Log("Die!");
+        
     }
 
 }
