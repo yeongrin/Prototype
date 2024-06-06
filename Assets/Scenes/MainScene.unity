@@ -481,6 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtName: {fileID: 94866309}
   txtSentence: {fileID: 944102604}
+  DialPanel: {fileID: 1365968007}
   anim: {fileID: 141309287}
 --- !u!114 &141309289
 MonoBehaviour:
@@ -989,6 +990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtName: {fileID: 94866309}
   txtSentence: {fileID: 944102604}
+  DialPanel: {fileID: 1365968007}
   anim: {fileID: 141309287}
 --- !u!4 &457669537
 Transform:

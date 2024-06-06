@@ -18,9 +18,9 @@ public class AllMini : MonoBehaviour
     void Start()
     {
         timer = 0.0f;
-        waitingTime1 = 10;
-        waitingTime2 = 20;
-        waitingTime3 = 30;
+        waitingTime1 = 5;
+        waitingTime2 = 10;
+        waitingTime3 = 15;
        
         FirMini.SetActive(true);
     }

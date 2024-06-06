@@ -1,0 +1,20 @@
+Hello! This is my first adventrue of my life. 
+Life in Hong Kong was hell. It was very busy and hard.
+From now on, I will leave for a new country in search of freedom.
+You can experience how busy and difficulty hell life in HongKong must have been.
+Press the button and the obstacle will be remove on each mini game.
+If you don't deal with the obstacle in time, we'll be in trouble!
+
+
+Hello! Welcome to my Album! Here you can look into each picture.
+It is an album consisting of a total of five photos.
+All the pictures contain the journey I've been through to Australia.
+But, you have to finish your first adventure to see the next picture.
+If you press the first picture, you can go to the first level and go on an adventure with me.
+
+
+Memo
+- Seperate lives to each mini game/First mini-1, Second mini-1....
+- Making screaming guy animation
+- When the games end, screaming guy video pops up and add the screaming sound
+- the video end, buy the ticket and play video (<-Lin move to Aus)

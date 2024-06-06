@@ -14,7 +14,7 @@ public class Timer3 : MonoBehaviour
 
     void Start()
     {
-        timer3 = 5f;
+        timer3 = 3f;
         TimeOver = 0;
     }
 
@@ -25,7 +25,7 @@ public class Timer3 : MonoBehaviour
 
         if (timer3 <= TimeOver)
         {
-            timer3 = 5f;
+            timer3 = 3f;
         }
         else if (timer3 > TimeOver)
         {
@@ -37,7 +37,7 @@ public class Timer3 : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
                 {
                     GameObject click_button = hit.transform.gameObject;
-                    timer3 = 5f;
+                    timer3 = 3f;
 
                 }
             }

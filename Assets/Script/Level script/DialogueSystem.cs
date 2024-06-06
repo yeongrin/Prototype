@@ -9,6 +9,7 @@ public class DialogueSystem : MonoBehaviour
 {
     public TMP_Text txtName;
     public TMP_Text txtSentence;
+    public GameObject DialPanel;
 
     Queue<string> sentences = new Queue<string>();
 
@@ -56,9 +57,10 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    private void End()
+    public void End()
     {
         anim.SetBool("isOpen", false);
         txtSentence.text = string.Empty;
+        DialPanel.SetActive(false);
     }
 }

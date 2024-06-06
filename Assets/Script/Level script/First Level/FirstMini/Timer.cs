@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Timer1 = 5f;
+        Timer1 = 3f;
         TimeOver = 0;
 
         //SetText();
@@ -49,7 +49,7 @@ public class Timer : MonoBehaviour
         if (Timer1 <= TimeOver)
         {
 
-            Timer1 = 5f;
+            Timer1 = 3f;
 
             /*if (lives == 0)
             {
@@ -67,7 +67,7 @@ public class Timer : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Object1" && hit.collider != null)
                 {
                     GameObject click_button = hit.transform.gameObject;
-                    Timer1 = 5f;
+                    Timer1 = 3f;
 
 
                 }
@@ -114,9 +114,4 @@ public class Timer : MonoBehaviour
     {
         timerText.text = Timer1.ToString();
     }
-
-    /* public void GameEnding()
-     {
-         gameOverPanel.SetActive(false);
-     }*/
 }

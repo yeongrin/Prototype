@@ -17,14 +17,14 @@ public class UIManager : MonoBehaviour
     public float goTime;
     public float overTime;
 
-
     public float t1;
+
     void Start()
     {
         goTime = 0f;
-        overTime = 50f;
-        lives = 5;
-        t1 = 5f;
+        overTime = 45f;
+        lives = 3;
+        t1 = 3f;
         SetText();
     }
 

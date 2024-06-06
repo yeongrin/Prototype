@@ -14,7 +14,7 @@ public class Timer2 : MonoBehaviour
 
     void Start()
     {
-        timer2 = 5f;
+        timer2 = 3f;
         TimeOver = 0;
 
         UM = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
@@ -27,7 +27,7 @@ public class Timer2 : MonoBehaviour
 
         if (timer2 <= TimeOver)
         {
-            timer2 = 5f;
+            timer2 = 3f;
         }
         else if (timer2 > TimeOver)
         {
@@ -39,7 +39,7 @@ public class Timer2 : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Object2" && hit.collider != null)
                 {
                     GameObject click_button = hit.transform.gameObject;
-                    timer2 = 5f;
+                    timer2 = 3f;
 
                 }
             }

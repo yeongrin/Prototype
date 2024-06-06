@@ -8,7 +8,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void DLTrigger()
     {
-        var system = FindObjectOfType<DialogueSystem>();
-        system.Begin(info);
+        var system = FindObjectOfType<DialogueManager>();
+        system.StartDialogue(info);
     }
 }

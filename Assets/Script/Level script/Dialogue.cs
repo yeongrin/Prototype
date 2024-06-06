@@ -8,5 +8,7 @@ public class Dialogue
     //call and bring Dialogue trigger
 
     public string name;
+
+    [TextArea(3,10)]
     public List<string> sentences;
 }
