@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TargetPosition1
   - Object2
   - Object1
   - Object3
@@ -21,6 +20,7 @@ TagManager:
   - Enemy2
   - Enemy4
   - Enemy3
+  - UISlider
   layers:
   - Default
   - TransparentFX

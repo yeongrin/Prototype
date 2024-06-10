@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
         {
             if (goTime >= overTime)
             {
-                gameOverPanel.SetActive(true);
+                EndingPanel.SetActive(true);
             }
         }
 
@@ -68,6 +68,6 @@ public class UIManager : MonoBehaviour
 
     public void GameEnding()
     {
-        EndingPanel.SetActive(true);
+        gameOverPanel.SetActive(true);
     }
 }

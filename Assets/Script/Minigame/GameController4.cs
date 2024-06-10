@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public enum GameState { Title, Playing, Paused, GameOver }
-
-public class GameManager : MonoBehaviour
-{
-    public GameState gameState;
+public class GameController4 : MonoBehaviour
+{ 
     public int score;
     public GameObject GameEndPanel;
     //int scoreMultiplier = 1;
@@ -52,5 +50,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+   public void Restart()
+     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
+
 

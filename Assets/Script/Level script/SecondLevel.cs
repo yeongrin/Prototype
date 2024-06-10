@@ -78,4 +78,9 @@ public class SecondLevel : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("ForthScene");
     }
+
+    public void SetActivetrue()
+    {
+        this.gameObject.SetActive(true);
+    }
 }

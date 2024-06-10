@@ -23,7 +23,7 @@ public class EndingVideo : MonoBehaviour
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        print("Video Is Over");
+
         endingvidOb.SetActive(false);
     }
 }

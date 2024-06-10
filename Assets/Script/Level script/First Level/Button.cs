@@ -12,8 +12,8 @@ public class Button : MonoBehaviour
 
     public void Awake()
     {
-        check = false;
-        orgColor = new Color(1f, 1f, 1f, 1f);
+        //check = false;
+        //orgColor = new Color(1f, 1f, 1f, 1f);
     }
 
     void Start()
@@ -24,7 +24,7 @@ public class Button : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
@@ -50,12 +50,20 @@ public class Button : MonoBehaviour
                 }
                 
             }
-        }
+        }*/
 
 
     }
 
-    public IEnumerator EButton()
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.transform.gameObject.name == "Car2")
+        {
+            print("crash!!!!");
+        }
+    }
+
+    /*public IEnumerator EButton()
     {
 
         Color tempColor = orgColor;
@@ -83,6 +91,6 @@ public class Button : MonoBehaviour
             
         }
         
-    }
+    }*/
 
 }
