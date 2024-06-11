@@ -21,6 +21,9 @@ public class Travel : MonoBehaviour
     public Animator ani;
     public Type type;
 
+    Camera cam;
+    Vector3 MousePosition;
+
     [Header("Double click")]
     public float DoubleClickSpeed = 0.25f;
     private bool isOneClick = false;
@@ -35,56 +38,33 @@ public class Travel : MonoBehaviour
         StartTime = 5f;
         Timer = 5f;
         ani = GetComponent<Animator>();
+        cam = GetComponent<Camera>();
     }
 
     void Update()
     {
         Timer -= Time.deltaTime;
 
-        Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+        MousePosition = Input.mousePosition;
+        MousePosition = Camera.main.ScreenToWorldPoint(MousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(MousePosition, transform.forward, 0f);
+        //if(hit.collider != null) print(hit.collider.name);
+
+        if (Timer == 0)
+        {
+            Debug.Log("Byebye");
+            Destroy(this.gameObject);
+            TimerReset();
+        }
 
         switch (type)
         {
 
-            case Type.None:
-                {
-                   
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        if (hit.transform.gameObject.tag == "elements" && hit.collider != null)
-                        {
-                            //ScoreLevel();
-                        }
-                        else if (hit.transform.gameObject.tag == "elements2" && hit.collider != null)
-                        {
-                            //ScoreLevel();
-                        }
-                        else if (hit.transform.gameObject.tag == "elements3" && hit.collider != null)
-                        {
-                            //ScoreLevel();
-                        }
-                    }
-
-                }
-                break;
-
             case Type.Koala:
                 {
-                    if (Timer == 0)
-                    {
-                        Debug.Log("Byebye");
-                        Destroy(this.gameObject);
-                        TimerReset();
-                    }
-
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if (!isOneClick)
-                        {
-
-                            Timer2 = Time.time;
-                            isOneClick = true;
+                       
                            
                             if (hit.transform.gameObject.tag == "elements" && hit.collider != null)
                             {
@@ -93,26 +73,7 @@ public class Travel : MonoBehaviour
                                 GameController3.gameCon3();
                                 Invoke("Destroy", 2);
                             }
-                        }
-                        /*else
-                        {
-                           
-                            Timer2 = Time.time;
-                            isOneClick = false;
-                            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-
-                            if (hit.transform.gameObject.tag == "elements" && hit.collider != null)
-                            {
-
-                                ani.SetTrigger("Pet2");
-                               // ScoreLevel();
-                                gameObject.GetComponent<GameController3>().enabled = false;
-                          
-                                
-
-                            }
-                        }*/
+                        
                     }
                 }
                 break;
@@ -162,38 +123,16 @@ public class Travel : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if (!isOneClick)
-                        {
-
-                            Timer2 = Time.time;
-                            isOneClick = true;
-
+                        print("Clicking");
+                 
                             if (hit.transform.gameObject.tag == "elements3" && hit.collider != null)
                             {
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
                                 GameController3.gameCon3();
                                 Invoke("Destroy", 2);
-                                //ScoreLevel();
+                                
                             }
-                        }
-                       /*else
-                        {
-
-                            Timer2 = Time.time;
-                            isOneClick = false;
-                            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-
-                            if (hit.transform.gameObject.tag == "elements3" && hit.collider != null)
-                            {
-
-                                ani.SetTrigger("Shot2");
-                                //ScoreLevel();
-                                gameObject.GetComponent<GameController3>().enabled = false;
-
-                            }
-                        }*/
 
                     }
                 }

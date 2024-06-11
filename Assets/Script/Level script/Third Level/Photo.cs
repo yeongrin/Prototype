@@ -42,47 +42,31 @@ public class Photo : MonoBehaviour
         Vector2 findPhoto = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         cameraObject.transform.position = new Vector2(findPhoto.x, findPhoto.y);
 
-        if (Input.GetMouseButtonDown(0))
+       /*if (Input.GetMouseButtonDown(0))
         {
             ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D takePhoto = Physics2D.Raycast(findPhoto, Vector2.zero, 0f);
 
-            if (takePhoto.transform.gameObject.tag == "elements" && takePhoto.collider != null)
+            if (takePhoto.transform.gameObject.name == "elements" && takePhoto.collider != null)
             {
                 raycastEvent.Invoke(takePhoto.transform);
                 Debug.Log("attack!");
                 //StartCoroutine("Fade");
             }
 
-            /*if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            else if (takePhoto.transform.gameObject.tag == "elements2" && takePhoto.collider != null)
             {
-                raycastEvent.Invoke(hit.transform);
-                Debug.Log("attack!");
-            }*/
+                raycastEvent.Invoke(takePhoto.transform);
+                Debug.Log("attack!2");
+            }
 
-        }
+            else if (takePhoto.transform.gameObject.tag == "elements3" && takePhoto.collider != null)
+            {
+                raycastEvent.Invoke(takePhoto.transform);
+                Debug.Log("attack!3");
+            }
+
+        }*/
 
     }
-
-   /* IEnumerator Fade()
-    {
-        Color tempColor = orgColor;
-        gameObject.GetComponent<SpriteRenderer>().color = tempColor;
-
-        for (int i = 0; i < 100; i++)
-        {
-            if (i <= 100)
-            {
-                tempColor.a -= 0.1f;
-                gameObject.GetComponent<SpriteRenderer>().color = tempColor;
-
-
-            }
-           
-
-        }
-        yield return new WaitForSeconds(0.1f);
-
-        
-    }*/
 }
