@@ -7,57 +7,52 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    //Timer
-    public float Timer1;
-    //public float Timer2;
-    //public float Timer3;
-    //public float Timer4;
+    public float timer1;
     float TimeOver;
 
-    //Lives
-    /*public Image liveImage;
+    public Image liveImage;
     public TMP_Text livesText;
     public int lives;
-    public GameObject gameOverPanel;*/
+    public GameObject gameOverPanel;
 
     public TMP_Text timerText;
     private UIManager UM;
-    private ObstacleCar OC;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Timer1 = 3f;
+        lives = 3;
+        timer1 = 3f;
         TimeOver = 0;
 
-        //SetText();
+        SetText();
 
         UM = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
-        OC = GameObject.FindObjectOfType<ObstacleCar>().GetComponent<ObstacleCar>();
     }
 
     void Update()
     {
-        Timer1 -= Time.deltaTime;
+        timer1 -= Time.deltaTime;
         SetText();
-        //Timer2 -= Time.deltaTime;
-        //Timer3 -= Time.deltaTime;
-        //Timer4 -= Time.deltaTime;
-
-        UM.t1 = Timer1;
-
-        if (Timer1 <= TimeOver)
+        StartCoroutine(Countdown());
+        if (lives <= 0)
         {
+            GameEnding();
+            timerText.text = "0";
+            StopCoroutine(Countdown());
+        }
 
-            Timer1 = 3f;
+    }
 
-            /*if (lives == 0)
-            {
-              GameEnding();
-            }*/
+    IEnumerator Countdown()
+    {
+        if (timer1 <= TimeOver)
+        {
+            timer1 = 3f;
+            lives -= 1;
+            Lives1();
 
         }
-        else if (Timer1 > TimeOver)
+        else if (timer1 > TimeOver)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -67,51 +62,34 @@ public class Timer : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Object1" && hit.collider != null)
                 {
                     GameObject click_button = hit.transform.gameObject;
-                    Timer1 = 3f;
-
+                    timer1 = 3f;
+                
 
                 }
-                /*else if (Timer2 <= TimeOver)
-               {
-                   lives -= 1;
-                   //Debug.Log("Late");
-                   SetText();
-
-                   Timer2 = 5f;
-                   if (lives == 0)
-                   {
-                       GameEnding();
-                   }
-               }
-                else if (Timer3 <= TimeOver)
-               {
-                   lives -= 1;
-                   SetText();
-
-                   Timer3 = 5f;
-                   if (lives == 0)
-                   {
-                       GameEnding();
-                   }
-               }
-                else if(Timer4 <= TimeOver)
-               {
-                   lives -= 1;
-                   SetText();
-
-                   Timer4 = 5f;
-                   if (lives == 0)
-                   {
-                       GameEnding();
-                   }
-               }*/
-
             }
         }
+        yield break;
+
+    }
+
+    public void Lives1()
+    {
+        livesText.text = lives.ToString();
+
+        if (lives == 0)
+        {
+            livesText.text = "0";
+        }
+ 
     }
 
     public void SetText()
     {
-        timerText.text = Timer1.ToString();
+        timerText.text = timer1.ToString();
+    }
+
+    public void GameEnding()
+    {
+        gameOverPanel.SetActive(true);
     }
 }

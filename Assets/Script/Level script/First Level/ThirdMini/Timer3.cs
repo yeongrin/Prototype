@@ -10,22 +10,42 @@ public class Timer3 : MonoBehaviour
 
     public float timer3;
     float TimeOver;
+
+    public Image liveImage;
+    public TMP_Text livesText;
+    public int lives;
+    public GameObject gameOverPanel;
+
     public TMP_Text timerText;
+    private UIManager UM;
 
     void Start()
     {
+        lives = 3;
         timer3 = 3f;
         TimeOver = 0;
+
+        SetText();
+
+        UM = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
     }
 
     void Update()
     {
         timer3 -= Time.deltaTime;
-        SetText3();
+        SetText();
 
         if (timer3 <= TimeOver)
         {
             timer3 = 3f;
+            lives -= 1;
+            Lives1();
+
+            if (lives == 0)
+            {
+                GameEnding();
+            }
+
         }
         else if (timer3 > TimeOver)
         {
@@ -39,14 +59,29 @@ public class Timer3 : MonoBehaviour
                     GameObject click_button = hit.transform.gameObject;
                     timer3 = 3f;
 
+
                 }
             }
         }
     }
+    public void Lives1()
+    {
+        livesText.text = lives.ToString();
 
-    public void SetText3()
+        if (lives == 0)
+        {
+            livesText.text = "0";
+        }
+
+    }
+
+    public void SetText()
     {
         timerText.text = timer3.ToString();
     }
 
+    public void GameEnding()
+    {
+        gameOverPanel.SetActive(true);
+    }
 }
