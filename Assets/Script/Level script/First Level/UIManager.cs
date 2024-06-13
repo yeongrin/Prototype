@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     //public Image liveImage;
     //public TMP_Text livesText;
     //public int lives;
-    public GameObject gameOverPanel;
+    //public GameObject gameOverPanel;
     public GameObject EndingPanel;
     public TMP_Text overallTimetext;
 
@@ -76,10 +76,10 @@ public class UIManager : MonoBehaviour
             }
         }
         
-        else if (goTime >= overTime)
-            {
-                EndingPanel.SetActive(true);
-            }
+      
+        if (goTime >= overTime)
+        EndingPanel.SetActive(true);
+            
         
 
     }

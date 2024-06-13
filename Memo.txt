@@ -18,3 +18,9 @@ Memo
 - Making screaming guy animation
 - When the games end, screaming guy video pops up and add the screaming sound
 - the video end, buy the ticket and play video (<-Lin move to Aus)
+
+Memo/13 06
+More obibously and Developing Visual design
+
+Still confused about what to do and the purpose is ambiguous. And the UI is a bit dizzy and chaotic. 
+-> Fixing UI more obiously and need explain what player should do in this game.

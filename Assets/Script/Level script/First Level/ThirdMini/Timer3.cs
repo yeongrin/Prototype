@@ -7,7 +7,6 @@ using TMPro;
 
 public class Timer3 : MonoBehaviour
 {
-
     public float timer3;
     float TimeOver;
 
@@ -34,17 +33,25 @@ public class Timer3 : MonoBehaviour
     {
         timer3 -= Time.deltaTime;
         SetText();
+        StartCoroutine(Countdown());
 
+            if (lives <= 0)
+            {
+                GameEnding();
+            timerText.text = "0";
+            StopCoroutine(Countdown());
+            }
+
+    }
+
+    IEnumerator Countdown()
+    {
         if (timer3 <= TimeOver)
         {
             timer3 = 3f;
             lives -= 1;
             Lives1();
 
-            if (lives == 0)
-            {
-                GameEnding();
-            }
 
         }
         else if (timer3 > TimeOver)
@@ -63,12 +70,15 @@ public class Timer3 : MonoBehaviour
                 }
             }
         }
+        yield break;
+
     }
+
     public void Lives1()
     {
         livesText.text = lives.ToString();
 
-        if (lives == 0)
+        if (lives <= 0)
         {
             livesText.text = "0";
         }

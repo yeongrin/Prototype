@@ -76,7 +76,7 @@ public class Timer : MonoBehaviour
     {
         livesText.text = lives.ToString();
 
-        if (lives == 0)
+        if (lives <= 0)
         {
             livesText.text = "0";
         }

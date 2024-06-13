@@ -33,17 +33,24 @@ public class Timer2 : MonoBehaviour
     {
         timer2 -= Time.deltaTime;
         SetText();
+        StartCoroutine(Countdown());
 
+            if (lives <= 0)
+            {
+                GameEnding();
+            timerText.text = "0";
+            StopCoroutine(Countdown());
+        }
+    }
+
+    IEnumerator Countdown()
+    {
         if (timer2 <= TimeOver)
         {
             timer2 = 3f;
             lives -= 1;
             Lives1();
 
-            if (lives == 0)
-            {
-                GameEnding();
-            }
 
         }
         else if (timer2 > TimeOver)
@@ -62,12 +69,15 @@ public class Timer2 : MonoBehaviour
                 }
             }
         }
+        yield break;
+
     }
+
     public void Lives1()
     {
         livesText.text = lives.ToString();
 
-        if (lives == 0)
+        if (lives <= 0)
         {
             livesText.text = "0";
         }

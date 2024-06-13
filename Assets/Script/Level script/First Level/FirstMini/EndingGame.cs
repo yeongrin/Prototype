@@ -14,7 +14,7 @@ public class EndingGame : MonoBehaviour
     void Start()
     {
         endingVideo1.loopPointReached += CheckOver1;
-        Debug.Log("3534647");
+        //Debug.Log("3534647");
     }
 
     void Update()
@@ -27,7 +27,7 @@ public class EndingGame : MonoBehaviour
     {
         print("Video end");
         endingGame.SetActive(true);
-        endingGame.SetActive(false);
+        game.SetActive(false);
     }
 
     void EndingVideoStart()
