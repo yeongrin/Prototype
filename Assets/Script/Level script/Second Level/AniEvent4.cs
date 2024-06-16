@@ -22,22 +22,11 @@ public class AniEvent4 : MonoBehaviour
         end5 = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void EnterNextScene1()
-    {
-        // anim1.Play("WalkLin");
-    }
-
     public void OnEnterNextScene()
     {
         end4 = false;
         end5 = true;
-        Debug.Log("Fine2");
+        
         GameObject.Find("AllMap").transform.Find("4").gameObject.SetActive(true);
         GameObject.Find("AllMap").transform.Find("3").gameObject.SetActive(false);
 

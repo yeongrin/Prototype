@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AniEvent5 : MonoBehaviour
 {
-    private bool end5;
-    private bool end6;
+    //private bool end5;
+   //private bool end6;
 
     public Animator anim5;
 
@@ -18,17 +18,18 @@ public class AniEvent5 : MonoBehaviour
     }
     void Start()
     {
-        end5 = true;
-        end6 = false;
+        //end5 = true;
+        //end6 = false;
     }
 
     public void OnEnterNextScene()
     {
-        end5 = false;
-        end6 = true;
-       
+        //end5 = false;
+        //end6 = true;
+
         GameObject.Find("AllMap").transform.Find("5").gameObject.SetActive(true);
         GameObject.Find("AllMap").transform.Find("4").gameObject.SetActive(false);
+        Debug.Log("55256");
 
     }
 }

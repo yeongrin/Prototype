@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Airport : MonoBehaviour
 {
-    public Animator animator;
+    Animator animator;
     private Transform Button1;
 
     // Start is called before the first frame update

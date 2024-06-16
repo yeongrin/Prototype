@@ -29,7 +29,7 @@ public class GameController3 : MonoBehaviour
     private double Timer2 = 0;*/
 
     public Slider slider;
-    private int maxScore = 10;
+    //private int maxScore = 10;
     public int score;
 
     public void Awake()
