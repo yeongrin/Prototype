@@ -12,7 +12,7 @@ public class Timer3 : MonoBehaviour
 
     public Image liveImage;
     public TMP_Text livesText;
-    public int lives;
+    public static int lives3 = 3;
     public GameObject gameOverPanel;
 
     public TMP_Text timerText;
@@ -20,7 +20,7 @@ public class Timer3 : MonoBehaviour
 
     void Start()
     {
-        lives = 3;
+        lives3 = 3;
         timer3 = 3f;
         TimeOver = 0;
 
@@ -31,17 +31,25 @@ public class Timer3 : MonoBehaviour
 
     void Update()
     {
-        timer3 -= Time.deltaTime;
+       
         SetText();
         StartCoroutine(Countdown());
+        StartCoroutine(Count());
 
-            if (lives <= 0)
+            if (lives3 <= 0)
             {
                 GameEnding();
             timerText.text = "0";
             StopCoroutine(Countdown());
+            StopCoroutine(Count());
             }
 
+    }
+
+    IEnumerator Count()
+    {
+        timer3 -= Time.deltaTime;
+        yield break;
     }
 
     IEnumerator Countdown()
@@ -49,7 +57,7 @@ public class Timer3 : MonoBehaviour
         if (timer3 <= TimeOver)
         {
             timer3 = 3f;
-            lives -= 1;
+            lives3 -= 1;
             Lives1();
 
 
@@ -76,9 +84,9 @@ public class Timer3 : MonoBehaviour
 
     public void Lives1()
     {
-        livesText.text = lives.ToString();
+        livesText.text = lives3.ToString();
 
-        if (lives <= 0)
+        if (lives3 <= 0)
         {
             livesText.text = "0";
         }

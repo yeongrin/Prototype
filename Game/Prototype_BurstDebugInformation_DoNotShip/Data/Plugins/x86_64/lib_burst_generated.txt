@@ -10,8 +10,9 @@ Library: C:\Users\yjeon1\Documents\GitHub\Prototype\Temp\BurstOutput\Data\Plugin
 --assembly-defines=UnityEngine;
 --assembly-defines=Assembly-CSharp;
 --assembly-defines=Unity.2D.IK.Runtime;
---assembly-defines=Unity.AI.Navigation;
+--assembly-defines=Unity.Postprocessing.Runtime;
 --assembly-defines=Unity.Burst;
+--assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.VisualScripting.Core;
 --assembly-defines=Unity.2D.Animation.Runtime;
 --assembly-defines=Unity.2D.Tilemap.Extras;
@@ -100,8 +101,9 @@ Library: C:\Users\yjeon1\Documents\GitHub\Prototype\Temp\BurstOutput\Data\Plugin
 --assembly-defines=UnityEngine;
 --assembly-defines=Assembly-CSharp;
 --assembly-defines=Unity.2D.IK.Runtime;
---assembly-defines=Unity.AI.Navigation;
+--assembly-defines=Unity.Postprocessing.Runtime;
 --assembly-defines=Unity.Burst;
+--assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.VisualScripting.Core;
 --assembly-defines=Unity.2D.Animation.Runtime;
 --assembly-defines=Unity.2D.Tilemap.Extras;

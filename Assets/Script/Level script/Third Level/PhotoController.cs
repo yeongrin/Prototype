@@ -91,7 +91,7 @@ public class PhotoController : MonoBehaviour
     void LevelEnd2()
     {
 
-        //GameObject.Find("Scene3").transform.Find("EndingPanel").gameObject.SetActive(true);
+        //GameObject.Find("Scene3").transform.Find("manyelling").gameObject.SetActive(true);
         GameEndPanel.SetActive(true);
 
     }

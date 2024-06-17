@@ -1307,14 +1307,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affeab1208982a941a38d5f141d371cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndingPanel: {fileID: 901821441}
   overallTimetext: {fileID: 562710764}
+  overLives: 0
+  manyelling: {fileID: 901821441}
+  video: {fileID: 1943091782}
   goTime: 0
   overTime: 0
+  Game: {fileID: 245634847}
   FirMini: {fileID: 344020958}
   SecMini: {fileID: 108916184}
   ThiMini: {fileID: 99718666}
   ForMini: {fileID: 281940226}
+  EndingG: {fileID: 662653763}
 --- !u!1 &281940226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,7 +1740,7 @@ GameObject:
   - component: {fileID: 329282302}
   - component: {fileID: 329282306}
   - component: {fileID: 329282305}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -4132,8 +4136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endingGame: {fileID: 1845092329}
   game: {fileID: 245634847}
-  endingVideo2: {fileID: 0}
-  nextPanel: {fileID: 0}
   endingVideo1: {fileID: 1943091782}
 --- !u!1 &668444375
 GameObject:
@@ -5422,7 +5424,6 @@ MonoBehaviour:
   timer1: 0
   liveImage: {fileID: 393775762}
   livesText: {fileID: 1816854924}
-  lives: 3
   gameOverPanel: {fileID: 1317013206}
   timerText: {fileID: 984372771}
 --- !u!1 &877873159
@@ -5621,7 +5622,7 @@ GameObject:
   - component: {fileID: 901821446}
   - component: {fileID: 901821443}
   m_Layer: 5
-  m_Name: GameEndPanel1
+  m_Name: ManYellingPanel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10695,7 +10696,7 @@ GameObject:
   - component: {fileID: 1558256069}
   - component: {fileID: 1558256068}
   - component: {fileID: 1558256071}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: VideoScene2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11838,7 +11839,6 @@ MonoBehaviour:
   timer3: 0
   liveImage: {fileID: 328134153}
   livesText: {fileID: 1108135468}
-  lives: 0
   gameOverPanel: {fileID: 1347825109}
   timerText: {fileID: 1114811440}
 --- !u!1 &1708214685
@@ -14268,7 +14268,6 @@ MonoBehaviour:
   timer2: 0
   liveImage: {fileID: 516077396}
   livesText: {fileID: 1612160809}
-  lives: 0
   gameOverPanel: {fileID: 857038306}
   timerText: {fileID: 944602836}
 --- !u!1 &2051657200
@@ -14972,7 +14971,6 @@ MonoBehaviour:
   timer4: 0
   liveImage: {fileID: 877873161}
   livesText: {fileID: 554399944}
-  lives: 0
   gameOverPanel: {fileID: 1436875033}
   timerText: {fileID: 545951550}
 --- !u!1001 &8760783815858620794
@@ -15099,6 +15097,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 329282304}
   - {fileID: 1539744416}
-  - {fileID: 662653764}
   - {fileID: 245634848}
+  - {fileID: 662653764}
   - {fileID: 1048322277}

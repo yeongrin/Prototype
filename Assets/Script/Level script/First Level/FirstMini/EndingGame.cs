@@ -7,8 +7,8 @@ public class EndingGame : MonoBehaviour
 {
     public GameObject endingGame;
     public GameObject game;
-    public GameObject endingVideo2;
-    public GameObject nextPanel;
+   // public GameObject endingVideo2;
+    //public GameObject nextPanel;
     public VideoPlayer endingVideo1;
 
     void Start()

@@ -12,11 +12,15 @@ public class Timer : MonoBehaviour
 
     public Image liveImage;
     public TMP_Text livesText;
-    public int lives;
+    public static int lives = 3;
     public GameObject gameOverPanel;
 
     public TMP_Text timerText;
     private UIManager UM;
+
+    [Header("Stop")]
+    private IEnumerator loseLive;
+    private IEnumerator countDownTimer;
 
     void Start()
     {
@@ -26,24 +30,35 @@ public class Timer : MonoBehaviour
 
         SetText();
 
+        loseLive = LoseLive();
+        countDownTimer = Count();
+
         UM = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
     }
 
     void Update()
     {
-        timer1 -= Time.deltaTime;
         SetText();
-        StartCoroutine(Countdown());
+        StartCoroutine(countDownTimer);
+        StartCoroutine(loseLive);
+
         if (lives <= 0)
         {
             GameEnding();
-            timerText.text = "0";
-            StopCoroutine(Countdown());
+            //timerText.text = "0";
+            StopCoroutine(loseLive);
+            StopCoroutine(countDownTimer);
         }
+    }
+
+    IEnumerator Count()
+    {
+        timer1 -= Time.deltaTime;
+        yield break;
 
     }
 
-    IEnumerator Countdown()
+    IEnumerator LoseLive()
     {
         if (timer1 <= TimeOver)
         {
@@ -78,7 +93,7 @@ public class Timer : MonoBehaviour
 
         if (lives <= 0)
         {
-            livesText.text = "0";
+            //livesText.text = "0";
         }
  
     }
