@@ -5421,11 +5421,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0164944338d1b054e879ec830e540e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 984372771}
   timer1: 0
   liveImage: {fileID: 393775762}
   livesText: {fileID: 1816854924}
   gameOverPanel: {fileID: 1317013206}
-  timerText: {fileID: 984372771}
 --- !u!1 &877873159
 GameObject:
   m_ObjectHideFlags: 0
@@ -10223,31 +10223,31 @@ MonoBehaviour:
   waves:
   - name: Enemy1
     enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
-    count: 3
+    count: 1
     rate: 2
+  - name: Enemy2
+    enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
+    count: 2
+    rate: 2
+  - name: Enemy2
+    enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
+    count: 3
+    rate: 3
+  - name: Enemy2
+    enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
+    count: 4
+    rate: 3
   - name: Enemy2
     enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
     count: 5
-    rate: 2
+    rate: 3
+  - name: Enemy2
+    enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
+    count: 6
+    rate: 3
   - name: Enemy2
     enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
     count: 7
-    rate: 3
-  - name: Enemy2
-    enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
-    count: 9
-    rate: 3
-  - name: Enemy2
-    enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
-    count: 11
-    rate: 3
-  - name: Enemy2
-    enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
-    count: 13
-    rate: 3
-  - name: Enemy2
-    enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
-    count: 13
     rate: 3
   - name: Enemy2
     enemy: {fileID: 4910206208457005129, guid: a3377dcec4d8b794a8f9ab36d264c98c, type: 3}
@@ -10949,7 +10949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1627071906
 Transform:
   m_ObjectHideFlags: 0
@@ -14266,10 +14266,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer2: 0
+  TimeOver: 0
   liveImage: {fileID: 516077396}
   livesText: {fileID: 1612160809}
   gameOverPanel: {fileID: 857038306}
   timerText: {fileID: 944602836}
+  UM: {fileID: 0}
 --- !u!1 &2051657200
 GameObject:
   m_ObjectHideFlags: 0
