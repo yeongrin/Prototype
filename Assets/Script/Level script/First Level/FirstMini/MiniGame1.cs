@@ -20,7 +20,7 @@ public class MiniGame1 : MonoBehaviour
     public static int lives = 3;
     public GameObject gameOverPanel;
 
-    private GameManager GM;
+    //private GameManager GM;
 
     /*[Header("Stop")]
     Coroutine loseLive = null;
@@ -38,7 +38,7 @@ public class MiniGame1 : MonoBehaviour
        // countDownTimer = Count();
        
 
-        GM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        //GM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     void Update()
@@ -47,7 +47,7 @@ public class MiniGame1 : MonoBehaviour
         if (lives > 0)
         {
         StartCoroutine("LoseLive");
-        StartCoroutine("Count");
+        //StartCoroutine("Count");
         SetText();
         }
        if (lives <= 0)

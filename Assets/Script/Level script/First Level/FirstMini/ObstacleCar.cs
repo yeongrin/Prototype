@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class ObstacleCar : MonoBehaviour
@@ -13,6 +14,10 @@ public class ObstacleCar : MonoBehaviour
 
     private SpriteRenderer color;
 
+    Button _B;
+
+    MiniGame1 _MG1;
+
     private void Awake()
     {
         orgSize = transform.localScale;
@@ -22,6 +27,8 @@ public class ObstacleCar : MonoBehaviour
     {
         Button = GameObject.FindGameObjectWithTag("Object1").transform;
         //color = GameObject.Find("Car").GetComponent<SpriteRenderer>();
+        _B = GameObject.FindObjectOfType<Button>();
+        _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
     }
 
     private void OnEnable()
@@ -60,5 +67,8 @@ public class ObstacleCar : MonoBehaviour
     public void DestroyObj()
     {
         Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+        _MG1.timer1 = 3f;
+        _B.isTimer = false;
+        
     }
 }
