@@ -10,12 +10,12 @@ public class StartVideo : MonoBehaviour
     public VideoPlayer vid;
     public GameObject vidOb;
 
-    //private UIManager UI;
+    //private GameManager UI;
    // private AllMap AM;
 
     void Start()
     {
-        // UI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        // UI = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
        // AM = GameObject.FindObjectOfType<AllMap>().GetComponent<AllMap>();
         vid.loopPointReached += CheckOver;
         Invoke("OnInvoke", 0.5f);

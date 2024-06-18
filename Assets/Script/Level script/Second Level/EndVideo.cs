@@ -10,11 +10,11 @@ public class EndVideo : MonoBehaviour
     public VideoPlayer vid;
     public GameObject vidOb;
 
-    private UIManager UI;
+    private GameManager UI;
    
     void Start() 
     { 
-        UI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        UI = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
         vid.loopPointReached += CheckOver;
         Invoke("OnInvoke", 0.5f);
     

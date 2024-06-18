@@ -26,7 +26,7 @@ public class GameController3 : MonoBehaviour
     /*[Header("Double click")]
     public float DoubleClickSpeed = 0.25f;
     private bool isOneClick = false;
-    private double Timer2 = 0;*/
+    private double MiniGame2 = 0;*/
 
     public Slider slider;
     //private int maxScore = 10;

@@ -23,74 +23,18 @@ public class Button : MonoBehaviour
 
 
     void Update()
-    {
-        /*if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-
-            if (hit.transform.gameObject.tag == "Object1" && hit.collider != null)
-            {
-                GameObject click_button = hit.transform.gameObject;
-                //_render.color = Color.black;
-
-                
-
-                if(!check)
-                {
-                    StartCoroutine("EButton", button);
-                    check = true;
-
-                }
-                else
-                {
-                    StopCoroutine("EButton");
-                    button.GetComponent<SpriteRenderer>().color = orgColor;
-                    check = false;
-                }
-                
-            }
-        }*/
+    { 
 
 
     }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.transform.gameObject.name == "Car2")
+        if (coll.transform.gameObject.tag == "Enemy")
         {
+            MiniGame1.lives -= 1;
             print("crash!!!!");
         }
     }
-
-    /*public IEnumerator EButton()
-    {
-
-        Color tempColor = orgColor;
-
-        gameObject.GetComponent<SpriteRenderer>().color = tempColor;
-        
-
-        while(true)
-        {
-            while(gameObject.GetComponent<SpriteRenderer>().color.a > 0f)
-            {
-                tempColor.a -= 0.1f;
-                gameObject.GetComponent<SpriteRenderer>().color = tempColor;
-                yield return new WaitForSeconds(0.01f);
-            }
-            yield return new WaitForSeconds(0.1f);
-            while (gameObject.GetComponent<SpriteRenderer>().color.a < 1f)
-            {
-                tempColor.a += 0.1f;
-                gameObject.GetComponent<SpriteRenderer>().color = tempColor;
-                yield return new WaitForSeconds(0.01f);
-            }
-            break;
-            
-            
-        }
-        
-    }*/
 
 }

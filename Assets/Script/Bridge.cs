@@ -51,7 +51,7 @@ public class Bridge : MonoBehaviour
     void Update()
     {
 
-        /*if (isOneClick && (Time.time - Timer) > DoubleClickSpeed)
+        /*if (isOneClick && (Time.time - MiniGame1) > DoubleClickSpeed)
      {
          Debug.Log("One clicked");
          isOneClick = false;

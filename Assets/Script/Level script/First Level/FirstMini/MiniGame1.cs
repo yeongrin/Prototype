@@ -5,22 +5,26 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class Timer : MonoBehaviour
+
+public class MiniGame1 : MonoBehaviour
 {
+
+    [Header ("Timer")]
+    public TMP_Text timerText;
     public float timer1;
     float TimeOver;
 
+    [Header ("Lives")]
     public Image liveImage;
     public TMP_Text livesText;
     public static int lives = 3;
     public GameObject gameOverPanel;
 
-    public TMP_Text timerText;
-    private UIManager UM;
+    private GameManager GM;
 
-    [Header("Stop")]
-    private IEnumerator loseLive;
-    private IEnumerator countDownTimer;
+    /*[Header("Stop")]
+    Coroutine loseLive = null;
+    Coroutine countDownTimer = null;*/
 
     void Start()
     {
@@ -30,31 +34,36 @@ public class Timer : MonoBehaviour
 
         SetText();
 
-        loseLive = LoseLive();
-        countDownTimer = Count();
+       // loseLive = LoseLive();
+       // countDownTimer = Count();
+       
 
-        UM = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        GM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     void Update()
     {
-        SetText();
-        StartCoroutine(countDownTimer);
-        StartCoroutine(loseLive);
 
-        if (lives <= 0)
+        if (lives > 0)
         {
+        StartCoroutine("LoseLive");
+        StartCoroutine("Count");
+        SetText();
+        }
+       if (lives <= 0)
+        {
+            
             GameEnding();
             //timerText.text = "0";
-            StopCoroutine(loseLive);
-            StopCoroutine(countDownTimer);
+            StopCoroutine("LoseLive");
+            StopCoroutine("Count");
         }
     }
 
     IEnumerator Count()
     {
         timer1 -= Time.deltaTime;
-        yield break;
+        yield return null;
 
     }
 
@@ -83,7 +92,7 @@ public class Timer : MonoBehaviour
                 }
             }
         }
-        yield break;
+        yield return null;
 
     }
 

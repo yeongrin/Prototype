@@ -5,85 +5,88 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class Timer4 : MonoBehaviour
+public class MiniGame3 : MonoBehaviour
 {
-    public float timer4;
+    public float timer3;
     float TimeOver;
 
     public Image liveImage;
     public TMP_Text livesText;
-    public static int lives4 = 3;
+    public static int lives3 = 3;
     public GameObject gameOverPanel;
 
     public TMP_Text timerText;
-    private UIManager UM;
+    private GameManager UM;
 
     void Start()
     {
-        lives4 = 3;
-        timer4 = 3f;
+        lives3 = 3;
+        timer3 = 3f;
         TimeOver = 0;
 
         SetText();
 
-        UM = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     void Update()
     {
-        
+       
         SetText();
         StartCoroutine(Countdown());
         StartCoroutine(Count());
 
-            if (lives4 <= 0)
+            if (lives3 <= 0)
             {
                 GameEnding();
             timerText.text = "0";
             StopCoroutine(Countdown());
             StopCoroutine(Count());
             }
+
     }
 
     IEnumerator Count()
     {
-        timer4 -= Time.deltaTime;
+        timer3 -= Time.deltaTime;
         yield break;
     }
 
     IEnumerator Countdown()
     {
-
-        if (timer4 <= TimeOver)
+        if (timer3 <= TimeOver)
         {
-            timer4 = 3f;
-            lives4 -= 1;
+            timer3 = 3f;
+            lives3 -= 1;
             Lives1();
 
+
         }
-        else if (timer4 > TimeOver)
+        else if (timer3 > TimeOver)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
-                if (hit.transform.gameObject.tag == "Object2" && hit.collider != null)
+                if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
                 {
                     GameObject click_button = hit.transform.gameObject;
-                    timer4 = 3f;
+                    timer3 = 3f;
 
 
                 }
             }
         }
         yield break;
+
     }
+
     public void Lives1()
     {
-        livesText.text = lives4.ToString();
+        livesText.text = lives3.ToString();
 
-        if (lives4 <= 0)
+        if (lives3 <= 0)
         {
             livesText.text = "0";
         }
@@ -92,12 +95,11 @@ public class Timer4 : MonoBehaviour
 
     public void SetText()
     {
-        timerText.text = timer4.ToString();
+        timerText.text = timer3.ToString();
     }
 
     public void GameEnding()
     {
         gameOverPanel.SetActive(true);
     }
-
 }

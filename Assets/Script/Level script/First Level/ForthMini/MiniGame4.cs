@@ -5,63 +5,63 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class Timer2 : MonoBehaviour
+public class MiniGame4 : MonoBehaviour
 {
-    public float timer2;
+    public float timer4;
     float TimeOver;
 
     public Image liveImage;
     public TMP_Text livesText;
-    public static int lives2 = 3;
+    public static int lives4 = 3;
     public GameObject gameOverPanel;
 
     public TMP_Text timerText;
-    private UIManager UM;
+    private GameManager UM;
 
     void Start()
     {
-        lives2 = 3;
-        timer2 = 3f;
+        lives4 = 3;
+        timer4 = 3f;
         TimeOver = 0;
 
         SetText();
 
-        UM = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     void Update()
     {
+        
         SetText();
         StartCoroutine(Countdown());
         StartCoroutine(Count());
 
-            if (lives2 <= 0)
+            if (lives4 <= 0)
             {
                 GameEnding();
             timerText.text = "0";
             StopCoroutine(Countdown());
             StopCoroutine(Count());
-        }
+            }
     }
 
     IEnumerator Count()
     {
-        timer2 -= Time.deltaTime;
+        timer4 -= Time.deltaTime;
         yield break;
-
     }
 
     IEnumerator Countdown()
     {
-        if (timer2 <= TimeOver)
+
+        if (timer4 <= TimeOver)
         {
-            timer2 = 3f;
-            lives2 -= 1;
+            timer4 = 3f;
+            lives4 -= 1;
             Lives1();
 
-
         }
-        else if (timer2 > TimeOver)
+        else if (timer4 > TimeOver)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -71,21 +71,19 @@ public class Timer2 : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Object2" && hit.collider != null)
                 {
                     GameObject click_button = hit.transform.gameObject;
-                    timer2 = 3f;
+                    timer4 = 3f;
 
 
                 }
             }
         }
         yield break;
-
     }
-
     public void Lives1()
     {
-        livesText.text = lives2.ToString();
+        livesText.text = lives4.ToString();
 
-        if (lives2 <= 0)
+        if (lives4 <= 0)
         {
             livesText.text = "0";
         }
@@ -94,11 +92,12 @@ public class Timer2 : MonoBehaviour
 
     public void SetText()
     {
-        timerText.text = timer2.ToString();
+        timerText.text = timer4.ToString();
     }
 
     public void GameEnding()
     {
         gameOverPanel.SetActive(true);
     }
+
 }

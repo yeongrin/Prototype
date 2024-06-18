@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
 
-public class UIManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
   
     [Header ("Lives")]
@@ -82,25 +82,26 @@ public class UIManager : MonoBehaviour
            
     }
 
-    public void SetLives()
+    IEnumerator SetLives()
     {
 
-        if (Timer.lives <= 0)
+        if (MiniGame1.lives <= 0)
         {
             overLives -= 1;
+            yield break;
            
         }
-        else if (Timer2.lives2 <= 0)
+        else if (MiniGame2.lives2 <= 0)
         {
             overLives -= 1;
             
         }
-        else if (Timer3.lives3 <= 0)
+        else if (MiniGame3.lives3 <= 0)
         {
             overLives -= 1;
            
         }
-        else if (Timer4.lives4 <= 0)
+        else if (MiniGame4.lives4 <= 0)
         {
             overLives -= 1;
            

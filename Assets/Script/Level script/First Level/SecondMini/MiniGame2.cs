@@ -5,74 +5,73 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class Timer3 : MonoBehaviour
+public class MiniGame2 : MonoBehaviour
 {
-    public float timer3;
+    public float timer2;
     float TimeOver;
 
     public Image liveImage;
     public TMP_Text livesText;
-    public static int lives3 = 3;
+    public static int lives2 = 3;
     public GameObject gameOverPanel;
 
     public TMP_Text timerText;
-    private UIManager UM;
+    private GameManager UM;
 
     void Start()
     {
-        lives3 = 3;
-        timer3 = 3f;
+        lives2 = 3;
+        timer2 = 3f;
         TimeOver = 0;
 
         SetText();
 
-        UM = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     void Update()
     {
-       
         SetText();
         StartCoroutine(Countdown());
         StartCoroutine(Count());
 
-            if (lives3 <= 0)
+            if (lives2 <= 0)
             {
                 GameEnding();
             timerText.text = "0";
             StopCoroutine(Countdown());
             StopCoroutine(Count());
-            }
-
+        }
     }
 
     IEnumerator Count()
     {
-        timer3 -= Time.deltaTime;
+        timer2 -= Time.deltaTime;
         yield break;
+
     }
 
     IEnumerator Countdown()
     {
-        if (timer3 <= TimeOver)
+        if (timer2 <= TimeOver)
         {
-            timer3 = 3f;
-            lives3 -= 1;
+            timer2 = 3f;
+            lives2 -= 1;
             Lives1();
 
 
         }
-        else if (timer3 > TimeOver)
+        else if (timer2 > TimeOver)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
-                if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
+                if (hit.transform.gameObject.tag == "Object2" && hit.collider != null)
                 {
                     GameObject click_button = hit.transform.gameObject;
-                    timer3 = 3f;
+                    timer2 = 3f;
 
 
                 }
@@ -84,9 +83,9 @@ public class Timer3 : MonoBehaviour
 
     public void Lives1()
     {
-        livesText.text = lives3.ToString();
+        livesText.text = lives2.ToString();
 
-        if (lives3 <= 0)
+        if (lives2 <= 0)
         {
             livesText.text = "0";
         }
@@ -95,7 +94,7 @@ public class Timer3 : MonoBehaviour
 
     public void SetText()
     {
-        timerText.text = timer3.ToString();
+        timerText.text = timer2.ToString();
     }
 
     public void GameEnding()
