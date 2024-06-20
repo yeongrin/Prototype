@@ -7,16 +7,31 @@ using TMPro;
 
 public class MiniGame2 : MonoBehaviour
 {
+    //Check the timer variable
+    [Header ("Timer")]
+    public TMP_Text timerText;
     public float timer2;
     float TimeOver;
+    private bool isTimer = false;
 
+    //Check the lives variable
+    [Header ("Lives")]
     public Image liveImage;
     public TMP_Text livesText;
-    public static int lives2 = 3;
+    public int lives2 = 3;
     public GameObject gameOverPanel;
 
-    public TMP_Text timerText;
-    private GameManager UM;
+    //Check enemies and count timer
+    [Header("Enemies")]
+    public int enemies;
+
+    //private GameManager UM;
+    public void Awake()
+    {
+        isTimer = false;
+        //check = false;
+        //orgColor = new Color(1f, 1f, 1f, 1f);
+    }
 
     void Start()
     {
@@ -26,22 +41,56 @@ public class MiniGame2 : MonoBehaviour
 
         SetText();
 
-        UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+       // UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     void Update()
     {
-        SetText();
-        StartCoroutine(Countdown());
-        StartCoroutine(Count());
+        
+        if (lives2 > 0)
+        {
+            CountDownEnemies();
+            SetText();
 
-            if (lives2 <= 0)
-            {
-                GameEnding();
+        }
+
+        if (lives2 <= 0)
+        {
+            GameEnding();
             timerText.text = "0";
             StopCoroutine(Countdown());
             StopCoroutine(Count());
         }
+    }
+
+    void CountDownEnemies()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy2").Length;
+
+        if (enemies >= 1)
+        {
+            isTimer = true;
+
+            if (isTimer == true)
+            {
+                StartCoroutine(Countdown());
+                StartCoroutine(Count());
+            }
+        }
+        else
+        {
+            if(enemies <= 0)
+            {
+                isTimer = false;
+                if(isTimer == false)
+                {
+                    StopCoroutine(Countdown());
+                    StopCoroutine(Count());
+                    timer2 = 3f;
+                }
+            }
+        }
+
     }
 
     IEnumerator Count()

@@ -5,26 +5,22 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-
 public class MiniGame1 : MonoBehaviour
-{
-
+{ 
+    //Check the timer variable
     [Header ("Timer")]
     public TMP_Text timerText;
     public float timer1;
     float TimeOver;
 
+    //Check the lives variable
     [Header ("Lives")]
     public Image liveImage;
     public TMP_Text livesText;
-    public static int lives = 3;
+    public int lives;
     public GameObject gameOverPanel;
 
     //private GameManager GM;
-
-    /*[Header("Stop")]
-    Coroutine loseLive = null;
-    Coroutine countDownTimer = null;*/
 
     void Start()
     {
@@ -34,10 +30,6 @@ public class MiniGame1 : MonoBehaviour
 
         SetText();
 
-       // loseLive = LoseLive();
-       // countDownTimer = Count();
-       
-
         //GM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
@@ -46,9 +38,9 @@ public class MiniGame1 : MonoBehaviour
 
         if (lives > 0)
         {
-        StartCoroutine("LoseLive");
-        //StartCoroutine("Count");
-        SetText();
+            StartCoroutine("LoseLive");
+            //StartCoroutine("Count");
+            SetText();
         }
        if (lives <= 0)
         {
@@ -96,13 +88,14 @@ public class MiniGame1 : MonoBehaviour
 
     }
 
+    //Check Lives
     public void Lives1()
     {
         livesText.text = lives.ToString();
 
         if (lives <= 0)
         {
-            //livesText.text = "0";
+            livesText.text = "0";
         }
  
     }

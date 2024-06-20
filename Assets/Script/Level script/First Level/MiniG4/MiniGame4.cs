@@ -7,16 +7,30 @@ using TMPro;
 
 public class MiniGame4 : MonoBehaviour
 {
+    //Check the timer variable
+    [Header("Timer")]
+    public TMP_Text timerText;
     public float timer4;
     float TimeOver;
+    private bool isTimer = false;
 
+    //Check the lives variable
+    [Header("Lives")]
     public Image liveImage;
     public TMP_Text livesText;
-    public static int lives4 = 3;
+    public int lives4 = 3;
     public GameObject gameOverPanel;
 
-    public TMP_Text timerText;
-    private GameManager UM;
+    //Check enemies and count timer
+    [Header("Enemies")]
+    public int enemies;
+
+    //private GameManager UM;
+
+    private void Awake()
+    {
+        isTimer = false;
+    }
 
     void Start()
     {
@@ -26,23 +40,53 @@ public class MiniGame4 : MonoBehaviour
 
         SetText();
 
-        UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        //UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     void Update()
     {
-        
-        SetText();
-        StartCoroutine(Countdown());
-        StartCoroutine(Count());
+        if (lives4 > 0)
+        {
+            SetText();
+            CountDownEnemies();
+        }
 
-            if (lives4 <= 0)
-            {
-                GameEnding();
+        if (lives4 <= 0)
+        {
+            GameEnding();
             timerText.text = "0";
             StopCoroutine(Countdown());
             StopCoroutine(Count());
+        }
+    }
+
+    void CountDownEnemies()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy4").Length;
+
+        if (enemies >= 1)
+        {
+            isTimer = true;
+            if (isTimer == true)
+            {
+                StartCoroutine(Countdown());
+                StartCoroutine(Count());
             }
+        }
+        else
+        {
+            if (enemies <= 0)
+            {
+                isTimer = false;
+                if (isTimer == false)
+                {
+                    StopCoroutine(Countdown());
+                    StopCoroutine(Count());
+                    timer4 = 3f;
+                }
+            }
+        }
+
     }
 
     IEnumerator Count()

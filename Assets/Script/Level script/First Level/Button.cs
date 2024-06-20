@@ -43,7 +43,7 @@ public class Button : MonoBehaviour
         {
             isTimer = true;
             
-            print("crash!!!!");
+            //print("crash!!!!");
         }
     }
    

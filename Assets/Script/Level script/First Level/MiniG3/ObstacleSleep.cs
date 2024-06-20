@@ -12,11 +12,5 @@ public class ObstacleSleep : MonoBehaviour
         Button3 = GameObject.FindGameObjectWithTag("Object3").transform;
         animator = GetComponent<Animator>();
     }
-
-
-    public void StartAnimation()
-    {
-        
-    }
 }
 

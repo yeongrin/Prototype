@@ -7,17 +7,30 @@ using TMPro;
 
 public class MiniGame3 : MonoBehaviour
 {
+    //Check the timer variable
+    [Header("Timer")]
+    public TMP_Text timerText;
     public float timer3;
     float TimeOver;
+    private bool isTimer = false;
 
+    //Check the lives variable
+    [Header("Lives")]
     public Image liveImage;
     public TMP_Text livesText;
-    public static int lives3 = 3;
+    public int lives3 = 3;
     public GameObject gameOverPanel;
 
-    public TMP_Text timerText;
-    private GameManager UM;
+    //Check enemies and count timer
+    [Header("Enemies")]
+    public int enemies;
 
+    //private GameManager UM;
+
+    private void Awake()
+    {
+        isTimer = false;
+    }
     void Start()
     {
         lives3 = 3;
@@ -26,24 +39,41 @@ public class MiniGame3 : MonoBehaviour
 
         SetText();
 
-        UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        //UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     void Update()
     {
-       
-        SetText();
-        StartCoroutine(Countdown());
-        StartCoroutine(Count());
-
-            if (lives3 <= 0)
-            {
-                GameEnding();
+        if (lives3 > 0)
+        {
+            WakeUp();
+            SetText();
+        }
+        if (lives3 <= 0)
+        {
+            GameEnding();
             timerText.text = "0";
             StopCoroutine(Countdown());
             StopCoroutine(Count());
-            }
+        }
 
+    }
+
+    //How many times left before Lin wake up.
+    //After 3 sec Lin fell a sleep, and timer countdown.
+    //Player click Lin to wake up.
+    void WakeUp()
+    {
+        
+        isTimer = true;
+
+        if (isTimer == true)
+        {
+
+            StartCoroutine(Countdown());
+            StartCoroutine(Count());
+
+        }
     }
 
     IEnumerator Count()

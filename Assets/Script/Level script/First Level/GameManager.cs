@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     [Header ("Lives")]
     public TMP_Text overallTimetext;
     public int overLives = 4;
+    MiniGame1 _MG1;
+    MiniGame2 _MG2;
+    MiniGame3 _MG3;
+    MiniGame4 _MG4;
 
     [Header("Ending")]
     public GameObject manyelling;
@@ -36,14 +40,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-       // lives2 = 3;
-        //t1 = 3f;
         goTime = 0f;
         overTime = 45f;
         overLives = 4;
        
         SetText();
-        SetLives();
+        StartCoroutine(SetLives());
 
         waitingTime1 = 5;
         waitingTime2 = 10;
@@ -51,15 +53,17 @@ public class GameManager : MonoBehaviour
 
         FirMini.SetActive(true);
         video.loopPointReached += CheckOver;
+
+        _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
+        _MG2 = GameObject.FindObjectOfType<MiniGame2>().GetComponent<MiniGame2>();
+        _MG3 = GameObject.FindObjectOfType<MiniGame3>().GetComponent<MiniGame3>();
+        _MG4 = GameObject.FindObjectOfType<MiniGame4>().GetComponent<MiniGame4>();
     }
 
 
     void Update()
     {
         goTime += Time.deltaTime;
-
-        SetText();
-        SetLives();
 
         if (goTime > waitingTime1)
         {
@@ -77,39 +81,63 @@ public class GameManager : MonoBehaviour
             }
         }
         
+        //GameOver
+        if (overLives > 0)
+        {
+            SetText();
+            StartCoroutine(SetLives());
+        }
+        else
+        {
+            if (overLives <= 0)
+                manyelling.SetActive(true);
+        }
+
+        //GameEnding
         if (goTime >= overTime)
         manyelling.SetActive(true);
-           
     }
 
     IEnumerator SetLives()
     {
-
-        if (MiniGame1.lives <= 0)
+       
+        if (_MG1.lives <= 0)
         {
-            overLives -= 1;
+            for (int i = 0; i < 1; i++)
+            { 
+                overLives -= 1;
+            }
+
             yield break;
-           
         }
-        else if (MiniGame2.lives2 <= 0)
+        else if (_MG2.lives2 <= 0)
         {
-            overLives -= 1;
-            
-        }
-        else if (MiniGame3.lives3 <= 0)
-        {
-            overLives -= 1;
-           
-        }
-        else if (MiniGame4.lives4 <= 0)
-        {
-            overLives -= 1;
-           
-        }
 
-        if (overLives <= 0)
+            for (int i = 0; i < 1; i++)
+            {
+                overLives -= 1;
+            }
+            yield break;
+
+        }
+        else if (_MG3.lives3 <= 0)
         {
-            //manyelling.SetActive(true);
+            for (int i = 0; i < 1; i++)
+            {
+                overLives -= 1;
+            }
+            yield break;
+
+        }
+        else if (_MG4.lives4 <= 0)
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                overLives -= 1;
+                Debug.Log("looo");
+            }
+            yield break;
+
         }
         
     }

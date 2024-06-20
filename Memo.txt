@@ -24,3 +24,7 @@ More obibously and Developing Visual design
 
 Still confused about what to do and the purpose is ambiguous. And the UI is a bit dizzy and chaotic. 
 -> Fixing UI more obiously and need explain what player should do in this game.
+
+Memo/20 06
+Invest a little more time creating functions.
+But we needs to find a UI designer. The UI is chaotic. players have to watch the timer and life at the same time.
