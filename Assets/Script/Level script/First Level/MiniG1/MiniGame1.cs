@@ -17,7 +17,7 @@ public class MiniGame1 : MonoBehaviour
     [Header ("Lives")]
     public Image liveImage;
     public TMP_Text livesText;
-    public int lives;
+    public static int lives;
     public GameObject gameOverPanel;
 
     //private GameManager GM;
@@ -108,5 +108,6 @@ public class MiniGame1 : MonoBehaviour
     public void GameEnding()
     {
         gameOverPanel.SetActive(true);
+        GameManager.over1 = true;
     }
 }

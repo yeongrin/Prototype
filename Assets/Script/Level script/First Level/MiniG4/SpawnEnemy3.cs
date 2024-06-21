@@ -83,8 +83,6 @@ public class SpawnEnemy3 : MonoBehaviour
         {
             nextWave++;
         }
-
-        nextWave++;
     }
 
     bool EnemyIsAlive()

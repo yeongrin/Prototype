@@ -142,6 +142,7 @@ public class MiniGame4 : MonoBehaviour
     public void GameEnding()
     {
         gameOverPanel.SetActive(true);
+        GameManager.over4 = true;
     }
 
 }

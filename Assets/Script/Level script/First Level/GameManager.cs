@@ -11,11 +11,6 @@ public class GameManager : MonoBehaviour
   
     [Header ("Lives")]
     public TMP_Text overallTimetext;
-    public int overLives = 4;
-    MiniGame1 _MG1;
-    MiniGame2 _MG2;
-    MiniGame3 _MG3;
-    MiniGame4 _MG4;
 
     [Header("Ending")]
     public GameObject manyelling;
@@ -36,16 +31,29 @@ public class GameManager : MonoBehaviour
     public GameObject ForMini;
     public GameObject EndingG;
 
+    [Header("GameEnding")]
+    public static bool over1 = false;
+    public static bool over2 = false;
+    public static bool over3 = false;
+    public static bool over4 = false;
+
     //public float t1;
+
+    void Awake()
+    {
+        over1 = false;
+        over2 = false;
+        over3 = false;
+        over4 = false;
+    }
 
     void Start()
     {
         goTime = 0f;
         overTime = 45f;
-        overLives = 4;
        
         SetText();
-        StartCoroutine(SetLives());
+        //StartCoroutine(SetLives());
 
         waitingTime1 = 5;
         waitingTime2 = 10;
@@ -53,11 +61,6 @@ public class GameManager : MonoBehaviour
 
         FirMini.SetActive(true);
         video.loopPointReached += CheckOver;
-
-        _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
-        _MG2 = GameObject.FindObjectOfType<MiniGame2>().GetComponent<MiniGame2>();
-        _MG3 = GameObject.FindObjectOfType<MiniGame3>().GetComponent<MiniGame3>();
-        _MG4 = GameObject.FindObjectOfType<MiniGame4>().GetComponent<MiniGame4>();
     }
 
 
@@ -82,64 +85,14 @@ public class GameManager : MonoBehaviour
         }
         
         //GameOver
-        if (overLives > 0)
+        if (over1 == true && over2 == true && over3 == true && over4 == true)
         {
-            SetText();
-            StartCoroutine(SetLives());
-        }
-        else
-        {
-            if (overLives <= 0)
-                manyelling.SetActive(true);
+            manyelling.SetActive(true);
         }
 
         //GameEnding
         if (goTime >= overTime)
         manyelling.SetActive(true);
-    }
-
-    IEnumerator SetLives()
-    {
-       
-        if (_MG1.lives <= 0)
-        {
-            for (int i = 0; i < 1; i++)
-            { 
-                overLives -= 1;
-            }
-
-            yield break;
-        }
-        else if (_MG2.lives2 <= 0)
-        {
-
-            for (int i = 0; i < 1; i++)
-            {
-                overLives -= 1;
-            }
-            yield break;
-
-        }
-        else if (_MG3.lives3 <= 0)
-        {
-            for (int i = 0; i < 1; i++)
-            {
-                overLives -= 1;
-            }
-            yield break;
-
-        }
-        else if (_MG4.lives4 <= 0)
-        {
-            for (int i = 0; i < 1; i++)
-            {
-                overLives -= 1;
-                Debug.Log("looo");
-            }
-            yield break;
-
-        }
-        
     }
 
     public void SetText()
@@ -155,6 +108,12 @@ public class GameManager : MonoBehaviour
 
         manyelling.SetActive(false);
         EndingG.SetActive(true);
+
+        Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+        Destroy(GameObject.FindGameObjectWithTag("Enemy2"));
+        Destroy(GameObject.FindGameObjectWithTag("Enemy3"));
+        Destroy(GameObject.FindGameObjectWithTag("Enemy4"));
+
         Game.SetActive(false);
     }
 

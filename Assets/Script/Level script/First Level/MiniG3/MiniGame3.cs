@@ -131,5 +131,6 @@ public class MiniGame3 : MonoBehaviour
     public void GameEnding()
     {
         gameOverPanel.SetActive(true);
+        GameManager.over3 = true;
     }
 }

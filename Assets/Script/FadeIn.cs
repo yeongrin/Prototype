@@ -5,32 +5,42 @@ using UnityEngine;
 
 public class FadeIn : MonoBehaviour
 {
+    public GameObject mainGame;
     GameObject SplashObj;
     Image image;
 
     private bool checkbool = false;
-    // Start is called before the first frame update
+   
     void Awake()
     {
         SplashObj = this.gameObject;
         image = SplashObj.GetComponent<Image>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        StartCoroutine("MainSplash");
+        StartCoroutine("Delay");
+
+        //When the fade out coroutine stops, start the main game. 
         if(checkbool)
         {
+            mainGame.SetActive(true);
             Destroy(this.gameObject);
         }
     }
 
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(3f);
+        StartCoroutine("MainSplash");
+    }
+
     IEnumerator MainSplash()
     {
+        
         Color color = image.color;
 
-        for(int i = 100; i>=0; i--)
+        for(int i = 150; i>=0; i--)
         {
             
             color.a -= Time.deltaTime * 0.01f;

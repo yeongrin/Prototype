@@ -624,15 +624,13 @@ GameObject:
   - component: {fileID: 182236170}
   - component: {fileID: 182236173}
   - component: {fileID: 182236172}
-  - component: {fileID: 182236174}
-  - component: {fileID: 182236175}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &182236170
 RectTransform:
   m_ObjectHideFlags: 0
@@ -644,11 +642,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 671554797}
-  - {fileID: 860806632}
-  - {fileID: 2138511190}
-  - {fileID: 664190992}
+  m_Children: []
   m_Father: {fileID: 1056791618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -694,32 +688,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182236169}
   m_CullTransparentMesh: 1
---- !u!114 &182236174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182236169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b8efc8c4d384164b8986415a51097da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 182236172}
---- !u!114 &182236175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182236169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3e36179d54f3c4dace64d1fda0590c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 182236172}
 --- !u!1 &240601718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1091,7 @@ GameObject:
   - component: {fileID: 664190994}
   - component: {fileID: 664190993}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: StartDay4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1142,7 +1110,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1241705519}
-  m_Father: {fileID: 182236170}
+  m_Father: {fileID: 1056791618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1193,8 +1161,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 182236175}
-        m_TargetAssemblyTypeName: SecondLevel, Assembly-CSharp
+      - m_Target: {fileID: 1056791622}
+        m_TargetAssemblyTypeName: MainTitle, Assembly-CSharp
         m_MethodName: Fade4
         m_Mode: 1
         m_Arguments:
@@ -1257,7 +1225,7 @@ GameObject:
   - component: {fileID: 671554798}
   - component: {fileID: 671554801}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartDay1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1276,7 +1244,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1835222339}
-  m_Father: {fileID: 182236170}
+  m_Father: {fileID: 1056791618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1327,7 +1295,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 182236174}
+      - m_Target: {fileID: 1056791622}
         m_TargetAssemblyTypeName: MainTitle, Assembly-CSharp
         m_MethodName: Fade
         m_Mode: 1
@@ -1672,7 +1640,7 @@ GameObject:
   - component: {fileID: 860806633}
   - component: {fileID: 860806636}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: StartDay2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1691,7 +1659,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1826605859}
-  m_Father: {fileID: 182236170}
+  m_Father: {fileID: 1056791618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1742,8 +1710,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 182236175}
-        m_TargetAssemblyTypeName: SecondLevel, Assembly-CSharp
+      - m_Target: {fileID: 1056791622}
+        m_TargetAssemblyTypeName: MainTitle, Assembly-CSharp
         m_MethodName: Fade2
         m_Mode: 1
         m_Arguments:
@@ -1956,6 +1924,7 @@ GameObject:
   - component: {fileID: 1056791621}
   - component: {fileID: 1056791620}
   - component: {fileID: 1056791619}
+  - component: {fileID: 1056791622}
   m_Layer: 5
   m_Name: MainBook
   m_TagString: Untagged
@@ -1977,9 +1946,13 @@ RectTransform:
   m_Children:
   - {fileID: 1932767645}
   - {fileID: 1201997877}
-  - {fileID: 182236170}
+  - {fileID: 671554797}
+  - {fileID: 860806632}
+  - {fileID: 2138511190}
+  - {fileID: 664190992}
   - {fileID: 804634890}
   - {fileID: 1086167637}
+  - {fileID: 182236170}
   m_Father: {fileID: 614776228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2050,6 +2023,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1056791622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056791617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8efc8c4d384164b8986415a51097da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 182236172}
 --- !u!1 &1086167636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,7 +3724,7 @@ GameObject:
   - component: {fileID: 2138511192}
   - component: {fileID: 2138511194}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: StartDay3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3757,7 +3743,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1861235773}
-  m_Father: {fileID: 182236170}
+  m_Father: {fileID: 1056791618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3846,8 +3832,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 182236175}
-        m_TargetAssemblyTypeName: SecondLevel, Assembly-CSharp
+      - m_Target: {fileID: 1056791622}
+        m_TargetAssemblyTypeName: MainTitle, Assembly-CSharp
         m_MethodName: Fade3
         m_Mode: 1
         m_Arguments:

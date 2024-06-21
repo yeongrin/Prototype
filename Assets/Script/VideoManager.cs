@@ -8,24 +8,30 @@ public class VideoManager : MonoBehaviour
     public int numberValue;
     int currentNumber;
     public VideoPlayer vid;
-    public VideoPlayer backvid;
     public GameObject vidOb;
-    public GameObject backvidOb;
 
     void Start() 
-    { 
-        
+    {
         vid.loopPointReached += CheckOver;
-        vid.Play();
-        //Invoke("OnInvoke", 0.5f);
+        //vid.Play();
+
+        //Play video when fade out ends.
+        //Invoke("OnInvoke", 5f);
+        StartCoroutine("Delay");
 
 
     }
 
-   /* void OnInvoke()
+   /*void OnInvoke()
     {
         vid.Play();
     }*/
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(5f);
+        vid.Play();
+    }
 
     private void Update()
     {
