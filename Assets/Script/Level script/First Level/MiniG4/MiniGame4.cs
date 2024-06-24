@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -136,7 +137,7 @@ public class MiniGame4 : MonoBehaviour
 
     public void SetText()
     {
-        timerText.text = timer4.ToString();
+        timerText.text = ((int)Math.Ceiling(timer4)).ToString();
     }
 
     public void GameEnding()
