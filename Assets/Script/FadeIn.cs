@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FadeIn : MonoBehaviour
 {
-    public GameObject mainGame;
+    public GameObject canvas;
     GameObject SplashObj;
     Image image;
 
@@ -24,7 +24,7 @@ public class FadeIn : MonoBehaviour
         //When the fade out coroutine stops, start the main game. 
         if(checkbool)
         {
-            mainGame.SetActive(true);
+            //canvas.SetActive(true);
             Destroy(this.gameObject);
         }
     }

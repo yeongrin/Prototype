@@ -16,6 +16,7 @@ public class Parking : MonoBehaviour
 
     public GameObject Scene;
     public GameObject NextScene;
+    public GameObject parking;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class Parking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             if (!isOneClick&!isSecClick)
             {
@@ -77,12 +78,24 @@ public class Parking : MonoBehaviour
                 animator.SetTrigger("Park3");
                 Bonk();
             }
+        }*/
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+
+            if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
+            {
+                animator.SetTrigger("parking");
+                
+            }
         }
     }
 
     public void Bonk()
     {
-        GameObject.Find("Scene3").transform.Find("CRASH").gameObject.SetActive(true);
+        parking.gameObject.SetActive(true);
     }
 
     public void SceneChange()

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68778d1864d990440b90a5591f06e47c
+guid: d915265c26b2747438e935b507aa5fde
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: diet_0
+      name: sandwich_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 27
-        width: 512
-        height: 458
+        x: 7
+        y: 53
+        width: 492
+        height: 394
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f0c0bf3aa2b04a4298618dd3c95db70
-      internalID: 1487627626
+      spriteID: dd4aaab1f51f22f43b1841afd26b78bb
+      internalID: -1254625068
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      diet_0: 1487627626
+      sandwich_0: -1254625068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

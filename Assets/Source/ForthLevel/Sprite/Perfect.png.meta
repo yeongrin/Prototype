@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68778d1864d990440b90a5591f06e47c
+guid: c97c05966a291ff40aa67c60ac275290
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,22 +110,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: diet_0
+      name: Perfect_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 27
-        width: 512
-        height: 458
+        y: 0
+        width: 1428
+        height: 765
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f0c0bf3aa2b04a4298618dd3c95db70
-      internalID: 1487627626
+      spriteID: f867332d25c186a478eefea0752203f4
+      internalID: 586399429
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      diet_0: 1487627626
+      Perfect_0: 586399429
+      Perfect_1: 1041985352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

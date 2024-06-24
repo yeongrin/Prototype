@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68778d1864d990440b90a5591f06e47c
+guid: 66040043af4c695418b2f6c3905f63ab
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: diet_0
+      name: currywurst_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 27
+        y: 0
         width: 512
-        height: 458
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f0c0bf3aa2b04a4298618dd3c95db70
-      internalID: 1487627626
+      spriteID: 5b1a2d5ed885b4a49b8d5090977b183b
+      internalID: -1500743224
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      diet_0: 1487627626
+      currywurst_0: -1500743224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

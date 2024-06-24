@@ -123,7 +123,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 2106040154, guid: 71954f04a0a74aa4fb2c9f14fa8be01f, type: 3}
+      value: {fileID: 586399429, guid: c97c05966a291ff40aa67c60ac275290, type: 3}
+    - time: 1.1666666
+      value: {fileID: 586399429, guid: c97c05966a291ff40aa67c60ac275290, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -173,13 +175,14 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 2106040154, guid: 71954f04a0a74aa4fb2c9f14fa8be01f, type: 3}
+    - {fileID: 586399429, guid: c97c05966a291ff40aa67c60ac275290, type: 3}
+    - {fileID: 586399429, guid: c97c05966a291ff40aa67c60ac275290, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.1666666
+    m_StopTime: 1.8333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -586,10 +589,10 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.1666666
+  - time: 1.8333334
     functionName: SceneChange
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 076928accda8de1449b335d8b16bd974, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
