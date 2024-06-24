@@ -41,6 +41,7 @@ public class MiniGame2 : MonoBehaviour
         TimeOver = 0;
 
         SetText();
+        Lives();
 
        // UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
@@ -107,7 +108,7 @@ public class MiniGame2 : MonoBehaviour
         {
             timer2 = 3f;
             lives2 -= 1;
-            Lives1();
+            Lives();
 
 
         }
@@ -131,7 +132,7 @@ public class MiniGame2 : MonoBehaviour
 
     }
 
-    public void Lives1()
+    public void Lives()
     {
         livesText.text = lives2.ToString();
 
@@ -151,5 +152,6 @@ public class MiniGame2 : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         GameManager.over2 = true;
+        Destroy(GameObject.FindGameObjectWithTag("Enemy2"));
     }
 }

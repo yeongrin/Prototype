@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     int waitingTime2;
     int waitingTime3;
     int waitingTime4;
+    int gameWaiting;
     public float goTime;
     public float overTime;
 
@@ -53,14 +54,16 @@ public class GameManager : MonoBehaviour
     {
         goTime = 0f;
         overTime = 45f;
-       
+        gameWaiting = 5;
+
+
         SetText();
         //StartCoroutine(SetLives());
 
-        waitingTime1 = 5;
-        waitingTime2 = 10;
-        waitingTime3 = 15;
-        waitingTime4 = 20;
+        waitingTime1 = 7;
+        waitingTime2 = waitingTime1 + gameWaiting;
+        waitingTime3 = waitingTime2 + gameWaiting;
+        waitingTime4 = waitingTime3 + gameWaiting;
 
         video.loopPointReached += CheckOver;
     }

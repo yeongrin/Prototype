@@ -9,6 +9,8 @@ public class VideoManager : MonoBehaviour
     int currentNumber;
     public VideoPlayer vid;
     public GameObject vidOb;
+    public GameObject secondVid;
+    public VideoPlayer vidOb2;
 
     void Start() 
     {
@@ -29,7 +31,7 @@ public class VideoManager : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3.5f);
         vid.Play();
     }
 
@@ -56,6 +58,7 @@ public class VideoManager : MonoBehaviour
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         print("Video Is Over");
+        secondVid.SetActive(true);
         vidOb.SetActive(false);
     }
 }

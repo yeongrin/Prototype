@@ -40,6 +40,7 @@ public class MiniGame4 : MonoBehaviour
         TimeOver = 0;
 
         SetText();
+        Lives();
 
         //UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
@@ -103,7 +104,7 @@ public class MiniGame4 : MonoBehaviour
         {
             timer4 = 3f;
             lives4 -= 1;
-            Lives1();
+            Lives();
 
         }
         else if (timer4 > TimeOver)
@@ -124,7 +125,7 @@ public class MiniGame4 : MonoBehaviour
         }
         yield break;
     }
-    public void Lives1()
+    public void Lives()
     {
         livesText.text = lives4.ToString();
 

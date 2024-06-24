@@ -41,6 +41,7 @@ public class MiniGame3 : MonoBehaviour
         TimeOver = 0;
 
         SetText();
+        Lives();
 
         //UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
@@ -98,7 +99,7 @@ public class MiniGame3 : MonoBehaviour
             {
                 timer3 = 3f;
                 lives3 -= 1;
-                Lives1();
+                Lives();
 
                 isTimer = false;
             }
@@ -125,7 +126,7 @@ public class MiniGame3 : MonoBehaviour
 
     }
 
-    public void Lives1()
+    public void Lives()
     {
         livesText.text = lives3.ToString();
 

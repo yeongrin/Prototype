@@ -30,6 +30,7 @@ public class MiniGame1 : MonoBehaviour
         TimeOver = 0;
 
         SetText();
+        Lives();
 
         //GM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
@@ -66,7 +67,7 @@ public class MiniGame1 : MonoBehaviour
         {
             timer1 = 3f;
             lives -= 1;
-            Lives1();
+            Lives();
 
         }
         else if (timer1 > TimeOver)
@@ -88,7 +89,7 @@ public class MiniGame1 : MonoBehaviour
     }
 
     //Check Lives
-    public void Lives1()
+    public void Lives()
     {
         livesText.text = lives.ToString();
 
