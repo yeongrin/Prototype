@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class MiniGame3 : MonoBehaviour
     [Header("Timer")]
     public TMP_Text timerText;
     public float timer3;
+    public float waiting_timer;
     float TimeOver;
     private bool isTimer = false;
 
@@ -33,6 +35,7 @@ public class MiniGame3 : MonoBehaviour
     }
     void Start()
     {
+        waiting_timer = 3f;
         lives3 = 3;
         timer3 = 3f;
         TimeOver = 0;
@@ -64,50 +67,60 @@ public class MiniGame3 : MonoBehaviour
     //Player click Lin to wake up.
     void WakeUp()
     {
-        
-        isTimer = true;
-
-        if (isTimer == true)
-        {
-
-            StartCoroutine(Countdown());
-            StartCoroutine(Count());
-
-        }
+        StartCoroutine(Countdown());
+        StartCoroutine(Count());
     }
 
     IEnumerator Count()
     {
-        timer3 -= Time.deltaTime;
+        if(isTimer == true)   ///Sleep
+        {
+            timer3 -= Time.deltaTime;
+        }
+        else // Awake
+        {
+            waiting_timer -= Time.deltaTime;
+
+            if (waiting_timer < 0)
+            {
+                isTimer = true;
+            }
+        }
+        
         yield break;
     }
 
     IEnumerator Countdown()
     {
-        if (timer3 <= TimeOver)
+        if (isTimer == true)
         {
-            timer3 = 3f;
-            lives3 -= 1;
-            Lives1();
-
-
-        }
-        else if (timer3 > TimeOver)
-        {
-            if (Input.GetMouseButtonDown(0))
+            if (timer3 <= TimeOver)
             {
-                Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+                timer3 = 3f;
+                lives3 -= 1;
+                Lives1();
 
-                if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
+                isTimer = false;
+            }
+            else if (timer3 > TimeOver)
+            {
+                if (Input.GetMouseButtonDown(0))
                 {
-                    GameObject click_button = hit.transform.gameObject;
-                    timer3 = 3f;
+                    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
+                    if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
+                    {
+                        GameObject click_button = hit.transform.gameObject;
+                        timer3 = 3f;
+                        waiting_timer = 3f;
 
+                        isTimer = false;
+                    }
                 }
             }
         }
+
         yield break;
 
     }
@@ -125,7 +138,7 @@ public class MiniGame3 : MonoBehaviour
 
     public void SetText()
     {
-        timerText.text = timer3.ToString();
+        timerText.text = ((int)Math.Ceiling(timer3)).ToString();
     }
 
     public void GameEnding()

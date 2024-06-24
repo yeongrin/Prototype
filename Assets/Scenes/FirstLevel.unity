@@ -433,13 +433,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 99718667}
+  - component: {fileID: 99718668}
   m_Layer: 0
   m_Name: ThirdMini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &99718667
 Transform:
   m_ObjectHideFlags: 0
@@ -458,6 +459,26 @@ Transform:
   - {fileID: 2033462767}
   m_Father: {fileID: 245634848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &99718668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99718666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8034f70dfce15104b80341945694c3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1114811440}
+  timer3: 0
+  waiting_timer: 0
+  liveImage: {fileID: 328134153}
+  livesText: {fileID: 1108135468}
+  lives3: 3
+  gameOverPanel: {fileID: 1347825109}
+  enemies: 0
 --- !u!1001 &100853182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -630,6 +651,7 @@ GameObject:
   - component: {fileID: 108916185}
   - component: {fileID: 108916186}
   - component: {fileID: 108916187}
+  - component: {fileID: 108916188}
   m_Layer: 0
   m_Name: SecondMini
   m_TagString: Untagged
@@ -679,6 +701,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c289b221b261dff4288770723c5a50be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &108916188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108916184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd2499e3275ed643bb80fd0d1fe3274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 944602836}
+  timer2: 0
+  liveImage: {fileID: 516077396}
+  livesText: {fileID: 1612160809}
+  lives2: 3
+  gameOverPanel: {fileID: 857038306}
+  enemies: 0
 --- !u!1 &113330314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,13 +1884,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344020959}
+  - component: {fileID: 344020960}
   m_Layer: 0
   m_Name: FirstMini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &344020959
 Transform:
   m_ObjectHideFlags: 0
@@ -1869,6 +1911,23 @@ Transform:
   - {fileID: 1484289896}
   m_Father: {fileID: 245634848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &344020960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344020958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0164944338d1b054e879ec830e540e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 984372771}
+  timer1: 0
+  liveImage: {fileID: 393775762}
+  livesText: {fileID: 1816854924}
+  gameOverPanel: {fileID: 1317013206}
 --- !u!1 &346550129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,7 +2845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &492238474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5250,7 +5309,6 @@ GameObject:
   - component: {fileID: 859546883}
   - component: {fileID: 859546882}
   - component: {fileID: 859546885}
-  - component: {fileID: 859546886}
   m_Layer: 5
   m_Name: Canvas1
   m_TagString: Untagged
@@ -5360,23 +5418,6 @@ MonoBehaviour:
   orgSize: {x: 0, y: 0}
   time: 0
   speed: 0
---- !u!114 &859546886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859546879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0164944338d1b054e879ec830e540e93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 984372771}
-  timer1: 0
-  liveImage: {fileID: 393775762}
-  livesText: {fileID: 1816854924}
-  gameOverPanel: {fileID: 1317013206}
 --- !u!1 &877873159
 GameObject:
   m_ObjectHideFlags: 0
@@ -11444,7 +11485,6 @@ GameObject:
   - component: {fileID: 1706362445}
   - component: {fileID: 1706362444}
   - component: {fileID: 1706362443}
-  - component: {fileID: 1706362446}
   m_Layer: 5
   m_Name: Canvas3
   m_TagString: Untagged
@@ -11538,25 +11578,6 @@ Canvas:
   m_SortingLayerID: -1627741267
   m_SortingOrder: 2
   m_TargetDisplay: 0
---- !u!114 &1706362446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706362441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8034f70dfce15104b80341945694c3df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 1114811440}
-  timer3: 0
-  liveImage: {fileID: 328134153}
-  livesText: {fileID: 1108135468}
-  lives3: 3
-  gameOverPanel: {fileID: 1347825109}
-  enemies: 0
 --- !u!1 &1708214685
 GameObject:
   m_ObjectHideFlags: 0
@@ -13953,7 +13974,6 @@ GameObject:
   - component: {fileID: 2043140181}
   - component: {fileID: 2043140180}
   - component: {fileID: 2043140183}
-  - component: {fileID: 2043140184}
   m_Layer: 5
   m_Name: Canvas2
   m_TagString: Untagged
@@ -14059,25 +14079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c289b221b261dff4288770723c5a50be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2043140184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043140178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dd2499e3275ed643bb80fd0d1fe3274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 944602836}
-  timer2: 0
-  liveImage: {fileID: 516077396}
-  livesText: {fileID: 1612160809}
-  lives2: 3
-  gameOverPanel: {fileID: 857038306}
-  enemies: 0
 --- !u!1 &2051657200
 GameObject:
   m_ObjectHideFlags: 0

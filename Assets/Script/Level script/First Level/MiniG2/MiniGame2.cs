@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -96,7 +97,7 @@ public class MiniGame2 : MonoBehaviour
     IEnumerator Count()
     {
         timer2 -= Time.deltaTime;
-        yield break;
+        yield return null;
 
     }
 
@@ -143,7 +144,7 @@ public class MiniGame2 : MonoBehaviour
 
     public void SetText()
     {
-        timerText.text = timer2.ToString();
+        timerText.text = ((int)Math.Ceiling(timer2)).ToString();
     }
 
     public void GameEnding()

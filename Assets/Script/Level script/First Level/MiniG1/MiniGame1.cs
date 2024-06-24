@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -79,8 +80,6 @@ public class MiniGame1 : MonoBehaviour
                 {
                     GameObject click_button = hit.transform.gameObject;
                     timer1 = 3f;
-                
-
                 }
             }
         }
@@ -102,7 +101,8 @@ public class MiniGame1 : MonoBehaviour
 
     public void SetText()
     {
-        timerText.text = timer1.ToString();
+        //timerText.text = timer1.ToString();
+        timerText.text = ((int)Math.Ceiling(timer1)).ToString();
     }
 
     public void GameEnding()

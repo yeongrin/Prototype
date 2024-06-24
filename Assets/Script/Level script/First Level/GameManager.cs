@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
+using static System.Collections.Specialized.BitVector32;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     int waitingTime1;
     int waitingTime2;
     int waitingTime3;
+    int waitingTime4;
     public float goTime;
     public float overTime;
 
@@ -58,8 +60,8 @@ public class GameManager : MonoBehaviour
         waitingTime1 = 5;
         waitingTime2 = 10;
         waitingTime3 = 15;
+        waitingTime4 = 20;
 
-        FirMini.SetActive(true);
         video.loopPointReached += CheckOver;
     }
 
@@ -70,16 +72,20 @@ public class GameManager : MonoBehaviour
 
         if (goTime > waitingTime1)
         {
-            GameObject.Find("Game").transform.Find("SecondMini").gameObject.SetActive(true);
+            FirMini.SetActive(true);
 
             if (goTime > waitingTime2)
             {
-                GameObject.Find("Game").transform.Find("ThirdMini").gameObject.SetActive(true);
+                SecMini.SetActive(true);
 
                 if (goTime > waitingTime3)
-
                 {
-                    GameObject.Find("Game").transform.Find("ForthMini").gameObject.SetActive(true);
+                    ThiMini.SetActive(true);
+
+                    if (goTime > waitingTime4)
+                    {
+                        ForMini.SetActive(true);
+                    }
                 }
             }
         }
