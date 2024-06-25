@@ -145,6 +145,7 @@ public class MiniGame4 : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         GameManager.over4 = true;
+        Destroy(GameObject.FindGameObjectWithTag("Enemy4"));
     }
 
 }

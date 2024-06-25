@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6895466646293858750}
   - component: {fileID: 1025903203764411910}
   - component: {fileID: 4931321180516586713}
-  - component: {fileID: 8250336660473767288}
   - component: {fileID: 6042137856497836541}
   m_Layer: 0
   m_Name: fly 1
@@ -359,19 +358,6 @@ PolygonCollider2D:
       - {x: -1.02, y: -2.1599998}
       - {x: -0.95, y: -2.06}
   m_UseDelaunayMesh: 1
---- !u!114 &8250336660473767288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2681046508965638740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee9f29f0d7efbc459e406a45451b0ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!114 &6042137856497836541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +374,8 @@ MonoBehaviour:
   flyHealth: 0
   flyDamage: 0
   isDamage: 0
+  speed: 2
   swatterDamage: 0
   swatter: {fileID: 0}
   fly: {fileID: 2681046508965638740}
+  ani: {fileID: 0}

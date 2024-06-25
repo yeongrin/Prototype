@@ -16,7 +16,7 @@ public class Parking : MonoBehaviour
 
     public GameObject Scene;
     public GameObject NextScene;
-    public GameObject parking;
+    public GameObject crash;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class Parking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if (!isOneClick&!isSecClick)
             {
@@ -43,9 +43,7 @@ public class Parking : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
                 {
                     animator.SetTrigger("Park");
-                    Debug.Log("443245325");
-                    
-
+                 
                 }
             }
             else if (isOneClick&!isSecClick)
@@ -62,9 +60,7 @@ public class Parking : MonoBehaviour
                 {
 
                     animator.SetTrigger("Park2");
-                    Debug.Log("eetwtw");
-                   
-
+                    
 
                 }
             }
@@ -74,28 +70,28 @@ public class Parking : MonoBehaviour
                 Timer3 = Time.time;
                 isOneClick = false;
                 isSecClick = false;
-                Debug.Log("fjsdkf");
+              
                 animator.SetTrigger("Park3");
                 Bonk();
             }
-        }*/
+        }
 
-        if(Input.GetMouseButtonDown(0))
+       /* if(Input.GetMouseButtonDown(0))
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
             if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
             {
-                animator.SetTrigger("parking");
+                animator.SetTrigger("crash");
                 
             }
-        }
+        }*/
     }
 
     public void Bonk()
     {
-        parking.gameObject.SetActive(true);
+        crash.gameObject.SetActive(true);
     }
 
     public void SceneChange()

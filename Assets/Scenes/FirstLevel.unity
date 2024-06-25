@@ -1669,7 +1669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7201519779346043948, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7201519779346043948, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_IsActive
@@ -2976,7 +2976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &492238474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3904,7 +3904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 421, y: -435}
+  m_AnchoredPosition: {x: 368, y: -396}
   m_SizeDelta: {x: 1000, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641615240
@@ -3927,7 +3927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Day 1. Hong-Kong
+  m_text: 1. Bright Lights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3961,7 +3961,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4277,7 +4277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endingGame: {fileID: 1845092329}
   game: {fileID: 245634847}
-  endingVideo1: {fileID: 0}
+  endingVideo1: {fileID: 723077099}
 --- !u!1 &668444375
 GameObject:
   m_ObjectHideFlags: 0
@@ -6767,7 +6767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &983826843
 Transform:
   m_ObjectHideFlags: 0
@@ -8547,7 +8547,7 @@ Canvas:
   m_GameObject: {fileID: 1202231112}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 329282303}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -9259,7 +9259,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1627741267
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1 &1325699855
 GameObject:
@@ -10932,8 +10932,8 @@ GameObject:
   - component: {fileID: 1558256067}
   - component: {fileID: 1558256069}
   - component: {fileID: 1558256070}
-  - component: {fileID: 1558256068}
   - component: {fileID: 1558256071}
+  - component: {fileID: 1558256068}
   m_Layer: 0
   m_Name: VideoScene2
   m_TagString: Untagged
@@ -11469,7 +11469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 132, y: 232}
+  m_AnchoredPosition: {x: 20, y: 162}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1670445537
@@ -12688,7 +12688,7 @@ GameObject:
   - component: {fileID: 1853898386}
   - component: {fileID: 1853898385}
   - component: {fileID: 1853898384}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: FirstVideo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13135,7 +13135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 53}
+  m_AnchoredPosition: {x: 17, y: -17}
   m_SizeDelta: {x: 950, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929917437
@@ -13265,7 +13265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2315b8733e15b234eac4956acbeba3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 1853898383}
 --- !u!1 &1957105225
 GameObject:
   m_ObjectHideFlags: 0
@@ -13732,7 +13732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 156, y: 10}
+  m_AnchoredPosition: {x: 0, y: -60}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024753194

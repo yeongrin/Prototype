@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         SetText();
         //StartCoroutine(SetLives());
 
-        waitingTime1 = 7;
+        waitingTime1 = 6;
         waitingTime2 = waitingTime1 + gameWaiting;
         waitingTime3 = waitingTime2 + gameWaiting;
         waitingTime4 = waitingTime3 + gameWaiting;

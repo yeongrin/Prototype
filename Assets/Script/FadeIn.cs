@@ -31,7 +31,7 @@ public class FadeIn : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine("MainSplash");
     }
 

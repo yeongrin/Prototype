@@ -21,6 +21,8 @@ TagManager:
   - Enemy4
   - Enemy3
   - UISlider
+  - TargetPosition1
+  - Fly
   layers:
   - Default
   - TransparentFX
@@ -61,11 +63,11 @@ TagManager:
   - name: Background
     uniqueID: 3451758199
     locked: 0
-  - name: Player2
-    uniqueID: 172028917
-    locked: 0
   - name: Elements
     uniqueID: 1101952423
+    locked: 0
+  - name: Player2
+    uniqueID: 172028917
     locked: 0
   - name: Object
     uniqueID: 689962221

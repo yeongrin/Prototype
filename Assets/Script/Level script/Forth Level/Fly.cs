@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static Flyfight;
 
 public enum FlyType
 {
@@ -13,29 +14,24 @@ public enum FlyType
 
 public class Fly : MonoBehaviour
 {
+    [Header("FlyState")]
     public FlyType flyState;
     public int flyHealth;
     public int flyDamage;
     public bool isDamage = false;
+    public float speed;
+    private Transform Target;
     public bool isDead { get; private set; } = false;
-
     public int swatterDamage;
-
     public Flyswatter swatter;
-
     public GameObject fly;
 
+    [Header("Raycast")]
     private Ray ray;
     private RaycastHit hit;
     private Camera mainCamera;
 
     public Animator ani;
-
-   /* private void SetEnemyState(int _swatterDamage)
-    {
-        swatterDamage = _swatterDamage;
-        Debug.Log("damge");
-    }*/
 
     void Awake()
     {
@@ -49,12 +45,13 @@ public class Fly : MonoBehaviour
 
         ani = GetComponent<Animator>();
 
-
+        Target = GameObject.FindGameObjectWithTag("Target").transform; //Trace to player
     }
 
    
     void Update()
     {
+        transform.position = Vector2.MoveTowards(this.transform.position, Target.position, speed * Time.deltaTime);
 
         switch (flyState)
         {
@@ -147,39 +144,21 @@ public class Fly : MonoBehaviour
 
     }
 
-   /*public void AttackFly()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Vector2 player = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D attacked = Physics2D.Raycast(player, Vector2.zero, 0f);
-
-            if (attacked.transform.gameObject.tag == "Enemy" && attacked.collider != null)
-        {
-            isDamage = true;
-                if (isDamage == true)
-                { 
-                    flyHealth -= swatterDamage;
-            Debug.Log("Attack!!!");
-
-                }
-           
-
-            if (flyHealth <= 0)
-            {
-                FlyDie();
-            }
-        }
-
-        }
-       
-    }*/
-
     void FlyDie()
     {
         
         Destroy(this.gameObject);
         
+    }
+
+    private void OnEnable()
+    {
+        activateScene2 += FlyDie;
+    }
+
+    private void OnDisable()
+    {
+        activateScene2 -= FlyDie;
     }
 
 }

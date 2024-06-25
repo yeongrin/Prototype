@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class Flyswatter : MonoBehaviour
 {
+    public delegate void IncreaseScore();
+    public static event IncreaseScore increaseScore;
+
     public int swatterDamage;
-    public GameObject swatter;
 
     public float fadeSpeed, fadeAmount;
     float original;
@@ -24,9 +26,6 @@ public class Flyswatter : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
 
-    private Fly fly;
-    public int fh;
-
     void Awake()
     {
         mainCamera = Camera.main;
@@ -36,7 +35,6 @@ public class Flyswatter : MonoBehaviour
     void Start()
     {
         swatterDamage = 1;
-        fly = GameObject.FindObjectOfType<Fly>().GetComponent<Fly>();
 
         Mat = GetComponent<SpriteRenderer>().material;
         original = Mat.color.a;
@@ -55,18 +53,19 @@ public class Flyswatter : MonoBehaviour
 
 
         Vector2 findFly = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-        swatter.transform.position = new Vector2(findFly.x, findFly.y);
+        transform.position = new Vector2(findFly.x, findFly.y);
        
         if (Input.GetMouseButtonDown(0))
         {
             ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hitFly = Physics2D.Raycast(findFly, Vector2.zero, 0f);
 
-           if (hitFly.transform.gameObject.tag == "Enemy" && hitFly.collider != null)
+           if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
             {
-                raycastEvent.Invoke(hitFly.transform);
-               // fly.AttackFly();
-
+                Destroy(hitFly.transform.gameObject);
+                increaseScore();
+                //raycastEvent.Invoke(hitFly.transform);
+              
             }
 
         
@@ -87,6 +86,5 @@ public class Flyswatter : MonoBehaviour
         Color smoothColor = new Color(currentColor.r, currentColor.g, currentColor.b, Mathf.Lerp(currentColor.a, original, fadeSpeed * Time.deltaTime));
         Mat.color = smoothColor;
     }
-
 }
 
