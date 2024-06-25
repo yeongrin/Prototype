@@ -18,6 +18,7 @@ public class Travel : MonoBehaviour
 {
     //public GameController3 gameCon3;
 
+    
     public Animator ani;
     public Type type;
 
@@ -28,6 +29,7 @@ public class Travel : MonoBehaviour
     public float DoubleClickSpeed = 0.25f;
     private bool isOneClick = false;
     private double Timer2;
+    public bool hasClicked;
 
     [Header("CountDown")]
     public float StartTime;
@@ -39,6 +41,8 @@ public class Travel : MonoBehaviour
         Timer = 5f;
         ani = GetComponent<Animator>();
         cam = GetComponent<Camera>();
+
+        hasClicked = false;
     }
 
     void Update()
@@ -50,11 +54,12 @@ public class Travel : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(MousePosition, transform.forward, 0f);
         //if(hit.collider != null) print(hit.collider.name);
 
-        if (Timer == 0)
+        if (Timer <= 0)
         {
             Debug.Log("Byebye");
             Destroy(this.gameObject);
             TimerReset();
+            //When timer reaches zero the item will disappear.
         }
 
         switch (type)
@@ -66,8 +71,9 @@ public class Travel : MonoBehaviour
                     {
                        
                            
-                            if (hit.transform.gameObject.tag == "elements" && hit.collider != null)
+                            if (hit.transform.gameObject.tag == "elements" && hit.collider != null && hasClicked == false)
                             {
+                                hasClicked = true;
                                 ani.SetTrigger("Pet");
                                 Debug.Log("35436334");
                                 GameController3.gameCon3();
@@ -125,8 +131,9 @@ public class Travel : MonoBehaviour
                     {
                         print("Clicking");
                  
-                            if (hit.transform.gameObject.tag == "elements3" && hit.collider != null)
+                            if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
                             {
+                                hasClicked = true;
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
                                 GameController3.gameCon3();

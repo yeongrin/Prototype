@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Photo : MonoBehaviour
+public class Photo2 : MonoBehaviour
 {
  
     public GameObject cameraObject;
