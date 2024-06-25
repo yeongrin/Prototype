@@ -16,9 +16,9 @@ public class StartVideoL2 : MonoBehaviour
 
     void Start()
     {
-      vid.loopPointReached += CheckOver;
-        Invoke("OnInvoke", 3.5f);
+        vid.loopPointReached += CheckOver;
         image = GetComponent<RawImage>();
+        StartCoroutine("Delay");
     }
 
     void Update()
@@ -29,6 +29,12 @@ public class StartVideoL2 : MonoBehaviour
             vidOb.SetActive(false);
 
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(3.8f);
+        vid.Play();
     }
 
     void OnInvoke()

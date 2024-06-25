@@ -12,9 +12,14 @@ public class VideoManager4 : MonoBehaviour
     void Start()
     {
         vid.loopPointReached += CheckOver;
-        vid.Play();
+        StartCoroutine("Delay");
     }
 
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(4f);
+        vid.Play();
+    }
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {

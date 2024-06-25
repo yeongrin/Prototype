@@ -2218,7 +2218,6 @@ GameObject:
   - component: {fileID: 307593938}
   - component: {fileID: 307593940}
   - component: {fileID: 307593939}
-  - component: {fileID: 307593941}
   m_Layer: 5
   m_Name: Opening
   m_TagString: Untagged
@@ -2281,21 +2280,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307593937}
   m_CullTransparentMesh: 1
---- !u!114 &307593941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307593937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 408ba347c35e069449a122f5a4e0cc2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vid: {fileID: 934779644}
-  vidOb: {fileID: 307593937}
-  game: {fileID: 2144397599}
 --- !u!1 &314648643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6856,6 +6840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 934779645}
   - component: {fileID: 934779644}
+  - component: {fileID: 934779646}
   m_Layer: 0
   m_Name: OpeningVideo
   m_TagString: Untagged
@@ -6912,6 +6897,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 301998031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &934779646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934779643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408ba347c35e069449a122f5a4e0cc2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vid: {fileID: 934779644}
+  vidOb: {fileID: 307593937}
+  game: {fileID: 2144397599}
 --- !u!1 &936130253
 GameObject:
   m_ObjectHideFlags: 0

@@ -1281,8 +1281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overallTimetext: {fileID: 562710764}
-  manyelling: {fileID: 0}
-  video: {fileID: 0}
+  manyelling: {fileID: 1319181319}
+  video: {fileID: 723077099}
   goTime: 0
   overTime: 0
   Game: {fileID: 245634847}
@@ -1528,7 +1528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2315b8733e15b234eac4956acbeba3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainGame: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!114 &294213980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13265,7 +13265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2315b8733e15b234eac4956acbeba3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainGame: {fileID: 245634847}
+  canvas: {fileID: 0}
 --- !u!1 &1957105225
 GameObject:
   m_ObjectHideFlags: 0
