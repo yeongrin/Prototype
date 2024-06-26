@@ -5,12 +5,10 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     public GameObject button;
-    SpriteRenderer _render;
 
-    private Color orgColor;
     private bool check;
     public bool isTimer;
-    
+    public bool isChange = false;
 
     MiniGame1 _MG1;
 
@@ -23,7 +21,6 @@ public class Button : MonoBehaviour
 
     void Start()
     {
-        _render = gameObject.GetComponent<SpriteRenderer>();
         _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
     }
 
@@ -33,6 +30,7 @@ public class Button : MonoBehaviour
         if (isTimer)
         {
             _MG1.timer1 -= Time.deltaTime;
+             
         }
 
     }
@@ -42,8 +40,8 @@ public class Button : MonoBehaviour
         if (coll.transform.gameObject.tag == "Enemy")
         {
             isTimer = true;
-            
-            //print("crash!!!!");
+            isChange = true;
+      
         }
     }
    

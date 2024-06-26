@@ -2022,7 +2022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &344020959
 Transform:
   m_ObjectHideFlags: 0
@@ -2945,7 +2945,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1101952423
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -5177388603050735206, guid: cc35afd292fc349128b36a291fb3a165, type: 3}
   m_Color: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
@@ -10778,6 +10778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1500912429}
   isTimer: 0
+  isChange: 0
 --- !u!50 &1500912436
 Rigidbody2D:
   serializedVersion: 4

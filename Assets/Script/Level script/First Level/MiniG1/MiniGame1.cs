@@ -65,6 +65,7 @@ public class MiniGame1 : MonoBehaviour
     {
         if (timer1 <= TimeOver)
         {
+            
             timer1 = 3f;
             lives -= 1;
             Lives();

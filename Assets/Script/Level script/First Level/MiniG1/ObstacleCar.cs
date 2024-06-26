@@ -8,14 +8,16 @@ public class ObstacleCar : MonoBehaviour
     public float size = 1f;
     public Vector2 orgSize;
     public float time;
+    //public static float countdown = 3f; 
 
     public float speed;
     private Transform Button;
 
-    private SpriteRenderer color;
+    [Header("Color Change")]
+    //private SpriteRenderer color;
+    Animator ani;
 
     Button _B;
-
     MiniGame1 _MG1;
 
     private void Awake()
@@ -28,7 +30,19 @@ public class ObstacleCar : MonoBehaviour
         Button = GameObject.FindGameObjectWithTag("Object1").transform;
         //color = GameObject.Find("Car").GetComponent<SpriteRenderer>();
         _B = GameObject.FindObjectOfType<Button>();
+        ani = GetComponent<Animator>();
         _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
+
+    }
+
+    void Update()
+    {
+        transform.position = Vector2.MoveTowards(this.transform.position, Button.position, speed * Time.deltaTime);
+
+        if (_B.isChange)
+        {
+            StartCoroutine("CarColorChange");
+        }
     }
 
     private void OnEnable()
@@ -53,15 +67,16 @@ public class ObstacleCar : MonoBehaviour
         }
     }
 
+    IEnumerator CarColorChange()
+    {
+        //countdown -= Time.deltaTime;
+        ani.SetBool("timer", true);
+        yield return null;
+    }
+
     private void OnDisable()
     {
         gameObject.transform.localScale = orgSize;
-    }
-
-    void Update()
-    {
-        transform.position = Vector2.MoveTowards(this.transform.position, Button.position, speed * Time.deltaTime);
-        //color.color = new Color(Random.value, Random.value, Random.value, 1f);
     }
 
     public void DestroyObj()
