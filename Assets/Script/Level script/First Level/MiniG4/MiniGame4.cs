@@ -10,10 +10,11 @@ public class MiniGame4 : MonoBehaviour
 {
     //Check the timer variable
     [Header("Timer")]
-    public TMP_Text timerText;
+    //public TMP_Text timerText;
     public float timer4;
     float TimeOver;
     private bool isTimer = false;
+    public bool isChange = false;
 
     //Check the lives variable
     [Header("Lives")]
@@ -39,7 +40,7 @@ public class MiniGame4 : MonoBehaviour
         timer4 = 3f;
         TimeOver = 0;
 
-        SetText();
+        //SetText();
         Lives();
 
         //UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
@@ -49,14 +50,14 @@ public class MiniGame4 : MonoBehaviour
     {
         if (lives4 > 0)
         {
-            SetText();
+            //SetText();
             CountDownEnemies();
         }
 
         if (lives4 <= 0)
         {
             GameEnding();
-            timerText.text = "0";
+            //timerText.text = "0";
             StopCoroutine(Countdown());
             StopCoroutine(Count());
         }
@@ -69,6 +70,7 @@ public class MiniGame4 : MonoBehaviour
         if (enemies >= 1)
         {
             isTimer = true;
+            isChange = true;
             if (isTimer == true)
             {
                 StartCoroutine(Countdown());
@@ -136,10 +138,10 @@ public class MiniGame4 : MonoBehaviour
 
     }
 
-    public void SetText()
+   /* public void SetText()
     {
         timerText.text = ((int)Math.Ceiling(timer4)).ToString();
-    }
+    }*/
 
     public void GameEnding()
     {

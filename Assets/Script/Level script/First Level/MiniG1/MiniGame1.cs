@@ -10,7 +10,7 @@ public class MiniGame1 : MonoBehaviour
 { 
     //Check the timer variable
     [Header ("Timer")]
-    public TMP_Text timerText;
+    //public TMP_Text timerText;
     public float timer1;
     float TimeOver;
 
@@ -29,7 +29,7 @@ public class MiniGame1 : MonoBehaviour
         timer1 = 3f;
         TimeOver = 0;
 
-        SetText();
+        //SetText();
         Lives();
 
         //GM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
@@ -42,7 +42,7 @@ public class MiniGame1 : MonoBehaviour
         {
             StartCoroutine("LoseLive");
             //StartCoroutine("Count");
-            SetText();
+            //SetText();
         }
        if (lives <= 0)
         {
@@ -101,11 +101,11 @@ public class MiniGame1 : MonoBehaviour
  
     }
 
-    public void SetText()
+    /*public void SetText()
     {
         //timerText.text = timer1.ToString();
         timerText.text = ((int)Math.Ceiling(timer1)).ToString();
-    }
+    }*/
 
     public void GameEnding()
     {

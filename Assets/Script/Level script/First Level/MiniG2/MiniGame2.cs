@@ -10,10 +10,11 @@ public class MiniGame2 : MonoBehaviour
 {
     //Check the timer variable
     [Header ("Timer")]
-    public TMP_Text timerText;
+    //public TMP_Text timerText;
     public float timer2;
     float TimeOver;
     private bool isTimer = false;
+    public bool isChange = false;
 
     //Check the lives variable
     [Header ("Lives")]
@@ -40,7 +41,7 @@ public class MiniGame2 : MonoBehaviour
         timer2 = 3f;
         TimeOver = 0;
 
-        SetText();
+        //SetText();
         Lives();
 
        // UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
@@ -52,26 +53,27 @@ public class MiniGame2 : MonoBehaviour
         if (lives2 > 0)
         {
             CountDownEnemies();
-            SetText();
+            //SetText();
 
         }
 
         if (lives2 <= 0)
         {
             GameEnding();
-            timerText.text = "0";
+            //timerText.text = "0";
             StopCoroutine(Countdown());
             StopCoroutine(Count());
         }
     }
 
-    void CountDownEnemies()
+    public void CountDownEnemies()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy2").Length;
 
         if (enemies >= 1)
         {
             isTimer = true;
+            isChange = true;
 
             if (isTimer == true)
             {
@@ -143,10 +145,10 @@ public class MiniGame2 : MonoBehaviour
 
     }
 
-    public void SetText()
+    /*public void SetText()
     {
         timerText.text = ((int)Math.Ceiling(timer2)).ToString();
-    }
+    }*/
 
     public void GameEnding()
     {

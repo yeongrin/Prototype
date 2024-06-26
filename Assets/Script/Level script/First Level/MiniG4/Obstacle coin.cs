@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class Obstaclecoin : MonoBehaviour
 {
-    private Transform Button4;
+    MiniGame4 _MG4;
+    Animator ani;
 
-    void Start()
+    public void Start()
     {
-        Button4 = GameObject.FindGameObjectWithTag("Object4").transform;
+        ani = GetComponent<Animator>();
+        _MG4 = GameObject.FindObjectOfType<MiniGame4>().GetComponent<MiniGame4>();
     }
 
+    void Update()
+    {
+        if (_MG4.isChange == true)
+        {
+            ChangeFileColor();
+        }
+    }
+
+    void ChangeFileColor()
+    {
+        ani.SetBool("timer", true);
+    }
 
     public void DestroyObj()
     {
-        Destroy(GameObject.FindGameObjectWithTag("Enemy4"));
+        Destroy(this.gameObject);
+
     }
 }

@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class ObstableFolder : MonoBehaviour
 {
-    private Transform Button2;
-
-    void Start()
+    MiniGame2 _MG2;
+    Animator ani;
+    
+    public void Start()
     {
-        Button2 = GameObject.FindGameObjectWithTag("Object2").transform;
+        ani = GetComponent<Animator>();
+        _MG2 = GameObject.FindObjectOfType<MiniGame2>().GetComponent<MiniGame2>();
     }
 
-    
+    void Update()
+    {
+        if(_MG2.isChange == true)
+        {
+            ChangeFileColor();
+        }
+    }
+
+    void ChangeFileColor()
+    {
+        ani.SetBool("timer", true);
+    }
+
     public void DestroyObj()
     {
-        Destroy(GameObject.FindGameObjectWithTag("Enemy2"));
+        Destroy(this.gameObject);
+
     }
 }
