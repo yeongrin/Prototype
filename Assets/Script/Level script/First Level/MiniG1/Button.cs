@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    public GameObject button;
+    private GameObject car; 
 
     private bool check;
     public bool isTimer;
@@ -44,5 +44,11 @@ public class Button : MonoBehaviour
       
         }
     }
-   
+
+    public void Destroy()
+    {
+        car = GameObject.FindGameObjectWithTag("Enemy").gameObject;
+        Destroy(car.gameObject);
+    }
+
 }

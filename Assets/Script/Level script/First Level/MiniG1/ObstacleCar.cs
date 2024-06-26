@@ -39,9 +39,9 @@ public class ObstacleCar : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(this.transform.position, Button.position, speed * Time.deltaTime);
 
-        if (_B.isChange)
+        if (_B.isChange == true)
         {
-            StartCoroutine("CarColorChange");
+            CarColorChange();
         }
     }
 
@@ -67,11 +67,11 @@ public class ObstacleCar : MonoBehaviour
         }
     }
 
-    IEnumerator CarColorChange()
+    void CarColorChange()
     {
         //countdown -= Time.deltaTime;
         ani.SetBool("timer", true);
-        yield return null;
+       
     }
 
     private void OnDisable()

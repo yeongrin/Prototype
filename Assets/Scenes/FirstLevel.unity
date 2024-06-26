@@ -5442,7 +5442,6 @@ GameObject:
   - component: {fileID: 859546884}
   - component: {fileID: 859546883}
   - component: {fileID: 859546882}
-  - component: {fileID: 859546885}
   m_Layer: 5
   m_Name: Canvas1
   m_TagString: Untagged
@@ -5536,22 +5535,6 @@ Canvas:
   m_SortingLayerID: 1101952423
   m_SortingOrder: 2
   m_TargetDisplay: 0
---- !u!114 &859546885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859546879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6048045ecdb1c9e43bb7f8b0a4c5a134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: 1
-  orgSize: {x: 0, y: 0}
-  time: 0
-  speed: 0
 --- !u!1 &877873159
 GameObject:
   m_ObjectHideFlags: 0
@@ -10679,9 +10662,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 859546885}
-        m_TargetAssemblyTypeName: ObstacleCar, Assembly-CSharp
-        m_MethodName: DestroyObj
+      - m_Target: {fileID: 1500912435}
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_MethodName: Destroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10776,7 +10759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab357c5b5a357ed44ae78760e0e510f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1500912429}
   isTimer: 0
   isChange: 0
 --- !u!50 &1500912436
