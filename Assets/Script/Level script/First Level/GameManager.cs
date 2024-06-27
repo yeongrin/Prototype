@@ -123,7 +123,6 @@ public class GameManager : MonoBehaviour
         Destroy(GameObject.FindGameObjectWithTag("Enemy3"));
         Destroy(GameObject.FindGameObjectWithTag("Enemy4"));
 
-        Game.SetActive(false);
     }
 
 }

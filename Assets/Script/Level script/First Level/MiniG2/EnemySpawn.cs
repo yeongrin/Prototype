@@ -106,7 +106,7 @@ public class EnemySpawn : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _waves)
     {
-        Debug.Log("Spawning Wave:" + _waves.name);
+       //Debug.Log("Spawning Wave:" + _waves.name);
         state = SpawnState.SPAWNING;
         
 

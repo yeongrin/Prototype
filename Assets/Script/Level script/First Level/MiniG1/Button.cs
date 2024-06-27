@@ -29,10 +29,9 @@ public class Button : MonoBehaviour
     {
         if (isTimer)
         {
-            _MG1.timer1 -= Time.deltaTime;
-             
+            _MG1.timer1 -= Time.deltaTime;     
         }
-
+    
     }
 
     public void OnTriggerEnter2D(Collider2D coll)
@@ -41,8 +40,18 @@ public class Button : MonoBehaviour
         {
             isTimer = true;
             isChange = true;
-      
+
         }
+
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.gameObject.tag == "Enemy")
+            {
+                isTimer = false;
+                isChange = false;
+            }
     }
 
     public void Destroy()

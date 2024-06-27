@@ -7,6 +7,12 @@ public class EndingVideo : MonoBehaviour
 {
     public VideoPlayer endingvid;
     public GameObject endingvidOb;
+    public static bool over5 = false;
+
+    private void Awake()
+    {
+        over5 = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -25,5 +31,6 @@ public class EndingVideo : MonoBehaviour
     {
 
         endingvidOb.SetActive(false);
+        over5 = true;
     }
 }

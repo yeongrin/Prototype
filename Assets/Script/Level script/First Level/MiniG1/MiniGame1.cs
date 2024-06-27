@@ -50,16 +50,16 @@ public class MiniGame1 : MonoBehaviour
             GameEnding();
             //timerText.text = "0";
             StopCoroutine("LoseLive");
-            StopCoroutine("Count");
+            //StopCoroutine("Count");
         }
     }
 
-    IEnumerator Count()
+    /*IEnumerator Count()
     {
         timer1 -= Time.deltaTime;
         yield return null;
 
-    }
+    }*/
 
     IEnumerator LoseLive()
     {

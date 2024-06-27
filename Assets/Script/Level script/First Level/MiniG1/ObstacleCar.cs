@@ -41,8 +41,16 @@ public class ObstacleCar : MonoBehaviour
 
         if (_B.isChange == true)
         {
-            CarColorChange();
+            ani.SetBool("timer 0", true);
         }
+        else
+        {
+            if (_B.isChange == false)
+            {
+                ani.SetBool("timer 0", false);
+              
+            }
+        }   
     }
 
     private void OnEnable()
@@ -65,13 +73,6 @@ public class ObstacleCar : MonoBehaviour
             }
             yield return null;
         }
-    }
-
-    void CarColorChange()
-    {
-        //countdown -= Time.deltaTime;
-        ani.SetBool("timer", true);
-       
     }
 
     private void OnDisable()
