@@ -20,8 +20,9 @@ public class SpawnEnemy2 : MonoBehaviour
 
     public Transform[] spawnPoints;
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves;
     public float waveCountdown;
+    public float time;
 
     private float searchCountdown = 1f;
 
@@ -34,37 +35,58 @@ public class SpawnEnemy2 : MonoBehaviour
             Debug.Log("35");
         }
         waveCountdown = timeBetweenWaves;
+        time = 0f;
     }
 
     
     void Update()
     {
-        if (state == SpawnState.WAITING)
+        time += Time.deltaTime;
+
+        if (GameManager.over1 == false)
         {
-            // Check if enemies are still alive
-            if (!EnemyIsAlive())
+
+            if (state == SpawnState.WAITING)
             {
-                //Begin a new round
-                WaveCompleted();
-                //return; Looping first wave
+                // Check if enemies are still alive
+                if (!EnemyIsAlive())
+                {
+                    //Begin a new round
+                    WaveCompleted();
+                    //return; Looping first wave
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            if (waveCountdown <= 0)
+            {
+                if (state != SpawnState.SPAWNING)
+                {
+                    StartCoroutine(SpawnWave(waves[nextWave]));
+                    //Start spawing waves;
+                }
             }
             else
             {
-                return;
+                waveCountdown -= Time.deltaTime;
+            }
+
+            //Time passed. Faster more Faster
+            if (time >= 15)
+            {
+                timeBetweenWaves = 1;
+
+                if (time >= 25)
+                    timeBetweenWaves = 0;
             }
         }
 
-        if (waveCountdown <= 0)
+        if(GameManager.over1 == true)
         {
-            if(state != SpawnState.SPAWNING)
-            {
-                StartCoroutine(SpawnWave(waves[nextWave]));
-                //Start spawing waves;
-            }
-        }
-        else
-        {
-            waveCountdown -= Time.deltaTime;
+            StopCoroutine(SpawnWave(waves[nextWave]));
         }
     }
 

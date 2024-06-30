@@ -19,6 +19,7 @@ public class ObstacleCar : MonoBehaviour
 
     Button _B;
     MiniGame1 _MG1;
+    SpawnEnemy2 _SE2;
 
     private void Awake()
     {
@@ -29,9 +30,10 @@ public class ObstacleCar : MonoBehaviour
     {
         Button = GameObject.FindGameObjectWithTag("Object1").transform;
         //color = GameObject.Find("Car").GetComponent<SpriteRenderer>();
-        _B = GameObject.FindObjectOfType<Button>();
         ani = GetComponent<Animator>();
+        _B = GameObject.FindObjectOfType<Button>();
         _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
+        _SE2 = GameObject.FindObjectOfType<SpawnEnemy2>();
 
     }
 
@@ -50,7 +52,19 @@ public class ObstacleCar : MonoBehaviour
                 ani.SetBool("timer 0", false);
               
             }
-        }   
+        }
+
+        //Time passed. Faster more Faster
+        if (_SE2.time >= 15)
+        {
+            speed = 2;
+
+            if (time >= 25)
+            {
+                speed = 3;
+            }
+        }
+
     }
 
     private void OnEnable()

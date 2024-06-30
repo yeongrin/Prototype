@@ -25,7 +25,6 @@ public class CameraBlur1 : MonoBehaviour
         {
             //ppVolume.enabled = !ppVolume.enabled;
             ppVolume.weight = 0.8f;
-            Debug.Log("674458654646");
 
         }
         else

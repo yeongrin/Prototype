@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class FadeIn : MonoBehaviour
 {
-    public GameObject canvas;
     GameObject SplashObj;
     Image image;
 

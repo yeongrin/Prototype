@@ -1177,7 +1177,6 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 70026416}
   - {fileID: 203015358}
-  hasClicked: 0
   timeBetweenWaves: 2.5
   waveCountdown: 0
 --- !u!114 &444065206
@@ -4941,7 +4940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1607317067
 RectTransform:
   m_ObjectHideFlags: 0
