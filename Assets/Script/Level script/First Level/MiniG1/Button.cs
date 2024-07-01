@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    private GameObject car; 
+    private GameObject car;
+    public Animator ani;
 
     private bool check;
     public bool isTimer;
@@ -32,6 +33,7 @@ public class Button : MonoBehaviour
             _MG1.timer1 -= Time.deltaTime;     
         }
     
+
     }
 
     public void OnTriggerEnter2D(Collider2D coll)
@@ -58,6 +60,7 @@ public class Button : MonoBehaviour
     {
         car = GameObject.FindGameObjectWithTag("Enemy").gameObject;
         Destroy(car.gameObject);
+        ani.SetTrigger("press");
     }
 
 }

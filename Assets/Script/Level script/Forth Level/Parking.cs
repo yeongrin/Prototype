@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ParkingCar
+{
+    Crash,
+    Perfect
+}
+
 public class Parking : MonoBehaviour
 {
+    public ParkingCar parkingcar;
+
     public GameObject car;
     Animator animator;
 
@@ -28,65 +36,77 @@ public class Parking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        switch (parkingcar)
         {
-            if (!isOneClick&!isSecClick)
-            {
-
-                Timer2 = Time.time;
-                Timer3 = Time.time;
-                isOneClick = true;
-                isSecClick = false;
-                Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-
-                if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
+            case ParkingCar. Crash:
                 {
-                    animator.SetTrigger("Park");
-                 
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (!isOneClick & !isSecClick)
+                        {
+
+                            Timer2 = Time.time;
+                            Timer3 = Time.time;
+                            isOneClick = true;
+                            isSecClick = false;
+                            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+
+                            if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
+                            {
+                                animator.SetTrigger("Park");
+
+                            }
+                        }
+                        else if (isOneClick & !isSecClick)
+                        {
+
+                            Timer2 = Time.time;
+                            Timer3 = Time.time;
+                            isOneClick = false;
+                            isSecClick = true;
+                            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+
+                            if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
+                            {
+
+                                animator.SetTrigger("Park2");
+
+
+                            }
+                        }
+                        else
+                        {
+                            Timer2 = Time.time;
+                            Timer3 = Time.time;
+                            isOneClick = false;
+                            isSecClick = false;
+
+                            animator.SetTrigger("Park3");
+                            Bonk();
+                        }
+                    }
                 }
-            }
-            else if (isOneClick&!isSecClick)
-            {
+            break;
 
-                Timer2 = Time.time;
-                Timer3 = Time.time;
-                isOneClick = false;
-                isSecClick = true;
-                Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-
-                if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
+            case ParkingCar. Perfect:
                 {
-
-                    animator.SetTrigger("Park2");
-                    
-
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+                       
+                        if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
+                        {
+                            animator.SetTrigger("perfect");
+                            
+                        }
+                    }
                 }
-            }
-            else 
-            {
-                Timer2 = Time.time;
-                Timer3 = Time.time;
-                isOneClick = false;
-                isSecClick = false;
-              
-                animator.SetTrigger("Park3");
-                Bonk();
-            }
+            break;
         }
-
-       /* if(Input.GetMouseButtonDown(0))
-        {
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-
-            if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
-            {
-                animator.SetTrigger("crash");
-                
-            }
-        }*/
+  
     }
 
     public void Bonk()

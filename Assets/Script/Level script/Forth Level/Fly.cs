@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System;
 using static Flyfight;
 
 public enum FlyType
@@ -14,6 +15,8 @@ public enum FlyType
 
 public class Fly : MonoBehaviour
 {
+    public static Action _fly;
+
     [Header("FlyState")]
     public FlyType flyState;
     public int flyHealth;
@@ -36,6 +39,7 @@ public class Fly : MonoBehaviour
     void Awake()
     {
         mainCamera = Camera.main;
+        _fly = () => { FlyDie(); };
     }
 
     void Start()
@@ -48,67 +52,22 @@ public class Fly : MonoBehaviour
         Target = GameObject.FindGameObjectWithTag("Target").transform; //Trace to player
     }
 
-   
+
     void Update()
     {
         transform.position = Vector2.MoveTowards(this.transform.position, Target.position, speed * Time.deltaTime);
 
-        switch (flyState)
+       /* switch (flyState)
         {
             case FlyType.Big:
                 flyHealth = 1;
                 flyDamage = 1;
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Vector2 player = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    RaycastHit2D attacked = Physics2D.Raycast(player, Vector2.zero, 0f);
-
-                    if (attacked.transform.gameObject.tag == "elements" && attacked.collider != null)
-                    {
-                        isDamage = true;
-                        if (isDamage == true)
-                        {
-                            flyHealth -= swatterDamage;
-                            Debug.Log("Attack!!!");
-
-                        }
-
-
-                        if (flyHealth <= 0)
-                        {
-                            FlyDie();
-                        }
-                    }
-
-                }
+                
                 break;
 
             case FlyType.Medium:
                 flyHealth = 1;
                 flyDamage = 1;
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Vector2 player = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    RaycastHit2D attacked2 = Physics2D.Raycast(player, Vector2.zero, 0f);
-
-                    if (attacked2.transform.gameObject.tag == "elements2" && attacked2.collider != null)
-                    {
-                        isDamage = true;
-                        if (isDamage == true)
-                        {
-                            flyHealth -= swatterDamage;
-                            Debug.Log("Attack!!!2");
-
-                        }
-
-
-                        if (flyHealth <= 0)
-                        {
-                            FlyDie();
-                        }
-                    }
-
-                }
                 break;
 
             case FlyType.Small:
@@ -125,30 +84,29 @@ public class Fly : MonoBehaviour
                         if (isDamage == true)
                         {
                             flyHealth -= swatterDamage;
-                            Debug.Log("Attack!!!3");
-
+                         
                         }
 
 
                         if (flyHealth <= 0)
                         {
                             ani.SetTrigger("Death");
-                            Invoke("FlyDie", 3f);
+                           // Invoke("FlyDie", 3f);
                         }
                     }
 
                 }
-                
+
                 break;
-        }
+        }*/
 
     }
 
     void FlyDie()
     {
-        
-        Destroy(this.gameObject);
-        
+        ani.SetTrigger("Death");
+        //Destroy(this.gameObject);
+
     }
 
     private void OnEnable()

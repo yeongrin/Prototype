@@ -17,35 +17,15 @@ public class Flyfight : MonoBehaviour
     {
         score = 0;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Vector2 player = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //    RaycastHit2D attacked = Physics2D.Raycast(player, Vector2.zero, 0f);
-
-        //    if (attacked.transform.gameObject.tag == "elements1" && attacked.collider != null)
-        //    {
-        //        Score();
-        //    }
-        //    else if (attacked.transform.gameObject.tag == "elements2" && attacked.collider != null)
-        //    {
-        //        Score();
-        //    }
-        //    else if (attacked.transform.gameObject.tag == "elements3" && attacked.collider != null)
-        //    {
-        //        Score();
-        //    }
-        //}
         
     }
 
     public void Score()
     {
         score += 1;
-        if (score >= 5)
+        if (score >= 10)
         {
             map3.SetActive(true);
             map2.SetActive(false);

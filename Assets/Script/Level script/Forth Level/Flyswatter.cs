@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using static Fly;
 
 public class Flyswatter : MonoBehaviour
 {
@@ -50,8 +51,6 @@ public class Flyswatter : MonoBehaviour
         else
             ResetFade();
 
-
-
         Vector2 findFly = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         transform.position = new Vector2(findFly.x, findFly.y);
        
@@ -61,16 +60,13 @@ public class Flyswatter : MonoBehaviour
             RaycastHit2D hitFly = Physics2D.Raycast(findFly, Vector2.zero, 0f);
 
            if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
-            {
-                Destroy(hitFly.transform.gameObject);
-                increaseScore();
-                //raycastEvent.Invoke(hitFly.transform);
-              
-            }
-
-        
+           {
+               //raycastEvent.Invoke(hitFly.transform);
+               //_fly();
+               Destroy(hitFly.transform.gameObject);
+               increaseScore();
+           }
         }
-
     }
 
     void FadeNow()

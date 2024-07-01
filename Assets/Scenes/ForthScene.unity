@@ -383,8 +383,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 282.48}
+  m_AnchoredPosition: {x: 0, y: 12}
+  m_SizeDelta: {x: 110, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54623253
 MonoBehaviour:
@@ -455,14 +455,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 83112504, guid: ec0f5de726f2a6649bc1adbdd5f0029b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1398,6 +1398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076928accda8de1449b335d8b16bd974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parkingcar: 0
   car: {fileID: 1744670324}
   DoubleClickSpeed: 0.25
   ThirdClickSpeed: 0.5
@@ -2552,12 +2553,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1226066393}
+  m_Father: {fileID: 877492134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 58.75995}
-  m_SizeDelta: {x: 500, y: 282.48}
+  m_AnchoredPosition: {x: 0, y: 12.2}
+  m_SizeDelta: {x: 110, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435386372
 MonoBehaviour:
@@ -2630,18 +2631,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1166591844}
         m_TargetAssemblyTypeName: Bubble, Assembly-CSharp
         m_MethodName: Destroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1226066394}
-        m_TargetAssemblyTypeName: Bubble, Assembly-CSharp
-        m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3409,17 +3398,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518868121}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 877492134}
+  m_Father: {fileID: 1226066393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0012527, y: 58.76}
-  m_SizeDelta: {x: 500, y: 282.48}
+  m_AnchoredPosition: {x: 0, y: 12.3}
+  m_SizeDelta: {x: 110, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518868123
 MonoBehaviour:
@@ -4798,8 +4787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 282.48}
+  m_AnchoredPosition: {x: 0, y: 11.8}
+  m_SizeDelta: {x: 110, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &690224177
 MonoBehaviour:
@@ -5637,12 +5626,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1236840989}
+  m_Father: {fileID: 1228325460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 58}
-  m_SizeDelta: {x: 500, y: 282.48}
+  m_AnchoredPosition: {x: 0, y: 13}
+  m_SizeDelta: {x: 120, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874898050
 MonoBehaviour:
@@ -5950,7 +5939,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1639330144}
-  - {fileID: 518868122}
+  - {fileID: 435386371}
   m_Father: {fileID: 1643425734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6539,8 +6528,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 58.75995}
-  m_SizeDelta: {x: 500, y: 282.48}
+  m_AnchoredPosition: {x: 0, y: 12.4}
+  m_SizeDelta: {x: 110, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921648919
 MonoBehaviour:
@@ -7548,7 +7537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2315b8733e15b234eac4956acbeba3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 434435539}
 --- !u!114 &1090071908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7939,7 +7927,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138005872}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -7961,10 +7949,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11836052, y: -0.104919314}
+  m_Offset: {x: -0.02, y: -0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.74017954, y: 0.74691343}
@@ -7975,7 +7963,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.4588404, y: 3.4706724}
+  m_Size: {x: 2.8, y: 2.8}
   m_EdgeRadius: 0
 --- !u!114 &1138005877
 MonoBehaviour:
@@ -8458,7 +8446,7 @@ Animator:
   m_GameObject: {fileID: 1202662071}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 42121163499888140b49cd8809b7bfc1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7b32a92a548f1c846a49d934003af5d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8572,11 +8560,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076928accda8de1449b335d8b16bd974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parkingcar: 1
   car: {fileID: 1202662071}
   DoubleClickSpeed: 0.25
   ThirdClickSpeed: 0.5
-  Scene: {fileID: 120210744}
-  NextScene: {fileID: 1301098155}
+  Scene: {fileID: 0}
+  NextScene: {fileID: 0}
   crash: {fileID: 1869504514}
 --- !u!212 &1202662076
 SpriteRenderer:
@@ -8665,8 +8654,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0012527, y: 58.76}
-  m_SizeDelta: {x: 500, y: 282.48}
+  m_AnchoredPosition: {x: 0, y: 12.1}
+  m_SizeDelta: {x: 110, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215430344
 MonoBehaviour:
@@ -8794,7 +8783,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 381410507}
-  - {fileID: 435386371}
+  - {fileID: 518868122}
   m_Father: {fileID: 1643425734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -8925,7 +8914,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1398482896}
-  - {fileID: 2130291196}
+  - {fileID: 874898049}
   m_Father: {fileID: 1643425734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -9002,7 +8991,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1485769872}
-  - {fileID: 874898049}
+  - {fileID: 2130291196}
   m_Father: {fileID: 1643425734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -9772,8 +9761,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0012527, y: 58.76}
-  m_SizeDelta: {x: 500, y: 282.48}
+  m_AnchoredPosition: {x: 0, y: 12.3}
+  m_SizeDelta: {x: 110, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1350010407
 MonoBehaviour:
@@ -12976,8 +12965,8 @@ MonoBehaviour:
   waves:
   - name: Fly
     enemy: {fileID: 6895466646293858750, guid: 82bd9ebc228b4b1438ece8cfdba9d569, type: 3}
-    count: 7
-    rate: 1
+    count: 10
+    rate: 2
   spawnPoints:
   - {fileID: 676036929}
   - {fileID: 1618577650}
@@ -13441,6 +13430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076928accda8de1449b335d8b16bd974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parkingcar: 0
   car: {fileID: 1744670324}
   DoubleClickSpeed: 0.25
   ThirdClickSpeed: 0.5
@@ -14035,6 +14025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076928accda8de1449b335d8b16bd974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parkingcar: 0
   car: {fileID: 1202662071}
   DoubleClickSpeed: 0.25
   ThirdClickSpeed: 0.5
@@ -14051,7 +14042,7 @@ Animator:
   m_GameObject: {fileID: 1869504514}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 89d5365a1f4f11a47a9beb10939bab9b, type: 2}
+  m_Controller: {fileID: 9100000, guid: e6493fa9d5c618140b80f51064234c59, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15335,12 +15326,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1228325460}
+  m_Father: {fileID: 1236840989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 58.75995}
-  m_SizeDelta: {x: 500, y: 282.48}
+  m_AnchoredPosition: {x: 0, y: 12.7}
+  m_SizeDelta: {x: 110, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2130291197
 MonoBehaviour:
