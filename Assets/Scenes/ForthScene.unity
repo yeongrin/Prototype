@@ -1614,7 +1614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &287080876
 Transform:
   m_ObjectHideFlags: 0
@@ -7980,7 +7980,7 @@ MonoBehaviour:
   swatterDamage: 1
   fadeSpeed: 10
   fadeAmount: 0.5
-  DoFade: 1
+  DoFade: 0
   raycastEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14900,8 +14900,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: Fly
-    enemy: {fileID: 6895466646293858750, guid: 82bd9ebc228b4b1438ece8cfdba9d569, type: 3}
-    count: 6
+    enemy: {fileID: 6895466646293858750, guid: a285d8abc67615844b8cdcfc1b448c24, type: 3}
+    count: 10
     rate: 1
   spawnPoints:
   - {fileID: 1899638303}
@@ -14927,7 +14927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1990624803
 Transform:
   m_ObjectHideFlags: 0
@@ -15134,7 +15134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2083051266
 Transform:
   m_ObjectHideFlags: 0
