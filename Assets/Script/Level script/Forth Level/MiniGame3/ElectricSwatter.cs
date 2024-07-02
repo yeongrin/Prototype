@@ -29,11 +29,10 @@ public class ElectricSwatter : MonoBehaviour
     }
     void Update()
     {
-        transform.position = Vector2.MoveTowards(this.transform.position, target.position, speed *Time.deltaTime );
+        transform.position = Vector2.MoveTowards(this.transform.position, target.position, speed * Time.deltaTime);
 
         if (Input.GetMouseButtonDown(0))
         {
-            ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             Vector2 FindPlayer = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             RaycastHit2D hitFly = Physics2D.Raycast(FindPlayer, Vector2.zero, 0f);
 
@@ -42,6 +41,5 @@ public class ElectricSwatter : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-
     }
 }

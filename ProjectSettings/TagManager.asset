@@ -27,10 +27,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Video
+  - BackGroundVideo
   - Water
   - UI
-  - Object1
+  - Game
   - Object2
   - Object3
   - 

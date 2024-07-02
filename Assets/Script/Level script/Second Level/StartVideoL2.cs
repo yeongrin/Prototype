@@ -23,12 +23,12 @@ public class StartVideoL2 : MonoBehaviour
 
     void Update()
     {
-        if (checkbool)
+        /*if (checkbool)
         {
             game.SetActive(true);
             vidOb.SetActive(false);
 
-        }
+        }*/
     }
 
     IEnumerator Delay()
@@ -44,11 +44,14 @@ public class StartVideoL2 : MonoBehaviour
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        StartCoroutine("MainSplash");
-        
+        //StartCoroutine("MainSplash");
+        game.SetActive(true);
+        vidOb.SetActive(false);
+
+
     }
 
-    IEnumerator MainSplash()
+    /*IEnumerator MainSplash()
     {
 
         Color color = image.color;
@@ -67,5 +70,5 @@ public class StartVideoL2 : MonoBehaviour
         }
     
         yield break;
-    }
+    }*/
 }
