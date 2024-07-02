@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3c3ea2c40ce834994c3d04d6503fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1025903203764411910}
+  deadFly: {fileID: 419537118, guid: b850b8e74e3cf7344b0b976e000437d7, type: 3}
   flyState: 0
   flyHealth: 0
   flyDamage: 0

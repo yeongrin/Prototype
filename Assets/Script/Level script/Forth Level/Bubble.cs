@@ -42,6 +42,8 @@ public class Bubble : MonoBehaviour
     public void Wrong()
     {
         Debug.Log("Wrong answer");
+        
+        
     }
 
     public void NextScene()

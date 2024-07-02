@@ -17,6 +17,9 @@ public class Fly : MonoBehaviour
 {
     public static Action _fly;
 
+    public SpriteRenderer spriteRenderer;
+    
+
     [Header("FlyState")]
     public FlyType flyState;
     public int flyHealth;
@@ -24,6 +27,7 @@ public class Fly : MonoBehaviour
     public bool isDamage = false;
     public float speed;
     private Transform Target;
+    public bool dying;
     public bool isDead { get; private set; } = false;
     public int swatterDamage;
     public Flyswatter swatter;
@@ -55,7 +59,15 @@ public class Fly : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(this.transform.position, Target.position, speed * Time.deltaTime);
+        if (dying == false)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, Target.position, speed * Time.deltaTime);
+            //While the fly is alive, it will move towards the specified spot
+        }
+        
+            
+            
+        
 
        /* switch (flyState)
         {
