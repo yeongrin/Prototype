@@ -39,10 +39,11 @@ public class Bubble : MonoBehaviour
 
     }
 
-    public void Wrong()
+    public void Wrong(GameObject shakeObject)
     {
         Debug.Log("Wrong answer");
-        
+        shakeObject.GetComponent<NewBubble>().Shake();
+        //When clicked the object shake from the called script is run on the object that it is hooked up to.
         
     }
 
