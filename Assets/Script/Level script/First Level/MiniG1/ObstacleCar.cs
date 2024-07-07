@@ -7,15 +7,16 @@ public class ObstacleCar : MonoBehaviour
     public float size = 1f;
     public Vector2 orgSize;
     public float time;
+    public float speed;
     //public static float countdown = 3f; 
 
-    public float speed;
+    [Header ("Location")]
     private Transform Button;
-
-    [Header("Color Change")]
-    //private SpriteRenderer color;
+    public Transform firstLocation;
+    public Transform movingLocation;
+    Vector2 startPos;
+  
     Animator ani;
-
     Button _B;
     MiniGame1 _MG1;
     SpawnEnemy2 _SE2;
@@ -28,11 +29,12 @@ public class ObstacleCar : MonoBehaviour
     void Start()
     {
         Button = GameObject.FindGameObjectWithTag("Object1").transform;
-        //color = GameObject.Find("Car").GetComponent<SpriteRenderer>();
         ani = GetComponent<Animator>();
         _B = GameObject.FindObjectOfType<Button>();
         _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
         _SE2 = GameObject.FindObjectOfType<SpawnEnemy2>();
+
+        //startPos = firstLocation.gameObject.transform.position;
 
     }
 
@@ -95,9 +97,11 @@ public class ObstacleCar : MonoBehaviour
 
     public void DestroyObj()
     {
-        Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+        //transform.position = Vector2.MoveTowards(this.transform.position, firstLocation.position, speed * Time.deltaTime);
         _MG1.timer1 = 3f;
         _B.isTimer = false;
-        
+
+        //https://onecoke.tistory.com/entry/%EC%9C%A0%EB%8B%88%ED%8B%B02D-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%9B%90%EB%9E%98-%EC%9E%88%EB%8D%98-%EC%9C%84%EC%B9%98%EB%A1%9C-%EB%8F%8C%EC%95%84%EA%B0%80%EA%B8%B0
+
     }
 }

@@ -12,6 +12,7 @@ public class Button : MonoBehaviour
     public bool isChange = false;
 
     MiniGame1 _MG1;
+    public int speed = 5;
 
     public void Awake()
     {
@@ -59,6 +60,7 @@ public class Button : MonoBehaviour
     public void Destroy()
     {
         car = GameObject.FindGameObjectWithTag("Enemy").gameObject;
+        //car.transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(-10,2), speed * Time.deltaTime);
         Destroy(car.gameObject);
         ani.SetTrigger("press");
     }

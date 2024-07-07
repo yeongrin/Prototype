@@ -6,27 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-/*public enum Type
-{
-    Koala,
-    Food,
-    Photo,
-    None
-
-}*/
 public class GameController3 : MonoBehaviour
 {
     public static Action gameCon3;
-
-    //public Animator ani;
-    //public Type type;
-
     public GameObject canvas;
-
-    /*[Header("Double click")]
-    public float DoubleClickSpeed = 0.25f;
-    private bool isOneClick = false;
-    private double MiniGame2 = 0;*/
 
     public Slider slider;
     //private int maxScore = 10;
