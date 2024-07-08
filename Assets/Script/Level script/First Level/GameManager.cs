@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     public static bool over3 = false;
     public static bool over4 = false;
 
+    [Header("Blur")]
+    public Image image;
+
     //public float t1;
 
     void Awake()
@@ -52,20 +55,20 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        video.loopPointReached += CheckOver;
+        
         goTime = 0f;
         overTime = 45f;
         gameWaiting = 5;
-
-
-        SetText();
-        //StartCoroutine(SetLives());
 
         waitingTime1 = 6;
         waitingTime2 = waitingTime1 + gameWaiting;
         waitingTime3 = waitingTime2 + gameWaiting;
         waitingTime4 = waitingTime3 + gameWaiting;
 
-        video.loopPointReached += CheckOver;
+        SetText();
+
+        image.color = new Color32(55, 55, 55, 0);
     }
 
 
@@ -76,18 +79,22 @@ public class GameManager : MonoBehaviour
         if (goTime > waitingTime1)
         {
             FirMini.SetActive(true);
+            image.color = new Color32(55, 55, 55, 50);
 
             if (goTime > waitingTime2)
             {
                 SecMini.SetActive(true);
+                image.color = new Color32(55, 55, 55, 100);
 
                 if (goTime > waitingTime3)
                 {
                     ThiMini.SetActive(true);
+                    image.color = new Color32(55, 55, 55, 150);
 
                     if (goTime > waitingTime4)
                     {
                         ForMini.SetActive(true);
+                        image.color = new Color32(55, 55, 55, 200);
                     }
                 }
             }

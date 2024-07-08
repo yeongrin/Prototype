@@ -98,6 +98,7 @@ public class ObstacleCar : MonoBehaviour
     public void DestroyObj()
     {
         //transform.position = Vector2.MoveTowards(this.transform.position, firstLocation.position, speed * Time.deltaTime);
+        Destroy(this.gameObject); //if 3 secs passed, car is destried;
         _MG1.timer1 = 3f;
         _B.isTimer = false;
 

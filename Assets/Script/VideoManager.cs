@@ -7,14 +7,14 @@ public class VideoManager : MonoBehaviour
 {
     public int numberValue;
     int currentNumber;
-    public VideoPlayer vid;
-    public GameObject vidOb;
+    public GameObject vid;
+    public VideoPlayer vidOb;
     public GameObject secondVid;
     public VideoPlayer vidOb2;
 
     void Start() 
     {
-        vid.loopPointReached += CheckOver;
+        vidOb.loopPointReached += CheckOver;
         //vid.Play();
 
         //Play video when fade out ends.
@@ -32,7 +32,7 @@ public class VideoManager : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(3f);
-        vid.Play();
+        vidOb.Play();
     }
 
     private void Update()
@@ -43,11 +43,11 @@ public class VideoManager : MonoBehaviour
             switch (numberValue)
             {
                 case 1:
-                    vid.Play();
+                    vidOb.Play();
                     break;
 
                 case 2:
-                    vid.Pause();
+                    vidOb.Pause();
                     break;
             }
         }
@@ -59,6 +59,6 @@ public class VideoManager : MonoBehaviour
     {
         print("Video Is Over");
         secondVid.SetActive(true);
-        vidOb.SetActive(false);
+        vid.SetActive(false);
     }
 }

@@ -14,10 +14,6 @@ public class CameraBlur1 : MonoBehaviour
         
     }
 
-    void Start()
-    {
-    }
-
   
     void Update()
     {
@@ -31,7 +27,7 @@ public class CameraBlur1 : MonoBehaviour
         {
             if (EndingVideo.over5 == false)
                 ppVolume.weight = 0f;
-            //Debug.Log("lpapapapap");
+                
         }
 
     }
