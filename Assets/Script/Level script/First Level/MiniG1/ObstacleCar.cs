@@ -14,7 +14,11 @@ public class ObstacleCar : MonoBehaviour
     private Transform Button;
     public Transform firstLocation;
     public Transform movingLocation;
-    Vector2 startPos;
+    public Transform target;
+    public Transform startPos;
+    
+
+    //Vector2 startPos;
   
     Animator ani;
     Button _B;
@@ -24,6 +28,7 @@ public class ObstacleCar : MonoBehaviour
     private void Awake()
     {
         orgSize = transform.localScale;
+        
     }
 
     void Start()
@@ -33,14 +38,20 @@ public class ObstacleCar : MonoBehaviour
         _B = GameObject.FindObjectOfType<Button>();
         _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
         _SE2 = GameObject.FindObjectOfType<SpawnEnemy2>();
-
+        target = Button.transform;
+        Vector3 originalPos = gameObject.transform.position;
+        startPos.gameObject.transform.position = originalPos;
         //startPos = firstLocation.gameObject.transform.position;
-
+        
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(this.transform.position, Button.position, speed * Time.deltaTime);
+        if(target != null)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, target.position, speed * Time.deltaTime);
+        }
+        
 
         if (_B.isChange == true)
         {

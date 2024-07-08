@@ -11,7 +11,10 @@ public class Button : MonoBehaviour
     public bool isTimer;
     public bool isChange = false;
 
+    public Transform[] movePoints;
+
     MiniGame1 _MG1;
+    ObstacleCar _oc;
     public int speed = 5;
 
     public void Awake()
@@ -24,6 +27,7 @@ public class Button : MonoBehaviour
     void Start()
     {
         _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
+        
     }
 
 
@@ -59,9 +63,13 @@ public class Button : MonoBehaviour
 
     public void Destroy()
     {
+        _oc = GameObject.FindObjectOfType<ObstacleCar>();
         car = GameObject.FindGameObjectWithTag("Enemy").gameObject;
         //car.transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(-10,2), speed * Time.deltaTime);
-        Destroy(car.gameObject);
+        Destroy(car.gameObject, 2);
+        _oc.target = _oc.startPos;
+        
+        _oc.speed = 5f;
         ani.SetTrigger("press");
     }
 

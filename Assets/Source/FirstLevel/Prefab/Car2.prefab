@@ -107,6 +107,10 @@ MonoBehaviour:
   orgSize: {x: 0, y: 0}
   time: 0
   speed: 1
+  firstLocation: {fileID: 0}
+  movingLocation: {fileID: 0}
+  target: {fileID: 0}
+  startPos: {fileID: 0}
 --- !u!61 &2247272690764176228
 BoxCollider2D:
   m_ObjectHideFlags: 0
