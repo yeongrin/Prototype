@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 25920281}
   - component: {fileID: 25920283}
   - component: {fileID: 25920284}
+  - component: {fileID: 25920285}
   m_Layer: 5
   m_Name: Bubble2
   m_TagString: Untagged
@@ -343,6 +344,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44aadff57ac6bb46b353cdd7c588425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &25920285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25920279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ef456f696ec044485ad244e12a6f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  startPos: {fileID: 0}
+  shakeAmount: 20
 --- !u!1 &38376127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1979,7 @@ GameObject:
   - component: {fileID: 404140088}
   - component: {fileID: 404140090}
   - component: {fileID: 404140091}
+  - component: {fileID: 404140092}
   m_Layer: 5
   m_Name: Bubble3
   m_TagString: Untagged
@@ -2062,6 +2079,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44aadff57ac6bb46b353cdd7c588425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &404140092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404140086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ef456f696ec044485ad244e12a6f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  startPos: {fileID: 0}
+  shakeAmount: 20
 --- !u!1 &412272209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,6 +2139,7 @@ GameObject:
   - component: {fileID: 424466705}
   - component: {fileID: 424466708}
   - component: {fileID: 424466709}
+  - component: {fileID: 424466710}
   m_Layer: 5
   m_Name: Bubble4 (2)
   m_TagString: Untagged
@@ -2222,6 +2255,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &424466710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424466703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ef456f696ec044485ad244e12a6f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  startPos: {fileID: 0}
+  shakeAmount: 0
 --- !u!1 &434435539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShaking: 0
+  startPos: {fileID: 0}
   shakeAmount: 20
 --- !u!224 &443460047
 RectTransform:
@@ -3767,7 +3816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Abocado
+  m_text: Avocado
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4194,13 +4243,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 443650538}
-        m_TargetAssemblyTypeName: Bubble, Assembly-CSharp
-        m_MethodName: Wrong
-        m_Mode: 2
+      - m_Target: {fileID: 1914331951}
+        m_TargetAssemblyTypeName: NewBubble, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 443460045}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4641,13 +4690,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1914331946}
-        m_TargetAssemblyTypeName: Bubble, Assembly-CSharp
-        m_MethodName: Wrong
-        m_Mode: 2
+      - m_Target: {fileID: 404140092}
+        m_TargetAssemblyTypeName: NewBubble, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 747237190}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4868,13 +4917,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 424466705}
-        m_TargetAssemblyTypeName: Bubble, Assembly-CSharp
-        m_MethodName: Wrong
-        m_Mode: 2
+      - m_Target: {fileID: 424466710}
+        m_TargetAssemblyTypeName: NewBubble, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 2119788214}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4960,6 +5009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShaking: 0
+  startPos: {fileID: 0}
   shakeAmount: 20
 --- !u!224 &747237192
 RectTransform:
@@ -6060,7 +6110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &901782870
 Transform:
   m_ObjectHideFlags: 0
@@ -7873,6 +7923,7 @@ GameObject:
   - component: {fileID: 1192678830}
   - component: {fileID: 1192678834}
   - component: {fileID: 1192678833}
+  - component: {fileID: 1192678835}
   m_Layer: 5
   m_Name: Bubble4 (1)
   m_TagString: Untagged
@@ -7988,6 +8039,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44aadff57ac6bb46b353cdd7c588425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1192678835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192678828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ef456f696ec044485ad244e12a6f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  startPos: {fileID: 0}
+  shakeAmount: 0
 --- !u!1 &1202662071
 GameObject:
   m_ObjectHideFlags: 0
@@ -10656,13 +10722,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 424466705}
-        m_TargetAssemblyTypeName: Bubble, Assembly-CSharp
-        m_MethodName: Wrong
-        m_Mode: 2
+      - m_Target: {fileID: 1192678835}
+        m_TargetAssemblyTypeName: NewBubble, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 443460045}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11647,6 +11713,7 @@ GameObject:
   - component: {fileID: 1643916713}
   - component: {fileID: 1643916717}
   - component: {fileID: 1643916716}
+  - component: {fileID: 1643916718}
   m_Layer: 5
   m_Name: Bubble2 (2)
   m_TagString: Untagged
@@ -11762,6 +11829,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44aadff57ac6bb46b353cdd7c588425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1643916718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643916711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ef456f696ec044485ad244e12a6f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  startPos: {fileID: 0}
+  shakeAmount: 0
 --- !u!1 &1654995562
 GameObject:
   m_ObjectHideFlags: 0
@@ -11980,13 +12062,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1643916713}
-        m_TargetAssemblyTypeName: Bubble, Assembly-CSharp
-        m_MethodName: Wrong
-        m_Mode: 2
+      - m_Target: {fileID: 1643916718}
+        m_TargetAssemblyTypeName: NewBubble, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 2119788214}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12890,13 +12972,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 256754659}
-        m_TargetAssemblyTypeName: Bubble, Assembly-CSharp
-        m_MethodName: Wrong
-        m_Mode: 2
+      - m_Target: {fileID: 25920285}
+        m_TargetAssemblyTypeName: NewBubble, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 747237190}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13610,6 +13692,7 @@ GameObject:
   - component: {fileID: 1914331946}
   - component: {fileID: 1914331950}
   - component: {fileID: 1914331949}
+  - component: {fileID: 1914331951}
   m_Layer: 5
   m_Name: Bubble3 (1)
   m_TagString: Untagged
@@ -13725,6 +13808,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44aadff57ac6bb46b353cdd7c588425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1914331951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914331944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ef456f696ec044485ad244e12a6f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  startPos: {fileID: 0}
+  shakeAmount: 20
 --- !u!1 &1942047428
 GameObject:
   m_ObjectHideFlags: 0
@@ -14095,7 +14193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1990624803
 Transform:
   m_ObjectHideFlags: 0
@@ -14485,6 +14583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShaking: 0
+  startPos: {fileID: 0}
   shakeAmount: 20
 --- !u!1 &2125799492
 GameObject:

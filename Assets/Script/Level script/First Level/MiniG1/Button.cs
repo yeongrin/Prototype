@@ -67,7 +67,7 @@ public class Button : MonoBehaviour
         _oc = GameObject.FindObjectOfType<ObstacleCar>();
         car = GameObject.FindGameObjectWithTag("Enemy").gameObject;
         //car.transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(-10,2), speed * Time.deltaTime);
-        Destroy(car.gameObject, 2);
+        Destroy(car.gameObject, 1);
         _oc.target = _SE2.spawnPoint;
         //Once the button is pressed, the onscreen car will move towards the origin point before being destroyed after a set amount of time.
         _oc.speed = 5f;
