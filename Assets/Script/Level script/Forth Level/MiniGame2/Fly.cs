@@ -64,10 +64,6 @@ public class Fly : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, Target.position, speed * Time.deltaTime);
             //While the fly is alive, it will move towards the specified spot
         }
-        
-            
-            
-        
 
        /* switch (flyState)
         {

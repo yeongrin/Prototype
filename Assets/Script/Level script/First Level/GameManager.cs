@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public VideoPlayer video;
     
     [Header("Timer")]
-    int waitingTime1;
+    int waitingTime1; // Waiting for scene apprear.
     int waitingTime2;
     int waitingTime3;
     int waitingTime4;
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         overTime = 45f;
         gameWaiting = 5;
 
-        waitingTime1 = 6;
+        waitingTime1 = 8;
         waitingTime2 = waitingTime1 + gameWaiting;
         waitingTime3 = waitingTime2 + gameWaiting;
         waitingTime4 = waitingTime3 + gameWaiting;
