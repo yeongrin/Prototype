@@ -16,6 +16,7 @@ public class ObstacleCar : MonoBehaviour
     public Transform movingLocation;
     public Transform target;
     public Transform startPos;
+    public Transform spawnPoint;
     
 
     //Vector2 startPos;
@@ -39,10 +40,6 @@ public class ObstacleCar : MonoBehaviour
         _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
         _SE2 = GameObject.FindObjectOfType<SpawnEnemy2>();
         target = Button.transform;
-        Vector3 originalPos = gameObject.transform.position;
-        startPos.gameObject.transform.position = originalPos;
-        //startPos = firstLocation.gameObject.transform.position;
-        
     }
 
     void Update()
