@@ -12,14 +12,9 @@ public class Flyfight : MonoBehaviour
     public GameObject map3;
     public GameObject map2;
 
-    // Start is called before the first frame update
     void Start()
     {
         score = 0;
-    }
-    void Update()
-    {
-        
     }
 
     public void Score()

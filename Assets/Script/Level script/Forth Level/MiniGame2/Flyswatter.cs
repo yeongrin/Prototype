@@ -76,8 +76,6 @@ public class Flyswatter : MonoBehaviour
             RaycastHit2D hitFly = Physics2D.Raycast(findFly, Vector2.zero, 0f);
             fadeTimer = 0.5f; //When clicking, a timer will start for the flyswatter to be fully visible before returning to opaque.
             
-            
-
            if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
            {
                 //raycastEvent.Invoke(hitFly.transform);

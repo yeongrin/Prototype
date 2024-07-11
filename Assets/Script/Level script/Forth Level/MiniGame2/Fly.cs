@@ -16,7 +16,6 @@ public enum FlyType
 public class Fly : MonoBehaviour
 {
     public static Action _fly;
-
     public SpriteRenderer spriteRenderer;
     
 
@@ -67,17 +66,6 @@ public class Fly : MonoBehaviour
 
        /* switch (flyState)
         {
-            case FlyType.Big:
-                flyHealth = 1;
-                flyDamage = 1;
-                
-                break;
-
-            case FlyType.Medium:
-                flyHealth = 1;
-                flyDamage = 1;
-                break;
-
             case FlyType.Small:
                 flyHealth = 1;
                 flyDamage = 1;
@@ -112,9 +100,7 @@ public class Fly : MonoBehaviour
 
     void FlyDie()
     {
-        ani.SetTrigger("Death");
-        //Destroy(this.gameObject);
-
+        Destroy(this.gameObject);
     }
 
     private void OnEnable()
