@@ -20,11 +20,9 @@ public class Flyfight : MonoBehaviour
     public void Score()
     {
         score += 1;
-        if (score >= 10)
+        if (score >= 20)
         {
-            map3.SetActive(true);
-            map2.SetActive(false);
-            activateScene2();
+            StartCoroutine("SceneChange");
         }
     }
 
@@ -38,4 +36,11 @@ public class Flyfight : MonoBehaviour
         increaseScore -= Score;
     }
 
+    IEnumerator SceneChange()
+    {
+       yield return new WaitForSeconds(10f);
+       map3.SetActive(true);
+       map2.SetActive(false);
+       activateScene2();
+    }
 }

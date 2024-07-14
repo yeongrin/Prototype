@@ -9,10 +9,12 @@ public class NextScene : MonoBehaviour
     public GameObject nextquestions;
     public GameObject questions;
     public GameObject clapObject;
+    public GameObject gameEndingPanel;
 
     void Start()
     {
-
+        gameEndingPanel.SetActive(false);
+        afterScene.SetActive(false);
     }
 
 
@@ -52,7 +54,7 @@ public class NextScene : MonoBehaviour
         clapObject.SetActive(true);
         yield return new WaitForSeconds(5f);
         afterScene.SetActive(true);
-        beforeScene.SetActive(false);
+        gameEndingPanel.SetActive(true);
 
     }
 }

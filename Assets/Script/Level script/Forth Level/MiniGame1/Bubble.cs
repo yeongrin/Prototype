@@ -6,15 +6,22 @@ public class Bubble : MonoBehaviour
 {
     public GameObject questions;
     public GameObject nextquestions;
-    public GameObject before;
-    public GameObject bubble;
+    public GameObject beforeBubble;
+    public GameObject afterBubble;
     //control the bubble
     //Click bubble1/bubble 1 disappears and bubble 2 apear(setActiveTRUE)
 
-    public void nextbubble()
+    public void Wating1()
     {
-        bubble.SetActive(true);
-        before.SetActive(false);
+        StartCoroutine(nextbubble());
+
+    }
+
+    IEnumerator nextbubble()
+    {
+        yield return new WaitForSeconds(5f);
+        afterBubble.SetActive(true);
+        beforeBubble.SetActive(false);
         nextquestions.SetActive(true);
         questions.SetActive(false);
     }

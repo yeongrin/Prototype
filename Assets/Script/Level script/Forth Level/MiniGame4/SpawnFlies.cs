@@ -24,11 +24,14 @@ public class SpawnFlies : MonoBehaviour
     public float waveCountdown;
 
     private float searchCountdown = 1f;
+    private IEnumerator startCoroutine;
 
     private SpawnState state = SpawnState.COUNTING;
 
     void Start()
     {
+        startCoroutine = SpawnWave(waves[nextWave]);
+
         if (spawnPoints.Length == 0)
         {
             Debug.LogError("No spawn points referenced.");
@@ -56,7 +59,7 @@ public class SpawnFlies : MonoBehaviour
         {
             if (state != SpawnState.SPAWNING)
             {
-                StartCoroutine(SpawnWave(waves[nextWave]));
+                StartCoroutine(startCoroutine);
             }
         }
 
@@ -77,7 +80,8 @@ public class SpawnFlies : MonoBehaviour
         if (nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
-            Debug.Log("ALL WAVES COMEPLETED!! Looping...");
+            //Debug.Log("ALL WAVES COMEPLETED!! Looping...");
+            StopCoroutine(startCoroutine);
         }
         else
         {
@@ -94,7 +98,6 @@ public class SpawnFlies : MonoBehaviour
         {
             searchCountdown = 1f;
             if (GameObject.FindGameObjectWithTag("Enemy2") == null)
-
             {
 
                 return false;
