@@ -6,42 +6,40 @@ using UnityEngine.UI;
 using System;
 using static Flyfight;
 
-public enum FlyType
+/*public enum FlyType
 {
     Big,
     Medium,
     Small
-}
+}*/
 
 public class Fly : MonoBehaviour
 {
     public static Action _fly;
     public SpriteRenderer spriteRenderer;
     
-
     [Header("FlyState")]
-    public FlyType flyState;
+    //public FlyType flyState;
     public int flyHealth;
     public int flyDamage;
     public bool isDamage = false;
     public float speed;
     private Transform Target;
     public bool dying;
-    public bool isDead { get; private set; } = false;
+
+    public bool isDead { get; 
+    private set; } = false;
+
+    [Header("FlyDeath")]
     public int swatterDamage;
     public Flyswatter swatter;
     public GameObject fly;
-
-    [Header("Raycast")]
-    private Ray ray;
-    private RaycastHit hit;
-    private Camera mainCamera;
+    public BoxCollider2D flyCollider;
 
     public Animator ani;
 
     void Awake()
     {
-        mainCamera = Camera.main;
         _fly = () => { FlyDie(); };
     }
 
@@ -49,7 +47,7 @@ public class Fly : MonoBehaviour
     {
         swatter = GameObject.FindObjectOfType<Flyswatter>().GetComponent<Flyswatter>();
         swatterDamage = 1;
-
+        flyCollider = gameObject.GetComponent<BoxCollider2D>();
         ani = GetComponent<Animator>();
 
         Target = GameObject.FindGameObjectWithTag("Target").transform; //Trace to player

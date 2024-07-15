@@ -16,7 +16,7 @@ public class SpawnFlies : MonoBehaviour
     }
 
     public Wave[] waves;
-    private int nextWave = 0;
+    private int nextWave = 1;
 
     public Transform[] spawnPoints;
 
@@ -80,7 +80,7 @@ public class SpawnFlies : MonoBehaviour
         if (nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
-            //Debug.Log("ALL WAVES COMEPLETED!! Looping...");
+            Debug.Log("ALL WAVES COMEPLETED!! Looping...");
             StopCoroutine(startCoroutine);
         }
         else
@@ -97,7 +97,7 @@ public class SpawnFlies : MonoBehaviour
         if (searchCountdown <= 0)
         {
             searchCountdown = 1f;
-            if (GameObject.FindGameObjectWithTag("Enemy2") == null)
+            if (GameObject.FindGameObjectWithTag("Fly") == null)
             {
 
                 return false;
@@ -116,12 +116,12 @@ public class SpawnFlies : MonoBehaviour
         for (int i = 0; i < _waves.count; i++)
         {
             SpawnEnemy(_waves.enemy);
-            yield return new WaitForSeconds(1f / _waves.rate);
+            yield return new WaitForSeconds(_waves.rate);
         }
 
         state = SpawnState.WAITING;
 
-        yield break;
+
     }
 
     void SpawnEnemy(Transform _enemy)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleCar : MonoBehaviour
 {
-    public float size = 1f;
+    public float size;
     public Vector2 orgSize;
     public float time;
     public float speed;

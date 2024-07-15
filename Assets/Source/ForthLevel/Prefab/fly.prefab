@@ -110,6 +110,7 @@ MonoBehaviour:
   swatterDamage: 0
   swatter: {fileID: 0}
   fly: {fileID: 2681046508965638740}
+  flyCollider: {fileID: 4910062927373490869}
   ani: {fileID: 2918495973881505643}
 --- !u!61 &4910062927373490869
 BoxCollider2D:

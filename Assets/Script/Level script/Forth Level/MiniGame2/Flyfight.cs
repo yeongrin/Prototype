@@ -20,7 +20,7 @@ public class Flyfight : MonoBehaviour
     public void Score()
     {
         score += 1;
-        if (score >= 20)
+        if (score >= 10)
         {
             StartCoroutine("SceneChange");
         }
