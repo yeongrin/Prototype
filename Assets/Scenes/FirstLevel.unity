@@ -511,7 +511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &99718667
 Transform:
   m_ObjectHideFlags: 0
@@ -727,7 +727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &108916185
 Transform:
   m_ObjectHideFlags: 0
@@ -1868,7 +1868,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4311,7 +4311,7 @@ Animator:
   m_GameObject: {fileID: 668444375}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 789399a3ffd9a14429de896a69bb8340, type: 2}
+  m_Controller: {fileID: 9100000, guid: 29847dedd1c084446960a83ff0f54617, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5038,6 +5038,7 @@ GameObject:
   - component: {fileID: 853765378}
   - component: {fileID: 853765377}
   - component: {fileID: 853765381}
+  - component: {fileID: 853765382}
   m_Layer: 5
   m_Name: Coffee
   m_TagString: Object3
@@ -5224,6 +5225,27 @@ PolygonCollider2D:
       - {x: -85.7651, y: -8.369885}
       - {x: -90.18214, y: -34.581993}
   m_UseDelaunayMesh: 1
+--- !u!95 &853765382
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853765375}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ee00795888d9044d8956290828fb823, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &857038306
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,8 +6158,9 @@ GameObject:
   - component: {fileID: 949985110}
   - component: {fileID: 949985113}
   - component: {fileID: 949985114}
+  - component: {fileID: 949985115}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Upload
   m_TagString: Object2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6314,6 +6337,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1192722a0eb934ebc1a0e383a42702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &949985115
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949985108}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e6743bde5bf9e14290237a217970ad7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &953757634
 GameObject:
   m_ObjectHideFlags: 0
@@ -8516,7 +8560,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -843209097
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b211870c6a91b3948a7a2e102a18d518, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
