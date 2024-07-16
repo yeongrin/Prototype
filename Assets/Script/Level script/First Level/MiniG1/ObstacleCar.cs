@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleCar : MonoBehaviour
 {
-    public float size;
+    public float size = 1f;
     public Vector2 orgSize;
     public float time;
     public float speed;
@@ -14,7 +14,12 @@ public class ObstacleCar : MonoBehaviour
     private Transform Button;
     public Transform firstLocation;
     public Transform movingLocation;
-    Vector2 startPos;
+    public Transform target;
+    public Transform startPos;
+    public Transform spawnPoint;
+    
+
+    //Vector2 startPos;
   
     Animator ani;
     Button _B;
@@ -24,6 +29,7 @@ public class ObstacleCar : MonoBehaviour
     private void Awake()
     {
         orgSize = transform.localScale;
+        
     }
 
     void Start()
@@ -33,14 +39,16 @@ public class ObstacleCar : MonoBehaviour
         _B = GameObject.FindObjectOfType<Button>();
         _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
         _SE2 = GameObject.FindObjectOfType<SpawnEnemy2>();
-
-        //startPos = firstLocation.gameObject.transform.position;
-
+        target = Button.transform;
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(this.transform.position, Button.position, speed * Time.deltaTime);
+        if(target != null)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, target.position, speed * Time.deltaTime);
+        }
+        
 
         if (_B.isChange == true)
         {
@@ -98,7 +106,6 @@ public class ObstacleCar : MonoBehaviour
     public void DestroyObj()
     {
         //transform.position = Vector2.MoveTowards(this.transform.position, firstLocation.position, speed * Time.deltaTime);
-        Destroy(this.gameObject); //if 3 secs passed, car is destried;
         _MG1.timer1 = 3f;
         _B.isTimer = false;
 

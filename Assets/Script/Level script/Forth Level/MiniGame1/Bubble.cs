@@ -56,7 +56,7 @@ public class Bubble : MonoBehaviour
 
     public void NextScene()
     {
-        GameObject.Find("Game").transform.Find("Scene2").gameObject.SetActive(true);
-        GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
+        GameObject.Find("Game").transform.Find("MiniGame2").gameObject.SetActive(true);
+        GameObject.Find("Game").transform.Find("MiniGame1").gameObject.SetActive(false);
     }
 }
