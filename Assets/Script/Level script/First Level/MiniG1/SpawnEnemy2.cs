@@ -19,7 +19,7 @@ public class SpawnEnemy2 : MonoBehaviour
     private int nextWave = 0;
 
     public Transform[] spawnPoints;
-    public Transform spawnPoint;
+
     public float timeBetweenWaves;
     public float waveCountdown;
     public float time;
@@ -141,13 +141,10 @@ public class SpawnEnemy2 : MonoBehaviour
         yield break;
     }
 
-    public void SpawnEnemy(Transform _enemy)
+    void SpawnEnemy(Transform _enemy)
     {
         //Debug.Log("Spawning Enemy:" + _enemy.name);
         Transform _sp = spawnPoints[Random.Range (0, spawnPoints.Length)];
-        Transform sPoint = _sp.gameObject.transform;
-        spawnPoint = sPoint;
-        //Stores the spawnpoint position for the button script to call when assigning car movement.
         Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation);
     }
 }

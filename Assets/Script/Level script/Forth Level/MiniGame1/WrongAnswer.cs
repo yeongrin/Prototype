@@ -19,6 +19,5 @@ public class WrongAnswer : MonoBehaviour
     public void Wrong()
     {
         ani.SetTrigger("wrong");
-        print("Wrong Answer");
     }
 }
