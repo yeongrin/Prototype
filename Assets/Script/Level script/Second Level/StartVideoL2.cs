@@ -33,7 +33,7 @@ public class StartVideoL2 : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(3.8f);
+        yield return new WaitForSeconds(3.0f);
         vid.Play();
     }
 
