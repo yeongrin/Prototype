@@ -54,7 +54,7 @@ public class PuzzleGame2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         if(puzzle.IsClear())
         {
             Debug.Log("clear");
-            JigsawPuzzle2.JP2();
+            //JigsawPuzzle2.JP2();
             
         }
 

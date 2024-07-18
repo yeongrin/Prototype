@@ -11,10 +11,10 @@ public class JigsawPuzzle2 : MonoBehaviour
     public GameObject puzzlePieceSet;
     public GameObject endingPanel;
 
-    private void Awake()
-    {
-        JP2 = () => { VideoStart(); };
-    }
+    //private void Awake()
+    //{
+    //    JP2 = () => { VideoStart(); };
+    //}
 
     void Start()
     {
@@ -49,10 +49,9 @@ public class JigsawPuzzle2 : MonoBehaviour
         return true;
     }
 
-    public void VideoStart()
-    {
-        //GameObject.Find("AllMap").transform.Find("BackGroundVideo").gameObject.SetActive(true);
-        endingPanel.SetActive(true);
-    }
+    //public void VideoStart()
+    //{
+    //    endingPanel.SetActive(true);
+    //}
 
 }
