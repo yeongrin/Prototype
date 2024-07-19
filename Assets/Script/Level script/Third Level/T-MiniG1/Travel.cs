@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -23,6 +24,7 @@ public class Travel : MonoBehaviour
     public Type type;
     SpawnPhoto _sp;
     GameController3 _gm3;
+    ScreenshotManager _sm;
 
     Camera cam;
     Vector3 MousePosition;
@@ -47,6 +49,7 @@ public class Travel : MonoBehaviour
         cam = GetComponent<Camera>();
         _sp = GameObject.FindObjectOfType<SpawnPhoto>();
         _gm3 = FindObjectOfType<GameController3>();
+        _sm = FindObjectOfType<ScreenshotManager>();
 
         hasClicked = false;
     }
@@ -82,7 +85,6 @@ public class Travel : MonoBehaviour
                                 hasClicked = true;
                                 ani.SetTrigger("Pet");
                                 Debug.Log("35436334");
-                                GameController3.gameCon3();
                                 Invoke("Destroy", 2);
                             }
                         
@@ -117,7 +119,6 @@ public class Travel : MonoBehaviour
                             {
 
                                 ani.SetTrigger("Eating2");
-                                GameController3.gameCon3();
                                 //gameObject.GetComponent<GameController3>().enabled = false;
                                 Invoke("Destroy", 2);
 
@@ -143,13 +144,13 @@ public class Travel : MonoBehaviour
                  
                             if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
                             {
-                                StartCoroutine(_gm3.CameraFlash());
                                 hasClicked = true;
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
-                                GameController3.gameCon3();
                                 Invoke("Destroy", 2);
-                                
+                                _sm.TakeScreenshot();
+                                StartCoroutine(_gm3.CameraFlash());
+
                             }
 
                     }
