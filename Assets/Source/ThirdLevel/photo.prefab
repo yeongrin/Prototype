@@ -195,5 +195,7 @@ MonoBehaviour:
   ani: {fileID: 1540395483317186505}
   type: 2
   DoubleClickSpeed: 0.25
+  hasClicked: 0
   StartTime: 0
   Timer: 0
+  speed: 5

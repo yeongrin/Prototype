@@ -10,6 +10,9 @@ public class GameController3 : MonoBehaviour
 {
     public static Action gameCon3;
     public GameObject canvas;
+    public GameObject flashObject;
+    
+    public float flashSpeed;
 
     public Slider slider;
     //private int maxScore = 10;
@@ -21,7 +24,10 @@ public class GameController3 : MonoBehaviour
         {
             ScoreLevel();
             ScoreSlider();
+            
         };
+        
+
     }
 
     void Start()
@@ -52,5 +58,14 @@ public class GameController3 : MonoBehaviour
     public void ScoreSlider()
     {
         slider.value = score;
+    }
+
+    public IEnumerator CameraFlash()
+    {
+        flashObject.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        flashObject.SetActive(false);
+        
+        
     }
 }

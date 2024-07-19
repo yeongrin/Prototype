@@ -21,6 +21,8 @@ public class Travel : MonoBehaviour
     
     public Animator ani;
     public Type type;
+    SpawnPhoto _sp;
+    GameController3 _gm3;
 
     Camera cam;
     Vector3 MousePosition;
@@ -35,12 +37,16 @@ public class Travel : MonoBehaviour
     public float StartTime;
     public float Timer;
 
+    public float speed;
+
     void Start()
     {
         StartTime = 5f;
         Timer = 5f;
         ani = GetComponent<Animator>();
         cam = GetComponent<Camera>();
+        _sp = GameObject.FindObjectOfType<SpawnPhoto>();
+        _gm3 = FindObjectOfType<GameController3>();
 
         hasClicked = false;
     }
@@ -127,12 +133,17 @@ public class Travel : MonoBehaviour
 
             case Type.Photo:
                 {
+                    
+                    this.gameObject.transform.position = Vector2.MoveTowards(this.transform.position, _sp.target.position, speed * Time.deltaTime);
+                    
+
                     if (Input.GetMouseButtonDown(0))
                     {
                         print("Clicking");
                  
                             if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
                             {
+                                StartCoroutine(_gm3.CameraFlash());
                                 hasClicked = true;
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
