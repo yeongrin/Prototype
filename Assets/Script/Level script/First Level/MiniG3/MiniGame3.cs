@@ -22,6 +22,12 @@ public class MiniGame3 : MonoBehaviour
     public TMP_Text livesText;
     public int lives3 = 3;
     public GameObject gameOverPanel;
+    public Animator heart;
+
+    [Header("Dialogue")]
+    public GameObject dialoguePanel;
+    public Image dialogueImage;
+    public bool checkBool;
 
     //Check enemies and count timer
     [Header("Enemies")]
@@ -48,10 +54,13 @@ public class MiniGame3 : MonoBehaviour
 
     void Update()
     {
+        StartCoroutine("Delay");
+
         if (lives3 > 0)
         {
             WakeUp();
             SetText();
+
         }
         if (lives3 <= 0)
         {
@@ -89,6 +98,32 @@ public class MiniGame3 : MonoBehaviour
         }
         
         yield break;
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2f);
+        StartCoroutine("StartDialogue");
+    }
+
+    IEnumerator StartDialogue()
+    {
+        Color color = dialogueImage.color;
+
+        for (int i = 200; i >= 0; i--)
+        {
+
+            dialogueImage.color = color;
+            color.a -= Time.deltaTime * 0.01f;
+
+            if (dialogueImage.color.a <= 0)
+            {
+                checkBool = true;
+                dialoguePanel.SetActive(false);
+            }
+        }
+        yield return null;
+
     }
 
     IEnumerator Countdown()
@@ -130,11 +165,21 @@ public class MiniGame3 : MonoBehaviour
     {
         livesText.text = lives3.ToString();
 
-        if (lives3 <= 0)
+        if (lives3 <= 2)
         {
-            livesText.text = "0";
-        }
+            heart.SetTrigger("Life2");
 
+            if (lives3 <= 1)
+            {
+                heart.SetTrigger("Life1");
+
+                if (lives3 <= 0)
+                {
+                    heart.SetTrigger("Life0");
+                    livesText.text = "0";
+                }
+            }
+        }
     }
 
     public void SetText()

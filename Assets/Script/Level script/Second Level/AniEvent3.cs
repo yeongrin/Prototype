@@ -38,8 +38,8 @@ public class AniEvent3 : MonoBehaviour
         end3 = false;
         end4 = true;
         Debug.Log("Fine2");
-        GameObject.Find("AllMap").transform.Find("3").gameObject.SetActive(true);
-        GameObject.Find("AllMap").transform.Find("2").gameObject.SetActive(false);
+        map4.SetActive(true);
+        map3.gameObject.SetActive(false);
 
     }
 }

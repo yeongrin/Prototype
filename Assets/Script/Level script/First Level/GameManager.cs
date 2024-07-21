@@ -107,8 +107,8 @@ public class GameManager : MonoBehaviour
         }
 
         //GameEnding
-        if (goTime >= overTime)
-        manyelling.SetActive(true);
+        //if (goTime >= overTime)
+        //manyelling.SetActive(true);
     }
 
     public void SetText()

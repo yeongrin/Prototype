@@ -20,8 +20,18 @@ public class MiniGame1 : MonoBehaviour
     public TMP_Text livesText;
     public static int lives;
     public GameObject gameOverPanel;
+    public Animator heart;
+
+    public GameObject dialoguePanel;
+    public Image dialogueImage;
+    private bool checkBool = false;
 
     //private GameManager GM;
+
+    void Awake()
+    {
+        dialogueImage = dialoguePanel.GetComponent<Image>();
+    }
 
     void Start()
     {
@@ -29,37 +39,61 @@ public class MiniGame1 : MonoBehaviour
         timer1 = 3f;
         TimeOver = 0;
 
-        //SetText();
         Lives();
+        dialoguePanel.SetActive(true);
+        
 
         //GM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     void Update()
     {
+        StartCoroutine("Delay");
 
         if (lives > 0)
         {
             StartCoroutine("LoseLive");
             //StartCoroutine("Count");
             //SetText();
-        }
-       if (lives <= 0)
-        {
+
             
+        }
+        if (lives <= 0)
+        {
+
             GameEnding();
             //timerText.text = "0";
             StopCoroutine("LoseLive");
             //StopCoroutine("Count");
+
         }
     }
 
-    /*IEnumerator Count()
+    IEnumerator Delay()
     {
-        timer1 -= Time.deltaTime;
+        yield return new WaitForSeconds(2f);
+        StartCoroutine("StartDialogue");
+    }
+
+    IEnumerator StartDialogue()
+    {
+        Color color = dialogueImage.color;
+
+        for (int i = 200; i >= 0; i--)
+        {
+
+            dialogueImage.color = color;
+            color.a -= Time.deltaTime * 0.01f;
+
+            if (dialogueImage.color.a <= 0)
+            {
+                checkBool = true;
+                dialoguePanel.SetActive(false);
+            }
+        }
         yield return null;
 
-    }*/
+    }
 
     IEnumerator LoseLive()
     {
@@ -94,11 +128,21 @@ public class MiniGame1 : MonoBehaviour
     {
         livesText.text = lives.ToString();
 
-        if (lives <= 0)
+        if (lives <= 2)
         {
-            livesText.text = "0";
-        }
+            heart.SetTrigger("Life2");
+
+            if (lives <= 1)
+            {
+                heart.SetTrigger("Life1");
+            }
+            if (lives <= 0)
+            {
+                livesText.text = "0";
+                heart.SetTrigger("Life0");
+            }
  
+        }
     }
 
     /*public void SetText()

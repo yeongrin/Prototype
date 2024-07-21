@@ -41,8 +41,8 @@ public class AniEvent1 : MonoBehaviour
         end1 = false;
         end2 = true;
         //Debug.Log("Fine2");
-        GameObject.Find("AllMap").transform.Find("1.5").gameObject.SetActive(true);
-        GameObject.Find("AllMap").transform.Find("Map1").gameObject.SetActive(false);
+        map2.SetActive(true);
+        map1.gameObject.SetActive(false);
 
     }
 }
