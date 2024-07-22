@@ -25,6 +25,7 @@ public class Travel : MonoBehaviour
     SpawnPhoto _sp;
     GameController3 _gm3;
     ScreenshotManager _sm;
+    PhotoLoader _pl;
 
     Camera cam;
     Vector3 MousePosition;
@@ -50,6 +51,7 @@ public class Travel : MonoBehaviour
         _sp = GameObject.FindObjectOfType<SpawnPhoto>();
         _gm3 = FindObjectOfType<GameController3>();
         _sm = FindObjectOfType<ScreenshotManager>();
+        _pl = FindObjectOfType<PhotoLoader>();
 
         hasClicked = false;
     }
@@ -148,6 +150,7 @@ public class Travel : MonoBehaviour
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
                                 Invoke("Destroy", 2);
+                                _pl.TakePhoto();
                                 _sm.TakeScreenshot();
                                 StartCoroutine(_gm3.CameraFlash());
 

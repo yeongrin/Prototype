@@ -22,8 +22,12 @@ public class PhotoAlbum : MonoBehaviour
 
     public int score;
 
+    PhotoLoader _Pl;
+
     void Start()
     {
+
+        _Pl = FindObjectOfType<PhotoLoader>();
         move = false;
         score = 0;
 
@@ -81,7 +85,7 @@ public class PhotoAlbum : MonoBehaviour
         score += 1;
         Debug.Log("add");
        
-        if (score == 5)
+        if (score == _Pl.photosTaken)
         {
             LevelEnd2();
         }
