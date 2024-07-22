@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         video.loopPointReached += CheckOver;
         
         goTime = 0f;
-        overTime = 45f;
+        overTime = 60f;
         gameWaiting = 5;
 
         waitingTime1 = 8;
@@ -107,8 +107,8 @@ public class GameManager : MonoBehaviour
         }
 
         //GameEnding
-        //if (goTime >= overTime)
-        //manyelling.SetActive(true);
+        if (goTime >= overTime)
+        manyelling.SetActive(true);
     }
 
     public void SetText()

@@ -587,7 +587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &99718667
 Transform:
   m_ObjectHideFlags: 0
@@ -807,7 +807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &108916185
 Transform:
   m_ObjectHideFlags: 0
@@ -1400,8 +1400,8 @@ MonoBehaviour:
   lives4: 3
   gameOverPanel: {fileID: 1436875033}
   heart: {fileID: 548137517}
-  dialoguePanel: {fileID: 0}
-  dialogueImage: {fileID: 0}
+  dialoguePanel: {fileID: 1698026360}
+  dialogueImage: {fileID: 1698026362}
   checkBool: 0
   enemies: 0
 --- !u!1 &289875793
@@ -3750,7 +3750,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the handle and help him goint to office!
+  m_text: Beep the Horn!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -6656,7 +6656,7 @@ GameObject:
   - component: {fileID: 953757636}
   - component: {fileID: 953757637}
   - component: {fileID: 953757639}
-  - component: {fileID: 953757638}
+  - component: {fileID: 953757640}
   m_Layer: 6
   m_Name: Background (1)
   m_TagString: Untagged
@@ -6782,51 +6782,6 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
---- !u!114 &953757638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953757634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 584365018}
-          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
-          m_MethodName: HandInvisible
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 584365018}
-          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
-          m_MethodName: HandVisible
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!61 &953757639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6872,6 +6827,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.2, y: 10.8}
   m_EdgeRadius: 0
+--- !u!114 &953757640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953757634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584365018}
+          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
+          m_MethodName: HandVisible
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584365018}
+          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
+          m_MethodName: HandInvisible
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &966968335
 GameObject:
   m_ObjectHideFlags: 0
@@ -7523,7 +7523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Check the Card and help him pay for it!
+  m_text: Pay the Bills!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -9161,7 +9161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1246430738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9232,7 +9232,7 @@ GameObject:
   - component: {fileID: 1249910703}
   - component: {fileID: 1249910702}
   m_Layer: 6
-  m_Name: Background (1)
+  m_Name: LinCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10146,7 +10146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Drink the Coffe and Wake up him!
+  m_text: Wake Up!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -11092,6 +11092,7 @@ MonoBehaviour:
   timeBetweenWaves: 2
   waveCountdown: 0
   time: 0
+  button: {fileID: 1500912435}
 --- !u!1 &1485052600
 GameObject:
   m_ObjectHideFlags: 0
@@ -11291,7 +11292,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.5849056, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -11314,7 +11315,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1500912435}
         m_TargetAssemblyTypeName: Button, Assembly-CSharp
-        m_MethodName: Destroy
+        m_MethodName: PressTheButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11409,6 +11410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab357c5b5a357ed44ae78760e0e510f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  car: {fileID: 0}
   ani: {fileID: 1500912437}
   isTimer: 0
   isChange: 0
@@ -11519,7 +11521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the Upload and help the his working
+  m_text: Upload your work!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -11724,6 +11726,7 @@ GameObject:
   - component: {fileID: 1558256069}
   - component: {fileID: 1558256070}
   - component: {fileID: 1558256071}
+  - component: {fileID: 1558256072}
   m_Layer: 3
   m_Name: VideoScene2
   m_TagString: Untagged
@@ -11806,6 +11809,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1558256072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558256066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584365018}
+          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
+          m_MethodName: HandInvisible
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584365018}
+          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
+          m_MethodName: HandVisible
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1634887863
 GameObject:
   m_ObjectHideFlags: 0
@@ -12471,7 +12519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1698026361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14043,6 +14091,7 @@ GameObject:
   - component: {fileID: 1957105226}
   - component: {fileID: 1957105227}
   - component: {fileID: 1957105228}
+  - component: {fileID: 1957105229}
   m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
@@ -14168,6 +14217,51 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1957105229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957105225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584365018}
+          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
+          m_MethodName: HandInvisibleOnOtherScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584365018}
+          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
+          m_MethodName: HandVisible
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1963477034
 GameObject:
   m_ObjectHideFlags: 0
@@ -15919,19 +16013,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1306607632167817400, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.97629607
       objectReference: {fileID: 0}
     - target: {fileID: 1306607632167817400, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1306607632167817400, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1306607632167817400, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.21643952
       objectReference: {fileID: 0}
     - target: {fileID: 1306607632167817400, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15943,11 +16037,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1306607632167817400, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805663734118610192, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5902277712188721111, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
       propertyPath: m_Name
       value: Arm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902277712188721111, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418801558580482061, guid: d05a635b1295dff4dbd5f74f72a80daa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

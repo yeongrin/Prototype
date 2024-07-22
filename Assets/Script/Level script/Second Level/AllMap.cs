@@ -52,7 +52,7 @@ public class AllMap : MonoBehaviour
                    {
                   
                   GameObject.Find("AllMap").transform.Find("1.5").gameObject.SetActive(true);
-                  Destroy(map1);
+                  PressTheButton(map1);
 
                 if (end3 == true)
 

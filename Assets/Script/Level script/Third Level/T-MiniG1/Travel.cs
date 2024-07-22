@@ -77,7 +77,7 @@ public class Travel : MonoBehaviour
                                 ani.SetTrigger("Pet");
                                 Debug.Log("35436334");
                                 GameController3.gameCon3();
-                                Invoke("Destroy", 2);
+                                Invoke("PressTheButton", 2);
                             }
                         
                     }
@@ -113,7 +113,7 @@ public class Travel : MonoBehaviour
                                 ani.SetTrigger("Eating2");
                                 GameController3.gameCon3();
                                 //gameObject.GetComponent<GameController3>().enabled = false;
-                                Invoke("Destroy", 2);
+                                Invoke("PressTheButton", 2);
 
                             }
 
@@ -137,7 +137,7 @@ public class Travel : MonoBehaviour
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
                                 GameController3.gameCon3();
-                                Invoke("Destroy", 2);
+                                Invoke("PressTheButton", 2);
                                 
                             }
 

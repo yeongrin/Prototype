@@ -40,7 +40,7 @@ public class OperaHouse : MonoBehaviour
             
         }
         transform.position = Vector2.SmoothDamp(gameObject.transform.position, transformPosition.transform.position, ref startPost, speed * Time.deltaTime);
-        Destroy(this.gameObject, 3);*/
+        PressTheButton(this.gameObject, 3);*/
 
         if (Input.GetMouseButtonUp(0))
         {

@@ -61,7 +61,7 @@ public class Seagull : Singleton<Seagull>
             if (seaguelHealth <= 0)
             {
                 isDead = true;
-                Destroy(gameObject);
+                PressTheButton(gameObject);
             }
         }
 
