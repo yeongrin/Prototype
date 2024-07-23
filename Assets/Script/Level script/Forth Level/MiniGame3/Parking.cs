@@ -22,8 +22,6 @@ public class Parking : MonoBehaviour
     private double Timer2 = 0;
     private double Timer3 = 0;
 
-    public GameObject Scene;
-    public GameObject NextScene;
     public GameObject crash;
 
     // Start is called before the first frame update
@@ -112,11 +110,8 @@ public class Parking : MonoBehaviour
     public void Bonk()
     {
         crash.gameObject.SetActive(true);
+        MiniGame3Manager.endVideoStart = true;
+       
     }
 
-    public void SceneChange()
-    {
-        NextScene.SetActive(true);
-        Scene.SetActive(false);
-    }
 }

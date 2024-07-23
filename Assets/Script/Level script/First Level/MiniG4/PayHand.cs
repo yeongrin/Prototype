@@ -9,9 +9,9 @@ public class PayHand : MonoBehaviour
     public RaycastHit2D hit;
     Animator ani;
 
-    public int coin;
-    public bool otherScene;
-
+    public int coin; //Count How many coin is there, if there is more than one coin, Hand keep appear.
+    public bool enterOtherScene; //If mouse pointer enter the other scene
+ 
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -21,6 +21,7 @@ public class PayHand : MonoBehaviour
     void Start()
     {
         //this.gameObject.SetActive(false);
+        enterOtherScene = false;
     }
 
     void Update()
@@ -41,30 +42,35 @@ public class PayHand : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 
-    IEnumerator HandMoving()
-    {
-       
-        yield return null;
-    }
-
     public void HandInvisible()
     {
         coin = GameObject.FindGameObjectsWithTag("Enemy4").Length;
         if (coin == 0)
         {
-           
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
 
-        }
-        if (coin > 0)
+        else
         {
-            return;
+            if (coin > 0)
+
+                return;
         }
-        //StopCoroutine("HandMoving");
+        if (enterOtherScene == true)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+        else
+        {
+            if (enterOtherScene == false)
+                return;
+        }
+     
     }
 
     public void HandInvisibleOnOtherScene()
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        Debug.Log("ghskgj");
+        enterOtherScene = true;
     }
 }
