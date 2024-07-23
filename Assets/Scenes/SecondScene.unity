@@ -6294,7 +6294,7 @@ GameObject:
   - component: {fileID: 896466381}
   - component: {fileID: 896466382}
   m_Layer: 0
-  m_Name: 5
+  m_Name: Map5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8272,11 +8272,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map1: {fileID: 2144397599}
-  map2: {fileID: 1484529576}
-  map3: {fileID: 1467740393}
-  map4: {fileID: 1858526747}
-  map5: {fileID: 2032035328}
-  map6: {fileID: 896466380}
+  map2: {fileID: 1467740393}
+  map3: {fileID: 1858526747}
+  map4: {fileID: 2032035328}
+  map5: {fileID: 896466380}
+  map6: {fileID: 1727331666}
 --- !u!4 &1150546446
 Transform:
   m_ObjectHideFlags: 0
@@ -8291,13 +8291,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2144397600}
-  - {fileID: 1484529577}
   - {fileID: 1467740394}
   - {fileID: 1858526748}
   - {fileID: 2032035329}
   - {fileID: 896466381}
   - {fileID: 1727331667}
-  - {fileID: 1724094450}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1151811565
@@ -9092,7 +9090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim1: {fileID: 1188127995}
   map1: {fileID: 2144397599}
-  map2: {fileID: 1484529576}
+  map2: {fileID: 1467740393}
 --- !u!1 &1207931142
 GameObject:
   m_ObjectHideFlags: 0
@@ -10251,7 +10249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10987,7 +10985,7 @@ GameObject:
   - component: {fileID: 1467740394}
   - component: {fileID: 1467740395}
   m_Layer: 0
-  m_Name: 2
+  m_Name: Map2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11203,7 +11201,7 @@ Transform:
   - {fileID: 4069415324903134932}
   - {fileID: 1566879904}
   - {fileID: 1334056923}
-  m_Father: {fileID: 1150546446}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1484529578
 MonoBehaviour:
@@ -12532,7 +12530,7 @@ Transform:
   - {fileID: 1625459698}
   - {fileID: 1668309918}
   - {fileID: 1954191729}
-  m_Father: {fileID: 1150546446}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1727331666
 GameObject:
@@ -13479,7 +13477,7 @@ GameObject:
   - component: {fileID: 1858526748}
   - component: {fileID: 1858526749}
   m_Layer: 0
-  m_Name: 3
+  m_Name: Map3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14432,7 +14430,7 @@ GameObject:
   - component: {fileID: 2032035329}
   - component: {fileID: 2032035330}
   m_Layer: 0
-  m_Name: 4
+  m_Name: Map4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14699,7 +14697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene1: {fileID: 2144397599}
-  Scene2: {fileID: 1484529576}
+  Scene2: {fileID: 1467740393}
 --- !u!224 &704294256525551583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16222,6 +16220,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 304746899}
   - {fileID: 364503547}
+  - {fileID: 1484529577}
+  - {fileID: 1724094450}
   - {fileID: 301998031}
   - {fileID: 1150546446}
   - {fileID: 83093139}

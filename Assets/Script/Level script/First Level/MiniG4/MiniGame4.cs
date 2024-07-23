@@ -22,6 +22,12 @@ public class MiniGame4 : MonoBehaviour
     public TMP_Text livesText;
     public int lives4 = 3;
     public GameObject gameOverPanel;
+    public Animator heart;
+
+    [Header("Dialogue")]
+    public GameObject dialoguePanel;
+    public Image dialogueImage;
+    public bool checkBool;
 
     //Check enemies and count timer
     [Header("Enemies")]
@@ -48,10 +54,13 @@ public class MiniGame4 : MonoBehaviour
 
     void Update()
     {
+        StartCoroutine("Delay");
+
         if (lives4 > 0)
         {
             //SetText();
             CountDownEnemies();
+      
         }
 
         if (lives4 <= 0)
@@ -61,6 +70,31 @@ public class MiniGame4 : MonoBehaviour
             StopCoroutine(Countdown());
             StopCoroutine(Count());
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2f);
+        StartCoroutine("StartDialogue");
+    }
+    
+    IEnumerator StartDialogue()
+    {
+        Color color = dialogueImage.color;
+
+        for (int i = 200; i >= 0; i--)
+        {
+            dialogueImage.color = color;
+            color.a -= Time.deltaTime * 0.01f;
+
+            if (dialogueImage.color.a <= 0)
+            {
+                checkBool = true;
+                dialoguePanel.SetActive(false);
+            }
+
+        }
+        yield return null;
     }
 
     void CountDownEnemies()
@@ -131,11 +165,22 @@ public class MiniGame4 : MonoBehaviour
     {
         livesText.text = lives4.ToString();
 
-        if (lives4 <= 0)
+        if (lives4 <= 2)
         {
-            livesText.text = "0";
-        }
+            heart.SetTrigger("Life2");
 
+            if (lives4 <= 1)
+            {
+                heart.SetTrigger("Life1");
+
+                if (lives4 <= 0)
+                {
+                    heart.SetTrigger("Life0");
+                    livesText.text = "0";
+                }
+            }
+        }
+       
     }
 
    /* public void SetText()

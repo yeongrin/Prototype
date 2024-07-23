@@ -27,8 +27,8 @@ public class AniEvent4 : MonoBehaviour
         end4 = false;
         end5 = true;
         
-        GameObject.Find("AllMap").transform.Find("4").gameObject.SetActive(true);
-        GameObject.Find("AllMap").transform.Find("3").gameObject.SetActive(false);
+        map5.SetActive(true);
+        map4.gameObject.SetActive(false);
 
     }
 }

@@ -22,6 +22,11 @@ public class MiniGame2 : MonoBehaviour
     public TMP_Text livesText;
     public int lives2 = 3;
     public GameObject gameOverPanel;
+    public Animator heart;
+
+    public GameObject dialoguePanel;
+    public Image dialogueImage;
+    public bool checkBool;
 
     //Check enemies and count timer
     [Header("Enemies")]
@@ -49,12 +54,13 @@ public class MiniGame2 : MonoBehaviour
 
     void Update()
     {
-        
+        StartCoroutine("Delay");
+
         if (lives2 > 0)
         {
             CountDownEnemies();
             //SetText();
-
+           
         }
 
         if (lives2 <= 0)
@@ -97,6 +103,32 @@ public class MiniGame2 : MonoBehaviour
 
     }
 
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2f);
+        StartCoroutine("StartDialogue");
+    }
+
+    IEnumerator StartDialogue()
+    {
+        Color color = dialogueImage.color;
+
+        for (int i = 200; i >= 0; i--)
+        {
+
+            dialogueImage.color = color;
+            color.a -= Time.deltaTime * 0.01f;
+
+            if (dialogueImage.color.a <= 0)
+            {
+                checkBool = true;
+                dialoguePanel.SetActive(false);
+            }
+        }
+        yield return null;
+
+    }
+
     IEnumerator Count()
     {
         timer2 -= Time.deltaTime;
@@ -126,7 +158,6 @@ public class MiniGame2 : MonoBehaviour
                     GameObject click_button = hit.transform.gameObject;
                     timer2 = 3f;
 
-
                 }
             }
         }
@@ -138,11 +169,24 @@ public class MiniGame2 : MonoBehaviour
     {
         livesText.text = lives2.ToString();
 
-        if (lives2 <= 0)
+        if (lives2 <= 2)
         {
-            livesText.text = "0";
-        }
 
+            heart.SetTrigger("Life2");
+
+            if (lives2 <= 1)
+            {
+                heart.SetTrigger("Life1");
+
+                if (lives2 <= 0)
+                {
+                    livesText.text = "0";
+                    heart.SetTrigger("Life0");
+                }
+
+            }
+        }
+       
     }
 
     /*public void SetText()

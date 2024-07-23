@@ -27,6 +27,8 @@ public class SpawnEnemy2 : MonoBehaviour
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
+
+    public Button button;
     
     void Start()
     {
@@ -148,6 +150,7 @@ public class SpawnEnemy2 : MonoBehaviour
         Transform sPoint = _sp.gameObject.transform;
         spawnPoint = sPoint;
         //Stores the spawnpoint position for the button script to call when assigning car movement.
-        Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation);
+        Transform go = Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation);
+        button.car = go.gameObject;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    private GameObject car;
+    public GameObject car;
     public Animator ani;
 
     private bool check;
@@ -62,13 +62,15 @@ public class Button : MonoBehaviour
             }
     }
 
-    public void Destroy()
+    public void PressTheButton()
     {
         _oc = GameObject.FindObjectOfType<ObstacleCar>();
         car = GameObject.FindGameObjectWithTag("Enemy").gameObject;
+
         //car.transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(-10,2), speed * Time.deltaTime);
-        Destroy(car.gameObject, 0.5f);
+        Destroy(_oc.gameObject, 0.5f);
         _oc.target = _SE2.spawnPoint;
+
         //Once the button is pressed, the onscreen car will move towards the origin point before being destroyed after a set amount of time.
         _oc.speed = 5f;
         ani.SetTrigger("press");

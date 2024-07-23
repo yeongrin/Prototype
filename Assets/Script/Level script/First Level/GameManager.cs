@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         video.loopPointReached += CheckOver;
         
         goTime = 0f;
-        overTime = 45f;
+        overTime = 60f;
         gameWaiting = 5;
 
         waitingTime1 = 8;
