@@ -5,12 +5,15 @@ using System.Net;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using TMPro.EditorUtilities;
 
 public enum Type
 {
     Koala,
     Food,
     Photo,
+    Shiny,
     None
 
 }
@@ -26,6 +29,7 @@ public class Travel : MonoBehaviour
     GameController3 _gm3;
     ScreenshotManager _sm;
     PhotoLoader _pl;
+    SpawnShinyPhoto _ssp;
 
     Camera cam;
     Vector3 MousePosition;
@@ -41,6 +45,9 @@ public class Travel : MonoBehaviour
     public float Timer;
 
     public float speed;
+    public float shinySpeed;
+
+    
 
     void Start()
     {
@@ -52,6 +59,7 @@ public class Travel : MonoBehaviour
         _gm3 = FindObjectOfType<GameController3>();
         _sm = FindObjectOfType<ScreenshotManager>();
         _pl = FindObjectOfType<PhotoLoader>();
+        _ssp = FindObjectOfType<SpawnShinyPhoto>();
 
         hasClicked = false;
     }
@@ -151,10 +159,33 @@ public class Travel : MonoBehaviour
                                 Debug.Log("Shot");
                                 Invoke("Destroy", 2);
                                 _pl.TakePhoto();
-                                _sm.TakeScreenshot();
                                 StartCoroutine(_gm3.CameraFlash());
 
                             }
+
+                    }
+                }
+                break;
+
+            case Type.Shiny:
+                {
+                    this.gameObject.transform.position = Vector2.MoveTowards(this.transform.position, _ssp.target.transform.position, shinySpeed * Time.deltaTime);
+
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        print("Clicking");
+
+                        if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
+                        {
+                            hasClicked = true;
+                            Debug.Log("Shot");
+                            Destroy(this.gameObject);
+                            _pl.TakePhoto();
+                            _sm.TakeScreenshot();
+                            StartCoroutine(_gm3.CameraFlash());
+                            _sm.TakeScreenshot();
+                            StartCoroutine(_ssp.BonusText());
+                        }
 
                     }
                 }

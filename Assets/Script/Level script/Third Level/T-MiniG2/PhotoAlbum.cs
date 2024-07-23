@@ -89,6 +89,7 @@ public class PhotoAlbum : MonoBehaviour
         {
             LevelEnd2();
         }
+        
     }
 
 

@@ -9,15 +9,6 @@ using Image = UnityEngine.UI.Image;
 
 public class ScreenshotManager : MonoBehaviour
 {
-    int maxAllowedScreenshots = 5;
-    int nextScreenshotIndex = 0;
-
-    public List<Sprite> screenshots = new List<Sprite>();
-
-    void Start()
-    {
-        DeleteAllInFolder();
-    }
 
     void DeleteAllInFolder()
     {
@@ -31,12 +22,11 @@ public class ScreenshotManager : MonoBehaviour
 
     public void TakeScreenshot()
     {
-        if (nextScreenshotIndex < maxAllowedScreenshots)
-        {
-            ScreenCapture.CaptureScreenshot(Application.dataPath + "/Screenshots/" + "Level3Screenshot" + nextScreenshotIndex + ".png");
-            nextScreenshotIndex++;
-        }
-        else
-            return;
+         ScreenCapture.CaptureScreenshot(Application.dataPath + "/Screenshots/" + "Level3Screenshot.png");
+    }
+
+    public void DeletePhoto()
+    {
+        DeleteAllInFolder();
     }
 }

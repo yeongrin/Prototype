@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3896916307227661775}
   - component: {fileID: 7656750686035694759}
-  - component: {fileID: 1540395483317186505}
   - component: {fileID: 2773814146574430372}
   - component: {fileID: -4735842667248793553}
   m_Layer: 0
@@ -87,27 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1540395483317186505
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381016066556427114}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f2b5c89c68c48e3428bdd3b24f3c9993, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!60 &2773814146574430372
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -192,10 +170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7fc6ae543d2be45b3b7ff70425dfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ani: {fileID: 1540395483317186505}
-  type: 2
+  ani: {fileID: 0}
+  type: 3
   DoubleClickSpeed: 0.25
   hasClicked: 0
   StartTime: 0
   Timer: 0
   speed: 5
+  shinySpeed: 10
