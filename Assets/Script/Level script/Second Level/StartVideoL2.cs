@@ -48,7 +48,6 @@ public class StartVideoL2 : MonoBehaviour
         game.SetActive(true);
         vidOb.SetActive(false);
 
-
     }
 
     /*IEnumerator MainSplash()

@@ -38,7 +38,7 @@ public class Flyfight : MonoBehaviour
 
     IEnumerator SceneChange()
     {
-       yield return new WaitForSeconds(10f);
+       yield return new WaitForSeconds(7f);
        map3.SetActive(true);
        map2.SetActive(false);
        activateScene2();
