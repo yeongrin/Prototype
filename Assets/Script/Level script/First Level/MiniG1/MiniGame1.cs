@@ -67,6 +67,10 @@ public class MiniGame1 : MonoBehaviour
             //StopCoroutine("Count");
 
         }
+        if(GameManager.over5 == true)
+        {
+            gameOverPanel.SetActive(true);
+        }
     }
 
     IEnumerator Delay()

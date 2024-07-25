@@ -69,7 +69,10 @@ public class MiniGame3 : MonoBehaviour
             StopCoroutine(Countdown());
             StopCoroutine(Count());
         }
-
+        if(GameManager.over5 == true)
+        {
+            gameOverPanel.SetActive(true);
+        }
     }
 
     //How many times left before Lin wake up.

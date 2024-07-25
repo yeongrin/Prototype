@@ -101,11 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1025903203764411910}
-  flyState: 0
   flyHealth: 0
   flyDamage: 0
   isDamage: 0
-  speed: 1
+  speed: 1.5
   dying: 0
   swatterDamage: 0
   swatter: {fileID: 0}

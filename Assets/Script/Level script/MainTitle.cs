@@ -102,6 +102,27 @@ public class MainTitle : MonoBehaviour
         SceneManager.LoadScene("ForthScene");
     }
 
+    public void Fade5()
+    {
+        StartCoroutine(FadeFlow5());
+
+    }
+
+    IEnumerator FadeFlow5()
+    {
+        Panel.gameObject.SetActive(true);
+        Color alpha = Panel.color;
+        while (alpha.a < 1f)
+        {
+            time4 += Time.deltaTime / F_time4;
+            alpha.a = Mathf.Lerp(0, 1, time4);
+            Panel.color = alpha;
+            yield return null;
+        }
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("FiveScene");
+    }
+
     public void SetActivetrue()
     {
         this.gameObject.SetActive(true);

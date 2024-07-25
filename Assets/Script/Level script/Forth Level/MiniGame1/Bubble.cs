@@ -8,6 +8,9 @@ public class Bubble : MonoBehaviour
     public GameObject nextquestions;
     public GameObject beforeBubble;
     public GameObject afterBubble;
+    public GameObject game1;
+    public GameObject game2;
+
     //control the bubble
     //Click bubble1/bubble 1 disappears and bubble 2 apear(setActiveTRUE)
 
@@ -56,7 +59,7 @@ public class Bubble : MonoBehaviour
 
     public void NextScene()
     {
-        GameObject.Find("Game").transform.Find("MiniGame2").gameObject.SetActive(true);
-        GameObject.Find("Game").transform.Find("MiniGame1").gameObject.SetActive(false);
+       game2.SetActive(true);
+        game1.SetActive(false);
     }
 }

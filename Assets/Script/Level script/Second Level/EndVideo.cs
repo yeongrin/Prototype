@@ -9,14 +9,13 @@ public class EndVideo : MonoBehaviour
     int currentNumber;
     public VideoPlayer vid;
     public GameObject vidOb;
-
-    private GameManager UI;
+    public GameObject game2;
    
     void Start() 
     { 
-        UI = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        
         vid.loopPointReached += CheckOver;
-        Invoke("OnInvoke", 0.5f);
+        //Invoke("OnInvoke", 0.5f);
     
     }
 
@@ -46,7 +45,7 @@ public class EndVideo : MonoBehaviour
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        
+        game2.SetActive(true);
         vidOb.SetActive(false);
     }
 }
