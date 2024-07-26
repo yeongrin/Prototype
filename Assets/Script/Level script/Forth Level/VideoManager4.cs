@@ -17,7 +17,7 @@ public class VideoManager4 : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         vid.Play();
     }
 

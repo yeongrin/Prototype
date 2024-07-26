@@ -70,6 +70,11 @@ public class MiniGame2 : MonoBehaviour
             StopCoroutine(Countdown());
             StopCoroutine(Count());
         }
+
+        if(GameManager.over5 == true)
+        {
+            gameOverPanel.SetActive(true);
+        }
     }
 
     public void CountDownEnemies()

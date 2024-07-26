@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     public static bool over2 = false;
     public static bool over3 = false;
     public static bool over4 = false;
+    public static bool over5 = false;
+    public GameObject[] endingPanel;
 
     [Header("Blur")]
     public Image image;
@@ -104,11 +106,15 @@ public class GameManager : MonoBehaviour
         if (over1 == true && over2 == true && over3 == true && over4 == true)
         {
             manyelling.SetActive(true);
+            //endingPanel.Length.SetActive(true);
         }
 
         //GameEnding
         if (goTime >= overTime)
-        manyelling.SetActive(true);
+        {
+            over5 = true;
+            manyelling.SetActive(true);
+        }
     }
 
     public void SetText()
