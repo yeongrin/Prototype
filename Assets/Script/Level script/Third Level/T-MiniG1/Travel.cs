@@ -30,6 +30,7 @@ public class Travel : MonoBehaviour
     ScreenshotManager _sm;
     PhotoLoader _pl;
     SpawnShinyPhoto _ssp;
+    BonusPhoto _bp;
 
     Camera cam;
     Vector3 MousePosition;
@@ -60,6 +61,7 @@ public class Travel : MonoBehaviour
         _sm = FindObjectOfType<ScreenshotManager>();
         _pl = FindObjectOfType<PhotoLoader>();
         _ssp = FindObjectOfType<SpawnShinyPhoto>();
+        _bp = FindObjectOfType<BonusPhoto>();
 
         hasClicked = false;
     }
@@ -181,9 +183,8 @@ public class Travel : MonoBehaviour
                             Debug.Log("Shot");
                             Destroy(this.gameObject);
                             _pl.TakePhoto();
-                            _sm.TakeScreenshot();
                             StartCoroutine(_gm3.CameraFlash());
-                            _sm.TakeScreenshot();
+                            _bp.hasBonusPhoto = true;
                             StartCoroutine(_ssp.BonusText());
                         }
 

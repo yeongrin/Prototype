@@ -23,6 +23,7 @@ TagManager:
   - UISlider
   - TargetPosition1
   - Fly
+  - bonus
   layers:
   - Default
   - TransparentFX
