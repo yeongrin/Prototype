@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 662e2277f9212264d8052503b6aec536
+guid: a33be6e104ea37040b518be946e99e2c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,22 +110,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cursor_beep_0
+      name: Cursor_1
       rect:
         serializedVersion: 2
-        x: 220
-        y: 0
-        width: 537
-        height: 785
-      alignment: 9
-      pivot: {x: 0.23166928, y: 0.76699436}
+        x: 309
+        y: 246
+        width: 281
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 067fef0fada573f47b636e20814cf338
-      internalID: 1471718169
+      spriteID: eb3feb264b57f4148a8b82df0b1977cc
+      internalID: -309922582
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cursor_beep_0: 1471718169
+      Cursor_0: -259397715
+      Cursor_1: -309922582
+      Cursor_2: 2137873749
+      Cursor_3: 2096268921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

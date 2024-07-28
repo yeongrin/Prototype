@@ -105,7 +105,7 @@ public class SpawnEnemy3 : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _waves)
     {
-        Debug.Log("Spawning Wave:" + _waves.name);
+        //Debug.Log("Spawning Wave:" + _waves.name);
         state = SpawnState.SPAWNING;
         
 
@@ -122,7 +122,7 @@ public class SpawnEnemy3 : MonoBehaviour
 
     void SpawnEnemy(Transform _enemy)
     {
-        Debug.Log("Spawning enemy!:" + _enemy.name);
+        //Debug.Log("Spawning enemy!:" + _enemy.name);
         Transform _sp = spawnPoints[Random.Range (0, spawnPoints.Length)];
         Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation);
     }
