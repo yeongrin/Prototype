@@ -5,15 +5,21 @@ using UnityEngine.Video;
 
 public class MiniGame3Manager : MonoBehaviour
 {
+    //StartSceneVideo
     public GameObject startVideoObject;
     public VideoPlayer startVideo;
 
+    //EndSceneVideo
     public GameObject endVideoObject;
     public VideoPlayer endVideo;
+    public VideoPlayer endVideo2;
 
+    //Check video ending
     public static bool startVideoEnd;
-    public static bool endVideoStart = false;
+    public static bool endVideoStart;
     public static bool endVideoEnd;
+    public GameObject game;
+    public GameObject game2;
 
     private void Awake()
     {
@@ -48,12 +54,19 @@ public class MiniGame3Manager : MonoBehaviour
 
     public void EndVideoStart()
     {
-        Debug.Log("4865473478349");
         endVideoObject.SetActive(true);
     }
 
     void EndVideoCheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         endVideoEnd = true;
+        endVideo2.Play();
+        endVideo2.loopPointReached += CheckOver2;
+    }
+
+    void CheckOver2(UnityEngine.Video.VideoPlayer vp2)
+    {
+        game2.SetActive(true);
+        game.SetActive(false);
     }
 }

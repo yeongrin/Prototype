@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2681046508965638740}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &1025903203764411910
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1101952423
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -664174591, guid: 1a4ce1909eb2c7d4e81fe44b6379aa9c, type: 3}
+  m_Sprite: {fileID: 480849, guid: d4781bed845971444b4d747ff00863e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   flyHealth: 0
   flyDamage: 0
   isDamage: 0
-  speed: 1.5
+  speed: 2
   dying: 0
   swatterDamage: 0
   swatter: {fileID: 0}
@@ -143,18 +143,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.034431458, y: 0.21806598}
+  m_Offset: {x: -0.029795647, y: -0.046870112}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.5, y: 5.12}
+    oldSize: {x: 4.37, y: 4.37}
     newSize: {x: 4.5, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.379282, y: 7.759748}
+  m_Size: {x: 4.91103, y: 4.8213673}
   m_EdgeRadius: 0
 --- !u!95 &2918495973881505643
 Animator:
@@ -164,7 +164,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2681046508965638740}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5c567fe000587334a80d44701217ec59, type: 2}
   m_CullingMode: 0
