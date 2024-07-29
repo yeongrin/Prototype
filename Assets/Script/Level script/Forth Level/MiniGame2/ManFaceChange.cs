@@ -20,11 +20,13 @@ public class ManFaceChange : MonoBehaviour
 
     void Update()
     {
-            if(Input.GetMouseButtonDown(0))
-            {
-            StartCoroutine("StayOnFace");
-                //this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite2;
-            }
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            ani.SetTrigger("Swat2");
+            //StartCoroutine("StayOnFace");
+            //this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite2;
+        }
        
     }
 
@@ -41,12 +43,7 @@ public class ManFaceChange : MonoBehaviour
         }
     }
 
-    IEnumerable StayOnFace()
-    {
-        ani.SetTrigger("Swat2");
-        yield return new WaitForSeconds(1f);
-    }
-
+   
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Fly"))
