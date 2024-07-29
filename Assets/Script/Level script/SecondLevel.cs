@@ -65,7 +65,7 @@ public class SecondLevel : MonoBehaviour
 
     IEnumerator FadeFlow4()
     {
-        Panel2.gameObject.SetActive(true);
+        /*Panel2.gameObject.SetActive(true);
         Color alpha = Panel2.color;
         while (alpha.a < 1f)
         {
@@ -74,8 +74,9 @@ public class SecondLevel : MonoBehaviour
             Panel2.color = alpha;
             yield return null;
         }
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.0f); */
         SceneManager.LoadScene("ForthScene");
+        yield return null;
     }
 
     public void SetActivetrue()

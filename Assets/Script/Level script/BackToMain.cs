@@ -9,6 +9,6 @@ public class BackToMain : MonoBehaviour
 
     public void SceneLoad()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Title");
     }
 }

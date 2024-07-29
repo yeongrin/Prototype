@@ -1,15 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using TMPro.EditorUtilities;
 
 public enum Type
 {
     Koala,
     Food,
     Photo,
+    Shiny,
     None
 
 }
@@ -21,6 +25,12 @@ public class Travel : MonoBehaviour
     
     public Animator ani;
     public Type type;
+    SpawnPhoto _sp;
+    GameController3 _gm3;
+    ScreenshotManager _sm;
+    PhotoLoader _pl;
+    SpawnShinyPhoto _ssp;
+    BonusPhoto _bp;
 
     Camera cam;
     Vector3 MousePosition;
@@ -35,12 +45,30 @@ public class Travel : MonoBehaviour
     public float StartTime;
     public float Timer;
 
+    public float speed;
+    public float shinySpeed;
+
+    
+
     void Start()
     {
         StartTime = 5f;
-        Timer = 5f;
+        
+        if (gameObject.tag == ("elements4"))
+        {
+            Timer = 10f;
+        }
+        else
+            Timer = 5f;
+
         ani = GetComponent<Animator>();
         cam = GetComponent<Camera>();
+        _sp = GameObject.FindObjectOfType<SpawnPhoto>();
+        _gm3 = FindObjectOfType<GameController3>();
+        _sm = FindObjectOfType<ScreenshotManager>();
+        _pl = FindObjectOfType<PhotoLoader>();
+        _ssp = FindObjectOfType<SpawnShinyPhoto>();
+        _bp = FindObjectOfType<BonusPhoto>();
 
         hasClicked = false;
     }
@@ -76,8 +104,7 @@ public class Travel : MonoBehaviour
                                 hasClicked = true;
                                 ani.SetTrigger("Pet");
                                 Debug.Log("35436334");
-                                GameController3.gameCon3();
-                                Invoke("PressTheButton", 2);
+                                Invoke("Destroy", 2);
                             }
                         
                     }
@@ -111,9 +138,8 @@ public class Travel : MonoBehaviour
                             {
 
                                 ani.SetTrigger("Eating2");
-                                GameController3.gameCon3();
                                 //gameObject.GetComponent<GameController3>().enabled = false;
-                                Invoke("PressTheButton", 2);
+                                Invoke("Destroy", 2);
 
                             }
 
@@ -127,6 +153,10 @@ public class Travel : MonoBehaviour
 
             case Type.Photo:
                 {
+                    
+                    this.gameObject.transform.position = Vector2.MoveTowards(this.transform.position, _sp.target.position, speed * Time.deltaTime);
+                    
+
                     if (Input.GetMouseButtonDown(0))
                     {
                         print("Clicking");
@@ -136,10 +166,34 @@ public class Travel : MonoBehaviour
                                 hasClicked = true;
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
-                                GameController3.gameCon3();
-                                Invoke("PressTheButton", 2);
-                                
+                                Invoke("Destroy", 0.4f);
+                                _pl.TakePhoto();
+                                StartCoroutine(_gm3.CameraFlash());
+
                             }
+
+                    }
+                }
+                break;
+
+            case Type.Shiny:
+                {
+                    
+                    this.gameObject.transform.position = Vector2.MoveTowards(this.transform.position, _ssp.target.transform.position, shinySpeed * Time.deltaTime);
+
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        print("Clicking");
+
+                        if (hit.transform.gameObject.tag == "elements4" && hit.collider != null && hasClicked == false)
+                        {
+                            hasClicked = true;
+                            Debug.Log("Shot");
+                            Destroy(this.gameObject, 0.5f);
+                            StartCoroutine(_gm3.CameraFlash());
+                            //_bp.hasBonusPhoto = true;
+                            _ssp.hasClicked = true;
+                        }
 
                     }
                 }
