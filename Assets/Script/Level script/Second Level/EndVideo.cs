@@ -8,6 +8,7 @@ public class EndVideo : MonoBehaviour
     public int numberValue;
     int currentNumber;
     public VideoPlayer vid;
+    public VideoPlayer vid2;
     public GameObject vidOb;
     public GameObject game2;
    
@@ -45,7 +46,12 @@ public class EndVideo : MonoBehaviour
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
+        vid2.Play();
+        vid2.loopPointReached += CheckOver2;
+    }
+
+    void CheckOver2(UnityEngine.Video.VideoPlayer vp2)
+    {
         game2.SetActive(true);
-        vidOb.SetActive(false);
     }
 }

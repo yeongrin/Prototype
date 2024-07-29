@@ -13,6 +13,7 @@ public class FadeIn : MonoBehaviour
     void Awake()
     {
         SplashObj = this.gameObject;
+        SplashObj.SetActive(true);
         image = SplashObj.GetComponent<Image>();
     }
 

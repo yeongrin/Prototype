@@ -114,4 +114,9 @@ public class Parking : MonoBehaviour
        
     }
 
+    public void PerfectParking()
+    {
+        crash.gameObject.SetActive(true);
+    }
+
 }
