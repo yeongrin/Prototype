@@ -17,17 +17,20 @@ public class SpawnShinyPhoto : MonoBehaviour
     public float targetTimer;
     public float fadeTimer = 4f;
     public bool fadeTime = false;
+    public bool hasClicked;
 
     public GameObject bonusTextbox;
     public TMP_Text bonusText;
+    public TextMeshProUGUI textDisplay;
     
 
 
     void Start()
     {
-        spawnTimer = Random.Range(1f, 3f);
+        spawnTimer = Random.Range(12f, 24f);
         hasSpawned = false;
         bonusTextbox.SetActive(false);
+        hasClicked = false;
         
     }
 
@@ -47,6 +50,11 @@ public class SpawnShinyPhoto : MonoBehaviour
         {
             SpawnShiny();
         }
+
+        if(hasClicked == true)
+        {
+            StartCoroutine(FadeOut());
+        }
     }
 
     void SpawnShiny()
@@ -62,8 +70,8 @@ public class SpawnShinyPhoto : MonoBehaviour
     IEnumerator TargetTimerStart()
     {
         targetTimer -= Time.deltaTime;
-        targetTimer = Random.Range(0f, 2f);
-        target = newTarget[Random.Range(0,spawnPoints.Length)];
+        targetTimer = Random.Range(2f, 5f);
+        target = newTarget[Random.Range(0, newTarget.Length)];
         yield return new WaitForSeconds(1f);
 
         StartCoroutine(TargetTimerStart());
@@ -78,5 +86,20 @@ public class SpawnShinyPhoto : MonoBehaviour
         fadeTime = true;
 
         yield return null;
+    }
+
+    public IEnumerator FadeOut()
+    {
+        bonusTextbox.SetActive(true);
+        float duration = 2f;
+        float currentTime = 0f;
+        while (currentTime < duration)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, currentTime / duration);
+            textDisplay.color = new Color(textDisplay.color.r, textDisplay.color.g, textDisplay.color.b, alpha);
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+        yield break;
     }
 }

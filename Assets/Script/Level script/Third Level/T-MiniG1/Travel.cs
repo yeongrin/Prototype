@@ -53,7 +53,14 @@ public class Travel : MonoBehaviour
     void Start()
     {
         StartTime = 5f;
-        Timer = 5f;
+        
+        if (gameObject.tag == ("elements4"))
+        {
+            Timer = 10f;
+        }
+        else
+            Timer = 5f;
+
         ani = GetComponent<Animator>();
         cam = GetComponent<Camera>();
         _sp = GameObject.FindObjectOfType<SpawnPhoto>();
@@ -159,7 +166,7 @@ public class Travel : MonoBehaviour
                                 hasClicked = true;
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
-                                Invoke("Destroy", 2);
+                                Invoke("Destroy", 0.4f);
                                 _pl.TakePhoto();
                                 StartCoroutine(_gm3.CameraFlash());
 
@@ -171,21 +178,21 @@ public class Travel : MonoBehaviour
 
             case Type.Shiny:
                 {
+                    
                     this.gameObject.transform.position = Vector2.MoveTowards(this.transform.position, _ssp.target.transform.position, shinySpeed * Time.deltaTime);
 
                     if (Input.GetMouseButtonDown(0))
                     {
                         print("Clicking");
 
-                        if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
+                        if (hit.transform.gameObject.tag == "elements4" && hit.collider != null && hasClicked == false)
                         {
                             hasClicked = true;
                             Debug.Log("Shot");
-                            Destroy(this.gameObject);
-                            _pl.TakePhoto();
+                            Destroy(this.gameObject, 0.5f);
                             StartCoroutine(_gm3.CameraFlash());
-                            _bp.hasBonusPhoto = true;
-                            StartCoroutine(_ssp.BonusText());
+                            //_bp.hasBonusPhoto = true;
+                            _ssp.hasClicked = true;
                         }
 
                     }
