@@ -5,8 +5,6 @@ using System.Net;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using TMPro.EditorUtilities;
 
 public enum Type
 {
@@ -27,7 +25,6 @@ public class Travel : MonoBehaviour
     public Type type;
     SpawnPhoto _sp;
     GameController3 _gm3;
-    ScreenshotManager _sm;
     PhotoLoader _pl;
     SpawnShinyPhoto _ssp;
     BonusPhoto _bp;
@@ -65,7 +62,6 @@ public class Travel : MonoBehaviour
         cam = GetComponent<Camera>();
         _sp = GameObject.FindObjectOfType<SpawnPhoto>();
         _gm3 = FindObjectOfType<GameController3>();
-        _sm = FindObjectOfType<ScreenshotManager>();
         _pl = FindObjectOfType<PhotoLoader>();
         _ssp = FindObjectOfType<SpawnShinyPhoto>();
         _bp = FindObjectOfType<BonusPhoto>();
@@ -166,10 +162,9 @@ public class Travel : MonoBehaviour
                                 hasClicked = true;
                                 ani.SetTrigger("Shot");
                                 Debug.Log("Shot");
+                                StartCoroutine(_gm3.CameraFlash());
                                 Invoke("Destroy", 0.4f);
                                 _pl.TakePhoto();
-                                StartCoroutine(_gm3.CameraFlash());
-
                             }
 
                     }
