@@ -11,8 +11,9 @@ public class MiniGame3 : MonoBehaviour
     //Check the timer variable
     [Header("Timer")]
     public TMP_Text timerText;
-    public float timer3;
-    public float waiting_timer;
+    public TMP_Text timerText2;
+    public float timer3; //When Lin fell a sleep, if this timer over, player lose 1 life.
+    public float waiting_timer; //How many time left when Lin get a sleep
     float TimeOver;
     private bool isTimer = false;
 
@@ -33,7 +34,8 @@ public class MiniGame3 : MonoBehaviour
     [Header("Enemies")]
     public int enemies;
 
-    //private GameManager UM;
+    public GameObject _sleep;
+    Animator ani;
 
     private void Awake()
     {
@@ -41,7 +43,7 @@ public class MiniGame3 : MonoBehaviour
     }
     void Start()
     {
-        waiting_timer = 3f;
+        waiting_timer = 3f; 
         lives3 = 3;
         timer3 = 3f;
         TimeOver = 0;
@@ -49,7 +51,7 @@ public class MiniGame3 : MonoBehaviour
         SetText();
         Lives();
 
-        //UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        ani = _sleep.GetComponent<Animator>();
     }
 
     void Update()
@@ -73,34 +75,6 @@ public class MiniGame3 : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
         }
-    }
-
-    //How many times left before Lin wake up.
-    //After 3 sec Lin fell a sleep, and timer countdown.
-    //Player click Lin to wake up.
-    void WakeUp()
-    {
-        StartCoroutine(Countdown());
-        StartCoroutine(Count());
-    }
-
-    IEnumerator Count()
-    {
-        if(isTimer == true)   ///Sleep
-        {
-            timer3 -= Time.deltaTime;
-        }
-        else // Awake
-        {
-            waiting_timer -= Time.deltaTime;
-
-            if (waiting_timer < 0)
-            {
-                isTimer = true;
-            }
-        }
-        
-        yield break;
     }
 
     IEnumerator Delay()
@@ -127,6 +101,35 @@ public class MiniGame3 : MonoBehaviour
         }
         yield return null;
 
+    }
+
+    //How many times left before Lin wake up.
+    //After 3 sec Lin fell a sleep, and timer countdown.
+    //Player click Lin to wake up.
+    void WakeUp()
+    {
+        StartCoroutine(Countdown());
+        StartCoroutine(Count());
+    }
+
+    IEnumerator Count() //Lin fell a sleep
+    {
+        if(isTimer == true) ///Sleep
+        {
+            timer3 -= Time.deltaTime;
+            ani.SetTrigger("Sleep");
+        }
+        else //Lin Awake
+        {
+            ani.SetTrigger("Default");
+            waiting_timer -= Time.deltaTime;
+
+            if (waiting_timer < 0)
+            {
+                isTimer = true;
+            }
+        }
+        yield break;
     }
 
     IEnumerator Countdown()
@@ -188,6 +191,7 @@ public class MiniGame3 : MonoBehaviour
     public void SetText()
     {
         timerText.text = ((int)Math.Ceiling(timer3)).ToString();
+        timerText2.text = ((int)Math.Ceiling(waiting_timer)).ToString();
     }
 
     public void GameEnding()

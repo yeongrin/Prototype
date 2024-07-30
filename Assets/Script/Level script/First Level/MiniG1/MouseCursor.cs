@@ -140,28 +140,4 @@ public class MouseCursor : MonoBehaviour
 
     }
 
-    //IEnumerator Coroutine1()
-    //{
-
-    //    yield return null;
-    //}
-
-    //IEnumerator Coroutine2()
-    //{
-       
-    //    yield return null;
-    //}
-
-    //IEnumerator Coroutine3()
-    //{
-
-    //    yield return null;
-    //}
-
-    //IEnumerator Coroutine4()
-    //{
-        
-    //    yield return null;
-    //}
-
 }

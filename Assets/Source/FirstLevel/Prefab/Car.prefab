@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2351727483009751040}
   - component: {fileID: 4519875294812650520}
   - component: {fileID: -6673901038191886913}
+  - component: {fileID: 7981192571298440781}
   m_Layer: 0
   m_Name: Car
   m_TagString: Enemy
@@ -101,3 +102,20 @@ MonoBehaviour:
   orgSize: {x: 0, y: 0}
   time: 0
   speed: 0.5
+  firstLocation: {fileID: 0}
+  movingLocation: {fileID: 0}
+  target: {fileID: 0}
+  startPos: {fileID: 0}
+  spawnPoint: {fileID: 0}
+--- !u!114 &7981192571298440781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951842412598915452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb099048ba5585444b961da908e6a965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -70,7 +70,6 @@ public class PayHand : MonoBehaviour
 
     public void HandInvisibleOnOtherScene()
     {
-        Debug.Log("ghskgj");
         enterOtherScene = true;
     }
 }

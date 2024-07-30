@@ -40,7 +40,7 @@ public class Bubble : MonoBehaviour
     }
 
     public void True2()
-    { 
+    {
     }
 
     public void True3()
@@ -54,12 +54,19 @@ public class Bubble : MonoBehaviour
         Debug.Log("Wrong answer");
         shakeObject.GetComponent<NewBubble>().Shake();
         //When clicked the object shake from the called script is run on the object that it is hooked up to.
-        
+
     }
 
     public void NextScene()
     {
-       game2.SetActive(true);
+        StartCoroutine("NextSceneCoroutine");
+    }
+
+    IEnumerator NextSceneCoroutine()
+    {
+        yield return new WaitForSeconds(2f);
+        game2.SetActive(true);
         game1.SetActive(false);
+
     }
 }
