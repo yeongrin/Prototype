@@ -45,6 +45,8 @@ public class Travel : MonoBehaviour
     public float speed;
     public float shinySpeed;
 
+    Image thisImage;
+
     
 
     void Start()
@@ -67,6 +69,8 @@ public class Travel : MonoBehaviour
         _bp = FindObjectOfType<BonusPhoto>();
 
         hasClicked = false;
+
+        thisImage = GetComponent<Image>();
     }
 
     void Update()
@@ -161,9 +165,10 @@ public class Travel : MonoBehaviour
                             {
                                 hasClicked = true;
                                 ani.SetTrigger("Shot");
+                                ChangeImage();
                                 Debug.Log("Shot");
                                 StartCoroutine(_gm3.CameraFlash());
-                                Invoke("Destroy", 0.4f);
+                                Invoke("Destroy", 2f);
                                 _pl.TakePhoto();
                             }
 
@@ -195,6 +200,12 @@ public class Travel : MonoBehaviour
                 break;
 
         }
+    }
+
+    public void ChangeImage()
+    {
+        thisImage.sprite = _gm3.newImage[_gm3.imageInt];
+        _gm3.imageInt++;
     }
 
     void TimerReset()
