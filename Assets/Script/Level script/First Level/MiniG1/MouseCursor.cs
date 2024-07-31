@@ -9,17 +9,26 @@ public class MouseCursor : MonoBehaviour
     public RaycastHit2D hit;
     private int layerMask;
 
+    public Sprite[] newSprite;
     public Animator ani;
+    
     Vector2 findHand;
-
     Transform cursor;
     SpriteRenderer spriteRenderer;
-    public Sprite[] newSprite;
+
+    AudioSource audioSource;
+    AudioClip audio;
 
     public void Awake()
     {
         mainCamera = Camera.main;
         ani = GetComponent<Animator>();
+
+
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audio = AudioSourceOfLevel1.instance.arraudio[1];
+        audioSource.clip = audio;
+
     }
 
     void Start()

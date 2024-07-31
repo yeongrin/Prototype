@@ -10,13 +10,15 @@ public class Button : MonoBehaviour
     private bool check;
     public bool isTimer;
     public bool isChange = false;
+    public int speed = 5;
 
     public Transform[] movePoints;
 
     MiniGame1 _MG1;
     ObstacleCar _oc;
     SpawnEnemy2 _SE2;
-    public int speed = 5;
+    AudioClip audio;
+    AudioSource audioSource;
 
     public void Awake()
     {
@@ -29,6 +31,10 @@ public class Button : MonoBehaviour
     {
         _MG1 = GameObject.FindObjectOfType<MiniGame1>().GetComponent<MiniGame1>();
         _SE2 = GameObject.FindObjectOfType<SpawnEnemy2>().GetComponent<SpawnEnemy2>();
+
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audio = AudioSourceOfLevel1.instance.arraudio[0];
+        audioSource.clip = audio;
     }
 
 
@@ -74,6 +80,10 @@ public class Button : MonoBehaviour
         //Once the button is pressed, the onscreen car will move towards the origin point before being destroyed after a set amount of time.
         _oc.speed = 5f;
         ani.SetTrigger("press");
+
+        audioSource.Play();
+
+
     }
 
 }
