@@ -45,7 +45,8 @@ public class Travel : MonoBehaviour
     public float speed;
     public float shinySpeed;
 
-    Image thisImage;
+    public Image thisImage;
+    public GameObject imageFrame;
 
     
 
@@ -69,8 +70,7 @@ public class Travel : MonoBehaviour
         _bp = FindObjectOfType<BonusPhoto>();
 
         hasClicked = false;
-
-        thisImage = GetComponent<Image>();
+        imageFrame.SetActive(false);
     }
 
     void Update()
@@ -205,6 +205,7 @@ public class Travel : MonoBehaviour
     public void ChangeImage()
     {
         thisImage.sprite = _gm3.newImage[_gm3.imageInt];
+        imageFrame.SetActive(true);
         _gm3.imageInt++;
     }
 
