@@ -34,21 +34,6 @@ public class Bubble : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public void True1()
-    {
-
-    }
-
-    public void True2()
-    {
-    }
-
-    public void True3()
-
-    {
-
-    }
-
     public void Wrong(GameObject shakeObject)
     {
         Debug.Log("Wrong answer");

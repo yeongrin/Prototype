@@ -36,8 +36,7 @@ public class MiniGame2 : MonoBehaviour
     public void Awake()
     {
         isTimer = false;
-        //check = false;
-        //orgColor = new Color(1f, 1f, 1f, 1f);
+       
     }
 
     void Start()
@@ -161,8 +160,7 @@ public class MiniGame2 : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Object2" && hit.collider != null)
                 {
                     GameObject click_button = hit.transform.gameObject;
-                    timer2 = 3f;
-
+                    
                 }
             }
         }

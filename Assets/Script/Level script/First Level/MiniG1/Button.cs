@@ -17,7 +17,7 @@ public class Button : MonoBehaviour
     MiniGame1 _MG1;
     ObstacleCar _oc;
     SpawnEnemy2 _SE2;
-    AudioClip audio;
+    AudioClip sound;
     AudioSource audioSource;
 
     public void Awake()
@@ -33,8 +33,8 @@ public class Button : MonoBehaviour
         _SE2 = GameObject.FindObjectOfType<SpawnEnemy2>().GetComponent<SpawnEnemy2>();
 
         audioSource = gameObject.GetComponent<AudioSource>();
-        audio = AudioSourceOfLevel1.instance.arraudio[0];
-        audioSource.clip = audio;
+        sound = AudioSourceOfLevel1.instance.arraudio[0];
+        audioSource.clip = sound;
     }
 
 

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class AniEvent1 : MonoBehaviour
 {
-    private bool end1;
-    private bool end2;
-
     public Animator anim1;
    
     public GameObject map1;
@@ -21,8 +18,7 @@ public class AniEvent1 : MonoBehaviour
     
     void Start()
     {
-        end1 = true;
-        end2 = false;
+      
     }
 
     
@@ -38,9 +34,7 @@ public class AniEvent1 : MonoBehaviour
 
     public void OnEnterNextScene()
     {
-        end1 = false;
-        end2 = true;
-        //Debug.Log("Fine2");
+       
         map2.SetActive(true);
         map1.gameObject.SetActive(false);
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MouseCursor : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class MouseCursor : MonoBehaviour
     Transform cursor;
     SpriteRenderer spriteRenderer;
 
-    AudioSource audioSource;
-    AudioClip audio;
+    //AudioSource audioSource;
+    //AudioClip sound;
 
     public void Awake()
     {
@@ -25,9 +26,9 @@ public class MouseCursor : MonoBehaviour
         ani = GetComponent<Animator>();
 
 
-        audioSource = gameObject.GetComponent<AudioSource>();
-        audio = AudioSourceOfLevel1.instance.arraudio[1];
-        audioSource.clip = audio;
+        //audioSource = gameObject.GetComponent<AudioSource>();
+        //sound = AudioSourceOfLevel1.instance.arraudio[1];
+        //audioSource.clip = sound;
 
     }
 

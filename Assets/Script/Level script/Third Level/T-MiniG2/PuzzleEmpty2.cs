@@ -72,7 +72,7 @@ public class PuzzleEmpty2 : MonoBehaviour
         float halfWidth = (width * dimensions.x) / 2f;
         float halfHeight = (height * dimensions.y) / 2f;
 
-        float borderZ = 0f;
+       // float borderZ = 0f;
 
        //lineRenderer.SetPosition(0, new Vector3(-halfWidth, halfHeight, borderZ));
        //lineRenderer.SetPosition(1, new Vector3(halfWidth, halfHeight, borderZ));
