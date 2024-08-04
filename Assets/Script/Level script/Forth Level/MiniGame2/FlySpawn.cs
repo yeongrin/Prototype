@@ -20,7 +20,7 @@ public class FlySpawn : MonoBehaviour
 
     public Transform[] spawnPoints;
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves;
     public float waveCountdown;
 
     private float searchCountdown = 1f;
@@ -56,8 +56,9 @@ public class FlySpawn : MonoBehaviour
         {
             if (state != SpawnState.SPAWNING)
             {
-                StartCoroutine(SpawnWave(waves[0]));
+                StartCoroutine(SpawnWave(waves[nextWave]));
             }
+
         }
 
         else
@@ -106,7 +107,7 @@ public class FlySpawn : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _waves)
     {
-        Debug.Log("Spawning Wave:" + _waves.name);
+        //Debug.Log("Spawning Wave:" + _waves.name);
         state = SpawnState.SPAWNING;
         
 

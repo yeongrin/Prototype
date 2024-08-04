@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -1366572882368280198}
   - component: {fileID: 3563449963711891345}
   - component: {fileID: -7072852944161569947}
-  - component: {fileID: -2478467713457750491}
   - component: {fileID: 7778035980994008632}
   m_Layer: 0
   m_Name: fly 1
@@ -106,6 +105,9 @@ MonoBehaviour:
   flyDamage: 0
   isDamage: 0
   speed: 0
+  mainTarget: []
+  targetObjects: []
+  currentTarget: {fileID: 0}
   dying: 0
   swatterDamage: 0
   swatter: {fileID: 0}
@@ -167,7 +169,7 @@ Animator:
   m_GameObject: {fileID: 2681046508965638740}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c567fe000587334a80d44701217ec59, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -178,22 +180,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-2478467713457750491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2681046508965638740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4961a62b5bfcbc747be1ad34a3fe1d04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  speed: 1
 --- !u!50 &7778035980994008632
 Rigidbody2D:
   serializedVersion: 4

@@ -29,22 +29,31 @@ public class Obstaclecoin : MonoBehaviour
     {
         if (_MG4.isChange == true)
         {
-            ChangeFileColor();
+            StartCoroutine("ChangeFileColor");
         }
     }
 
-    void ChangeFileColor()
+    IEnumerator ChangeFileColor()
     {
+
         ani.SetBool("timer", true);
+        yield return null;
+   
     }
 
     public void DestroyObj()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void DestroyObj2()
     {
         StartCoroutine("SoundOutPut");
     }
 
     IEnumerator SoundOutPut()
     {
+        StopCoroutine("ChangeFileColor");
         audioSource.Play();
         _MG4.timer4 = 3f;
         yield return new WaitForSeconds(1f);

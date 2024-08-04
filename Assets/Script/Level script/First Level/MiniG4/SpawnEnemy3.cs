@@ -92,13 +92,14 @@ public class SpawnEnemy3 : MonoBehaviour
         if (searchCountdown <= 0)
         {
             searchCountdown = 1f;
-            if (GameObject.FindGameObjectWithTag ("Enemy4") == null)
+            if (GameObject.FindGameObjectWithTag("Enemy4") == null)
 
             {
-               
-            return false;
 
-            }           
+                return false;
+
+            }
+                  
         }
        return true;
     }

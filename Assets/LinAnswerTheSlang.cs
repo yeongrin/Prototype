@@ -61,4 +61,34 @@ public class LinAnswerTheSlang : MonoBehaviour
         StopCoroutine("AnswerBubbleOutPut");
         answerBubble.gameObject.SetActive(false);
     }
+
+    public void ShowUpAnswerBubble2()
+    {
+        answerBubble.gameObject.SetActive(true);
+        StartCoroutine("AnswerBubbleOutPut2");
+    }
+
+    IEnumerator AnswerBubbleOutPut2()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            numberOfOutPut += 1;
+            i++;
+        }
+        if (numberOfOutPut == 1)
+        {
+            answerText.text = "Avocado";
+        }
+        else if (numberOfOutPut == 2)
+        {
+            answerText.text = "Thanks";
+        }
+        else if (numberOfOutPut == 3)
+        {
+            answerText.text = "Mosquito";
+        }
+        yield return new WaitForSeconds(0.5f);
+        StopCoroutine("AnswerBubbleOutPut");
+        answerBubble.gameObject.SetActive(false);
+    }
 }

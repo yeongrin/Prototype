@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum ParkingCar
 {
@@ -15,6 +16,7 @@ public class Parking : MonoBehaviour
     Animator animator;
     Animator animator2;
     public GameObject button;
+    public TMP_Text buttonText;
 
     public float DoubleClickSpeed = 0.25f;
     public float ThirdClickSpeed = 0.5f;
@@ -67,6 +69,8 @@ public class Parking : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
                     animator.SetTrigger("Park");
+
+                buttonText.text = "A little more....";
  
             }
             else if (isOneClick & !isSecClick)
@@ -81,6 +85,8 @@ public class Parking : MonoBehaviour
 
                     animator.SetTrigger("Park2");
 
+                buttonText.text = "A little more...more..";
+
             }
             else
             {
@@ -90,6 +96,7 @@ public class Parking : MonoBehaviour
                 isSecClick = false;
 
                 animator.SetTrigger("Park3");
+                buttonText.text = "CRASH!!!!!";
                 Bonk();
             }
         }

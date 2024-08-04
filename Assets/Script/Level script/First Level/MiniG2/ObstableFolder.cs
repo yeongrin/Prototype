@@ -7,16 +7,6 @@ public class ObstableFolder : MonoBehaviour
     MiniGame2 _MG2;
     Animator ani;
 
-    AudioSource audioSource;
-    AudioClip sound;
-
-    private void Awake()
-    {
-        audioSource = gameObject.GetComponent<AudioSource>();
-        sound = AudioSourceOfLevel1.instance.arraudio[2];
-        audioSource.clip = sound;
-    }
-
     public void Start()
     {
         ani = GetComponent<Animator>();
@@ -44,7 +34,6 @@ public class ObstableFolder : MonoBehaviour
 
     IEnumerator SoundOutput()
     {
-        audioSource.Play();
         _MG2.timer2 = 3f;
         yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
