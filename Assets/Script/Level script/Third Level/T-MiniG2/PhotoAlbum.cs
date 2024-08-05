@@ -23,11 +23,15 @@ public class PhotoAlbum : MonoBehaviour
     public int score;
 
     PhotoLoader _Pl;
+    ChangeColor _cc;
+    PuzzleGame2 _pg2;
 
     void Start()
     {
 
         _Pl = FindObjectOfType<PhotoLoader>();
+        _cc = FindObjectOfType<ChangeColor>();
+        _pg2 = FindObjectOfType<PuzzleGame2>();
         move = false;
         score = 0;
 
@@ -82,6 +86,7 @@ public class PhotoAlbum : MonoBehaviour
 
     public void Score()
     {  
+        
         score += 1;
         Debug.Log("add");
        

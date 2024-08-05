@@ -270,6 +270,8 @@ GameObject:
   - component: {fileID: 92039680}
   - component: {fileID: 92039679}
   - component: {fileID: 92039682}
+  - component: {fileID: 92039684}
+  - component: {fileID: 92039683}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -367,6 +369,83 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &92039683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92039678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 92039681}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!114 &92039684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92039678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 17e6ad77197d08944bb947d45d0bd979, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &167935404
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &167935405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -419,6 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 167935407}
+  photoNumber: 1
 --- !u!114 &167935407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,7 +1161,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297174385}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
@@ -1528,7 +1608,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513625297}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 6b846dda23b808744967b4b085d71090, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6684f1ca04dab4d4192e1b65203a07f6, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1600,7 +1680,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528057821}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: e58250017dd557247bb3bfa87a36b244, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: cbbe3a576759b3f49b90c13216095c18, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1964,7 +2044,6 @@ GameObject:
   - component: {fileID: 729300617}
   - component: {fileID: 729300616}
   - component: {fileID: 729300618}
-  - component: {fileID: 729300621}
   - component: {fileID: 729300620}
   - component: {fileID: 729300619}
   m_Layer: 5
@@ -1973,7 +2052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &729300614
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1988,10 +2067,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 297174386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1760, y: -975.5}
+  m_SizeDelta: {x: 280, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &729300616
 MonoBehaviour:
@@ -2045,8 +2124,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapOffset: 30
   puzzle: {fileID: 1609473577}
-  piece_no: 0
+  piece_no: 4
   piecePos: {fileID: 729300613}
+  targetLocation: {fileID: 2069434402}
+  distanceToTargetLocation: 0
+  correctMargin: 0
+  startPos: {x: 0, y: 0}
 --- !u!114 &729300619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,35 +2170,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &729300621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729300613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 6
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1729608042}
-          m_TargetAssemblyTypeName: PhotoAlbum, Assembly-CSharp
-          m_MethodName: Score
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &735752872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2495,6 @@ GameObject:
   - component: {fileID: 780786381}
   - component: {fileID: 780786380}
   - component: {fileID: 780786382}
-  - component: {fileID: 780786385}
   - component: {fileID: 780786384}
   - component: {fileID: 780786383}
   m_Layer: 5
@@ -2450,7 +2503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &780786378
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2465,10 +2518,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 297174386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 584, y: -975.5}
+  m_SizeDelta: {x: 280, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &780786380
 MonoBehaviour:
@@ -2524,6 +2577,10 @@ MonoBehaviour:
   puzzle: {fileID: 1609473577}
   piece_no: 0
   piecePos: {fileID: 780786377}
+  targetLocation: {fileID: 963224782}
+  distanceToTargetLocation: 0
+  correctMargin: 50
+  startPos: {x: 0, y: 0}
 --- !u!114 &780786383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2564,35 +2621,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &780786385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780786377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 6
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1729608042}
-          m_TargetAssemblyTypeName: PhotoAlbum, Assembly-CSharp
-          m_MethodName: Score
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1001 &791241901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2753,8 +2781,9 @@ GameObject:
   - component: {fileID: 791580719}
   - component: {fileID: 791580718}
   - component: {fileID: 791580717}
-  m_Layer: 0
-  m_Name: Button
+  - component: {fileID: 791580720}
+  m_Layer: 5
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2873,6 +2902,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791580715}
   m_CullTransparentMesh: 1
+--- !u!95 &791580720
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791580715}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 592962be885debe48b140aa9ac63e0a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &792393783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,7 +2942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &792393784
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2925,6 +2975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 792393786}
+  photoNumber: 2
 --- !u!114 &792393786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2998,7 +3049,6 @@ GameObject:
   - component: {fileID: 823247415}
   - component: {fileID: 823247414}
   - component: {fileID: 823247416}
-  - component: {fileID: 823247419}
   - component: {fileID: 823247418}
   - component: {fileID: 823247417}
   m_Layer: 5
@@ -3007,7 +3057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &823247412
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3022,10 +3072,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 297174386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1466, y: -975.5}
+  m_SizeDelta: {x: 280, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &823247414
 MonoBehaviour:
@@ -3079,8 +3129,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapOffset: 30
   puzzle: {fileID: 1609473577}
-  piece_no: 0
+  piece_no: 3
   piecePos: {fileID: 823247411}
+  targetLocation: {fileID: 1325739148}
+  distanceToTargetLocation: 0
+  correctMargin: 0
+  startPos: {x: 0, y: 0}
 --- !u!114 &823247417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3121,35 +3175,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &823247419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823247411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 6
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1729608042}
-          m_TargetAssemblyTypeName: PhotoAlbum, Assembly-CSharp
-          m_MethodName: Score
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &846571029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3640,7 +3665,6 @@ GameObject:
   - component: {fileID: 900737826}
   - component: {fileID: 900737825}
   - component: {fileID: 900737827}
-  - component: {fileID: 900737830}
   - component: {fileID: 900737829}
   - component: {fileID: 900737828}
   m_Layer: 5
@@ -3649,7 +3673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &900737823
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3664,10 +3688,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 297174386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 878, y: -975.5}
+  m_SizeDelta: {x: 280, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900737825
 MonoBehaviour:
@@ -3721,8 +3745,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapOffset: 30
   puzzle: {fileID: 1609473577}
-  piece_no: 0
+  piece_no: 1
   piecePos: {fileID: 900737822}
+  targetLocation: {fileID: 167935404}
+  distanceToTargetLocation: 0
+  correctMargin: 50
+  startPos: {x: 0, y: 0}
 --- !u!114 &900737828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3763,35 +3791,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &900737830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900737822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 6
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1729608042}
-          m_TargetAssemblyTypeName: PhotoAlbum, Assembly-CSharp
-          m_MethodName: Score
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!224 &917474483 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3896916307227661775, guid: 8c6d6cf1d54846c42a3bab6aabebe052, type: 3}
@@ -3955,7 +3954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &963224783
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3988,6 +3987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 963224785}
+  photoNumber: 0
 --- !u!114 &963224785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5118,7 +5118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1325739149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5151,6 +5151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1325739151}
+  photoNumber: 3
 --- !u!114 &1325739151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5260,7 +5261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1378608926
 Transform:
   m_ObjectHideFlags: 0
@@ -6197,7 +6198,6 @@ GameObject:
   - component: {fileID: 1607903867}
   - component: {fileID: 1607903866}
   - component: {fileID: 1607903868}
-  - component: {fileID: 1607903871}
   - component: {fileID: 1607903870}
   - component: {fileID: 1607903869}
   m_Layer: 5
@@ -6206,7 +6206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1607903864
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6221,10 +6221,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 297174386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1172, y: -975.5}
+  m_SizeDelta: {x: 280, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1607903866
 MonoBehaviour:
@@ -6278,8 +6278,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapOffset: 30
   puzzle: {fileID: 1609473577}
-  piece_no: 0
+  piece_no: 2
   piecePos: {fileID: 1607903863}
+  targetLocation: {fileID: 792393783}
+  distanceToTargetLocation: 0
+  correctMargin: 0
+  startPos: {x: 0, y: 0}
 --- !u!114 &1607903869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6320,35 +6324,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1607903871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607903863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 6
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1729608042}
-          m_TargetAssemblyTypeName: PhotoAlbum, Assembly-CSharp
-          m_MethodName: Score
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1609473571
 GameObject:
   m_ObjectHideFlags: 0
@@ -6917,7 +6892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1684623362
 Transform:
   m_ObjectHideFlags: 0
@@ -8032,7 +8007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -302, y: -12}
+  m_AnchoredPosition: {x: -401, y: 65}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1988565493
@@ -8084,7 +8059,7 @@ GameObject:
   - component: {fileID: 2047149334}
   - component: {fileID: 2047149335}
   m_Layer: 0
-  m_Name: vintage-car-852239_1920
+  m_Name: Start Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8100,7 +8075,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.48, y: 1.48, z: 1.48}
+  m_LocalScale: {x: 0.93, y: 0.93, z: 0.93}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1684623362}
@@ -8146,7 +8121,7 @@ SpriteRenderer:
   m_SortingLayerID: -843209097
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a57409171516e58469463b3b5518dca4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c70e2580c6c1aa499ea1ec5e8f54102, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8406,7 +8381,7 @@ GameObject:
   - component: {fileID: 2065997555}
   - component: {fileID: 2065997554}
   - component: {fileID: 2065997557}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8465,7 +8440,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1081}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8482,7 +8457,7 @@ Canvas:
   m_GameObject: {fileID: 2065997552}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 92039680}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -8515,6 +8490,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1cb3d80a2d742174fab9e770e0e54119, type: 3}
   image: {fileID: 791580718}
   currentKey: 0
+  ani: {fileID: 791580720}
 --- !u!1 &2069434402
 GameObject:
   m_ObjectHideFlags: 0
@@ -8534,7 +8510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2069434403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8567,6 +8543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2069434405}
+  photoNumber: 4
 --- !u!114 &2069434405
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -70,7 +70,9 @@ public class Travel : MonoBehaviour
         _bp = FindObjectOfType<BonusPhoto>();
 
         hasClicked = false;
-        imageFrame.SetActive(false);
+        if(imageFrame != null)
+            imageFrame.SetActive(false);
+
     }
 
     void Update()

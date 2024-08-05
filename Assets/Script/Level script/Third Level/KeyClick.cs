@@ -2,35 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class KeyClick : MonoBehaviour
 {
     public Sprite[] keyStates;
     public Image image;
     public int currentKey;
+    bool fadeStart = false;
+
+    public Animator ani;
 
     // Start is called before the first frame update
     void Start()
     {
         image.sprite = keyStates[0];
-        currentKey = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(fadeStart == true)
+        {
+            PostProcessVolume ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
+            ppVolume.weight -= Time.deltaTime;
+        }
     }
 
     public void KeyPress()
     {
         if (currentKey == 0)
             StartCoroutine(KeyChange1());
-        else if (currentKey == 1)
-            StartCoroutine(KeyChange2());
-        else if (currentKey == 2)
-            StartCoroutine(KeyChange3());
-
     }
 
     
@@ -38,22 +40,27 @@ public class KeyClick : MonoBehaviour
     public IEnumerator KeyChange1()
     {
         image.sprite = keyStates[1];
-        currentKey++;
-        yield return null;
-    }
-
-    public IEnumerator KeyChange2()
-    {
-        image.sprite = keyStates[2];
-        currentKey++;
-        yield return null;
-    }
-
-    public IEnumerator KeyChange3()
-    {
-        image.sprite = keyStates[3];
-        yield return new WaitForSeconds(0.5f);
+        ani.SetTrigger("clicking");
+        fadeStart = true;
+        yield return new WaitForSeconds(1.5f);
         GameObject.Find("StartScene").SetActive(false); GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(true);
         yield return null;
     }
+
+
+
+    //public IEnumerator KeyChange2()
+    //{
+    //    image.sprite = keyStates[2];
+    //    currentKey++;
+    //    yield return null;
+    //}
+
+    //public IEnumerator KeyChange3()
+    //{
+    //    image.sprite = keyStates[3];
+    //    yield return new WaitForSeconds(0.5f);
+    //    GameObject.Find("StartScene").SetActive(false); GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(true);
+    //    yield return null;
+    //}
 }
