@@ -32,7 +32,6 @@ public class Flyswatter : MonoBehaviour
     private Camera mainCamera;
     private Ray ray;
     private RaycastHit2D hitFly;
-    public LayerMask enemyLayer;
 
     void Awake()
     {
@@ -77,7 +76,7 @@ public class Flyswatter : MonoBehaviour
 
             animator.SetTrigger("Swat");
 
-            ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            //ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             hitFly = Physics2D.Raycast(findFly, Vector2.zero, 0f);
             fadeTimer = 0.5f; //When clicking, a timer will start for the flyswatter to be fully visible before returning to opaque.
             
@@ -85,14 +84,17 @@ public class Flyswatter : MonoBehaviour
            {
                 //raycastEvent.Invoke(hitFly.transform);
                 //_fly();
-
                 //PressTheButton(hitFly.transform.gameObject,2);
+
                 //hitFly.transform.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
-                Fly._fly();
-                hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
                 //This function changes the sprite of the hit fly to sprite specified in this script in the editor
+
+                hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
                 hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
+                hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
                 //When hit, the target fly will change sprite and stop moving.
+                
+                hitFly.collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
                 
                increaseScore();
            }

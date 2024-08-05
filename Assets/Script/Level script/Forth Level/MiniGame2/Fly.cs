@@ -87,49 +87,16 @@ public class Fly : MonoBehaviour
             //While the fly is alive, it will move towards the specified spot
         }
 
-        /* switch (flyState)
-         {
-             case FlyType.Small:
-                 flyHealth = 1;
-                 flyDamage = 1;
-                 if (Input.GetMouseButtonDown(0))
-                 {
-                     Vector2 player = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                     RaycastHit2D attacked3 = Physics2D.Raycast(player, Vector2.zero, 0f);
-
-                     if (attacked3.transform.gameObject.tag == "elements3" && attacked3.collider != null)
-                     {
-                         isDamage = true;
-                         if (isDamage == true)
-                         {
-                             flyHealth -= swatterDamage;
-
-                         }
-
-
-                         if (flyHealth <= 0)
-                         {
-                             ani.SetTrigger("Death");
-                            // Invoke("FlyDie", 3f);
-                         }
-                     }
-
-                 }
-
-                 break;
-         }*/
-
     }
 
-    void FlyDie()
+    public void FlyDie()
     {
-       ani.SetTrigger("Death");
        
     }
 
-    public void Destroy()
+    public void OnBecameInvisible()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     private void OnEnable()

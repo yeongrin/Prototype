@@ -72,8 +72,8 @@ public class ElectricSwatter : MonoBehaviour
         else
             DoFade = false;
 
-        Vector2 findFly = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-        transform.position = new Vector2(findFly.x, findFly.y);
+        Vector2 findSwatter = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        transform.position = new Vector2(findSwatter.x, findSwatter.y);
 
         findflies = GameObject.FindGameObjectsWithTag("Fly");//Trace to player
 
@@ -85,16 +85,15 @@ public class ElectricSwatter : MonoBehaviour
             animator.SetTrigger("Swat");
 
             ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            hitFly = Physics2D.Raycast(findFly, Vector2.zero, 0f);
+            hitFly = Physics2D.Raycast(findSwatter, Vector2.zero, 0f);
             fadeTimer = 0.5f; //When clicking, a timer will start for the flyswatter to be fully visible before returning to opaque.
 
             if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
             {
-                Fly._fly();
+
                 hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
-                //This function changes the sprite of the hit fly to sprite specified in this script in the editor
                 hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
-                //When hit, the target fly will change sprite and stop moving.
+                hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
 
                 //flies = new Transform[30];
 
@@ -108,7 +107,7 @@ public class ElectricSwatter : MonoBehaviour
                 //    Destroy(obj);
                 //}
 
-                Destroy(hitFly.transform.gameObject);
+               // Destroy(hitFly.transform.gameObject);
             }
         }
     }
