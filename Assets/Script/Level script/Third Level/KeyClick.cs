@@ -10,12 +10,17 @@ public class KeyClick : MonoBehaviour
     public Image image;
     public int currentKey;
     bool fadeStart = false;
+    public GameObject startScene;
 
     public Animator ani;
 
     // Start is called before the first frame update
     void Start()
     {
+        PostProcessVolume ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
+        if (startScene.activeSelf == true)
+            ppVolume.weight = 1f;
+
         image.sprite = keyStates[0];
     }
 

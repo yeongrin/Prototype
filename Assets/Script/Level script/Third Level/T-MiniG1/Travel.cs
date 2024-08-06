@@ -166,10 +166,13 @@ public class Travel : MonoBehaviour
                             if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
                             {
                                 hasClicked = true;
-                                ani.SetTrigger("Shot");
+                                //ani.SetTrigger("Shot");
                                 ChangeImage();
+                                _gm3.startAnimationFlash();
                                 Debug.Log("Shot");
-                                StartCoroutine(_gm3.CameraFlash());
+                                //ani.SetTrigger("FlashCamera");
+                                //_gm3.flash = true;
+                                //StartCoroutine(_gm3.CameraFlash());
                                 Invoke("Destroy", 2f);
                                 _pl.TakePhoto();
                             }
@@ -192,7 +195,9 @@ public class Travel : MonoBehaviour
                             hasClicked = true;
                             Debug.Log("Shot");
                             Destroy(this.gameObject, 0.5f);
-                            StartCoroutine(_gm3.CameraFlash());
+                            _gm3.startAnimationFlash();
+                            //_gm3.flash = true;
+                            //StartCoroutine(_gm3.CameraFlash());
                             //_bp.hasBonusPhoto = true;
                             _ssp.hasClicked = true;
                         }

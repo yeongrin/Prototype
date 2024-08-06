@@ -11,17 +11,56 @@ public class GameController3 : MonoBehaviour
     public GameObject flashObject;
     public Sprite[] newImage;
     public int imageInt;
-    public Image test;
+    Image flashImage;
+    public bool flash;
+    public Animator ani;
 
     private void Start()
     {
+        flash = false;
         imageInt = 0;
+        flashImage = flashObject.GetComponent<Image>();
+    }
+
+    private void Update()
+    {
+        if (flash == true)
+        {
+            StartCoroutine(CameraFlash());
+        }
+        else
+            StopCoroutine(CameraFlash());
     }
     public IEnumerator CameraFlash()
     {
-        yield return new WaitForSeconds(0.1f);
+        Color color = flashImage.color;
+        
         flashObject.SetActive(true);
         yield return new WaitForSeconds(0.2f);
-        flashObject.SetActive(false);
+        
+        for (int i = 150; i>=0; i--)
+        {
+            Debug.Log("camera flash");
+            flashImage.color = color;
+            color.a -= Time.deltaTime * 1f;
+            
+
+            if(color.a <= 0)
+            {
+                
+                flash = false;
+                flashObject.SetActive(false);
+
+                StopCoroutine(CameraFlash());
+            }
+            color.a = 255;
+
+        }
+
+    }
+    public void startAnimationFlash()
+    {
+        ani.SetTrigger("FlashCamera");
+        Debug.Log("TakePhoto");
     }
 }
