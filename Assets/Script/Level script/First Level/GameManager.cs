@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     public static bool over3 = false;
     public static bool over4 = false;
     public static bool over5 = false;
+    public static int overCount = 0;
 
     [Header("Blur")]
     public Image image;

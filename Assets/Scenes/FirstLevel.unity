@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 58140558}
   - component: {fileID: 58140559}
   - component: {fileID: 58140557}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: VideoScene3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,6 @@ GameObject:
   m_Component:
   - component: {fileID: 99718667}
   - component: {fileID: 99718668}
-  - component: {fileID: 99718669}
   - component: {fileID: 99718670}
   m_Layer: 11
   m_Name: ThirdMini
@@ -634,23 +633,6 @@ MonoBehaviour:
   checkBool: 0
   enemies: 0
   _sleep: {fileID: 3614000244966740758}
---- !u!114 &99718669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99718666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!61 &99718670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -867,7 +849,6 @@ GameObject:
   m_Component:
   - component: {fileID: 108916185}
   - component: {fileID: 108916188}
-  - component: {fileID: 108916189}
   - component: {fileID: 108916190}
   m_Layer: 10
   m_Name: SecondMini
@@ -917,23 +898,6 @@ MonoBehaviour:
   dialogueImage: {fileID: 300081107}
   checkBool: 0
   enemies: 0
---- !u!114 &108916189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108916184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!61 &108916190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1284,7 +1248,6 @@ GameObject:
   m_Component:
   - component: {fileID: 281940227}
   - component: {fileID: 281940228}
-  - component: {fileID: 281940229}
   - component: {fileID: 281940230}
   m_Layer: 12
   m_Name: ForthMini
@@ -1335,23 +1298,6 @@ MonoBehaviour:
   dialogueImage: {fileID: 1698026362}
   checkBool: 0
   enemies: 0
---- !u!114 &281940229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281940226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!61 &281940230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1708,7 +1654,7 @@ PrefabInstance:
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 40f57a31ebb9124469161211f3e7d5a7, type: 3}
+      objectReference: {fileID: 32900000, guid: d7cb12102f89f0d4dadd6bc589775d57, type: 3}
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -1723,23 +1669,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_ControlledAudioTrackCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_DirectAudioMutes.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_DirectAudioVolumes.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_EnabledAudioTracks.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_TargetAudioSources.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5465958252662938980, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_LocalScale.x
@@ -1816,6 +1762,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7201519779346043948, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1117793276}
+    - targetCorrespondingSourceObject: {fileID: 7201519779346043948, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1117793277}
   m_SourcePrefab: {fileID: 100100000, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
 --- !u!1 &300081105
 GameObject:
@@ -1905,8 +1854,8 @@ GameObject:
   - component: {fileID: 329282303}
   - component: {fileID: 329282302}
   - component: {fileID: 329282305}
-  - component: {fileID: 329282307}
   - component: {fileID: 329282308}
+  - component: {fileID: 329282307}
   - component: {fileID: 329282309}
   m_Layer: 5
   m_Name: Main Camera
@@ -2004,7 +1953,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 329282304}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8163
   stopNaNPropagation: 0
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -2075,9 +2024,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: 8647ce2c2b84dde4885a78cc99daac5c, type: 2}
   isGlobal: 1
-  blendDistance: 0
-  weight: 0
-  priority: 0
+  blendDistance: 4
+  weight: 0.33
+  priority: 5
 --- !u!114 &329282309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,7 +2128,6 @@ GameObject:
   m_Component:
   - component: {fileID: 344020959}
   - component: {fileID: 344020960}
-  - component: {fileID: 344020961}
   - component: {fileID: 344020962}
   m_Layer: 9
   m_Name: FirstMini
@@ -2226,27 +2174,6 @@ MonoBehaviour:
   heart: {fileID: 1679422527}
   dialoguePanel: {fileID: 9976426}
   dialogueImage: {fileID: 9976428}
---- !u!114 &344020961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344020958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!61 &344020962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4850,7 +4777,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723077096}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 103ed2c18a9bb4145a14467fe77b3c99, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: ccb42394b4578b046a7c422ce356df83, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -6203,7 +6130,7 @@ PrefabInstance:
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: f9494392398d8a2489be67c95361bdaf, type: 3}
+      objectReference: {fileID: 32900000, guid: 0624c1c92e6ea19479239709fb8d3b7c, type: 3}
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_SkipOnDrop
       value: 1
@@ -6230,23 +6157,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_ControlledAudioTrackCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_DirectAudioMutes.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_DirectAudioVolumes.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_EnabledAudioTracks.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_TargetAudioSources.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_DirectAudioVolumes.Array.data[0]
@@ -8659,6 +8586,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!328 &1117793277
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172312631}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 0}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 1
+  m_TargetAudioSources:
+  - {fileID: 1117793276}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &1118158864
 GameObject:
   m_ObjectHideFlags: 0
@@ -10040,7 +10003,7 @@ GameObject:
   - component: {fileID: 1319181323}
   - component: {fileID: 1319181322}
   - component: {fileID: 1319181321}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ManYellingPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12032,8 +11995,6 @@ GameObject:
   - component: {fileID: 1558256067}
   - component: {fileID: 1558256069}
   - component: {fileID: 1558256070}
-  - component: {fileID: 1558256071}
-  - component: {fileID: 1558256072}
   m_Layer: 3
   m_Name: VideoScene2
   m_TagString: Untagged
@@ -12095,72 +12056,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558256066}
   m_CullTransparentMesh: 1
---- !u!95 &1558256071
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558256066}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54624a3d41a53da41b1095a7f602a047, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1558256072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558256066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
-          m_MethodName: HandInvisible
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: PayHand, Assembly-CSharp
-          m_MethodName: HandVisible
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1634887863
 GameObject:
   m_ObjectHideFlags: 0
@@ -13735,7 +13630,6 @@ GameObject:
   - component: {fileID: 1849086673}
   - component: {fileID: 1849086672}
   - component: {fileID: 1849086676}
-  - component: {fileID: 1849086677}
   m_Layer: 0
   m_Name: Cursor
   m_TagString: Untagged
@@ -13946,35 +13840,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1849086677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849086671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1849360041
 GameObject:
   m_ObjectHideFlags: 0

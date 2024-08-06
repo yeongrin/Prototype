@@ -18,18 +18,11 @@ public class VideoManager : MonoBehaviour
     {
        
         vidOb.loopPointReached += CheckOver;
-        //vid.Play();
 
-        //Play video when fade out ends.
-        //Invoke("OnInvoke", 5f);
         StartCoroutine("Delay");
 
     }
 
-   /*void OnInvoke()
-    {
-        vid.Play();
-    }*/
 
     IEnumerator Delay()
     {

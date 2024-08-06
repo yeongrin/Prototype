@@ -193,6 +193,7 @@ public class MiniGame4 : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         GameManager.over4 = true;
+        GameManager.overCount += 1;
         Destroy(GameObject.FindGameObjectWithTag("Enemy4"));
     }
 

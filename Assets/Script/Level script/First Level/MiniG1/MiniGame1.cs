@@ -159,5 +159,6 @@ public class MiniGame1 : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         GameManager.over1 = true;
+        GameManager.overCount += 1;
     }
 }
