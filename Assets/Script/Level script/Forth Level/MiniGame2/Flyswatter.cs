@@ -82,10 +82,6 @@ public class Flyswatter : MonoBehaviour
             
            if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
            {
-                //raycastEvent.Invoke(hitFly.transform);
-                //_fly();
-                //PressTheButton(hitFly.transform.gameObject,2);
-
                 //hitFly.transform.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
                 //This function changes the sprite of the hit fly to sprite specified in this script in the editor
 
@@ -93,8 +89,6 @@ public class Flyswatter : MonoBehaviour
                 hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
                 hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
                 //When hit, the target fly will change sprite and stop moving.
-                
-                hitFly.collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
                 
                increaseScore();
            }

@@ -40,6 +40,7 @@ public class Fly : MonoBehaviour
     public ElectricSwatter electricSwatter;
     public GameObject fly;
     public BoxCollider2D flyCollider;
+    Rigidbody2D rigid;
 
     public Animator ani;
 
@@ -54,6 +55,7 @@ public class Fly : MonoBehaviour
 
         flyCollider = gameObject.GetComponent<BoxCollider2D>();
         ani = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
 
         targetObjects = GameObject.FindGameObjectsWithTag("Target");//Trace to player
 
@@ -86,17 +88,26 @@ public class Fly : MonoBehaviour
 
             //While the fly is alive, it will move towards the specified spot
         }
+        if(dying == true)
+        {
 
+        }
+
+    }
+
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
     }
 
     public void FlyDie()
     {
-       
+        rigid.gravityScale = 1.5f;
     }
 
     public void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 
     private void OnEnable()
