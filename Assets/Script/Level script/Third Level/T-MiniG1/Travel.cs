@@ -198,7 +198,7 @@ public class Travel : MonoBehaviour
                             _gm3.startAnimationFlash();
                             //_gm3.flash = true;
                             //StartCoroutine(_gm3.CameraFlash());
-                            //_bp.hasBonusPhoto = true;
+                            _bp.hasBonusPhoto = true;
                             _ssp.hasClicked = true;
                         }
 
