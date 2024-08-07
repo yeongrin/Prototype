@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public static bool over3 = false;
     public static bool over4 = false;
     public static bool over5 = false;
-    public GameObject[] endingPanel;
+    public static int overCount = 0;
 
     [Header("Blur")]
     public Image image;
@@ -60,10 +60,10 @@ public class GameManager : MonoBehaviour
         video.loopPointReached += CheckOver;
         
         goTime = 0f;
-        overTime = 60f;
+        overTime = 50f;
         gameWaiting = 5;
 
-        waitingTime1 = 8;
+        waitingTime1 = 10;
         waitingTime2 = waitingTime1 + gameWaiting;
         waitingTime3 = waitingTime2 + gameWaiting;
         waitingTime4 = waitingTime3 + gameWaiting;

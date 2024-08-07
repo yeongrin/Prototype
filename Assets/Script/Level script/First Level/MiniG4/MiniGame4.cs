@@ -10,9 +10,9 @@ public class MiniGame4 : MonoBehaviour
 {
     //Check the timer variable
     [Header("Timer")]
-    //public TMP_Text timerText;
-    public float timer4;
-    float TimeOver;
+    public TMP_Text timerText;
+    public float timer4; //If bill appears and you don't pay within 3 seconds, this timer goes to zero.
+    public static bool TimeOver; 
     private bool isTimer = false;
     public bool isChange = false;
 
@@ -44,9 +44,8 @@ public class MiniGame4 : MonoBehaviour
     {
         lives4 = 3;
         timer4 = 3f;
-        TimeOver = 0;
 
-        //SetText();
+        SetText();
         Lives();
 
         //UM = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
@@ -58,7 +57,7 @@ public class MiniGame4 : MonoBehaviour
 
         if (lives4 > 0)
         {
-            //SetText();
+            SetText();
             CountDownEnemies();
       
         }
@@ -139,29 +138,27 @@ public class MiniGame4 : MonoBehaviour
 
     IEnumerator Countdown()
     {
-
-        if (timer4 <= TimeOver)
+        //this is countdown
+        if (timer4 <= 0)
         {
             timer4 = 3f;
             lives4 -= 1;
             Lives();
 
         }
-        else if (timer4 > TimeOver)
+        else if (timer4 > 0)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //    RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
-                if (hit.transform.gameObject.tag == "Object2" && hit.collider != null)
-                {
-                    GameObject click_button = hit.transform.gameObject;
-                    timer4 = 3f;
-
-
-                }
-            }
+            //    if (hit.transform.gameObject.tag == "Object2" && hit.collider != null)
+            //    {
+            //        GameObject click_button = hit.transform.gameObject;
+            //        //Turning the timer back to 3 is in the coin script.
+            //    }
+            //}
         }
         yield break;
     }
@@ -187,15 +184,16 @@ public class MiniGame4 : MonoBehaviour
        
     }
 
-   /* public void SetText()
+    public void SetText()
     {
         timerText.text = ((int)Math.Ceiling(timer4)).ToString();
-    }*/
+    }
 
     public void GameEnding()
     {
         gameOverPanel.SetActive(true);
         GameManager.over4 = true;
+        GameManager.overCount += 1;
         Destroy(GameObject.FindGameObjectWithTag("Enemy4"));
     }
 

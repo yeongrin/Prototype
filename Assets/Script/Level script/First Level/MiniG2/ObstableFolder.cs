@@ -6,7 +6,7 @@ public class ObstableFolder : MonoBehaviour
 {
     MiniGame2 _MG2;
     Animator ani;
-    
+
     public void Start()
     {
         ani = GetComponent<Animator>();
@@ -28,7 +28,14 @@ public class ObstableFolder : MonoBehaviour
 
     public void DestroyObj()
     {
-        Destroy(this.gameObject);
+        StartCoroutine("SoundOutput");
 
+    }
+
+    IEnumerator SoundOutput()
+    {
+        _MG2.timer2 = 3f;
+        yield return new WaitForSeconds(1f);
+        Destroy(this.gameObject);
     }
 }

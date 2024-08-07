@@ -4,10 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Obstaclecoin : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Obstaclecoin : MonoBehaviour
 {
     MiniGame4 _MG4;
     Animator ani;
+
+    AudioSource audioSource;
+    AudioClip sound;
+
+    public void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        sound = AudioSourceOfLevel1.instance.arraudio[1];
+        audioSource.clip = sound;
+    }
 
     public void Start()
     {
@@ -19,39 +29,35 @@ public class Obstaclecoin : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         if (_MG4.isChange == true)
         {
-            ChangeFileColor();
+            StartCoroutine("ChangeFileColor");
         }
     }
 
-    void ChangeFileColor()
+    IEnumerator ChangeFileColor()
     {
+
         ani.SetBool("timer", true);
+        yield return null;
+   
     }
 
     public void DestroyObj()
     {
-       
+        Destroy(this.gameObject);
+    }
+
+    public void DestroyObj2()
+    {
+        StartCoroutine("SoundOutPut");
+    }
+
+    IEnumerator SoundOutPut()
+    {
+        StopCoroutine("ChangeFileColor");
+        audioSource.Play();
+        _MG4.timer4 = 3f;
+        yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
 
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-
-    }
-
-    public void PointerClick(PointerEventData eventData)
-    {
-
-    }
-
-    public void test()
-    {
-        Debug.Log("clocking");
     }
 }

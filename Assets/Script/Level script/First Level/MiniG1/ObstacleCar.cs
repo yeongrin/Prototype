@@ -105,9 +105,9 @@ public class ObstacleCar : MonoBehaviour
 
     public void DestroyObj()
     {
-        //transform.position = Vector2.MoveTowards(this.transform.position, firstLocation.position, speed * Time.deltaTime);
         _MG1.timer1 = 3f;
         _B.isTimer = false;
+        Destroy(this.gameObject);
 
         //https://onecoke.tistory.com/entry/%EC%9C%A0%EB%8B%88%ED%8B%B02D-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%9B%90%EB%9E%98-%EC%9E%88%EB%8D%98-%EC%9C%84%EC%B9%98%EB%A1%9C-%EB%8F%8C%EC%95%84%EA%B0%80%EA%B8%B0
 

@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 6895466646293858750}
   - component: {fileID: 1025903203764411910}
   - component: {fileID: -1366572882368280198}
-  - component: {fileID: 3563449963711891345}
   - component: {fileID: -7072852944161569947}
-  - component: {fileID: -2478467713457750491}
+  - component: {fileID: 3563449963711891345}
   - component: {fileID: 7778035980994008632}
   m_Layer: 0
   m_Name: fly 1
@@ -32,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.45000002, y: 0.45000002, z: 0.45000002}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.45000002, y: 0.45, z: 0.45}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -106,12 +105,35 @@ MonoBehaviour:
   flyDamage: 0
   isDamage: 0
   speed: 0
+  mainTarget: []
+  targetObjects: []
+  currentTarget: {fileID: 0}
   dying: 0
-  swatterDamage: 0
-  swatter: {fileID: 0}
+  electricSwatter: {fileID: 0}
   fly: {fileID: 2681046508965638740}
   flyCollider: {fileID: 3563449963711891345}
   ani: {fileID: -7072852944161569947}
+--- !u!95 &-7072852944161569947
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681046508965638740}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbadce0ecd77eda4db1d9d9aebbcc858, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &3563449963711891345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,43 +179,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.374735, y: 5.3364067}
   m_EdgeRadius: 0
---- !u!95 &-7072852944161569947
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2681046508965638740}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-2478467713457750491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2681046508965638740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4961a62b5bfcbc747be1ad34a3fe1d04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  speed: 1
 --- !u!50 &7778035980994008632
 Rigidbody2D:
   serializedVersion: 4

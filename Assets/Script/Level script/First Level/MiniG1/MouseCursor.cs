@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using static UnityEditor.PlayerSettings;
 
 public class MouseCursor : MonoBehaviour
 {
@@ -9,21 +11,29 @@ public class MouseCursor : MonoBehaviour
     public RaycastHit2D hit;
     private int layerMask;
 
+    public Sprite[] newSprite;
     public Animator ani;
+    
     Vector2 findHand;
-
     Transform cursor;
     SpriteRenderer spriteRenderer;
-    public Sprite[] newSprite;
+
+    //AudioSource audioSource;
+    //AudioClip sound;
 
     public void Awake()
     {
         mainCamera = Camera.main;
-        ani = GetComponent<Animator>();
+
+        //audioSource = gameObject.GetComponent<AudioSource>();
+        //sound = AudioSourceOfLevel1.instance.arraudio[1];
+        //audioSource.clip = sound;
+
     }
 
     void Start()
     {
+        ani = GetComponent<Animator>();
         cursor = this.gameObject.GetComponent<Transform>();
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
     }
@@ -33,6 +43,57 @@ public class MouseCursor : MonoBehaviour
         findHand = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         transform.position = new Vector2(findHand.x, findHand.y);
 
+        Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+
+        if (transform.position.x < 0 && transform.position.y >0)
+        {
+            //spriteRenderer.sprite = newSprite[1];
+            //cursor.transform.localScale = new Vector3(1, 1, 1);
+            ani.SetTrigger("Mouse1");
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("firstClick");
+                ani.SetTrigger("Press1");
+            }
+        }
+        if (transform.position.x >= 0 && transform.position.y > 0)
+        {
+            //spriteRenderer.sprite = newSprite[2];
+            //cursor.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+            ani.SetTrigger("Mouse2");
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("secondClick");
+                ani.SetTrigger("Press2");
+            }
+        }
+        if (transform.position.x >= 0 && transform.position.y <= 0)
+        {
+            //spriteRenderer.sprite = newSprite[3];
+            //cursor.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            ani.SetTrigger("Mouse3");
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("thirdClick");
+                ani.SetTrigger("Press3");
+            }
+        }
+        if (transform.position.x < 0 && transform.position.y < 0)
+        {
+            //spriteRenderer.sprite = newSprite[4];
+            //cursor.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            ani.SetTrigger("Mouse4");
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("forthClick");
+                ani.SetTrigger("Press4");
+            }
+        }
     }
 
     public void HandVisibleOnFirstMini()
@@ -41,21 +102,16 @@ public class MouseCursor : MonoBehaviour
         hit = Physics2D.Raycast(findHand, Vector2.zero, 1f, LayerMask.GetMask("Scene1"));
         if (hit.collider != null)
         {
-
-            Debug.Log("firstlevel" + hit.collider.gameObject.name);
-
-            ani.SetBool("Mouse1", true);
-            ani.SetBool("Mouse2", false);
-            ani.SetBool("Mouse3", false);
-            ani.SetBool("Mouse4", false);
+            //ani.SetBool("Mouse1", true);
+            //ani.SetBool("Mouse2", false);
+            //ani.SetBool("Mouse3", false);
+            //ani.SetBool("Mouse4", false);
 
             if (Input.GetMouseButtonDown(0))
             {
                 ani.SetTrigger("Press1");
             }
 
-            // StartCoroutine("Coroutine1"); 
-            //cursor.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         }
 
     }
@@ -66,13 +122,6 @@ public class MouseCursor : MonoBehaviour
         hit = Physics2D.Raycast(findHand, Vector2.zero, 1f, LayerMask.GetMask("Scene2"));
         if (hit.collider != null)
         {
-
-            Debug.Log("secondlevel" + hit.collider.gameObject.name);
-
-            ani.SetBool("Mouse2", true);
-            ani.SetBool("Mouse1", false);
-            ani.SetBool("Mouse3", false);
-            ani.SetBool("Mouse4", false);
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -93,13 +142,6 @@ public class MouseCursor : MonoBehaviour
         if (hit.collider != null)
         {
 
-            Debug.Log("ThirdLevel" + hit.collider.gameObject.name);
-
-            ani.SetBool("Mouse3", true);
-            ani.SetBool("Mouse1", false);
-            ani.SetBool("Mouse2", false);
-            ani.SetBool("Mouse4", false);
-
             if (Input.GetMouseButtonDown(0))
             {
                 ani.SetTrigger("Press3");
@@ -119,13 +161,6 @@ public class MouseCursor : MonoBehaviour
         if (hit.collider != null)
         {
 
-            Debug.Log("SecondLevel" + hit.collider.gameObject.name);
-
-            ani.SetBool("Mouse4", true);
-            ani.SetBool("Mouse1", false);
-            ani.SetBool("Mouse2", false);
-            ani.SetBool("Mouse4", false);
-
             if (Input.GetMouseButtonDown(0))
             {
                 ani.SetTrigger("Press4");
@@ -139,29 +174,5 @@ public class MouseCursor : MonoBehaviour
 
 
     }
-
-    //IEnumerator Coroutine1()
-    //{
-
-    //    yield return null;
-    //}
-
-    //IEnumerator Coroutine2()
-    //{
-       
-    //    yield return null;
-    //}
-
-    //IEnumerator Coroutine3()
-    //{
-
-    //    yield return null;
-    //}
-
-    //IEnumerator Coroutine4()
-    //{
-        
-    //    yield return null;
-    //}
 
 }

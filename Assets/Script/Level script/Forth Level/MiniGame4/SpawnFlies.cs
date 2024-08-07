@@ -16,22 +16,19 @@ public class SpawnFlies : MonoBehaviour
     }
 
     public Wave[] waves;
-    private int nextWave = 1;
+    private int nextWave = 0;
 
     public Transform[] spawnPoints;
 
-    public float timeBetweenWaves;
+    public float timeBetweenWaves = 5f;
     public float waveCountdown;
 
     private float searchCountdown = 1f;
-    private IEnumerator startCoroutine;
 
     private SpawnState state = SpawnState.COUNTING;
 
     void Start()
     {
-        startCoroutine = SpawnWave(waves[nextWave]);
-
         if (spawnPoints.Length == 0)
         {
             Debug.LogError("No spawn points referenced.");
@@ -59,7 +56,7 @@ public class SpawnFlies : MonoBehaviour
         {
             if (state != SpawnState.SPAWNING)
             {
-                StartCoroutine(startCoroutine);
+                StartCoroutine(SpawnWave(waves[nextWave]));
             }
         }
 
@@ -81,13 +78,11 @@ public class SpawnFlies : MonoBehaviour
         {
             nextWave = 0;
             Debug.Log("ALL WAVES COMEPLETED!! Looping...");
-            StopCoroutine(startCoroutine);
         }
         else
         {
             nextWave++;
         }
-
     }
 
     bool EnemyIsAlive()
@@ -98,11 +93,13 @@ public class SpawnFlies : MonoBehaviour
         {
             searchCountdown = 1f;
             if (GameObject.FindGameObjectWithTag("Fly") == null)
+
             {
 
                 return false;
 
             }
+
         }
         return true;
     }
@@ -116,12 +113,12 @@ public class SpawnFlies : MonoBehaviour
         for (int i = 0; i < _waves.count; i++)
         {
             SpawnEnemy(_waves.enemy);
-            yield return new WaitForSeconds(_waves.rate);
+            yield return new WaitForSeconds(1f / _waves.rate);
         }
 
         state = SpawnState.WAITING;
 
-
+        yield break;
     }
 
     void SpawnEnemy(Transform _enemy)

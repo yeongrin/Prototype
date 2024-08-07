@@ -12,27 +12,23 @@ public class VideoManager : MonoBehaviour
     public GameObject secondVid;
     public VideoPlayer vidOb2;
 
+    public AudioSource audioSource;
+
     void Start() 
     {
+       
         vidOb.loopPointReached += CheckOver;
-        //vid.Play();
 
-        //Play video when fade out ends.
-        //Invoke("OnInvoke", 5f);
         StartCoroutine("Delay");
-
 
     }
 
-   /*void OnInvoke()
-    {
-        vid.Play();
-    }*/
 
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(3f);
         vidOb.Play();
+        audioSource.Play();
     }
 
     private void Update()

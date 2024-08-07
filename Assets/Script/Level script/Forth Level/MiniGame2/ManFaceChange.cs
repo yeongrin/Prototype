@@ -10,24 +10,25 @@ public class ManFaceChange : MonoBehaviour
     //ublic float fliesStayOnFace;
     // public float maxTime;
 
-    Animator ani;
+    public Animator ani;
 
     void Start()
     {
         //this.gameObject.GetComponent<SpriteRenderer>().sprite = originalSprite;
-        ani = GetComponent<Animator>();
+        //ani = GetComponent<Animator>();
     }
 
     void Update()
     {
-            if(Input.GetMouseButtonDown(0))
-            {
-            StartCoroutine("StayOnFace");
-                //this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite2;
-            }
-       
     }
 
+    public void HitLin()
+    {
+            ani.SetTrigger("Swat2");
+            //StartCoroutine("StayOnFace");
+            //this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite2;
+
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -35,18 +36,13 @@ public class ManFaceChange : MonoBehaviour
         {
             ani.SetTrigger("Swat");
             //this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
-           
-           // StartCoroutine("StayOnFace");
+
+            // StartCoroutine("StayOnFace");
 
         }
     }
 
-    IEnumerable StayOnFace()
-    {
-        ani.SetTrigger("Swat2");
-        yield return new WaitForSeconds(1f);
-    }
-
+   
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Fly"))
