@@ -11,6 +11,8 @@ public class ChangeColor : MonoBehaviour
     [SerializeField]
     private Image image;
     private Color color;
+    PuzzleGame2 _pg2;
+    public int photoNumber;
 
     private void Awake()
     {
@@ -20,7 +22,8 @@ public class ChangeColor : MonoBehaviour
    
     void Start()
     {
-        color.a = 1;   
+        color.a = 1;
+        _pg2 = FindObjectOfType<PuzzleGame2>();
     }
 
     

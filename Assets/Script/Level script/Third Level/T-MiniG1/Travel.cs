@@ -5,8 +5,6 @@ using System.Net;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using TMPro.EditorUtilities;
 
 public enum Type
 {
@@ -27,7 +25,6 @@ public class Travel : MonoBehaviour
     public Type type;
     SpawnPhoto _sp;
     GameController3 _gm3;
-    ScreenshotManager _sm;
     PhotoLoader _pl;
     SpawnShinyPhoto _ssp;
     BonusPhoto _bp;
@@ -48,6 +45,9 @@ public class Travel : MonoBehaviour
     public float speed;
     public float shinySpeed;
 
+    public Image thisImage;
+    public GameObject imageFrame;
+
     
 
     void Start()
@@ -65,12 +65,14 @@ public class Travel : MonoBehaviour
         cam = GetComponent<Camera>();
         _sp = GameObject.FindObjectOfType<SpawnPhoto>();
         _gm3 = FindObjectOfType<GameController3>();
-        _sm = FindObjectOfType<ScreenshotManager>();
         _pl = FindObjectOfType<PhotoLoader>();
         _ssp = FindObjectOfType<SpawnShinyPhoto>();
         _bp = FindObjectOfType<BonusPhoto>();
 
         hasClicked = false;
+        if(imageFrame != null)
+            imageFrame.SetActive(false);
+
     }
 
     void Update()
@@ -164,12 +166,15 @@ public class Travel : MonoBehaviour
                             if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
                             {
                                 hasClicked = true;
-                                ani.SetTrigger("Shot");
+                                //ani.SetTrigger("Shot");
+                                ChangeImage();
+                                _gm3.startAnimationFlash();
                                 Debug.Log("Shot");
-                                Invoke("Destroy", 0.4f);
+                                //ani.SetTrigger("FlashCamera");
+                                //_gm3.flash = true;
+                                //StartCoroutine(_gm3.CameraFlash());
+                                Invoke("Destroy", 2f);
                                 _pl.TakePhoto();
-                                StartCoroutine(_gm3.CameraFlash());
-
                             }
 
                     }
@@ -190,8 +195,10 @@ public class Travel : MonoBehaviour
                             hasClicked = true;
                             Debug.Log("Shot");
                             Destroy(this.gameObject, 0.5f);
-                            StartCoroutine(_gm3.CameraFlash());
-                            //_bp.hasBonusPhoto = true;
+                            _gm3.startAnimationFlash();
+                            //_gm3.flash = true;
+                            //StartCoroutine(_gm3.CameraFlash());
+                            _bp.hasBonusPhoto = true;
                             _ssp.hasClicked = true;
                         }
 
@@ -200,6 +207,13 @@ public class Travel : MonoBehaviour
                 break;
 
         }
+    }
+
+    public void ChangeImage()
+    {
+        thisImage.sprite = _gm3.newImage[_gm3.imageInt];
+        imageFrame.SetActive(true);
+        _gm3.imageInt++;
     }
 
     void TimerReset()

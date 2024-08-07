@@ -21,6 +21,7 @@ public class SpawnPhoto : MonoBehaviour
     public Transform[] spawnPoints;
     public Transform target;
     public float speed;
+    public GameObject canvasParent;
 
     public float timeBetweenWaves = 5f;
     public float waveCountdown;
@@ -131,7 +132,8 @@ public class SpawnPhoto : MonoBehaviour
         //Debug.Log("Spawning enemy!:" + _enemy.name);
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         
-        Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation);
+        
+        Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation, canvasParent.transform);
 
         if (_sp.transform.position.x < 0)
         {
