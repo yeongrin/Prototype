@@ -44,6 +44,8 @@ public class Fly : MonoBehaviour
 
     public Animator ani;
 
+    public float time; // Fly is destroyed automatically 
+
     void Awake()
     {
         _fly = () => { FlyDie(); };
@@ -80,6 +82,7 @@ public class Fly : MonoBehaviour
 
     void Update()
     {
+        time += Time.deltaTime;
        
         if (dying == false)
         {
@@ -91,6 +94,11 @@ public class Fly : MonoBehaviour
         if(dying == true)
         {
 
+        }
+
+        if(time >= 4)
+        {
+            Destroy(this.gameObject);
         }
 
     }
