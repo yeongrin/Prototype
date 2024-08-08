@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject SecMini;
     public GameObject ThiMini;
     public GameObject ForMini;
-    public GameObject EndingG;
+    public GameObject EndingG; //Ending plus game panel
 
     [Header("GameEnding")]
     public static bool over1 = false;

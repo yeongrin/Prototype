@@ -15,5 +15,4 @@ public class AudioSourceOfLevel1 : MonoBehaviour
         else
             instance = this;
     }
-
 }
