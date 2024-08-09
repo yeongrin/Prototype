@@ -16,7 +16,6 @@ public class Parking : MonoBehaviour
     Animator animator;
     Animator animator2;
     public GameObject button;
-    public TMP_Text buttonText;
 
     public float DoubleClickSpeed = 0.25f;
     public float ThirdClickSpeed = 0.5f;
@@ -69,9 +68,9 @@ public class Parking : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
                     animator.SetTrigger("Park");
+                animator2.SetTrigger("LittleMore");
 
-                buttonText.text = "A little more....";
- 
+
             }
             else if (isOneClick & !isSecClick)
             {
@@ -84,8 +83,7 @@ public class Parking : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
                     animator.SetTrigger("Park2");
-
-                buttonText.text = "A little more...more..";
+                animator2.SetTrigger("LittleMoreMore");
 
             }
             else
@@ -96,7 +94,7 @@ public class Parking : MonoBehaviour
                 isSecClick = false;
 
                 animator.SetTrigger("Park3");
-                buttonText.text = "CRASH!!!!!";
+               
                 Bonk();
             }
         }

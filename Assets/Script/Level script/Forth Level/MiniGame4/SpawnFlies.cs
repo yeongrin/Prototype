@@ -65,6 +65,12 @@ public class SpawnFlies : MonoBehaviour
             waveCountdown -= Time.deltaTime;
         }
 
+        if(Flyfight.gameEnd == true)
+        {
+            StopAllCoroutines();
+            Destroy(GameObject.FindGameObjectWithTag("Fly"));
+        }
+
     }
 
     void WaveCompleted()

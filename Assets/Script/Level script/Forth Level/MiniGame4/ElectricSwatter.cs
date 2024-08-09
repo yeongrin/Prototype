@@ -37,6 +37,8 @@ public class ElectricSwatter : MonoBehaviour
     //public Transform[] flies;
     public GameObject[] findflies;
 
+    public int killedFlies;
+
     void Awake()
     {
         mainCamera = Camera.main;
@@ -51,7 +53,7 @@ public class ElectricSwatter : MonoBehaviour
 
         _f = FindObjectOfType<Fly>();
 
-        
+        killedFlies = 0;
     }
 
     void Update()
@@ -88,26 +90,51 @@ public class ElectricSwatter : MonoBehaviour
             hitFly = Physics2D.Raycast(findSwatter, Vector2.zero, 0f);
             fadeTimer = 0.5f; //When clicking, a timer will start for the flyswatter to be fully visible before returning to opaque.
 
-            if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
+           
+            if (killedFlies >= 1)
             {
+                    GameObject[] flies = GameObject.FindGameObjectsWithTag("Fly");
 
-                hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
-                hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
-                hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
+                foreach (GameObject thisisfly in flies)
+                {
+                    if (Input.GetMouseButton(0))
+                    {
 
-                //flies = new Transform[30];
+                        if (thisisfly.name == "Fly2")
+                        {
+                            Rigidbody2D flyRigidbody;
+                            Collider2D flycollider;
+                            Animator flyAnimator;
 
-                //for (int i = 0; i < findflies.Length; i++)
-                //{
-                //    flies[i] = findflies[i].transform;
-                //}
+                            flyAnimator = thisisfly.GetComponent<Animator>();
+                            flyRigidbody = thisisfly.GetComponent<Rigidbody2D>();
+                            flycollider = thisisfly.GetComponent<Collider2D>();
 
-                //foreach (GameObject obj in findflies)
-                //{
-                //    Destroy(obj);
-                //}
+                            flyAnimator.SetTrigger("Death");
+                            flyRigidbody.gravityScale = 1.5f;
+                            flycollider.enabled = false;
+                            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
-               // Destroy(hitFly.transform.gameObject);
+                        }
+                    }
+                }
+                   
+            }
+            else
+            {
+                if (killedFlies < 1)
+                {
+                    if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
+                    {
+
+                        hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
+                        hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
+                        hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
+                        killedFlies += 1;
+
+                    }
+
+                }
             }
         }
     }

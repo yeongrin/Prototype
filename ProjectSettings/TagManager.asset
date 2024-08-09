@@ -24,6 +24,7 @@ TagManager:
   - TargetPosition1
   - Fly
   - bonus
+  - Button
   layers:
   - Default
   - TransparentFX

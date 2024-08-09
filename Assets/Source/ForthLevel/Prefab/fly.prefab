@@ -109,8 +109,7 @@ MonoBehaviour:
   targetObjects: []
   currentTarget: {fileID: 0}
   dying: 0
-  swatterDamage: 0
-  swatter: {fileID: 0}
+  electricSwatter: {fileID: 0}
   fly: {fileID: 2681046508965638740}
   flyCollider: {fileID: 4910062927373490869}
   ani: {fileID: 2918495973881505643}
@@ -146,7 +145,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029795647, y: -0.046870112}
+  m_Offset: {x: 0.05119562, y: 0.13825417}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -157,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.91103, y: 4.8213673}
+  m_Size: {x: 5.859791, y: 5.9321127}
   m_EdgeRadius: 0
 --- !u!95 &2918495973881505643
 Animator:
