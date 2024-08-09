@@ -8,7 +8,12 @@ public class StartVideoL2 : MonoBehaviour
 {
     public VideoPlayer vid;
     public GameObject vidOb;
-    public GameObject game;
+    public GameObject credits;
+    public Animator ani;
+    public float timer;
+    bool creditsTimer;
+
+    BackToMain _btm;
 
     [Header ("Fade")]
     RawImage image;
@@ -19,10 +24,19 @@ public class StartVideoL2 : MonoBehaviour
         vid.loopPointReached += CheckOver;
         image = GetComponent<RawImage>();
         StartCoroutine("Delay");
+        creditsTimer = false;
+        _btm = FindObjectOfType<BackToMain>();
     }
 
     void Update()
     {
+        if (creditsTimer)
+        {
+            timer -= Time.deltaTime;
+        }
+        if (timer <= 0)
+            _btm.SceneLoad();
+
         /*if (checkbool)
         {
             game.SetActive(true);
@@ -45,9 +59,10 @@ public class StartVideoL2 : MonoBehaviour
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         //StartCoroutine("MainSplash");
-        game.SetActive(true);
+        credits.SetActive(true);
         vidOb.SetActive(false);
-
+        ani.SetTrigger("Fadeout");
+        creditsTimer = true;
     }
 
     /*IEnumerator MainSplash()
