@@ -11,6 +11,8 @@ public class JigsawPuzzle2 : MonoBehaviour
     public GameObject puzzlePieceSet;
     public GameObject endingPanel;
 
+    
+
     //private void Awake()
     //{
     //    JP2 = () => { VideoStart(); };
@@ -18,7 +20,7 @@ public class JigsawPuzzle2 : MonoBehaviour
 
     void Start()
     {
- 
+        
     }
 
     // Update is called once per frame

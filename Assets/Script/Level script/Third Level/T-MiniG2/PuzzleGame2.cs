@@ -37,6 +37,11 @@ public class PuzzleGame2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         return false;
     }
 
+    private void Awake()
+    {
+        //startPos = this.transform.position;
+    }
+
     public void Start()
     {
         piece_no = gameObject.name[gameObject.name.Length - 1] - '0';
@@ -49,6 +54,11 @@ public class PuzzleGame2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void OnBeginDrag(PointerEventData eventData)
     {
       
+    }
+
+    public void setPosition()
+    {
+        startPos = this.transform.localPosition;
     }
 
     public void OnDrag(PointerEventData eventData)
