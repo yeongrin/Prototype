@@ -588,7 +588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &99718667
 Transform:
   m_ObjectHideFlags: 0
@@ -623,6 +623,7 @@ MonoBehaviour:
   timerText2: {fileID: 1712816240}
   timer3: 0
   waiting_timer: 0
+  isTimer: 0
   liveImage: {fileID: 1232539977}
   livesText: {fileID: 691475175}
   lives3: 3
@@ -2554,7 +2555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &492238474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5136,7 +5137,7 @@ GameObject:
   - component: {fileID: 853765382}
   - component: {fileID: 853765383}
   - component: {fileID: 853765384}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Coffee
   m_TagString: Object3
   m_Icon: {fileID: 0}
@@ -5209,6 +5210,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8760783815858620799}
         m_TargetAssemblyTypeName: ObstacleSleep, Assembly-CSharp
         m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 99718668}
+        m_TargetAssemblyTypeName: MiniGame3, Assembly-CSharp
+        m_MethodName: ResetTimer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

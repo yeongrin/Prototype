@@ -15,7 +15,7 @@ public class MiniGame3 : MonoBehaviour
     public float timer3; //When Lin fell a sleep, if this timer over, player lose 1 life.
     public float waiting_timer; //How many time left when Lin get a sleep
     float TimeOver;
-    private bool isTimer = false;
+    public bool isTimer = false;
 
     //Check the lives variable
     [Header("Lives")]
@@ -75,6 +75,7 @@ public class MiniGame3 : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
         }
+
     }
 
     IEnumerator Delay()
@@ -124,10 +125,13 @@ public class MiniGame3 : MonoBehaviour
             ani.SetTrigger("Default");
             waiting_timer -= Time.deltaTime;
 
-            if (waiting_timer < 0)
+            if (waiting_timer <= 0)
             {
                 isTimer = true;
             }
+            else
+                isTimer = false;
+            
         }
         yield break;
     }
@@ -143,27 +147,11 @@ public class MiniGame3 : MonoBehaviour
                 Lives();
 
                 isTimer = false;
-            }
-            else if (timer3 > TimeOver)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-
-                    if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
-                    {
-                        GameObject click_button = hit.transform.gameObject;
-                        timer3 = 3f;
-                        waiting_timer = 3f;
-
-                        isTimer = false;
-                    }
-                }
+                waiting_timer = 3;
             }
         }
 
-        yield break;
+        yield return null;
 
     }
 
@@ -199,5 +187,15 @@ public class MiniGame3 : MonoBehaviour
         gameOverPanel.SetActive(true);
         GameManager.overCount += 1;
         GameManager.over3 = true;
+    }
+
+    public void ResetTimer()
+    {
+        ani.SetTrigger("WakeUp");
+        isTimer = false;
+        timer3 = 3f;
+        waiting_timer = 3f;
+        print("you hit the coffee");
+        
     }
 }
