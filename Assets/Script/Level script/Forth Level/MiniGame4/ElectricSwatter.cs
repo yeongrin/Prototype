@@ -22,6 +22,7 @@ public class ElectricSwatter : MonoBehaviour
 
     public Sprite newSprite;
     public float fadeTimer;
+    public ParticleSystem particle;
 
     [System.Serializable]
     public class RaycastEvent : UnityEvent<Transform> { }
@@ -34,7 +35,6 @@ public class ElectricSwatter : MonoBehaviour
     private RaycastHit2D hitFly;
     public LayerMask enemyLayer;
 
-    //public Transform[] flies;
     public GameObject[] findflies;
 
     public int killedFlies;
@@ -91,17 +91,25 @@ public class ElectricSwatter : MonoBehaviour
             fadeTimer = 0.5f; //When clicking, a timer will start for the flyswatter to be fully visible before returning to opaque.
 
            
-            if (killedFlies >= 1)
-            {
-                    GameObject[] flies = GameObject.FindGameObjectsWithTag("Fly");
+            // if hit the first spider, electric effect does not produce
 
-                foreach (GameObject thisisfly in flies)
+            if (killedFlies >= 1) // <-int that distinguishes the first spider
+            {
+
+                //When 30 spiders appear, a single mouse click create an electrical effect
+                //All 30 spiders are played in an animation that burn black
+                //After the animation ends, spiders fall down!
+
+
+                if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
                 {
-                    if (Input.GetMouseButton(0))
+                    GameObject[] flies = GameObject.FindGameObjectsWithTag("Fly");
+                    foreach (GameObject thisisfly in flies) // create loop to gather 30 spider 
                     {
 
-                        if (thisisfly.name == "Fly2")
+                        if (thisisfly.name == "Fly2(Clone)")
                         {
+                            particle.Play(); //electric effect
                             Rigidbody2D flyRigidbody;
                             Collider2D flycollider;
                             Animator flyAnimator;
@@ -110,19 +118,19 @@ public class ElectricSwatter : MonoBehaviour
                             flyRigidbody = thisisfly.GetComponent<Rigidbody2D>();
                             flycollider = thisisfly.GetComponent<Collider2D>();
 
-                            flyAnimator.SetTrigger("Death");
-                            flyRigidbody.gravityScale = 1.5f;
+                            flyAnimator.SetTrigger("Death"); // burnning animation
+                            flyRigidbody.gravityScale = 1.5f; // falling down after burning
                             flycollider.enabled = false;
-                            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-
+                           
                         }
                     }
                 }
-                   
+
+
             }
             else
             {
-                if (killedFlies < 1)
+                if (killedFlies < 1) // <- first spider
                 {
                     if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
                     {

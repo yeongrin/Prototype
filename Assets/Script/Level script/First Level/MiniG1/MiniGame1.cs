@@ -158,6 +158,7 @@ public class MiniGame1 : MonoBehaviour
     public void GameEnding()
     {
         gameOverPanel.SetActive(true);
+        Destroy(GameObject.FindGameObjectWithTag("Enemy"));
         GameManager.over1 = true;
         GameManager.overCount += 1;
     }

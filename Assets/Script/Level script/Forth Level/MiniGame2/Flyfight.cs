@@ -59,19 +59,21 @@ public class Flyfight : MonoBehaviour
             if (image2.color.a >= 255)
             {
                 checkbool = true;
+                StartCoroutine("EnterNextScene");
             }
         }
         yield return null;
 
-        StartCoroutine("EnterNextScene");
     }
 
     IEnumerator EnterNextScene()
     {
-       yield return new WaitForSeconds(3f);
+       Destroy(GameObject.FindGameObjectWithTag("Fly"));
+       //yield return new WaitForSeconds(3f);
        map3.SetActive(true);
        map2.SetActive(false);
        activateScene2();
+        yield return null;
 
     }
 }

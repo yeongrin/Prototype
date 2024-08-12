@@ -20,17 +20,18 @@ public class ManFaceChange : MonoBehaviour
 
     void Update()
     {
+
     }
 
     public void HitLin()
     {
-            ani.SetTrigger("Swat2");
-            //StartCoroutine("StayOnFace");
-            //this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite2;
+        ani.SetTrigger("Swat2");
+        //StartCoroutine("StayOnFace");
+        //this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite2;
 
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Fly"))
         {
