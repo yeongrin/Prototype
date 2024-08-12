@@ -12,6 +12,8 @@ public class Flyswatter : MonoBehaviour
     public static event IncreaseScore increaseScore;
 
     public Animator animator;
+    public ParticleSystem particle;
+    public Transform particlePoint;
 
     Fly _f;
 
@@ -32,6 +34,7 @@ public class Flyswatter : MonoBehaviour
     private Camera mainCamera;
     private Ray ray;
     private RaycastHit2D hitFly;
+    public ManFaceChange manFaceChange;
 
     void Awake()
     {
@@ -92,6 +95,11 @@ public class Flyswatter : MonoBehaviour
                 
                increaseScore();
            }
+            if (hitFly.transform.gameObject.tag == "Target")
+            {
+                manFaceChange.HitLin();
+                particle.Play();
+            }
         }
     }
 

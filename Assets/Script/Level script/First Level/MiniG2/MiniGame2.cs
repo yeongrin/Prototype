@@ -200,8 +200,8 @@ public class MiniGame2 : MonoBehaviour
     public void GameEnding()
     {
         gameOverPanel.SetActive(true);
+        Destroy(GameObject.FindGameObjectWithTag("Enemy2"));
         GameManager.over2 = true;
         GameManager.overCount += 1;
-        Destroy(GameObject.FindGameObjectWithTag("Enemy2"));
     }
 }
