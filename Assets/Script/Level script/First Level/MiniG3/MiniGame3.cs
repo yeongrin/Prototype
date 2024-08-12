@@ -118,19 +118,27 @@ public class MiniGame3 : MonoBehaviour
         if(isTimer == true) ///Sleep
         {
             timer3 -= Time.deltaTime;
-            ani.SetTrigger("Sleep");
+            
         }
         else //Lin Awake
         {
+            ani.SetTrigger("WakeUp");
+            yield return new WaitForSeconds(0.5f);
             ani.SetTrigger("Default");
             waiting_timer -= Time.deltaTime;
 
             if (waiting_timer <= 0)
             {
                 isTimer = true;
+                yield return new WaitForSeconds(0.5f);
+                ani.SetTrigger("Sleep");
             }
             else
+            {
                 isTimer = false;
+                
+            }
+                
             
         }
         yield break;
@@ -191,11 +199,12 @@ public class MiniGame3 : MonoBehaviour
 
     public void ResetTimer()
     {
+        waiting_timer = 3f;
         ani.SetTrigger("WakeUp");
         isTimer = false;
         timer3 = 3f;
-        waiting_timer = 3f;
         print("you hit the coffee");
         
+
     }
 }

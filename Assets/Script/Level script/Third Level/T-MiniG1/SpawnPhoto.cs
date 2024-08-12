@@ -36,7 +36,7 @@ public class SpawnPhoto : MonoBehaviour
         {
             Debug.LogError("No spawn points referenced.");
         }
-        timeBetweenWaves = Random.Range(0f, 5f);
+        timeBetweenWaves = Random.Range(0f, 4f);
         waveCountdown = timeBetweenWaves;
     }
 
@@ -74,7 +74,7 @@ public class SpawnPhoto : MonoBehaviour
     void WaveCompleted()
     {
         Debug.Log("Wave Completed");
-        timeBetweenWaves = Random.Range(0f, 5f);
+        timeBetweenWaves = Random.Range(0f, 4f);
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
