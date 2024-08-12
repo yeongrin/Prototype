@@ -2651,6 +2651,7 @@ GameObject:
   - component: {fileID: 504862330}
   - component: {fileID: 504862329}
   - component: {fileID: 504862328}
+  - component: {fileID: 504862331}
   m_Layer: 5
   m_Name: Moving (2)
   m_TagString: Untagged
@@ -2759,6 +2760,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504862325}
   m_CullTransparentMesh: 1
+--- !u!95 &504862331
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504862325}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 267d49c3363202c4990ae696f5f538a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &515326731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,6 +2870,8 @@ GameObject:
   - component: {fileID: 531795929}
   - component: {fileID: 531795928}
   - component: {fileID: 531795927}
+  - component: {fileID: 531795932}
+  - component: {fileID: 531795931}
   m_Layer: 5
   m_Name: MovingButton
   m_TagString: Button
@@ -2943,6 +2967,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 531795932}
+        m_TargetAssemblyTypeName: ButtonPress, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &531795929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2981,6 +3017,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531795925}
   m_CullTransparentMesh: 1
+--- !u!95 &531795931
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531795925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 267d49c3363202c4990ae696f5f538a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &531795932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531795925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c84724600d0e9f4cba8f98835f5dc26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ani: {fileID: 531795931}
 --- !u!328 &542752783 stripped
 VideoPlayer:
   m_CorrespondingSourceObject: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}

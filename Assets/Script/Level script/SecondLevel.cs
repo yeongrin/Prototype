@@ -24,6 +24,7 @@ public class SecondLevel : MonoBehaviour
 
     IEnumerator FadeFlow2()
     {
+        StartCoroutine(Wait());
         Panel2.gameObject.SetActive(true);
         Color alpha = Panel2.color;
         while (alpha.a < 1f)
@@ -81,6 +82,12 @@ public class SecondLevel : MonoBehaviour
 
     public void SetActivetrue()
     {
+        
         this.gameObject.SetActive(true);
+    }
+
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1.0f);
     }
 }

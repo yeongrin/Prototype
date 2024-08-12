@@ -68,6 +68,7 @@ public class MainTitle : MonoBehaviour
 
     IEnumerator FadeFlow3()
     {
+        yield return new WaitForSeconds(1.0f);
         Panel.gameObject.SetActive(true);
         Color alpha = Panel.color;
         while (alpha.a < 1f)

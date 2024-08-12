@@ -536,7 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1453403090}
   - component: {fileID: 1453403092}
-  - component: {fileID: 1453403091}
+  - component: {fileID: 1453403094}
   - component: {fileID: 1453403093}
   m_Layer: 0
   m_Name: EndingVideoObject
@@ -560,23 +560,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1914288045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1453403091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453403089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 408ba347c35e069449a122f5a4e0cc2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vid: {fileID: 1453403092}
-  vidOb: {fileID: 1509717400}
-  credits: {fileID: 1594555307}
-  ani: {fileID: 286904027}
-  timer: 13
 --- !u!328 &1453403092
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -625,6 +608,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703b8596f129e79449b7b253d2a444ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1453403094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453403089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6294a1003e7d0574da6ad6e0c87ce220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vid: {fileID: 1453403092}
+  vidOb: {fileID: 1914288041}
+  credits: {fileID: 1594555307}
+  ani: {fileID: 286904027}
+  timer: 13
 --- !u!1 &1509717400
 GameObject:
   m_ObjectHideFlags: 0
