@@ -127,6 +127,8 @@ public class GameManager : MonoBehaviour
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         manyelling.SetActive(false);
         EndingG.SetActive(true);

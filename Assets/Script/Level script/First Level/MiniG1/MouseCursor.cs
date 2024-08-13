@@ -36,6 +36,9 @@ public class MouseCursor : MonoBehaviour
         ani = GetComponent<Animator>();
         cursor = this.gameObject.GetComponent<Transform>();
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     void Update()
