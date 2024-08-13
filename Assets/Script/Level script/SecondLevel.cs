@@ -74,8 +74,8 @@ public class SecondLevel : MonoBehaviour
             alpha.a = Mathf.Lerp(0, 1, time4);
             Panel2.color = alpha;
             yield return null;
-        }
-        yield return new WaitForSeconds(1.0f); */
+        }*/
+        yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("ForthScene");
         yield return null;
     }
@@ -84,6 +84,7 @@ public class SecondLevel : MonoBehaviour
     {
         
         this.gameObject.SetActive(true);
+
     }
 
     public IEnumerator Wait()

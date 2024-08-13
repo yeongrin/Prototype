@@ -43,6 +43,7 @@ public class MiniGame3 : MonoBehaviour
     }
     void Start()
     {
+        dialoguePanel.SetActive(true);
         waiting_timer = 3f; 
         lives3 = 3;
         timer3 = 3f;

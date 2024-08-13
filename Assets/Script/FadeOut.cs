@@ -26,6 +26,11 @@ public class FadeOut : MonoBehaviour
         }
     }
 
+    public void StartFade()
+    {
+        StartCoroutine(MainSplash2());
+    }
+
     IEnumerator MainSplash2()
     {
         Color color = image2.color;
