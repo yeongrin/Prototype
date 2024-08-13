@@ -10,14 +10,18 @@ public class LevelEnd : MonoBehaviour
     public GameObject nextButton;
     PostProcessVolume ppVolume;
     bool videoOver;
+    AudioSource audioSourceFinal;
+    public AudioSource carSource;
     
     // Start is called before the first frame update
     void Start()
     {
+        audioSourceFinal = GetComponent<AudioSource>();
         ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
         ppVolume.weight = 0;
         video.loopPointReached += CheckOver;
         videoOver = false;
+        StartCoroutine(PlayCarSounds());
     }
 
     // Update is called once per frame
@@ -34,5 +38,13 @@ public class LevelEnd : MonoBehaviour
     {
         nextButton.SetActive(true);
         videoOver = true;
+        audioSourceFinal.Stop();
+        carSource.Stop();
+    }
+
+    public IEnumerator PlayCarSounds()
+    {
+        yield return new WaitForSeconds(4);
+        audioSourceFinal.Play();
     }
 }

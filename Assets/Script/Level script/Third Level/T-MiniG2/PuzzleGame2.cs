@@ -16,6 +16,10 @@ public class PuzzleGame2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public float correctMargin = 50;
     public Vector2 startPos;
 
+    [Header("Audio")]
+    AudioSource source;
+    public AudioClip[] putDown;
+
     PhotoAlbum _pa;
     ChangeColor _cc;
 
@@ -44,6 +48,7 @@ public class PuzzleGame2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void Start()
     {
+        source = GetComponent<AudioSource>();
         piece_no = gameObject.name[gameObject.name.Length - 1] - '0';
         _cc = FindObjectOfType<ChangeColor>();
         _pa = FindObjectOfType<PhotoAlbum>();
@@ -53,7 +58,7 @@ public class PuzzleGame2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-      
+        source.Play();
     }
 
     public void setPosition()
@@ -71,20 +76,18 @@ public class PuzzleGame2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         distanceToTargetLocation = Vector2.Distance(transform.position, targetLocation.transform.position);
     }
 
+    public AudioClip GetPutDownClip()
+    {
+        return putDown[Random.Range(0, putDown.Length)];
+    }
+
     public void OnEndDrag(PointerEventData eventData)
     {
-        //if(!CheckSnapPuzzle())
-        //{
-        //    transform.SetParent(puzzle.puzzlePieceSet.transform);
-        //}
-        //if(puzzle.IsClear())
-        //{
-        //    Debug.Log("clear");
-        //    //JigsawPuzzle2.JP2();
-            
-        //}
+        
+        source.clip = GetPutDownClip();
+        source.Play();
 
-        if(distanceToTargetLocation < correctMargin)
+        if (distanceToTargetLocation < correctMargin)
         {
             print("good job");
             _pa.Score();

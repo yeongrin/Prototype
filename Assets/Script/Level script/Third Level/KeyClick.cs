@@ -12,6 +12,9 @@ public class KeyClick : MonoBehaviour
     bool fadeStart = false;
     public GameObject startScene;
 
+    public AudioSource source;
+    public AudioClip carStarting;
+
     public Animator ani;
 
     // Start is called before the first frame update
@@ -47,7 +50,9 @@ public class KeyClick : MonoBehaviour
         image.sprite = keyStates[1];
         ani.SetTrigger("clicking");
         fadeStart = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1);
+        source.Play();
+        yield return new WaitForSeconds(3.5f);
         GameObject.Find("StartScene").SetActive(false); GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(true);
         yield return null;
     }

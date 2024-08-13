@@ -48,6 +48,8 @@ public class Travel : MonoBehaviour
     public Image thisImage;
     public GameObject imageFrame;
 
+    AudioSource source;
+
     
 
     void Start()
@@ -72,6 +74,8 @@ public class Travel : MonoBehaviour
         hasClicked = false;
         if(imageFrame != null)
             imageFrame.SetActive(false);
+
+        source = GetComponent<AudioSource>();
 
     }
 
@@ -166,15 +170,12 @@ public class Travel : MonoBehaviour
                             if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
                             {
                                 hasClicked = true;
-                                //ani.SetTrigger("Shot");
                                 ChangeImage();
                                 _gm3.startAnimationFlash();
                                 Debug.Log("Shot");
-                                //ani.SetTrigger("FlashCamera");
-                                //_gm3.flash = true;
-                                //StartCoroutine(_gm3.CameraFlash());
                                 Invoke("Destroy", 2f);
                                 _pl.TakePhoto();
+                                source.Play();
                             }
 
                     }
@@ -200,6 +201,7 @@ public class Travel : MonoBehaviour
                             //StartCoroutine(_gm3.CameraFlash());
                             _bp.hasBonusPhoto = true;
                             _ssp.hasClicked = true;
+                            source.Play();
                         }
 
                     }
