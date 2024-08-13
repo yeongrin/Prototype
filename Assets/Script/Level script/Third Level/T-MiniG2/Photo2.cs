@@ -47,20 +47,20 @@ public class Photo2 : MonoBehaviour
             ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D takePhoto = Physics2D.Raycast(findPhoto, Vector2.zero, 0f);
 
-            if (takePhoto.transform.gameObject.name == "elements" && takePhoto.collider != null)
+            if (takePhoto.transform.processingObject.name == "elements" && takePhoto.collider != null)
             {
                 raycastEvent.Invoke(takePhoto.transform);
                 Debug.Log("attack!");
                 //StartCoroutine("Fade");
             }
 
-            else if (takePhoto.transform.gameObject.tag == "elements2" && takePhoto.collider != null)
+            else if (takePhoto.transform.processingObject.tag == "elements2" && takePhoto.collider != null)
             {
                 raycastEvent.Invoke(takePhoto.transform);
                 Debug.Log("attack!2");
             }
 
-            else if (takePhoto.transform.gameObject.tag == "elements3" && takePhoto.collider != null)
+            else if (takePhoto.transform.processingObject.tag == "elements3" && takePhoto.collider != null)
             {
                 raycastEvent.Invoke(takePhoto.transform);
                 Debug.Log("attack!3");

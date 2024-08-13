@@ -25,7 +25,7 @@ public class MouseCursor : MonoBehaviour
     {
         mainCamera = Camera.main;
 
-        //audioSource = gameObject.GetComponent<AudioSource>();
+        //audioSource = processingObject.GetComponent<AudioSource>();
         //sound = AudioSourceOfLevel1.instance.arraudio[1];
         //audioSource.clip = sound;
 

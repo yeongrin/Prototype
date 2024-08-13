@@ -26,7 +26,7 @@ public class VideoManager4 : MonoBehaviour
         print("Video Is Over");
 
         Map1.SetActive(true);
-        //GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
+        //GameObject.Find("Game").transform.Find("Scene1").processingObject.SetActive(false);
         vidOb.SetActive(false); ;
     }
 }

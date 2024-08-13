@@ -3,54 +3,74 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class PostProcessingController : MonoBehaviour
 {
-    public GameObject gameObject;
-    public PostProcessVolume m_Volume;
-    Vignette m_Vignette;
+   
+    [SerializeField] private PostProcessVolume m_Volume;
+    public GameObject processingObject;
+    //public Vignette m_Vignette;
     float process;
+    bool reverse;
 
     void Start()
     {
+        m_Volume = gameObject.GetComponent<PostProcessVolume>();
+        
+        //Instance the postProcessing
         //m_Vignette = ScriptableObject.CreateInstance<Vignette>();
         //m_Vignette.enabled.Override(true);
-        //m_Vignette.intensity.Override(1f);
-        //m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, m_Vignette);
+        //m_Vignette.intensity.Override(0f);
+        //m_Volume = PostProcessManager.instance.QuickVolume(processingObject.layer, 0f, m_Vignette);
 
-        m_Vignette = gameObject.GetComponent<Vignette>();
-        m_Vignette.intensity.value = 0f;
+        //m_Volume = gameObject.GetComponent<PostProcessVolume>();
+        //m_Volume.weight = process;
+        //m_Volume.weight = 1f;
 
-        StartCoroutine("TurnRedLight");
     }
 
     void Update()
     {
+        //if (m_Volume.weight < 1f && !reverse)
+        //{
+        //    m_Volume.weight += 0.01f;
+        //}
+        //else if (m_Volume.weight > 1f && reverse)
+        //{
+        //    m_Volume.weight -= 0.01f;
+        //}
+
+        //if (m_Volume.weight == 1)
+        //    reverse = true;
+        //else if (m_Volume.weight == 0)
+        //    reverse = false;
        
     }
 
-    IEnumerable TurnRedLight()
-    {
-        Debug.Log("start");
+    //IEnumerator TurnRedLight()
+    //{
+    //    m_Volume.weight = process;
+    //    m_Volume = gameObject.GetComponent<PostProcessVolume>();
 
-        m_Vignette.intensity.value = process;
+    //    while (true)
+    //    {
+    //        while (process > 0f)
+    //        {
+    //            process -= 0.01f;
+    //            yield return new WaitForSeconds(0.05f);
+    //        }
+    //        yield return new WaitForSeconds(0.5f);
+    //        while (process < 1f)
+    //        {
+    //            process += 0.01f;
+    //            yield return new WaitForSeconds(0.05f);
+    //        }
+    //        yield return new WaitForSeconds(0.5f);
 
-        while (true)
-        {
-            while (process < 1f)
-            {
-                process += 0.01f;
-                yield return new WaitForSeconds(0.01f);
-            }
-            yield return new WaitForSeconds(0.5f);
-            while (process > 1f)
-            {
-                process -= 0.01f;
-                yield return new WaitForSeconds(0.01f);
-            }
-            yield return new WaitForSeconds(0.5f);
-        }
-    }
+    //    }
+    //}
 
 }

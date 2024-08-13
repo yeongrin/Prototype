@@ -38,7 +38,7 @@ public class PuzzleEmpty : MonoBehaviour
 
    /*public void StartGame(Texture2D puzzleTexture)
     {
-        levelSelectPanel.gameObject.SetActive(false);
+        levelSelectPanel.processingObject.SetActive(false);
 
         pieces = new List<Transform>();
         piecesCorrect = 0;

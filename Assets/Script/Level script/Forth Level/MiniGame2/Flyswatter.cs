@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using static Fly;
+using static UnityEngine.ParticleSystem;
 
 public class Flyswatter : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class Flyswatter : MonoBehaviour
     public static event IncreaseScore increaseScore;
 
     public Animator animator;
-    public ParticleSystem particle;
+    public ParticleSystem particle = null;
+    public ParticleSystem particle2 = null;
     public Transform particlePoint;
 
     Fly _f;
@@ -85,7 +87,7 @@ public class Flyswatter : MonoBehaviour
             
            if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
            {
-                //hitFly.transform.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+                //hitFly.transform.processingObject.GetComponent<SpriteRenderer>().sprite = newSprite;
                 //This function changes the sprite of the hit fly to sprite specified in this script in the editor
 
                 hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
@@ -98,7 +100,9 @@ public class Flyswatter : MonoBehaviour
             if (hitFly.transform.gameObject.tag == "Target")
             {
                 manFaceChange.HitLin();
+                particle2.Play();
                 particle.Play();
+                
             }
         }
     }
