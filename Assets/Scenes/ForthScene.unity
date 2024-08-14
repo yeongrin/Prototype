@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 25920284}
   - component: {fileID: 25920285}
   - component: {fileID: 25920286}
+  - component: {fileID: 25920287}
   m_Layer: 9
   m_Name: Bubble2
   m_TagString: Untagged
@@ -634,6 +635,25 @@ MonoBehaviour:
   isShaking: 0
   startPos: {fileID: 0}
   shakeAmount: 0
+--- !u!320 &25920287
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25920279}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 392316fcf5cf1304abfb21aa611fca53, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 6591930128315163295, guid: 392316fcf5cf1304abfb21aa611fca53, type: 2}
+    value: {fileID: 25920283}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &38376127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,6 +2205,8 @@ GameObject:
   - component: {fileID: 256754661}
   - component: {fileID: 256754660}
   - component: {fileID: 256754659}
+  - component: {fileID: 256754663}
+  - component: {fileID: 256754662}
   m_Layer: 9
   m_Name: Bubble2 (1)
   m_TagString: Untagged
@@ -2269,6 +2291,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256754657}
   m_CullTransparentMesh: 1
+--- !u!95 &256754662
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256754657}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!320 &256754663
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256754657}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 2317ce6a45506c146876d859c613ee17, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -5559159816376772112, guid: 2317ce6a45506c146876d859c613ee17, type: 2}
+    value: {fileID: 256754662}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &261241832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,7 +2833,7 @@ MonoBehaviour:
   m_text: Sausage
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2834,7 +2896,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &330181880
@@ -3432,6 +3494,7 @@ GameObject:
   - component: {fileID: 404140091}
   - component: {fileID: 404140092}
   - component: {fileID: 404140093}
+  - component: {fileID: 404140094}
   m_Layer: 9
   m_Name: Bubble3
   m_TagString: Untagged
@@ -3564,6 +3627,25 @@ MonoBehaviour:
   isShaking: 0
   startPos: {fileID: 0}
   shakeAmount: 0
+--- !u!320 &404140094
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404140086}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 6f93fe0e0c133734da87eb2c923ad615, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8294711596284111807, guid: 6f93fe0e0c133734da87eb2c923ad615, type: 2}
+    value: {fileID: 404140090}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &412272209
 GameObject:
   m_ObjectHideFlags: 0
@@ -3761,7 +3843,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1959499087}
   - {fileID: 706795958}
@@ -4077,6 +4159,7 @@ GameObject:
   - component: {fileID: 443650540}
   - component: {fileID: 443650539}
   - component: {fileID: 443650538}
+  - component: {fileID: 443650541}
   m_Layer: 9
   m_Name: Bubble3 (2)
   m_TagString: Untagged
@@ -4161,6 +4244,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443650536}
   m_CullTransparentMesh: 1
+--- !u!95 &443650541
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443650536}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &447391529
 GameObject:
   m_ObjectHideFlags: 0
@@ -7679,6 +7783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747237192}
   - component: {fileID: 747237191}
+  - component: {fileID: 747237193}
   m_Layer: 9
   m_Name: QuizLevel1
   m_TagString: Untagged
@@ -7724,6 +7829,23 @@ RectTransform:
   m_AnchoredPosition: {x: -4, y: -33.5}
   m_SizeDelta: {x: 1670, y: 961}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!320 &747237193
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747237190}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: e46d4386e9737584b939c82cd628afff, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &760601002
 GameObject:
   m_ObjectHideFlags: 0
@@ -13058,7 +13180,7 @@ MonoBehaviour:
   m_text: Service station
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13121,7 +13243,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &842531591
@@ -15014,6 +15136,7 @@ GameObject:
   - component: {fileID: 991913483}
   - component: {fileID: 991913482}
   - component: {fileID: 991913481}
+  - component: {fileID: 991913484}
   m_Layer: 9
   m_Name: Bubble (2)
   m_TagString: Untagged
@@ -15031,7 +15154,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1289340933}
   m_Father: {fileID: 2119788215}
@@ -15097,6 +15220,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991913479}
   m_CullTransparentMesh: 1
+--- !u!95 &991913484
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991913479}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1003376614
 GameObject:
   m_ObjectHideFlags: 0
@@ -20690,6 +20834,7 @@ GameObject:
   - component: {fileID: 1119669359}
   - component: {fileID: 1119669358}
   - component: {fileID: 1119669360}
+  - component: {fileID: 1119669361}
   m_Layer: 9
   m_Name: Bubble4
   m_TagString: Untagged
@@ -20715,7 +20860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 585, y: -238.99997}
+  m_AnchoredPosition: {x: 585, y: -239}
   m_SizeDelta: {x: 560, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119669358
@@ -20777,6 +20922,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!320 &1119669361
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119669356}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 67920e8be282bd34fa0bd59654bf8663, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -4387787746520524102, guid: 67920e8be282bd34fa0bd59654bf8663, type: 2}
+    value: {fileID: 1119669360}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1121551529
 GameObject:
   m_ObjectHideFlags: 0
@@ -21345,6 +21509,7 @@ GameObject:
   - component: {fileID: 1192678834}
   - component: {fileID: 1192678833}
   - component: {fileID: 1192678835}
+  - component: {fileID: 1192678836}
   m_Layer: 9
   m_Name: Bubble4 (1)
   m_TagString: Untagged
@@ -21477,6 +21642,25 @@ MonoBehaviour:
   isShaking: 0
   startPos: {fileID: 0}
   shakeAmount: 0
+--- !u!320 &1192678836
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192678828}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 5459b0e9aa9874343ab4873f107ed198, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8221339550020306342, guid: 5459b0e9aa9874343ab4873f107ed198, type: 2}
+    value: {fileID: 1192678833}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1194428255
 GameObject:
   m_ObjectHideFlags: 0
@@ -22208,7 +22392,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22271,7 +22455,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1289340935
@@ -29850,6 +30034,7 @@ GameObject:
   - component: {fileID: 1596587383}
   - component: {fileID: 1596587382}
   - component: {fileID: 1596587384}
+  - component: {fileID: 1596587385}
   m_Layer: 9
   m_Name: Bubble
   m_TagString: Untagged
@@ -29867,7 +30052,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1494238674}
   m_Father: {fileID: 747237192}
@@ -29933,6 +30118,27 @@ MonoBehaviour:
   afterBubble: {fileID: 0}
   game1: {fileID: 0}
   game2: {fileID: 0}
+--- !u!95 &1596587385
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596587380}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9aa0cf20813a39e4abf1cde26e8c97e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1601891570
 GameObject:
   m_ObjectHideFlags: 0
@@ -30444,6 +30650,7 @@ GameObject:
   - component: {fileID: 1643916717}
   - component: {fileID: 1643916716}
   - component: {fileID: 1643916718}
+  - component: {fileID: 1643916719}
   m_Layer: 9
   m_Name: Bubble2 (2)
   m_TagString: Untagged
@@ -30576,6 +30783,23 @@ MonoBehaviour:
   isShaking: 0
   startPos: {fileID: 0}
   shakeAmount: 0
+--- !u!320 &1643916719
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643916711}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: ed81e0abb75671448a34187f482cd564, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1649256269
 GameObject:
   m_ObjectHideFlags: 0
@@ -33674,6 +33898,7 @@ GameObject:
   - component: {fileID: 1914331950}
   - component: {fileID: 1914331949}
   - component: {fileID: 1914331951}
+  - component: {fileID: 1914331952}
   m_Layer: 9
   m_Name: Bubble3 (1)
   m_TagString: Untagged
@@ -33806,6 +34031,25 @@ MonoBehaviour:
   isShaking: 0
   startPos: {fileID: 0}
   shakeAmount: 0
+--- !u!320 &1914331952
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914331944}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 4b22987662ebfad4ea93dfc4f2a4cc88, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 7015723501751996824, guid: 4b22987662ebfad4ea93dfc4f2a4cc88, type: 2}
+    value: {fileID: 1914331949}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1926085299
 GameObject:
   m_ObjectHideFlags: 0
@@ -34061,7 +34305,7 @@ MonoBehaviour:
   m_text: Snack
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -34124,7 +34368,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1959499089
@@ -35479,6 +35723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119788215}
   - component: {fileID: 2119788216}
+  - component: {fileID: 2119788217}
   m_Layer: 9
   m_Name: QuizLevel3
   m_TagString: Untagged
@@ -35524,6 +35769,31 @@ MonoBehaviour:
   isShaking: 0
   startPos: {fileID: 0}
   shakeAmount: 20
+--- !u!320 &2119788217
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119788214}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 99d0ffe31f4f9f141893f42b7f0953ba, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -4846248688383443634, guid: 99d0ffe31f4f9f141893f42b7f0953ba, type: 2}
+    value: {fileID: 1643916716}
+  - key: {fileID: 6843641363833256091, guid: 99d0ffe31f4f9f141893f42b7f0953ba, type: 2}
+    value: {fileID: 443650541}
+  - key: {fileID: 5301363717237100119, guid: 99d0ffe31f4f9f141893f42b7f0953ba, type: 2}
+    value: {fileID: 424466709}
+  - key: {fileID: -7984424388286114741, guid: 99d0ffe31f4f9f141893f42b7f0953ba, type: 2}
+    value: {fileID: 991913484}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &2125327081
 GameObject:
   m_ObjectHideFlags: 0
