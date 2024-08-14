@@ -30,7 +30,7 @@ public class OperaHouse : MonoBehaviour
         transform.position = newPos;
 
         if (progress >= 1)
-            gameObject.SetActive(false);*/
+            processingObject.SetActive(false);*/
 
         /*if(Input.GetMouseButtonUp(0))
         {
@@ -39,8 +39,8 @@ public class OperaHouse : MonoBehaviour
             //transform.position = transform.position + new Vector3(10, 0, 0) * 1 * Time.deltaTime;
             
         }
-        transform.position = Vector2.SmoothDamp(gameObject.transform.position, transformPosition.transform.position, ref startPost, speed * Time.deltaTime);
-        PressTheButton(this.gameObject, 3);*/
+        transform.position = Vector2.SmoothDamp(processingObject.transform.position, transformPosition.transform.position, ref startPost, speed * Time.deltaTime);
+        PressTheButton(this.processingObject, 3);*/
 
         if (Input.GetMouseButtonUp(0))
         {

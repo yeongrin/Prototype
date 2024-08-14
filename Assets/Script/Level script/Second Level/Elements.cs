@@ -28,7 +28,7 @@ public class Elements : MonoBehaviour
     public float fadein;
     void Start()
     {
-        //_render = gameObject.GetComponent<SpriteRenderer>();
+        //_render = processingObject.GetComponent<SpriteRenderer>();
         ElementColor = gameObject.GetComponent<Renderer>();
         ElementColor.material.color = new Color(R / 0, G / 0, B / 0);
     }

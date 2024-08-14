@@ -17,7 +17,7 @@ public class FadeScript : MonoBehaviour
 
     IEnumerator FadeFlow()
     {
-        Panel.gameObject.SetActive(true);
+        Panel.processingObject.SetActive(true);
         Color alpha = Panel.color;
         while(alpha.a < 1f)
         {

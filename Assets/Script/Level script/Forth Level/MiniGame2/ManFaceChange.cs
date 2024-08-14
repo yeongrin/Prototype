@@ -14,7 +14,7 @@ public class ManFaceChange : MonoBehaviour
 
     void Start()
     {
-        //this.gameObject.GetComponent<SpriteRenderer>().sprite = originalSprite;
+        //this.processingObject.GetComponent<SpriteRenderer>().sprite = originalSprite;
         //ani = GetComponent<Animator>();
     }
 
@@ -27,7 +27,7 @@ public class ManFaceChange : MonoBehaviour
     {
         ani.SetTrigger("Swat2");
         //StartCoroutine("StayOnFace");
-        //this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite2;
+        //this.processingObject.GetComponent<SpriteRenderer>().sprite = newSprite2;
 
     }
 
@@ -36,7 +36,7 @@ public class ManFaceChange : MonoBehaviour
         if (other.gameObject.CompareTag("Fly"))
         {
             ani.SetTrigger("Swat");
-            //this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+            //this.processingObject.GetComponent<SpriteRenderer>().sprite = newSprite;
 
             // StartCoroutine("StayOnFace");
 
@@ -48,7 +48,7 @@ public class ManFaceChange : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Fly"))
         {
-            //this.gameObject.GetComponent<SpriteRenderer>().sprite = originalSprite;
+            //this.processingObject.GetComponent<SpriteRenderer>().sprite = originalSprite;
            
         }
     }

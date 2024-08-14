@@ -72,7 +72,7 @@ MonoBehaviour:
   lumContrib:
     overrideState: 0
     value: 0.8
---- !u!114 &-4420505716441957643
+--- !u!114 &-5452124481731739251
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,23 +81,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
-  m_Name: ChromaticAberration
+  m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
+  m_Name: AutoExposure
   m_EditorClassIdentifier: 
   active: 1
   enabled:
     overrideState: 1
     value: 1
-  spectralLut:
-    overrideState: 0
-    value: {fileID: 0}
-    defaultState: 1
-  intensity:
+  filtering:
+    overrideState: 1
+    value: {x: 54.00001, y: 99}
+  minLuminance:
+    overrideState: 1
+    value: 1
+  maxLuminance:
+    overrideState: 1
+    value: 3
+  keyValue:
+    overrideState: 1
+    value: 2
+  eyeAdaptation:
     overrideState: 0
     value: 0
-  fastMode:
+  speedUp:
     overrideState: 0
-    value: 0
+    value: 2
+  speedDown:
+    overrideState: 0
+    value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,8 +124,8 @@ MonoBehaviour:
   settings:
   - {fileID: -8111492330041720896}
   - {fileID: 3994448920501716797}
-  - {fileID: -4420505716441957643}
   - {fileID: -6834510951645645044}
+  - {fileID: -5452124481731739251}
 --- !u!114 &3994448920501716797
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -133,10 +144,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2.52
+    value: 3
   threshold:
     overrideState: 1
-    value: 0.82
+    value: 0.8
   softKnee:
     overrideState: 1
     value: 0.5

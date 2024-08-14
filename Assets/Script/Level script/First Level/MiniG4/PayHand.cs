@@ -20,7 +20,7 @@ public class PayHand : MonoBehaviour
 
     void Start()
     {
-        //this.gameObject.SetActive(false);
+        //this.processingObject.SetActive(false);
         enterOtherScene = false;
     }
 

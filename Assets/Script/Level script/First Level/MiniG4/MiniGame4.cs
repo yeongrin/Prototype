@@ -153,9 +153,9 @@ public class MiniGame4 : MonoBehaviour
             //    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //    RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
-            //    if (hit.transform.gameObject.tag == "Object2" && hit.collider != null)
+            //    if (hit.transform.processingObject.tag == "Object2" && hit.collider != null)
             //    {
-            //        GameObject click_button = hit.transform.gameObject;
+            //        GameObject click_button = hit.transform.processingObject;
             //        //Turning the timer back to 3 is in the coin script.
             //    }
             //}

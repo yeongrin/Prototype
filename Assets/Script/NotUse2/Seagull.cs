@@ -54,14 +54,14 @@ public class Seagull : Singleton<Seagull>
         if (collision.collider.tag == "Player" && !isDamage)
         {
             isDamage = true;
-            int hammerDamage = collision.gameObject.GetComponent<Hammer>().hammerDamage;
+            int hammerDamage = collision.processingObject.GetComponent<Hammer>().hammerDamage;
             seaguelHealth -= hammerDamage;
             Debug.Log("Hit!");
 
             if (seaguelHealth <= 0)
             {
                 isDead = true;
-                PressTheButton(gameObject);
+                PressTheButton(processingObject);
             }
         }
 

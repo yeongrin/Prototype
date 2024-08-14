@@ -51,7 +51,7 @@ public class JigsawPuzzle : MonoBehaviour
 
     public void VideoStart()
     {
-        //GameObject.Find("AllMap").transform.Find("BackGroundVideo").gameObject.SetActive(true);
+        //GameObject.Find("AllMap").transform.Find("BackGroundVideo").processingObject.SetActive(true);
         endingVideo.SetActive(true);
     }
 

@@ -18,16 +18,16 @@ public class MouseCursor : MonoBehaviour
     Transform cursor;
     SpriteRenderer spriteRenderer;
 
-    //AudioSource audioSourceFinal;
+    //AudioSource audioSource;
     //AudioClip sound;
 
     public void Awake()
     {
         mainCamera = Camera.main;
 
-        //audioSourceFinal = gameObject.GetComponent<AudioSource>();
+        //audioSource = processingObject.GetComponent<AudioSource>();
         //sound = AudioSourceOfLevel1.instance.arraudio[1];
-        //audioSourceFinal.clip = sound;
+        //audioSource.clip = sound;
 
     }
 
@@ -36,9 +36,6 @@ public class MouseCursor : MonoBehaviour
         ani = GetComponent<Animator>();
         cursor = this.gameObject.GetComponent<Transform>();
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
     }
 
     void Update()

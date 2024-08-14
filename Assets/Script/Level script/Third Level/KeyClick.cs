@@ -70,7 +70,7 @@ public class KeyClick : MonoBehaviour
     //{
     //    image.sprite = keyStates[3];
     //    yield return new WaitForSeconds(0.5f);
-    //    GameObject.Find("StartScene").SetActive(false); GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(true);
+    //    GameObject.Find("StartScene").SetActive(false); GameObject.Find("Game").transform.Find("Scene1").processingObject.SetActive(true);
     //    yield return null;
     //}
 }

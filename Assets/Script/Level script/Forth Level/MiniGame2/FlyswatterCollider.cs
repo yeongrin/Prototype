@@ -23,13 +23,13 @@ public class FlyswatterCollider : MonoBehaviour
     {
         if (collision.CompareTag("Fly"))
             Debug.Log("Enter");
-            //fliesBelowSwatter.Add(collision.gameObject);
+            //fliesBelowSwatter.Add(collision.processingObject);
     }
 
     private void OnTriggerExit(Collider collision)
     {
         if (collision.CompareTag("Fly"))
             Debug.Log("Exit");
-        //fliesBelowSwatter.Remove(collision.gameObject);
+        //fliesBelowSwatter.Remove(collision.processingObject);
     }
 }

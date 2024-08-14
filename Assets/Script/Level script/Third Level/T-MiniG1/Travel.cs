@@ -144,7 +144,7 @@ public class Travel : MonoBehaviour
                             {
 
                                 ani.SetTrigger("Eating2");
-                                //gameObject.GetComponent<GameController3>().enabled = false;
+                                //processingObject.GetComponent<GameController3>().enabled = false;
                                 Invoke("Destroy", 2);
 
                             }

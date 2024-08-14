@@ -66,7 +66,7 @@ public class SecondLevel : MonoBehaviour
 
     IEnumerator FadeFlow4()
     {
-        /*Panel2.gameObject.SetActive(true);
+        /*Panel2.processingObject.SetActive(true);
         Color alpha = Panel2.color;
         while (alpha.a < 1f)
         {

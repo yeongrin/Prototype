@@ -101,7 +101,7 @@ public class PhotoAlbum : MonoBehaviour
     void LevelEnd2()
     {
 
-        //GameObject.Find("Scene3").transform.Find("manyelling").gameObject.SetActive(true);
+        //GameObject.Find("Scene3").transform.Find("manyelling").processingObject.SetActive(true);
         GameEndPanel.SetActive(true);
         scene2.SetActive(false);
 
