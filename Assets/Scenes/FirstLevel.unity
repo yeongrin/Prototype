@@ -1017,6 +1017,8 @@ MonoBehaviour:
   ForMini: {fileID: 281940226}
   EndingG: {fileID: 662653763}
   image: {fileID: 290765539}
+  video2: {fileID: 1791031201}
+  video3: {fileID: 723077096}
 --- !u!1 &255390037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,7 +4621,7 @@ AudioSource:
   m_GameObject: {fileID: 723077096}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1784949698861052978, guid: d34057e3cf5d1ea44bbff58054416656, type: 2}
   m_audioClip: {fileID: 8300000, guid: f1d2955d484119f42abd06a51077ef4f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -8334,7 +8336,7 @@ AudioSource:
   m_GameObject: {fileID: 172312631}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1784949698861052978, guid: d34057e3cf5d1ea44bbff58054416656, type: 2}
   m_audioClip: {fileID: 8300000, guid: 51fa7ab3d90363d4e900af4eabe61ae2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -12795,7 +12797,7 @@ AudioSource:
   m_GameObject: {fileID: 1791031201}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1784949698861052978, guid: d34057e3cf5d1ea44bbff58054416656, type: 2}
   m_audioClip: {fileID: 8300000, guid: ac62342dbf7199d4a86a5b3c0f6141b0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -13101,6 +13103,10 @@ MonoBehaviour:
   - {fileID: -309922582, guid: a33be6e104ea37040b518be946e99e2c, type: 3}
   - {fileID: 21300000, guid: 2d6a0843620c86a4197ec5ec04a2a299, type: 3}
   ani: {fileID: 1849086673}
+  miniGame1: {fileID: 344020958}
+  miniGame2: {fileID: 108916184}
+  miniGame3: {fileID: 99718666}
+  miniGame4: {fileID: 281940226}
 --- !u!95 &1849086673
 Animator:
   serializedVersion: 5
@@ -13163,7 +13169,7 @@ SpriteRenderer:
   m_SortingLayerID: 602040153
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a05618b7fe86cc94ea8eeb9bf6bb5c25, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13171,7 +13177,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1849086675

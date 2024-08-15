@@ -13,6 +13,12 @@ public class MouseCursor : MonoBehaviour
 
     public Sprite[] newSprite;
     public Animator ani;
+
+    [Header("MiniGames")]
+    public GameObject miniGame1;
+    public GameObject miniGame2;
+    public GameObject miniGame3;
+    public GameObject miniGame4;
     
     Vector2 findHand;
     Transform cursor;
@@ -36,6 +42,8 @@ public class MouseCursor : MonoBehaviour
         ani = GetComponent<Animator>();
         cursor = this.gameObject.GetComponent<Transform>();
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+
+        
     }
 
     void Update()
@@ -46,7 +54,7 @@ public class MouseCursor : MonoBehaviour
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
-        if (transform.position.x < 0 && transform.position.y >0)
+        if (transform.position.x < 0 && transform.position.y >0 && miniGame1.activeSelf)
         {
             //spriteRenderer.sprite = newSprite[1];
             //cursor.transform.localScale = new Vector3(1, 1, 1);
@@ -58,7 +66,7 @@ public class MouseCursor : MonoBehaviour
                 ani.SetTrigger("Press1");
             }
         }
-        if (transform.position.x >= 0 && transform.position.y > 0)
+        if (transform.position.x >= 0 && transform.position.y > 0 && miniGame2.activeSelf)
         {
             //spriteRenderer.sprite = newSprite[2];
             //cursor.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
@@ -70,7 +78,7 @@ public class MouseCursor : MonoBehaviour
                 ani.SetTrigger("Press2");
             }
         }
-        if (transform.position.x >= 0 && transform.position.y <= 0)
+        if (transform.position.x >= 0 && transform.position.y <= 0 && miniGame3.activeSelf)
         {
             //spriteRenderer.sprite = newSprite[3];
             //cursor.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
@@ -82,7 +90,7 @@ public class MouseCursor : MonoBehaviour
                 ani.SetTrigger("Press3");
             }
         }
-        if (transform.position.x < 0 && transform.position.y < 0)
+        if (transform.position.x < 0 && transform.position.y < 0 && miniGame4.activeSelf)
         {
             //spriteRenderer.sprite = newSprite[4];
             //cursor.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);

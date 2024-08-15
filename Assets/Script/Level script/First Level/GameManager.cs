@@ -45,6 +45,11 @@ public class GameManager : MonoBehaviour
     [Header("Blur")]
     public Image image;
 
+    public GameObject video2;
+    AudioSource video2Source;
+    public GameObject video3;
+    AudioSource video3Source;
+
     //public float t1;
 
     void Awake()
@@ -71,6 +76,12 @@ public class GameManager : MonoBehaviour
         SetText();
 
         image.color = new Color32(55, 55, 55, 0);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+
+        video2Source = video2.GetComponent<AudioSource>();
+        video3Source = video3.GetComponent<AudioSource>();
     }
 
 
@@ -105,6 +116,8 @@ public class GameManager : MonoBehaviour
         //GameOver
         if (over1 == true && over2 == true && over3 == true && over4 == true)
         {
+            video2Source.Stop();
+            video2.GetComponent<VideoPlayer>().Pause();
             manyelling.SetActive(true);
             //endingPanel.Length.SetActive(true);
         }
@@ -112,6 +125,8 @@ public class GameManager : MonoBehaviour
         //GameEnding
         if (goTime >= overTime)
         {
+            video2Source.Stop();
+            video2.GetComponent<VideoPlayer>().Pause();
             over5 = true;
             manyelling.SetActive(true);
         }
@@ -130,7 +145,9 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
+        video3.SetActive(false);
         manyelling.SetActive(false);
+        
         EndingG.SetActive(true);
 
         Destroy(GameObject.FindGameObjectWithTag("Enemy"));
