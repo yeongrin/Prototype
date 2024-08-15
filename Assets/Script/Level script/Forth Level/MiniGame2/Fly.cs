@@ -43,6 +43,7 @@ public class Fly : MonoBehaviour
     Rigidbody2D rigid;
 
     public Animator ani;
+    AudioSource audioSource;
 
     public float time; // Fly is destroyed automatically 
 
@@ -54,12 +55,12 @@ public class Fly : MonoBehaviour
     void Start()
     {
         electricSwatter = GameObject.FindObjectOfType<ElectricSwatter>().GetComponent<ElectricSwatter>();
+        targetObjects = GameObject.FindGameObjectsWithTag("Target");//Trace to player
 
         flyCollider = gameObject.GetComponent<BoxCollider2D>();
         ani = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-
-        targetObjects = GameObject.FindGameObjectsWithTag("Target");//Trace to player
+        audioSource = GetComponent<AudioSource>();
 
         mainTarget = new Transform[4];
 
@@ -101,6 +102,11 @@ public class Fly : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+    }
+
+    public void AudioEffect()
+    {
+        audioSource.Play();
     }
 
     public void Destroy()

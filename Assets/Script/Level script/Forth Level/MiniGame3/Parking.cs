@@ -44,8 +44,8 @@ public class Parking : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-                    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
             if (hit.transform.gameObject.tag == "Button" && hit.collider != null)
             {
@@ -71,7 +71,7 @@ public class Parking : MonoBehaviour
                     Timer3 = Time.time;
                     isOneClick = false;
                     isSecClick = true;
-                   
+
                     animator.SetTrigger("Park2");
                     animator2.SetTrigger("LittleMoreMore");
 

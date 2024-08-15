@@ -57,7 +57,7 @@ public class LinAnswerTheSlang : MonoBehaviour
         {
             answerText.text = "Service station";
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         StopCoroutine("AnswerBubbleOutPut");
         answerBubble.gameObject.SetActive(false);
     }
