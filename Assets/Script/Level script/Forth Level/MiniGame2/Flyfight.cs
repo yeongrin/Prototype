@@ -31,7 +31,8 @@ public class Flyfight : MonoBehaviour
             gameEnd = true;
             if (gameEnd == true)
             {
-                StartCoroutine("SceneChange");
+                //StartCoroutine("SceneChange");
+                StartCoroutine("EnterNextScene");
             }
         }
     }
@@ -46,25 +47,25 @@ public class Flyfight : MonoBehaviour
         increaseScore -= Score;
     }
 
-    IEnumerator SceneChange()
-    {
-        Color color = image2.color;
+    //IEnumerator SceneChange()
+    //{
+    //    Color color = image2.color;
 
-        for (int i = 0; i <= 255; i++)
-        {
-            color.a += Time.deltaTime * 0.01f;
+    //    for (int i = 0; i <= 255; i++)
+    //    {
+    //        color.a += Time.deltaTime * 0.01f;
 
-            image2.color = color;
+    //        image2.color = color;
 
-            if (image2.color.a >= 255)
-            {
-                checkbool = true;
-                StartCoroutine("EnterNextScene");
-            }
-        }
-        yield return null;
+    //        if (image2.color.a >= 255)
+    //        {
+    //            StartCoroutine("EnterNextScene");
+    //            checkbool = true;
+    //        }
+    //    }
+    //    yield return null;
 
-    }
+    //}
 
     IEnumerator EnterNextScene()
     {

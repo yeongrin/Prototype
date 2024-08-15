@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.Burst.CompilerServices;
 
 public enum ParkingCar
 {
@@ -13,8 +14,8 @@ public class Parking : MonoBehaviour
 {
     public ParkingCar parkingcar;
 
-    Animator animator;
-    Animator animator2;
+    public Animator animator;
+    public Animator animator2;
     public GameObject button;
 
     public float DoubleClickSpeed = 0.25f;
@@ -28,28 +29,14 @@ public class Parking : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        animator2 = button.GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
+       // animator2 = button.GetComponent<Animator>();
 
+       
     }
 
     void Update()
     {
-        switch (parkingcar)
-        {
-            case ParkingCar. Crash:
-                {
-
-                    CarGetAccident();
-                }
-            break;
-
-            case ParkingCar. Perfect:
-                {
-                    CarParkingSmooth();
-                }
-            break;
-        }
   
     }
 
@@ -57,62 +44,57 @@ public class Parking : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!isOneClick & !isSecClick)
+                    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+
+            if (hit.transform.gameObject.tag == "Button" && hit.collider != null)
             {
 
-                Timer2 = Time.time;
-                Timer3 = Time.time;
-                isOneClick = true;
-                isSecClick = false;
-                Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+
+                if (!isOneClick & !isSecClick)
+                {
+
+                    Timer2 = Time.time;
+                    Timer3 = Time.time;
+                    isOneClick = true;
+                    isSecClick = false;
 
                     animator.SetTrigger("Park");
-                animator2.SetTrigger("LittleMore");
+                    animator2.SetTrigger("LittleMore");
 
 
-            }
-            else if (isOneClick & !isSecClick)
-            {
+                }
+                else if (isOneClick & !isSecClick)
+                {
 
-                Timer2 = Time.time;
-                Timer3 = Time.time;
-                isOneClick = false;
-                isSecClick = true;
-                Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-
+                    Timer2 = Time.time;
+                    Timer3 = Time.time;
+                    isOneClick = false;
+                    isSecClick = true;
+                   
                     animator.SetTrigger("Park2");
-                animator2.SetTrigger("LittleMoreMore");
+                    animator2.SetTrigger("LittleMoreMore");
 
-            }
-            else
-            {
-                Timer2 = Time.time;
-                Timer3 = Time.time;
-                isOneClick = false;
-                isSecClick = false;
+                }
+                else
+                {
+                    Timer2 = Time.time;
+                    Timer3 = Time.time;
+                    isOneClick = false;
+                    isSecClick = false;
 
-                animator.SetTrigger("Park3");
-               
-                Bonk();
+                    animator.SetTrigger("Park3");
+
+                    Bonk();
+                }
             }
         }
     }
 
     public void CarParkingSmooth()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+         animator.SetTrigger("perfect");
 
-            if (hit.transform.gameObject.tag == "Object3" && hit.collider != null)
-            {
-                animator.SetTrigger("perfect");
-
-            }
-        }
     }
 
     public void Bonk()
