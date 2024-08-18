@@ -24,6 +24,8 @@ public class MouseCursor : MonoBehaviour
     Transform cursor;
     SpriteRenderer spriteRenderer;
 
+    GameManager _gm;
+
     //AudioSource audioSource;
     //AudioClip sound;
 
@@ -42,66 +44,70 @@ public class MouseCursor : MonoBehaviour
         ani = GetComponent<Animator>();
         cursor = this.gameObject.GetComponent<Transform>();
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-
+        _gm = FindObjectOfType<GameManager>();
         
     }
 
     void Update()
     {
-        findHand = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-        transform.position = new Vector2(findHand.x, findHand.y);
-
-        Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-
-        if (transform.position.x < 0 && transform.position.y >0 && miniGame1.activeSelf)
+        if (_gm.EndingG.activeSelf != true)
         {
-            //spriteRenderer.sprite = newSprite[1];
-            //cursor.transform.localScale = new Vector3(1, 1, 1);
-            ani.SetTrigger("Mouse1");
+            findHand = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            transform.position = new Vector2(findHand.x, findHand.y);
 
-            if (Input.GetMouseButtonDown(0))
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+
+            if (transform.position.x < 0 && transform.position.y > 0 && miniGame1.activeSelf)
             {
-                Debug.Log("firstClick");
-                ani.SetTrigger("Press1");
+                //spriteRenderer.sprite = newSprite[1];
+                //cursor.transform.localScale = new Vector3(1, 1, 1);
+                ani.SetTrigger("Mouse1");
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Debug.Log("firstClick");
+                    ani.SetTrigger("Press1");
+                }
+            }
+            if (transform.position.x >= 0 && transform.position.y > 0 && miniGame2.activeSelf)
+            {
+                //spriteRenderer.sprite = newSprite[2];
+                //cursor.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                ani.SetTrigger("Mouse2");
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Debug.Log("secondClick");
+                    ani.SetTrigger("Press2");
+                }
+            }
+            if (transform.position.x >= 0 && transform.position.y <= 0 && miniGame3.activeSelf)
+            {
+                //spriteRenderer.sprite = newSprite[3];
+                //cursor.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                ani.SetTrigger("Mouse3");
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Debug.Log("thirdClick");
+                    ani.SetTrigger("Press3");
+                }
+            }
+            if (transform.position.x < 0 && transform.position.y < 0 && miniGame4.activeSelf)
+            {
+                //spriteRenderer.sprite = newSprite[4];
+                //cursor.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                ani.SetTrigger("Mouse4");
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Debug.Log("forthClick");
+                    ani.SetTrigger("Press4");
+                }
             }
         }
-        if (transform.position.x >= 0 && transform.position.y > 0 && miniGame2.activeSelf)
-        {
-            //spriteRenderer.sprite = newSprite[2];
-            //cursor.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-            ani.SetTrigger("Mouse2");
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("secondClick");
-                ani.SetTrigger("Press2");
-            }
-        }
-        if (transform.position.x >= 0 && transform.position.y <= 0 && miniGame3.activeSelf)
-        {
-            //spriteRenderer.sprite = newSprite[3];
-            //cursor.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            ani.SetTrigger("Mouse3");
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("thirdClick");
-                ani.SetTrigger("Press3");
-            }
-        }
-        if (transform.position.x < 0 && transform.position.y < 0 && miniGame4.activeSelf)
-        {
-            //spriteRenderer.sprite = newSprite[4];
-            //cursor.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            ani.SetTrigger("Mouse4");
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("forthClick");
-                ani.SetTrigger("Press4");
-            }
-        }
+        
     }
 
     public void HandVisibleOnFirstMini()
