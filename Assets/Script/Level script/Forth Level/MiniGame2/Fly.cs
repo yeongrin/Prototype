@@ -43,7 +43,8 @@ public class Fly : MonoBehaviour
     Rigidbody2D rigid;
 
     public Animator ani;
-    AudioSource audioSource;
+    public AudioSource audioSource;
+    public AudioSource audioSource2;
 
     public float time; // Fly is destroyed automatically 
 
@@ -60,7 +61,6 @@ public class Fly : MonoBehaviour
         flyCollider = gameObject.GetComponent<BoxCollider2D>();
         ani = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
 
         mainTarget = new Transform[4];
 
@@ -74,6 +74,10 @@ public class Fly : MonoBehaviour
         {
             int randomIndex = Random.Range(0, mainTarget.Length);
             currentTarget = mainTarget[randomIndex];
+        }
+        if(dying == true)
+        {
+            audioSource2.Play();
         }
 
             speed = Random.Range(2, 4);

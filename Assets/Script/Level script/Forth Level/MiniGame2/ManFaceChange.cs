@@ -12,10 +12,17 @@ public class ManFaceChange : MonoBehaviour
 
     public Animator ani;
 
+    [Header("Audio")]
+    public AudioClip[] source;
+    AudioSource audioSource;
+
     void Start()
     {
         //this.processingObject.GetComponent<SpriteRenderer>().sprite = originalSprite;
         //ani = GetComponent<Animator>();
+
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = source[Random.Range(0, 2)];
     }
 
     void Update()
@@ -25,6 +32,7 @@ public class ManFaceChange : MonoBehaviour
 
     public void HitLin()
     {
+        audioSource.Play();
         ani.SetTrigger("Swat2");
         //StartCoroutine("StayOnFace");
         //this.processingObject.GetComponent<SpriteRenderer>().sprite = newSprite2;

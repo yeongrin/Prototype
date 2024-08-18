@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static Flyswatter;
+using UnityEngine.Video;
 
 public class Flyfight : MonoBehaviour
 {
@@ -12,10 +13,12 @@ public class Flyfight : MonoBehaviour
     public int score;
     public GameObject map3;
     public GameObject map2;
+    public GameObject transitionVideo;
     public static bool gameEnd = false;
 
     public Image image2;
     private bool checkbool = false;
+
 
     void Start()
     {
@@ -69,12 +72,13 @@ public class Flyfight : MonoBehaviour
 
     IEnumerator EnterNextScene()
     {
-       Destroy(GameObject.FindGameObjectWithTag("Fly"));
-       //yield return new WaitForSeconds(3f);
-       map3.SetActive(true);
-       map2.SetActive(false);
-       activateScene2();
-        yield return null;
+        Destroy(GameObject.FindGameObjectWithTag("Fly"));
+        transitionVideo.SetActive(true);
+        yield return new WaitForSeconds(4f);
+
+        map3.SetActive(true);
+        map2.SetActive(false);
+        activateScene2();
 
     }
 }

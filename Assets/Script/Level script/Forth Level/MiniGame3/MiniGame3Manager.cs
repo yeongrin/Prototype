@@ -12,7 +12,6 @@ public class MiniGame3Manager : MonoBehaviour
     //EndSceneVideo
     public GameObject endVideoObject;
     public VideoPlayer endVideo;
-    public VideoPlayer endVideo2;
 
     //Check video ending
     public static bool startVideoEnd;
@@ -60,13 +59,9 @@ public class MiniGame3Manager : MonoBehaviour
     void EndVideoCheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         endVideoEnd = true;
-        endVideo2.Play();
-        endVideo2.loopPointReached += CheckOver2;
-    }
 
-    void CheckOver2(UnityEngine.Video.VideoPlayer vp2)
-    {
         game2.SetActive(true);
         game.SetActive(false);
+
     }
 }
