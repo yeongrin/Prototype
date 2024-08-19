@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class VideoTransition2 : MonoBehaviour
+public class TransitionVideoOfMiniGame2 : MonoBehaviour
 {
-    public VideoPlayer transitionVid;
+    public VideoPlayer transitionVid; //Transition video
     public GameObject transitionVidOb;
     public GameObject game2;
-    //public SpawnFlies spawnFlies;
 
     void Start()
     {
@@ -19,7 +18,6 @@ public class VideoTransition2 : MonoBehaviour
     
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        Debug.Log("132542356363");
         game2.SetActive(true);
         transitionVidOb.SetActive(false);
     }

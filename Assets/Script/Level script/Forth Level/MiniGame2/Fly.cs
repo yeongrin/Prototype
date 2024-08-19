@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System;
-using static Flyfight;
+using static MiniGame2OfLevel4;
 using Random = UnityEngine.Random;
 
 /*public enum FlyType

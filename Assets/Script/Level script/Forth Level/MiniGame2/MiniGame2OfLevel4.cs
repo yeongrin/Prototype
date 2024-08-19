@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using static Flyswatter;
 using UnityEngine.Video;
 
-public class Flyfight : MonoBehaviour
+public class MiniGame2OfLevel4 : MonoBehaviour
 {
     public delegate void ActivateScene2();
     public static event ActivateScene2 activateScene2;
@@ -13,7 +13,7 @@ public class Flyfight : MonoBehaviour
     public int score;
     public GameObject map3;
     public GameObject map2;
-    public GameObject transitionVideo;
+    public GameObject transitionVideo3;
     public static bool gameEnd = false;
 
     public Image image2;
@@ -50,34 +50,11 @@ public class Flyfight : MonoBehaviour
         increaseScore -= Score;
     }
 
-    //IEnumerator SceneChange()
-    //{
-    //    Color color = image2.color;
-
-    //    for (int i = 0; i <= 255; i++)
-    //    {
-    //        color.a += Time.deltaTime * 0.01f;
-
-    //        image2.color = color;
-
-    //        if (image2.color.a >= 255)
-    //        {
-    //            StartCoroutine("EnterNextScene");
-    //            checkbool = true;
-    //        }
-    //    }
-    //    yield return null;
-
-    //}
-
     IEnumerator EnterNextScene()
     {
         Destroy(GameObject.FindGameObjectWithTag("Fly"));
-        transitionVideo.SetActive(true);
+        transitionVideo3.SetActive(true);
         yield return new WaitForSeconds(4f);
-
-        map3.SetActive(true);
-        map2.SetActive(false);
         activateScene2();
 
     }

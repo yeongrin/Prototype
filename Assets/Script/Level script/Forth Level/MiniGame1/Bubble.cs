@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
+using TMPro;
 
 public class Bubble : MonoBehaviour
 {
+    [Header("Bubble")]
     public GameObject questions;
     public GameObject nextquestions;
     public GameObject beforeBubble;
     public GameObject afterBubble;
     public GameObject game1;
     public GameObject game2;
+
+    [Header("Transition")]
+    public Animator ani;
+    public GameObject transitionPlayer;
+    public TMP_Text dialogueText;
 
     //control the bubble
     //Click bubble1/bubble 1 disappears and bubble 2 apear(setActiveTRUE)
@@ -49,9 +58,12 @@ public class Bubble : MonoBehaviour
 
     IEnumerator NextSceneCoroutine()
     {
-        yield return new WaitForSeconds(2f);
-        game2.SetActive(true);
+        ani.SetTrigger("Show");
+        yield return new WaitForSeconds(3f);
+
+        transitionPlayer.SetActive(true);
         game1.SetActive(false);
+        yield return null;
 
     }
 }

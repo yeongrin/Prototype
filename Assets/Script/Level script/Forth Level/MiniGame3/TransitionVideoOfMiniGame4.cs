@@ -3,33 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class InvokeVideo : MonoBehaviour
+public class TransitionVideoOfMiniGame4 : MonoBehaviour
 {
-    public GameObject gameScript;
-    public VideoPlayer video;
+    public VideoPlayer video; //Transition video
     public GameObject videoOb;
-
+    public GameObject miniGame4;
+    
     void Start()
     {
         video.loopPointReached += VideoCheckOver;
     }
 
-
+    
     void Update()
     {
-
+        
     }
 
     void VideoCheckOver(UnityEngine.Video.VideoPlayer vp)
     {
+        miniGame4.SetActive(true);
         videoOb.SetActive(false);
-        StartCoroutine("Delay");
-    }
-
-    IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(0.5f);
-        gameScript.gameObject.GetComponent<SpawnFlies>().enabled = true;
-        yield return null;
     }
 }
