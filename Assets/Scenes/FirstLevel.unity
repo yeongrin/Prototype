@@ -1019,6 +1019,10 @@ MonoBehaviour:
   image: {fileID: 290765539}
   video2: {fileID: 1791031201}
   video3: {fileID: 723077096}
+  heart: {fileID: 1679422522}
+  heart1: {fileID: 1177686915}
+  heart2: {fileID: 1232539973}
+  heart3: {fileID: 548137514}
 --- !u!1 &255390037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &255390038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1518,7 +1522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_TimeUpdateMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4828687605598597683, guid: 4d0ea45233483d34e995c083d7426838, type: 3}
       propertyPath: m_AudioOutputMode
@@ -1679,7 +1683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2714468, g: 0.26477394, b: 0.3207547, a: 0.54901963}
+  m_Color: {r: 0.2714468, g: 0.26477394, b: 0.3207547, a: 0.77254903}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2838,7 +2842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2714468, g: 0.26477394, b: 0.3207547, a: 0.54901963}
+  m_Color: {r: 0.2714468, g: 0.26477394, b: 0.3207547, a: 0.7764706}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3232,7 +3236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 169.8, y: 86.8}
+  m_AnchoredPosition: {x: 148.7, y: 71.77903}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &548137516
@@ -3572,7 +3576,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Beep the Horn!
+  m_text: 'Beep the Horn! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -3599,8 +3603,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3946,7 +3950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LIN'S BILLS ARE OVERDUE...
+  m_text: YOUR BILLS ARE OVERDUE...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -4430,7 +4434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &691475174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4599,7 +4603,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
@@ -4905,7 +4909,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU MADE LIN RUN LATE FOR WORK...
+  m_text: YOU ARE RUNNING LATE FOR WORK...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -5971,6 +5975,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8400000, guid: c3a55e06e4e66a04aaadcd09155ded01, type: 2}
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
+      propertyPath: m_TimeUpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_AudioOutputMode
       value: 1
       objectReference: {fileID: 0}
@@ -6500,7 +6508,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2907791, y: 0.060009003}
+  m_Offset: {x: 0.2907791, y: -4.784781}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6511,7 +6519,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 98.95233, y: 29.341724}
+  m_Size: {x: 98.95233, y: 39.031303}
   m_EdgeRadius: 0
 --- !u!114 &949985114
 MonoBehaviour:
@@ -6929,7 +6937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &968311846
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7425,8 +7433,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7966,7 +7974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LIN'S WORK IS NOW LATE...
+  m_text: YOU MISSED THE DEADLINE...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -8481,7 +8489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174.6, y: -85.3}
+  m_AnchoredPosition: {x: -148.7, y: -70.1}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1177686917
@@ -9047,7 +9055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174.6, y: 86.8}
+  m_AnchoredPosition: {x: -148.7, y: 71.77903}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232539975
@@ -9138,7 +9146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1246430738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9934,6 +9942,107 @@ Canvas:
   m_SortingLayerID: -1627741267
   m_SortingOrder: 5
   m_TargetDisplay: 0
+--- !u!1001 &1319935096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248928149262667156, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_Name
+      value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528362021363890241, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
 --- !u!1 &1325699855
 GameObject:
   m_ObjectHideFlags: 0
@@ -10160,7 +10269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stop Lin from falling asleep!
+  m_text: Drink the Tea to wake up!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -10187,8 +10296,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11512,8 +11621,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12054,7 +12163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: -85}
+  m_AnchoredPosition: {x: 148.7, y: -70.1}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1679422524
@@ -12904,7 +13013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1816854923
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13089,7 +13198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite:
   - {fileID: 21300000, guid: b38f1555bc2bc5246a7c1a87e231e51c, type: 3}
-  - {fileID: 1471718169, guid: 662e2277f9212264d8052503b6aec536, type: 3}
+  - {fileID: 21300000, guid: a05618b7fe86cc94ea8eeb9bf6bb5c25, type: 3}
   - {fileID: 1044554474, guid: 2f90d9de641c5dd4eaa7815320b64d9e, type: 3}
   - {fileID: -309922582, guid: a33be6e104ea37040b518be946e99e2c, type: 3}
   - {fileID: 21300000, guid: 2d6a0843620c86a4197ec5ec04a2a299, type: 3}
@@ -13165,7 +13274,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.37, y: 7.85}
+  m_Size: {x: 3.45, y: 4.81}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -13180,7 +13289,7 @@ Transform:
   m_GameObject: {fileID: 1849086671}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.37, y: -0.96, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -13568,7 +13677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU LET LIN FALL ASLEEP ON THE JOB...
+  m_text: YOU FELL ASLEEP ON THE JOB...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
   m_sharedMaterial: {fileID: 7829511298870801526, guid: 5429730e4c0d1744baf0aaa81c240c38, type: 2}
@@ -15154,7 +15263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2077326371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16024,3 +16133,4 @@ SceneRoots:
   - {fileID: 245634848}
   - {fileID: 988308244}
   - {fileID: 1196927600}
+  - {fileID: 1319935096}

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
 using static System.Collections.Specialized.BitVector32;
+using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,6 +51,12 @@ public class GameManager : MonoBehaviour
     public GameObject video3;
     AudioSource video3Source;
 
+    public GameObject heart;
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
+    
+
     //public float t1;
 
     void Awake()
@@ -65,7 +72,7 @@ public class GameManager : MonoBehaviour
         video.loopPointReached += CheckOver;
         
         goTime = 0f;
-        overTime = 50f;
+        overTime = 35f;
         gameWaiting = 5;
 
         waitingTime1 = 10;
@@ -82,6 +89,8 @@ public class GameManager : MonoBehaviour
 
         video2Source = video2.GetComponent<AudioSource>();
         video3Source = video3.GetComponent<AudioSource>();
+
+        
     }
 
 
@@ -129,6 +138,10 @@ public class GameManager : MonoBehaviour
             video2.GetComponent<VideoPlayer>().Pause();
             over5 = true;
             manyelling.SetActive(true);
+            heart.GetComponent<Animator>().SetTrigger("Life0");
+            heart1.GetComponent<Animator>().SetTrigger("Life0");
+            heart2.GetComponent<Animator>().SetTrigger("Life0");
+            heart3.GetComponent<Animator>().SetTrigger("Life0");
         }
     }
 

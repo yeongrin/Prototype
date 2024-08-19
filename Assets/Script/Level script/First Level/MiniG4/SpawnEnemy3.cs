@@ -39,6 +39,7 @@ public class SpawnEnemy3 : MonoBehaviour
     
     void Update()
     {
+
         if(state == SpawnState.WAITING) 
         { 
             if (!EnemyIsAlive ())
