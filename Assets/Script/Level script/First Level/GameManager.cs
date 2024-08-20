@@ -55,8 +55,8 @@ public class GameManager : MonoBehaviour
     public GameObject heart1;
     public GameObject heart2;
     public GameObject heart3;
-    
 
+    CursorState _cs;
     //public float t1;
 
     void Awake()
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         video.loopPointReached += CheckOver;
         
         goTime = 0f;
-        overTime = 35f;
+        overTime = 50f;
         gameWaiting = 5;
 
         waitingTime1 = 10;
@@ -90,7 +90,8 @@ public class GameManager : MonoBehaviour
         video2Source = video2.GetComponent<AudioSource>();
         video3Source = video3.GetComponent<AudioSource>();
 
-        
+        _cs = FindObjectOfType<CursorState>();
+        _cs.showCursor = CursorState.CursorShowing.Invisible;
     }
 
 
@@ -155,7 +156,7 @@ public class GameManager : MonoBehaviour
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        Cursor.visible = true;
+        _cs.showCursor = CursorState.CursorShowing.Visible;
         
 
         video3.SetActive(false);

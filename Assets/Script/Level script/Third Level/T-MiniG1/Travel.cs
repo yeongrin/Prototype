@@ -166,17 +166,18 @@ public class Travel : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         print("Clicking");
-                 
-                            if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
-                            {
-                                hasClicked = true;
-                                ChangeImage();
-                                _gm3.startAnimationFlash();
-                                Debug.Log("Shot");
-                                Invoke("Destroy", 2f);
-                                _pl.TakePhoto();
-                                source.Play();
-                            }
+
+                        if (hit.transform.gameObject.tag == "elements3" && hit.collider != null && hasClicked == false)
+                        {
+                            hasClicked = true;
+                            ChangeImage();
+                            _gm3.startAnimationFlash();
+                            Debug.Log("Shot");
+                            Invoke("Destroy", 2f);
+                            _pl.TakePhoto();
+                            source.Play();
+                        }
+                        
 
                     }
                 }

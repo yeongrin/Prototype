@@ -10,6 +10,7 @@ public class VideoManager3 : MonoBehaviour
     public GameObject Map2;
     public GameObject Map3;
     PhotoLoader _Pl;
+    CursorState _cs;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class VideoManager3 : MonoBehaviour
         vid.loopPointReached += CheckOver;
         vid.Play();
         _Pl = FindObjectOfType<PhotoLoader>();
+        _cs = FindObjectOfType<CursorState>();
     }
 
     // Update is called once per frame
@@ -36,12 +38,14 @@ public class VideoManager3 : MonoBehaviour
             Map2.SetActive(true);
             GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
             vidOb.SetActive(false);
+            _cs.showCursor = CursorState.CursorShowing.Visible;
         }
         else
         {
             Map3.SetActive(true);
             GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(false);
             vidOb.SetActive(false);
+            _cs.showCursor = CursorState.CursorShowing.Invisible;
         }
             
         

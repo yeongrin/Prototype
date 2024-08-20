@@ -25,6 +25,7 @@ public class PhotoAlbum : MonoBehaviour
     PhotoLoader _Pl;
     ChangeColor _cc;
     PuzzleGame2 _pg2;
+    CursorState _cs;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class PhotoAlbum : MonoBehaviour
         _Pl = FindObjectOfType<PhotoLoader>();
         _cc = FindObjectOfType<ChangeColor>();
         _pg2 = FindObjectOfType<PuzzleGame2>();
+        _cs = FindObjectOfType<CursorState>();
         move = false;
         score = 0;
 
@@ -104,6 +106,6 @@ public class PhotoAlbum : MonoBehaviour
         //GameObject.Find("Scene3").transform.Find("manyelling").processingObject.SetActive(true);
         GameEndPanel.SetActive(true);
         scene2.SetActive(false);
-        Cursor.visible = false;
+        _cs.showCursor = CursorState.CursorShowing.Invisible;
     }
 }

@@ -19,6 +19,8 @@ public class MouseCursor : MonoBehaviour
     public GameObject miniGame2;
     public GameObject miniGame3;
     public GameObject miniGame4;
+
+    public GameObject linYell;
     
     Vector2 findHand;
     Transform cursor;
@@ -50,7 +52,7 @@ public class MouseCursor : MonoBehaviour
 
     void Update()
     {
-        if (_gm.EndingG.activeSelf != true)
+        if (linYell.activeSelf != true)
         {
             findHand = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             transform.position = new Vector2(findHand.x, findHand.y);
@@ -107,6 +109,8 @@ public class MouseCursor : MonoBehaviour
                 }
             }
         }
+        else
+            this.gameObject.SetActive(false);
         
     }
 

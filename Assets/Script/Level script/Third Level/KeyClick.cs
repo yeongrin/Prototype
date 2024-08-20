@@ -15,6 +15,8 @@ public class KeyClick : MonoBehaviour
     public AudioSource source;
     public AudioClip carStarting;
 
+    CursorState _cs;
+
     public Animator ani;
 
     // Start is called before the first frame update
@@ -25,6 +27,8 @@ public class KeyClick : MonoBehaviour
             ppVolume.weight = 1f;
 
         image.sprite = keyStates[0];
+        _cs = FindObjectOfType<CursorState>();
+        _cs.showCursor = CursorState.CursorShowing.Visible;
     }
 
     // Update is called once per frame
@@ -54,6 +58,7 @@ public class KeyClick : MonoBehaviour
         source.Play();
         yield return new WaitForSeconds(3.5f);
         GameObject.Find("StartScene").SetActive(false); GameObject.Find("Game").transform.Find("Scene1").gameObject.SetActive(true);
+        _cs.showCursor = CursorState.CursorShowing.Invisible;
         yield return null;
     }
 

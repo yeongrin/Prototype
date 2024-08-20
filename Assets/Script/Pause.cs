@@ -9,6 +9,7 @@ public class Pause : MonoBehaviour
     void Start()
     {
         pausePanel.SetActive(false);
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -31,6 +32,6 @@ public class Pause : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1;
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 }

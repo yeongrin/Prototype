@@ -38,9 +38,12 @@ public class Photo2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Vector2 findPhoto = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-        cameraObject.transform.position = new Vector2(findPhoto.x, findPhoto.y);
+        if(Time.timeScale == 1)
+        {
+            Vector2 findPhoto = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            cameraObject.transform.position = new Vector2(findPhoto.x, findPhoto.y);
+        }
+        
 
        /*if (Input.GetMouseButtonDown(0))
         {

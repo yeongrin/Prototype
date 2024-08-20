@@ -11,6 +11,7 @@ public class Obstaclecoin : MonoBehaviour
 
     AudioSource audioSource;
     AudioClip sound;
+    public Sprite replacementSprite;
 
     public void Awake()
     {
@@ -23,6 +24,7 @@ public class Obstaclecoin : MonoBehaviour
     {
         ani = GetComponent<Animator>();
         _MG4 = GameObject.FindObjectOfType<MiniGame4>().GetComponent<MiniGame4>();
+        
     }
 
     void Update()
@@ -55,8 +57,9 @@ public class Obstaclecoin : MonoBehaviour
     {
         StopCoroutine("ChangeFileColor");
         audioSource.Play();
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = replacementSprite;
         _MG4.timer4 = 3f;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Destroy(this.gameObject);
 
     }

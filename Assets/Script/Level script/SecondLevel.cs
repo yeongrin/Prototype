@@ -35,7 +35,7 @@ public class SecondLevel : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("SecondScene");
+        SceneManager.LoadScene("ThirdScene");
     }
 
     public void Fade3()

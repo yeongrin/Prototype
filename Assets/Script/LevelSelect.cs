@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BackToMain : MonoBehaviour
+public class LevelSelect : MonoBehaviour
 {
-
-    public void SceneLoad()
+    public void LoadScene(string name)
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene(name);
         Time.timeScale = 1;
     }
 }

@@ -12,11 +12,13 @@ public class LevelEnd : MonoBehaviour
     bool videoOver;
     AudioSource audioSourceFinal;
     public AudioSource carSource;
+    CursorState _cs;
     
     // Start is called before the first frame update
     void Start()
     {
         audioSourceFinal = GetComponent<AudioSource>();
+        _cs = FindObjectOfType<CursorState>();
         ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
         ppVolume.weight = 0;
         video.loopPointReached += CheckOver;
@@ -37,7 +39,7 @@ public class LevelEnd : MonoBehaviour
     public void CheckOver(UnityEngine.Video.VideoPlayer player)
     {
         nextButton.SetActive(true);
-        Cursor.visible = true;
+        _cs.showCursor = CursorState.CursorShowing.Visible;
         videoOver = true;
         audioSourceFinal.Stop();
         carSource.Stop();
