@@ -39,7 +39,7 @@ public class Credits : MonoBehaviour
 
         /*if (checkbool)
         {
-            game.SetActive(true);
+            miniGame3.SetActive(true);
             vidOb.SetActive(false);
 
         }*/

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System;
 using static MiniGame2OfLevel4;
 using Random = UnityEngine.Random;
+using UnityEditor;
 
 /*public enum FlyType
 {
@@ -23,7 +24,6 @@ public class Fly : MonoBehaviour
     //public FlyType flyState;
     public int flyHealth;
     public int flyDamage;
-    public bool isDamage = false;
     public float speed;
 
     [Header("Target")]
@@ -32,7 +32,6 @@ public class Fly : MonoBehaviour
     public Transform currentTarget;
 
     public bool dying;
-
     public bool isDead { get; 
     private set; } = false;
 
@@ -42,9 +41,10 @@ public class Fly : MonoBehaviour
     public BoxCollider2D flyCollider;
     Rigidbody2D rigid;
 
+    [Header("Audio")]
     public Animator ani;
-    public AudioSource audioSource;
-    public AudioSource audioSource2;
+    public AudioSource crawlingSound;
+    public AudioSource splatSound;
 
     public float time; // Fly is destroyed automatically 
 
@@ -75,10 +75,6 @@ public class Fly : MonoBehaviour
             int randomIndex = Random.Range(0, mainTarget.Length);
             currentTarget = mainTarget[randomIndex];
         }
-        if(dying == true)
-        {
-            audioSource2.Play();
-        }
 
             speed = Random.Range(2, 4);
       
@@ -96,11 +92,7 @@ public class Fly : MonoBehaviour
 
             //While the fly is alive, it will move towards the specified spot
         }
-        if(dying == true)
-        {
-
-        }
-
+     
         if(time >= 4)
         {
             Destroy(this.gameObject);
@@ -108,14 +100,10 @@ public class Fly : MonoBehaviour
 
     }
 
+    //Normal swatter
     public void AudioEffect()
     {
-        audioSource.Play();
-    }
-
-    public void Destroy()
-    {
-        Destroy(this.gameObject);
+        splatSound.Play();
     }
 
     public void FlyDie()
@@ -123,19 +111,36 @@ public class Fly : MonoBehaviour
         rigid.gravityScale = 1.5f;
     }
 
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
+    }
+
+    //Electric swatter
+    public void struckByElectricSwatter()
+    {
+        splatSound.Play();
+        Invoke("swat2", 1.1f);
+    }
+    public void swat2()
+    {
+        rigid.gravityScale = 1.5f; // falling down after burning
+        flyCollider.enabled = false;
+    }
+
     public void OnBecameInvisible()
     {
         Destroy(this.gameObject);
     }
 
-    private void OnEnable()
-    {
-        activateScene2 += FlyDie;
-    }
+    //private void OnEnable()
+    //{
+    //    activateScene2 += FlyDie;
+    //}
 
-    private void OnDisable()
-    {
-        activateScene2 -= FlyDie;
-    }
+    //private void OnDisable()
+    //{
+    //    activateScene2 -= FlyDie;
+    //}
 
 }

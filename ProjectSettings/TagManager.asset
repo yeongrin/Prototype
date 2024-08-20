@@ -80,6 +80,18 @@ TagManager:
   - name: Player
     uniqueID: 602040153
     locked: 0
+  - name: Scene4
+    uniqueID: 871845137
+    locked: 0
+  - name: Scene3
+    uniqueID: 2831503227
+    locked: 0
+  - name: Scene2
+    uniqueID: 200849711
+    locked: 0
   - name: Particle
     uniqueID: 4210451793
+    locked: 0
+  - name: Scene1
+    uniqueID: 1451701749
     locked: 0

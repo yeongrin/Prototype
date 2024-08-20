@@ -6,62 +6,53 @@ using UnityEngine.Video;
 public class MiniGame3Manager : MonoBehaviour
 {
     //StartSceneVideo
-    public GameObject startVideoObject;
-    public VideoPlayer startVideo;
+    public GameObject transitionVideo3;
+    public VideoPlayer transitionV3;
 
     //EndSceneVideo
-    public GameObject endVideoObject;
-    public VideoPlayer endVideo;
+    public GameObject transitionVideo4;
+    public VideoPlayer transitionV4;
 
     //Check video ending
-    public static bool startVideoEnd;
-    public static bool endVideoStart;
-    public static bool endVideoEnd;
-    public GameObject game;
-    public GameObject game2;
+    public static bool transitionV4start;
+    private bool test = false;
+    public GameObject miniGame3;
+    public GameObject miniGame4;
 
     private void Awake()
     {
-        startVideoEnd = false;
-        endVideoStart = false;
-        endVideoEnd = false;
+        transitionV4start = false;
     }
 
 
     void Start()
     {
-        startVideo.loopPointReached += StartVideoCheckOver;
+      
     }
 
     void Update()
     {
-        if (endVideoStart == true)
+        if (transitionV4start == true && test == false)
         {
-            endVideo.loopPointReached += EndVideoCheckOver;
+            test = true;
             Invoke("EndVideoStart", 1.0f);
         }
     }
 
-    void StartVideoCheckOver(UnityEngine.Video.VideoPlayer vp)
-    {
-        //startVideoEnd = true;
-        //if (startVideoEnd == true)
-        //{
-        //    startVideoObject.SetActive(false);
-        //}
-    }
-
     public void EndVideoStart()
     {
-        endVideoObject.SetActive(true);
+        transitionVideo4.SetActive(true);
+        transitionV4.loopPointReached += EndVideoCheckOver;
     }
 
     void EndVideoCheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        endVideoEnd = true;
-
-        game2.SetActive(true);
-        game.SetActive(false);
+        miniGame4.SetActive(true);
+        transitionVideo3.SetActive(false);
+        transitionVideo4.SetActive(false);
+        print("turnbed off videos");
+        miniGame3.SetActive(false);
+       
 
     }
 }

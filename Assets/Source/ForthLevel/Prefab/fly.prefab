@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2918495973881505643}
   - component: {fileID: 4910062927373490869}
   - component: {fileID: -8885817240244322852}
-  - component: {fileID: 1044359331651956439}
   - component: {fileID: -1559483088286007817}
+  - component: {fileID: 1044359331651956439}
   m_Layer: 7
   m_Name: fly
   m_TagString: Fly
@@ -76,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1101952423
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 200849711
+  m_SortingLayer: 9
+  m_SortingOrder: 3
   m_Sprite: {fileID: 480849, guid: d4781bed845971444b4d747ff00863e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,7 +105,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1025903203764411910}
   flyHealth: 0
   flyDamage: 0
-  isDamage: 0
   speed: 2
   mainTarget: []
   targetObjects: []
@@ -115,8 +114,8 @@ MonoBehaviour:
   fly: {fileID: 2681046508965638740}
   flyCollider: {fileID: 4910062927373490869}
   ani: {fileID: 2918495973881505643}
-  audioSource: {fileID: 1044359331651956439}
-  audioSource2: {fileID: 0}
+  crawlingSound: {fileID: -1559483088286007817}
+  splatSound: {fileID: 1044359331651956439}
   time: 0
 --- !u!95 &2918495973881505643
 Animator:
@@ -211,7 +210,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!82 &1044359331651956439
+--- !u!82 &-1559483088286007817
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,8 +220,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e004b7d01529cfd45970bed6ee6ce9ef, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 5ec67f7432ca09a48be2ea02ebfe0ac4, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -307,7 +306,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &-1559483088286007817
+--- !u!82 &1044359331651956439
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,8 +316,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5ec67f7432ca09a48be2ea02ebfe0ac4, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: e004b7d01529cfd45970bed6ee6ce9ef, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

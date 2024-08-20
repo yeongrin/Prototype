@@ -27,6 +27,7 @@ public class SpawnFlies : MonoBehaviour
 
     private SpawnState state = SpawnState.COUNTING;
 
+    public GameObject anchor;
     void Start()
     {
         if (spawnPoints.Length == 0)
@@ -131,6 +132,6 @@ public class SpawnFlies : MonoBehaviour
     {
         //Debug.Log("Spawning enemy!:" + _enemy.name);
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation);
+        Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation, anchor.transform);
     }
 }

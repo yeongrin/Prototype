@@ -7,18 +7,12 @@ using UnityEngine.Video;
 
 public class MiniGame2OfLevel4 : MonoBehaviour
 {
-    public delegate void ActivateScene2();
-    public static event ActivateScene2 activateScene2;
+    //public delegate void ActivateScene2();
+    //public static event ActivateScene2 activateScene2;
 
     public int score;
-    public GameObject map3;
-    public GameObject map2;
     public GameObject transitionVideo3;
     public static bool gameEnd = false;
-
-    public Image image2;
-    private bool checkbool = false;
-
 
     void Start()
     {
@@ -34,10 +28,11 @@ public class MiniGame2OfLevel4 : MonoBehaviour
             gameEnd = true;
             if (gameEnd == true)
             {
-                //StartCoroutine("SceneChange");
+                Debug.Log("next");
                 StartCoroutine("EnterNextScene");
             }
         }
+ 
     }
 
     private void OnEnable()
@@ -53,9 +48,9 @@ public class MiniGame2OfLevel4 : MonoBehaviour
     IEnumerator EnterNextScene()
     {
         Destroy(GameObject.FindGameObjectWithTag("Fly"));
-        transitionVideo3.SetActive(true);
-        yield return new WaitForSeconds(4f);
-        activateScene2();
+        yield return new WaitForSeconds(0.5f);
+        transitionVideo3.SetActive(true); //transition video play
+        //activateScene2();
 
     }
 }

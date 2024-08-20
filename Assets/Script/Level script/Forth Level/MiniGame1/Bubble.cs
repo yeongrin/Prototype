@@ -13,7 +13,6 @@ public class Bubble : MonoBehaviour
     public GameObject beforeBubble;
     public GameObject afterBubble;
     public GameObject game1;
-    public GameObject game2;
 
     [Header("Transition")]
     public Animator ani;
@@ -59,7 +58,7 @@ public class Bubble : MonoBehaviour
     IEnumerator NextSceneCoroutine()
     {
         ani.SetTrigger("Show");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f); //Text show first and start coroutine
 
         transitionPlayer.SetActive(true);
         game1.SetActive(false);

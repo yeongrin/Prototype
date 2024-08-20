@@ -12,7 +12,7 @@ public class ElectricSwatter : MonoBehaviour
     public static event IncreaseScore increaseScore;
 
     public Animator animator;
-    AudioSource audioSource;
+    AudioSource electricSound;
 
     Fly _f;
 
@@ -40,6 +40,8 @@ public class ElectricSwatter : MonoBehaviour
 
     public int killedFlies;
 
+    public MiniGame2OfLevel4 mini;
+
     void Awake()
     {
         mainCamera = Camera.main;
@@ -51,7 +53,7 @@ public class ElectricSwatter : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         Mat = GetComponent<SpriteRenderer>().material;
         original = Mat.color.a;
-        audioSource = gameObject.GetComponent<AudioSource>();
+        electricSound = gameObject.GetComponent<AudioSource>();
 
         _f = FindObjectOfType<Fly>();
 
@@ -111,20 +113,18 @@ public class ElectricSwatter : MonoBehaviour
 
                         if (thisisfly.name == "Fly2(Clone)")
                         {
-                            audioSource.Play();
+                            electricSound.Play();
                             particle.Play(); //electric effect
-                            Rigidbody2D flyRigidbody;
-                            Collider2D flycollider;
                             Animator flyAnimator;
 
                             flyAnimator = thisisfly.GetComponent<Animator>();
-                            flyRigidbody = thisisfly.GetComponent<Rigidbody2D>();
-                            flycollider = thisisfly.GetComponent<Collider2D>();
 
-                            flyAnimator.SetTrigger("Death"); // burnning animation
-                            flyRigidbody.gravityScale = 1.5f; // falling down after burning
-                            flycollider.enabled = false;
-                           
+                            // burnning animation
+                            flyAnimator.SetTrigger("Death");
+                            hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
+                            thisisfly.GetComponent<Fly>().struckByElectricSwatter();
+
+                            mini.score += 1;
                         }
                     }
                 }
@@ -138,11 +138,12 @@ public class ElectricSwatter : MonoBehaviour
                     if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
                     {
 
+                        hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
                         hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
                         hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
-                        hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
                         killedFlies += 1;
 
+                        mini.score += 1;
                     }
 
                 }
