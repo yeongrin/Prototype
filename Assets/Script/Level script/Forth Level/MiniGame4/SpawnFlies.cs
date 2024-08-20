@@ -65,7 +65,7 @@ public class SpawnFlies : MonoBehaviour
             waveCountdown -= Time.deltaTime;
         }
 
-        if(Flyfight.gameEnd == true)
+        if(MiniGame2OfLevel4.gameEnd == true)
         {
             StopAllCoroutines();
             Destroy(GameObject.FindGameObjectWithTag("Fly"));

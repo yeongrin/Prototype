@@ -19,10 +19,6 @@ public class Flyswatter : MonoBehaviour
     public ParticleSystem particle2 = null;
     public Transform particlePoint;
 
-    [Header("Audio")]
-    public AudioClip[] source;
-    AudioSource audioSource;
-
     [Header("SwatterFade")]
     public float fadeSpeed, fadeAmount;
     float original;
@@ -52,8 +48,6 @@ public class Flyswatter : MonoBehaviour
         Mat = GetComponent<SpriteRenderer>().material;
         original = Mat.color.a;
 
-        audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.clip = source[Random.Range(0, 2)];
 
     }
 
@@ -80,8 +74,6 @@ public class Flyswatter : MonoBehaviour
        
         if (Input.GetMouseButtonDown(0))
         {
-            audioSource.clip = source[Random.Range(0, 2)];
-
             animator.SetTrigger("Swat");
 
             hitFly = Physics2D.Raycast(findFly, Vector2.zero, 0f);
@@ -91,8 +83,6 @@ public class Flyswatter : MonoBehaviour
            {
                 //hitFly.transform.processingObject.GetComponent<SpriteRenderer>().sprite = newSprite;
                 //This function changes the sprite of the hit fly to sprite specified in this script in the editor
-
-                audioSource.Play();
 
                 hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
                 hitFly.collider.gameObject.GetComponent<Fly>().dying = true;

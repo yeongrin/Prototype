@@ -12,7 +12,8 @@ public class ElectricSwatter : MonoBehaviour
     public static event IncreaseScore increaseScore;
 
     public Animator animator;
- 
+    AudioSource audioSource;
+
     Fly _f;
 
     public float fadeSpeed, fadeAmount;
@@ -50,6 +51,7 @@ public class ElectricSwatter : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         Mat = GetComponent<SpriteRenderer>().material;
         original = Mat.color.a;
+        audioSource = gameObject.GetComponent<AudioSource>();
 
         _f = FindObjectOfType<Fly>();
 
@@ -109,6 +111,7 @@ public class ElectricSwatter : MonoBehaviour
 
                         if (thisisfly.name == "Fly2(Clone)")
                         {
+                            audioSource.Play();
                             particle.Play(); //electric effect
                             Rigidbody2D flyRigidbody;
                             Collider2D flycollider;
