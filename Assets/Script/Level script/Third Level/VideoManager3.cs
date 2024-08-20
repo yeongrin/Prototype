@@ -28,6 +28,8 @@ public class VideoManager3 : MonoBehaviour
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         print("Video Is Over");
+        Cursor.visible = true;
+        
 
         if(_Pl.photosTaken > 0)
         {

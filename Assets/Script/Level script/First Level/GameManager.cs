@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
 using static System.Collections.Specialized.BitVector32;
+using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,6 +46,17 @@ public class GameManager : MonoBehaviour
     [Header("Blur")]
     public Image image;
 
+    public GameObject video2;
+    AudioSource video2Source;
+    public GameObject video3;
+    AudioSource video3Source;
+
+    public GameObject heart;
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
+    
+
     //public float t1;
 
     void Awake()
@@ -60,7 +72,7 @@ public class GameManager : MonoBehaviour
         video.loopPointReached += CheckOver;
         
         goTime = 0f;
-        overTime = 50f;
+        overTime = 35f;
         gameWaiting = 5;
 
         waitingTime1 = 10;
@@ -71,6 +83,14 @@ public class GameManager : MonoBehaviour
         SetText();
 
         image.color = new Color32(55, 55, 55, 0);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+
+        video2Source = video2.GetComponent<AudioSource>();
+        video3Source = video3.GetComponent<AudioSource>();
+
+        
     }
 
 
@@ -105,6 +125,8 @@ public class GameManager : MonoBehaviour
         //GameOver
         if (over1 == true && over2 == true && over3 == true && over4 == true)
         {
+            video2Source.Stop();
+            video2.GetComponent<VideoPlayer>().Pause();
             manyelling.SetActive(true);
             //endingPanel.Length.SetActive(true);
         }
@@ -112,8 +134,14 @@ public class GameManager : MonoBehaviour
         //GameEnding
         if (goTime >= overTime)
         {
+            video2Source.Stop();
+            video2.GetComponent<VideoPlayer>().Pause();
             over5 = true;
             manyelling.SetActive(true);
+            heart.GetComponent<Animator>().SetTrigger("Life0");
+            heart1.GetComponent<Animator>().SetTrigger("Life0");
+            heart2.GetComponent<Animator>().SetTrigger("Life0");
+            heart3.GetComponent<Animator>().SetTrigger("Life0");
         }
     }
 
@@ -128,9 +156,11 @@ public class GameManager : MonoBehaviour
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        
 
+        video3.SetActive(false);
         manyelling.SetActive(false);
+        
         EndingG.SetActive(true);
 
         Destroy(GameObject.FindGameObjectWithTag("Enemy"));

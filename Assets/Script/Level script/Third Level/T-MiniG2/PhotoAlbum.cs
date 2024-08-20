@@ -104,6 +104,6 @@ public class PhotoAlbum : MonoBehaviour
         //GameObject.Find("Scene3").transform.Find("manyelling").processingObject.SetActive(true);
         GameEndPanel.SetActive(true);
         scene2.SetActive(false);
-
+        Cursor.visible = false;
     }
 }

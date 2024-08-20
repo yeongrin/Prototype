@@ -37,6 +37,7 @@ public class LevelEnd : MonoBehaviour
     public void CheckOver(UnityEngine.Video.VideoPlayer player)
     {
         nextButton.SetActive(true);
+        Cursor.visible = true;
         videoOver = true;
         audioSourceFinal.Stop();
         carSource.Stop();
