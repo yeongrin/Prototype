@@ -101,5 +101,5 @@ public class PuzzleGame2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     }
 
-    //https://game-happy-world.tistory.com/44
+    //https://miniGame3-happy-world.tistory.com/44
 }

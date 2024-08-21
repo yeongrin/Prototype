@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
 using static System.Collections.Specialized.BitVector32;
-using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,7 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject SecMini;
     public GameObject ThiMini;
     public GameObject ForMini;
-    public GameObject EndingG; //Ending plus game panel
+    public GameObject EndingG; //Ending plus miniGame3 panel
 
     [Header("GameEnding")]
     public static bool over1 = false;

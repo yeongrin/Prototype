@@ -60,7 +60,7 @@ public class PuzzleGame : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
     }
 
-    //https://game-happy-world.tistory.com/44
+    //https://miniGame3-happy-world.tistory.com/44
     //알맞는 퍼즐을 맞추면 퍼즐칸의 색깔이 하얗게 변하며 퍼즐은 더는 움직이지 않는다.
     //퍼즐을 맞추기 전에 모든 퍼즐칸은 하얗다.
     //잘못된 퍼즐을 맞추면 칸의 색은 그대로 검다.

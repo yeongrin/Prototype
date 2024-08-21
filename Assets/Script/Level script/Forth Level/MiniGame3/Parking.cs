@@ -36,6 +36,7 @@ public class Parking : MonoBehaviour
         clickCount = 0;
     }
 
+    //MiniGame Ver1. Level 3.  
     public void CarGetAccident()
     {
         //if (Input.GetMouseButtonDown(0))
@@ -93,21 +94,23 @@ public class Parking : MonoBehaviour
             animator2.SetTrigger("LittleMore");
 
             currentAudioClip = audioClip[0];
+            audioSource.clip = currentAudioClip;
             audioSource.Play();
 
             clickCount = 1;
-            
+
         }
-            else if (clickCount == 1)
-            {
-                animator.SetTrigger("Park2");
-                animator2.SetTrigger("LittleMoreMore");
+        else if (clickCount == 1)
+        {
+            animator.SetTrigger("Park2");
+            animator2.SetTrigger("LittleMoreMore");
 
             currentAudioClip = audioClip[1];
+            audioSource.clip = currentAudioClip;
             audioSource.Play();
 
             clickCount = 2;
-            }
+        }
         else
         {
             if (clickCount == 2)
@@ -120,12 +123,14 @@ public class Parking : MonoBehaviour
         
     }
 
+    //MiniGame Ver2. Level 3.  
     public void CarParkingSmooth()
     {
 
         if (clickCount == 0)
         {
             currentAudioClip = audioClip[0];
+            audioSource.clip = currentAudioClip;
             animator.SetTrigger("perfect");
         }
          
@@ -136,10 +141,11 @@ public class Parking : MonoBehaviour
         animator2.SetTrigger("Crash");
         crash.gameObject.SetActive(true);
 
-        currentAudioClip = audioClip[1];
+        currentAudioClip = audioClip[2];
+        audioSource.clip = currentAudioClip;
         audioSource.Play();
 
-        MiniGame3Manager.endVideoStart = true;
+        MiniGame3Manager.transitionV4start = true;
        
     }
 

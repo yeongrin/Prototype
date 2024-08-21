@@ -9,6 +9,8 @@ public class VideoManager4 : MonoBehaviour
     public GameObject vidOb;
     public GameObject Map1;
 
+    public AudioSource audioSource;
+
     void Start()
     {
         vid.loopPointReached += CheckOver;
@@ -19,12 +21,11 @@ public class VideoManager4 : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         vid.Play();
+        audioSource.Play();
     }
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        print("Video Is Over");
-
         Map1.SetActive(true);
         //GameObject.Find("Game").transform.Find("Scene1").processingObject.SetActive(false);
         vidOb.SetActive(false); ;

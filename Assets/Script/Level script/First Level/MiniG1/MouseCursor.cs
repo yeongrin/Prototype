@@ -28,16 +28,16 @@ public class MouseCursor : MonoBehaviour
 
     GameManager _gm;
 
-    //AudioSource audioSource;
+    //AudioSource crawlingSound;
     //AudioClip sound;
 
     public void Awake()
     {
         mainCamera = Camera.main;
 
-        //audioSource = processingObject.GetComponent<AudioSource>();
+        //crawlingSound = processingObject.GetComponent<AudioSource>();
         //sound = AudioSourceOfLevel1.instance.arraudio[1];
-        //audioSource.clip = sound;
+        //crawlingSound.clip = sound;
 
     }
 

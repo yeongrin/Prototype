@@ -19,6 +19,7 @@ public class TransitionVideoOfMiniGame2 : MonoBehaviour
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         game2.SetActive(true);
+        //Spawning flies when video is over
         transitionVidOb.SetActive(false);
     }
 }

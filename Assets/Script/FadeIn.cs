@@ -21,7 +21,7 @@ public class FadeIn : MonoBehaviour
     {
         StartCoroutine("Delay");
 
-        //When the fade out coroutine stops, start the main game. 
+        //When the fade out coroutine stops, start the main miniGame3. 
         if(checkbool)
         {
             //canvas.SetActive(true);

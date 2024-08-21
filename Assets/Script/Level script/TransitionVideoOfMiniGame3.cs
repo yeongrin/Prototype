@@ -9,9 +9,11 @@ public class TransitionVideoOfMiniGame3 : MonoBehaviour
     public GameObject videoOb;
     public GameObject miniGame3;
     public GameObject miniGame2;
+    public GameObject miniGame2Background;
 
     void Start()
     {
+        miniGame2.SetActive(false);
         video.loopPointReached += VideoCheckOver;
     }
 
@@ -25,7 +27,7 @@ public class TransitionVideoOfMiniGame3 : MonoBehaviour
     {
         //videoOb.SetActive(false);
         miniGame3.SetActive(true);
-        miniGame2.SetActive(false);
+        miniGame2Background.SetActive(false);
 
     }
 }

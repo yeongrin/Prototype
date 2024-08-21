@@ -36,18 +36,11 @@ public class Flyswatter : MonoBehaviour
     private RaycastHit2D hitFly;
     public ManFaceChange manFaceChange;
 
-    void Awake()
-    {
-
-    }
-
-
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
         Mat = GetComponent<SpriteRenderer>().material;
         original = Mat.color.a;
-
 
     }
 
