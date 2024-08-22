@@ -11,7 +11,7 @@ public class Credits : MonoBehaviour
     public GameObject credits;
     public Animator ani;
     public float timer;
-    bool creditsTimer;
+    public bool creditsTimer;
 
     BackToMain _btm;
 
@@ -24,13 +24,13 @@ public class Credits : MonoBehaviour
         vid.loopPointReached += CheckOver;
         image = GetComponent<RawImage>();
         StartCoroutine("Delay");
-        creditsTimer = false;
+        
         _btm = FindObjectOfType<BackToMain>();
     }
 
     void Update()
     {
-        if (creditsTimer)
+        if (creditsTimer == true)
         {
             timer -= Time.deltaTime;
         }

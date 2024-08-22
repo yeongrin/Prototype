@@ -15,9 +15,7 @@ public class Bubble : MonoBehaviour
     public GameObject game1;
 
     [Header("Transition")]
-    public Animator ani;
     public GameObject transitionPlayer;
-    public TMP_Text dialogueText;
 
     //control the bubble
     //Click bubble1/bubble 1 disappears and bubble 2 apear(setActiveTRUE)
@@ -57,9 +55,6 @@ public class Bubble : MonoBehaviour
 
     IEnumerator NextSceneCoroutine()
     {
-        ani.SetTrigger("Show");
-        yield return new WaitForSeconds(3f); //Text show first and start coroutine
-
         transitionPlayer.SetActive(true);
         game1.SetActive(false);
         yield return null;

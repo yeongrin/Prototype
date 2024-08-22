@@ -625,6 +625,7 @@ MonoBehaviour:
   credits: {fileID: 1594555307}
   ani: {fileID: 286904027}
   timer: 13
+  creditsTimer: 0
 --- !u!1 &1509717400
 GameObject:
   m_ObjectHideFlags: 0

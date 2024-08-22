@@ -18,6 +18,8 @@ public class MiniGame3Manager : MonoBehaviour
     private bool test = false;
     public GameObject miniGame3;
     public GameObject miniGame4;
+    public GameObject carBackground;
+    public GameObject nextBackground;
 
     private void Awake()
     {
@@ -43,6 +45,8 @@ public class MiniGame3Manager : MonoBehaviour
     {
         transitionVideo4.SetActive(true);
         transitionV4.loopPointReached += EndVideoCheckOver;
+        carBackground.SetActive(false);
+        nextBackground.SetActive(true);
     }
 
     void EndVideoCheckOver(UnityEngine.Video.VideoPlayer vp)

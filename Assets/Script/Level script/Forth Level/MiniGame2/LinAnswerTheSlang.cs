@@ -87,8 +87,8 @@ public class LinAnswerTheSlang : MonoBehaviour
         {
             answerText.text = "Mosquito";
         }
-        yield return new WaitForSeconds(1f);
         StopCoroutine("AnswerBubbleOutPut");
         answerBubble.gameObject.SetActive(false);
+        yield return null;
     }
 }
