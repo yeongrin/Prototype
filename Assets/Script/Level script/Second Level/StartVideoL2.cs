@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class StartVideoL2 : MonoBehaviour
 {
@@ -48,9 +49,8 @@ public class StartVideoL2 : MonoBehaviour
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         //StartCoroutine("MainSplash");
-        
-        vidOb.SetActive(false);
-        panel.SetActive(true);
+
+        SceneManager.LoadScene("ThirdScene");
         
     }
 

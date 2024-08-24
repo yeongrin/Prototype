@@ -13,12 +13,20 @@ public class Bubble : MonoBehaviour
     public GameObject beforeBubble;
     public GameObject afterBubble;
     public GameObject game1;
+    public GameObject background;
+
+    CursorState _cs;
 
     [Header("Transition")]
     public GameObject transitionPlayer;
 
     //control the bubble
     //Click bubble1/bubble 1 disappears and bubble 2 apear(setActiveTRUE)
+
+    private void Start()
+    {
+        _cs = FindObjectOfType<CursorState>();
+    }
 
     public void Wating1()
     {
@@ -55,8 +63,12 @@ public class Bubble : MonoBehaviour
 
     IEnumerator NextSceneCoroutine()
     {
+        yield return new WaitForSeconds(1.5f);
+        _cs.showCursor = CursorState.CursorShowing.Invisible;
         transitionPlayer.SetActive(true);
         game1.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        background.SetActive(false);
         yield return null;
 
     }

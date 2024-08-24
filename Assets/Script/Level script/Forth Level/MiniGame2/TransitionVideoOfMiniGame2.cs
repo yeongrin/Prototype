@@ -5,6 +5,8 @@ using UnityEngine.Video;
 
 public class TransitionVideoOfMiniGame2 : MonoBehaviour
 {
+    public enum WhichCursor { On, Off}
+
     public VideoPlayer transitionVid; //Transition video
     public GameObject transitionVidOb;
     public GameObject game2;
@@ -12,13 +14,20 @@ public class TransitionVideoOfMiniGame2 : MonoBehaviour
     public GameObject nextBackground;
     public GameObject gameThingy;
 
+    public WhichCursor cursor;
+
+    CursorState _cs;
+
     void Start()
     {
+        _cs = FindObjectOfType<CursorState>();
         transitionVid.loopPointReached += CheckOver;
         transitionVid.Play();
         if (nextBackground != null)
         {
-            nextBackground.SetActive(true);
+            print("next");
+            StartCoroutine(Wait());
+            
         }
         else
             return;
@@ -29,15 +38,17 @@ public class TransitionVideoOfMiniGame2 : MonoBehaviour
     
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        game2.SetActive(true);
         //Spawning flies when video is over
         transitionVidOb.SetActive(false);
-        if (lastMinigame != null)
+        if(cursor == WhichCursor.On)
         {
-            lastMinigame.SetActive(false);
+            _cs.showCursor = CursorState.CursorShowing.Invisible;
         }
-        else
-            return;
+        else 
+            _cs.showCursor = CursorState.CursorShowing.Visible;
+
+        
+     
         if (gameThingy != null)
         {
             gameThingy.SetActive(true);
@@ -45,5 +56,21 @@ public class TransitionVideoOfMiniGame2 : MonoBehaviour
         else
             return;
         
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+        
+        if (lastMinigame != null)
+        {
+            new WaitForSeconds(1f);
+            lastMinigame.SetActive(false);
+        }
+        else
+            yield return null;
+        new WaitForSeconds(3f);
+        nextBackground.SetActive(true);
+        game2.SetActive(true);
     }
 }

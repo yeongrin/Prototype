@@ -15,11 +15,13 @@ public class MiniGame2OfLevel4 : MonoBehaviour
     public static bool gameEnd = false;
     public GameObject minigame;
     public GameObject thisMinigame;
+    bool hasPlayed;
 
     void Start()
     {
         score = 0;
         gameEnd = false;
+        hasPlayed = false;
     }
 
     private void Update()
@@ -27,10 +29,11 @@ public class MiniGame2OfLevel4 : MonoBehaviour
         if (score >= 12)
         {
             gameEnd = true;
-            if (gameEnd == true)
+            if (gameEnd == true && hasPlayed == false)
             {
                 //Debug.Log("next");
                 StartCoroutine("EnterNextScene");
+                hasPlayed = true;
             }
         }
     }
@@ -57,6 +60,7 @@ public class MiniGame2OfLevel4 : MonoBehaviour
         Destroy(GameObject.FindGameObjectWithTag("Fly"));
         yield return new WaitForSeconds(0.5f);
         transitionVideo3.SetActive(true); //transition video play
+        yield return new WaitForSeconds(2f);
         thisMinigame.SetActive(false);
         if (minigame != null)
         {

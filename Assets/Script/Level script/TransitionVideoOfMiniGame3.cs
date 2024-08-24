@@ -11,10 +11,14 @@ public class TransitionVideoOfMiniGame3 : MonoBehaviour
     public GameObject miniGame2;
     public GameObject miniGame2Background;
 
+    CursorState _cs;
+
     void Start()
     {
-        miniGame2.SetActive(false);
+        
+        StartCoroutine(Delay());
         video.loopPointReached += VideoCheckOver;
+        _cs = FindObjectOfType<CursorState>();
     }
 
 
@@ -23,11 +27,18 @@ public class TransitionVideoOfMiniGame3 : MonoBehaviour
 
     }
 
+    IEnumerator Delay()
+    {
+        miniGame2.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        miniGame2Background.SetActive(false);
+    }
+
     void VideoCheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         //videoOb.SetActive(false);
         miniGame3.SetActive(true);
-        miniGame2Background.SetActive(false);
+        _cs.showCursor = CursorState.CursorShowing.Visible;
 
     }
 }

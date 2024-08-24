@@ -12,7 +12,7 @@ public class SoundEffectStop : MonoBehaviour
     {
 
         audioSource = GetComponent<AudioSource>();
-        sound = AudioSourceOfLevel1.instance.arraudio[7];
+        sound = AudioSourceOfLevel1.instance.arraudio[6];
         audioSource.clip = sound;
         audioSource.Play();
     }

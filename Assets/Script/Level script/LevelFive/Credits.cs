@@ -22,7 +22,7 @@ public class Credits : MonoBehaviour
     void Start()
     {
         vid.loopPointReached += CheckOver;
-        image = GetComponent<RawImage>();
+        image = vid.GetComponent<RawImage>();
         StartCoroutine("Delay");
         
         _btm = FindObjectOfType<BackToMain>();

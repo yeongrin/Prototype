@@ -11,10 +11,13 @@ public class VideoManager4 : MonoBehaviour
 
     public AudioSource audioSource;
 
+    CursorState _cs;
+
     void Start()
     {
         vid.loopPointReached += CheckOver;
         StartCoroutine("Delay");
+        _cs = FindObjectOfType<CursorState>();
     }
 
     IEnumerator Delay()
@@ -26,8 +29,10 @@ public class VideoManager4 : MonoBehaviour
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
+        _cs.showCursor = CursorState.CursorShowing.Visible;
         Map1.SetActive(true);
         //GameObject.Find("Game").transform.Find("Scene1").processingObject.SetActive(false);
         vidOb.SetActive(false); ;
+        
     }
 }
