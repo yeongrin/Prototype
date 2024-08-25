@@ -24,11 +24,6 @@ public class GameController3 : MonoBehaviour
 
     private void Update()
     {
-        if (this.gameObject.activeSelf)
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Confined;
-        }
 
         if (flash == true)
         {

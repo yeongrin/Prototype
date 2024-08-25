@@ -57,6 +57,7 @@ public class MiniGame2OfLevel4 : MonoBehaviour
 
     IEnumerator EnterNextScene()
     {
+        yield return new WaitForSeconds(1.5f);
         Destroy(GameObject.FindGameObjectWithTag("Fly"));
         yield return new WaitForSeconds(0.5f);
         transitionVideo3.SetActive(true); //transition video play

@@ -69,7 +69,7 @@ public class SpawnFlies : MonoBehaviour
         if(MiniGame2OfLevel4.gameEnd == true)
         {
             StopAllCoroutines();
-            Destroy(GameObject.FindGameObjectWithTag("Fly"));
+            //Destroy(GameObject.FindGameObjectWithTag("Fly"));
         }
 
     }

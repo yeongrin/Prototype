@@ -27,6 +27,8 @@ public class Flyswatter : MonoBehaviour
     public Sprite newSprite;
     public float fadeTimer;
 
+    public GameObject pauseMenu;
+
     [System.Serializable]
     public class RaycastEvent : UnityEvent<Transform> { }
 
@@ -46,52 +48,56 @@ public class Flyswatter : MonoBehaviour
 
     void Update()
     {
-        if (DoFade)
-
-            FadeNow();
-
-        else
-            ResetFade();
-
-        if (fadeTimer > 0)
+        if(pauseMenu.activeSelf != true)
         {
-            DoFade = true;
-            fadeTimer -= Time.deltaTime;
-            //When the timer hits zero, the fly swatter returns to transparent.
-        }
-        else
-            DoFade = false;
+            if (DoFade)
 
-        Vector2 findFly = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-        transform.position = new Vector2(findFly.x, findFly.y);
-       
-        if (Input.GetMouseButtonDown(0))
-        {
-            animator.SetTrigger("Swat");
+                FadeNow();
 
-            hitFly = Physics2D.Raycast(findFly, Vector2.zero, 0f);
-            fadeTimer = 0.5f; //When clicking, a timer will start for the flyswatter to be fully visible before returning to opaque.
-            
-           if (hitFly.transform.gameObject.tag == "Fly")
-           {
-                //hitFly.transform.processingObject.GetComponent<SpriteRenderer>().sprite = newSprite;
-                //This function changes the sprite of the hit fly to sprite specified in this script in the editor
+            else
+                ResetFade();
 
-                hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
-                hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
-                hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
-                //When hit, the target fly will change sprite and stop moving.
-                
-               increaseScore();
-           }
-            if (hitFly.transform.gameObject.tag == "Target")
+            if (fadeTimer > 0)
             {
-                manFaceChange.HitLin();
-                particle2.Play();
-                particle.Play();
-                
+                DoFade = true;
+                fadeTimer -= Time.deltaTime;
+                //When the timer hits zero, the fly swatter returns to transparent.
+            }
+            else
+                DoFade = false;
+
+            Vector2 findFly = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            transform.position = new Vector2(findFly.x, findFly.y);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                animator.SetTrigger("Swat");
+
+                hitFly = Physics2D.Raycast(findFly, Vector2.zero, 0f);
+                fadeTimer = 0.5f; //When clicking, a timer will start for the flyswatter to be fully visible before returning to opaque.
+
+                if (hitFly.transform.gameObject.tag == "Fly")
+                {
+                    //hitFly.transform.processingObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+                    //This function changes the sprite of the hit fly to sprite specified in this script in the editor
+
+                    hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
+                    hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
+                    hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
+                    //When hit, the target fly will change sprite and stop moving.
+
+                    increaseScore();
+                }
+                if (hitFly.transform.gameObject.tag == "Target")
+                {
+                    manFaceChange.HitLin();
+                    particle2.Play();
+                    particle.Play();
+
+                }
             }
         }
+        
     }
 
     void FadeNow()

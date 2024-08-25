@@ -9612,6 +9612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showCursor: 0
+  pauseMenu: {fileID: 1319935097}
 --- !u!4 &1285363232
 Transform:
   m_ObjectHideFlags: 0
@@ -10071,6 +10072,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 744005038462837622, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -10157,13 +10162,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6528362021363890241, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+--- !u!1 &1319935097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 744005038462837622, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+  m_PrefabInstance: {fileID: 1319935096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1325699855
 GameObject:
   m_ObjectHideFlags: 0
@@ -13329,6 +13339,7 @@ MonoBehaviour:
   miniGame3: {fileID: 99718666}
   miniGame4: {fileID: 281940226}
   linYell: {fileID: 1319181319}
+  pauseMenu: {fileID: 1319935097}
 --- !u!95 &1849086673
 Animator:
   serializedVersion: 5

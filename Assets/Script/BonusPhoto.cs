@@ -25,13 +25,6 @@ public class BonusPhoto : MonoBehaviour
 
     private void Start()
     {
-        bonusButton = GameObject.Find("Bonus");
 
-        if (hasBonusPhoto == false)
-        {
-            bonusButton.SetActive(false);
-        }
-        else
-            bonusButton.SetActive(true);
     }
 }

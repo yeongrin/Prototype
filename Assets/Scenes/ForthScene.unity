@@ -2920,6 +2920,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 744005038462837622, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2617254133548093175, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3048798232060251791, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3003,6 +3011,10 @@ PrefabInstance:
     - target: {fileID: 3248928149262667156, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528362021363890241, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15919,6 +15931,7 @@ MonoBehaviour:
   findflies: []
   killedFlies: 0
   mini: {fileID: 1993232570}
+  pauseMenu: {fileID: 1427055984}
 --- !u!82 &903915145
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22782,6 +22795,7 @@ MonoBehaviour:
   DoFade: 0
   newSprite: {fileID: 21300000, guid: 402c4853fb720474fa7b99f976ab1c0b, type: 3}
   fadeTimer: 0
+  pauseMenu: {fileID: 1427055984}
   raycastEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -22835,6 +22849,7 @@ MonoBehaviour:
   findflies: []
   killedFlies: 0
   mini: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!82 &1138005880
 AudioSource:
   m_ObjectHideFlags: 0
@@ -30149,6 +30164,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1994948759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1427055984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 744005038462837622, guid: 136d8435d79422e48ae4059800a87d5d, type: 3}
+  m_PrefabInstance: {fileID: 263405103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430522189
 GameObject:
   m_ObjectHideFlags: 0
@@ -40139,6 +40159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showCursor: 1
+  pauseMenu: {fileID: 1427055984}
 --- !u!4 &1834131807
 Transform:
   m_ObjectHideFlags: 0

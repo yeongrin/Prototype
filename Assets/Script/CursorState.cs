@@ -8,20 +8,31 @@ public class CursorState : MonoBehaviour
 
     public CursorShowing showCursor;
 
+    public GameObject pauseMenu;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
+        AudioListener.pause = false;
     }
 
     
     void Update()
     {
-        switch (showCursor)
+        if (pauseMenu.activeSelf)
         {
-            case CursorShowing.Visible:
-                Cursor.visible = true; break;
-            case CursorShowing.Invisible:
-                Cursor.visible = false; break;
+            Cursor.visible = true;
         }
+        else
+        {
+            switch (showCursor)
+            {
+                case CursorShowing.Visible:
+                    Cursor.visible = true; break;
+                case CursorShowing.Invisible:
+                    Cursor.visible = false; break;
+            }
+        }
+        
     }
 }

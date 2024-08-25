@@ -5,11 +5,16 @@ using UnityEngine;
 public class BonusButton : MonoBehaviour
 {
     public GameObject bonusPanel;
-
+    public GameObject button;
+    BonusPhoto _bp;
 
     void Start()
     {
-        
+        _bp = FindObjectOfType<BonusPhoto>();
+        if (_bp.hasBonusPhoto == true)
+            button.SetActive(true);
+        else
+            button.SetActive(false);
     }
 
     // Update is called once per frame

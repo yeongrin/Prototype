@@ -21,6 +21,8 @@ public class MouseCursor : MonoBehaviour
     public GameObject miniGame4;
 
     public GameObject linYell;
+
+    public GameObject pauseMenu;
     
     Vector2 findHand;
     Transform cursor;
@@ -111,6 +113,13 @@ public class MouseCursor : MonoBehaviour
         }
         else
             this.gameObject.SetActive(false);
+
+        if (pauseMenu.activeSelf)
+        {
+            spriteRenderer.enabled = false;
+        }
+        else
+            spriteRenderer.enabled = true;
         
     }
 

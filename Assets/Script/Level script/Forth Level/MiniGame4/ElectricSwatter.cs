@@ -42,6 +42,8 @@ public class ElectricSwatter : MonoBehaviour
 
     public MiniGame2OfLevel4 mini;
 
+    public GameObject pauseMenu;
+
     void Awake()
     {
         mainCamera = Camera.main;
@@ -62,93 +64,98 @@ public class ElectricSwatter : MonoBehaviour
 
     void Update()
     {
-        if (DoFade)
-
-            FadeNow();
-
-        else
-            ResetFade();
-
-        if (fadeTimer > 0)
+        if(pauseMenu.activeSelf != true)
         {
-            DoFade = true;
-            fadeTimer -= Time.deltaTime;
-            //When the timer hits zero, the fly swatter returns to transparent.
-        }
-        else
-            DoFade = false;
+            if (DoFade)
 
-        Vector2 findSwatter = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-        transform.position = new Vector2(findSwatter.x, findSwatter.y);
+                FadeNow();
 
-        findflies = GameObject.FindGameObjectsWithTag("Fly");//Trace to player
+            else
+                ResetFade();
 
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            //int mask = (1 << 7);
-
-            animator.SetTrigger("Swat");
-
-            ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            hitFly = Physics2D.Raycast(findSwatter, Vector2.zero, 0f);
-            fadeTimer = 0.5f; //When clicking, a timer will start for the flyswatter to be fully visible before returning to opaque.
-
-           
-            // if hit the first spider, electric effect does not produce
-
-            if (killedFlies >= 1) // <-int that distinguishes the first spider
+            if (fadeTimer > 0)
             {
+                DoFade = true;
+                fadeTimer -= Time.deltaTime;
+                //When the timer hits zero, the fly swatter returns to transparent.
+            }
+            else
+                DoFade = false;
 
-                //When 30 spiders appear, a single mouse click create an electrical effect
-                //All 30 spiders are played in an animation that burn black
-                //After the animation ends, spiders fall down!
+            Vector2 findSwatter = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            transform.position = new Vector2(findSwatter.x, findSwatter.y);
+
+            findflies = GameObject.FindGameObjectsWithTag("Fly");//Trace to player
 
 
-                if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
+            if (Input.GetMouseButtonDown(0))
+            {
+                //int mask = (1 << 7);
+
+                animator.SetTrigger("Swat");
+
+                ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                hitFly = Physics2D.Raycast(findSwatter, Vector2.zero, 0f);
+                fadeTimer = 0.5f; //When clicking, a timer will start for the flyswatter to be fully visible before returning to opaque.
+
+
+                // if hit the first spider, electric effect does not produce
+
+                if (killedFlies >= 1) // <-int that distinguishes the first spider
                 {
-                    GameObject[] flies = GameObject.FindGameObjectsWithTag("Fly");
-                    foreach (GameObject thisisfly in flies) // create loop to gather 30 spider 
+
+                    //When 30 spiders appear, a single mouse click create an electrical effect
+                    //All 30 spiders are played in an animation that burn black
+                    //After the animation ends, spiders fall down!
+
+
+                    if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
                     {
-
-                        if (thisisfly.name == "Fly2(Clone)")
+                        GameObject[] flies = GameObject.FindGameObjectsWithTag("Fly");
+                        foreach (GameObject thisisfly in flies) // create loop to gather 30 spider 
                         {
-                            electricSound.Play();
-                            particle.Play(); //electric effect
-                            Animator flyAnimator;
 
-                            flyAnimator = thisisfly.GetComponent<Animator>();
+                            if (thisisfly.name == "Fly2(Clone)")
+                            {
+                                //electricSound.Play();
+                                particle.Play(); //electric effect
+                                Animator flyAnimator;
 
-                            // burnning animation
-                            flyAnimator.SetTrigger("Death");
+                                flyAnimator = thisisfly.GetComponent<Animator>();
+
+                                // burnning animation
+                                flyAnimator.SetTrigger("Death");
+                                hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
+                                thisisfly.GetComponent<Fly>().struckByElectricSwatter();
+                                thisisfly.GetComponent<Fly>().dying = true;
+
+                                mini.score += 1;
+                            }
+                        }
+                    }
+
+
+                }
+                else
+                {
+                    if (killedFlies < 1) // <- first spider
+                    {
+                        if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
+                        {
+
                             hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
-                            thisisfly.GetComponent<Fly>().struckByElectricSwatter();
+                            hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
+                            hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
+                            killedFlies += 1;
 
                             mini.score += 1;
                         }
+
                     }
-                }
-
-
-            }
-            else
-            {
-                if (killedFlies < 1) // <- first spider
-                {
-                    if (hitFly.transform.gameObject.tag == "Fly" && hitFly.collider != null)
-                    {
-
-                        hitFly.collider.gameObject.GetComponent<Fly>().dying = true;
-                        hitFly.collider.gameObject.GetComponent<Animator>().SetTrigger("Death");
-                        hitFly.collider.GetComponent<Fly>().flyCollider.enabled = false;
-                        killedFlies += 1;
-
-                        mini.score += 1;
-                    }
-
                 }
             }
         }
+        
     }
 
     void FadeNow()

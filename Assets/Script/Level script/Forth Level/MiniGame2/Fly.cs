@@ -84,20 +84,25 @@ public class Fly : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-       
-        if (dying == false)
-        {
-            
-            transform.position = Vector2.MoveTowards(this.transform.position, currentTarget.transform.position, speed * Time.deltaTime);
 
-            //While the fly is alive, it will move towards the specified spot
-        }
+        StartCoroutine(FlyMove());
      
         if(time >= 4)
         {
             Destroy(this.gameObject);
         }
 
+    }
+    public IEnumerator FlyMove()
+    {
+        if (dying == false)
+        {
+
+            transform.position = Vector2.MoveTowards(this.transform.position, currentTarget.transform.position, speed * Time.deltaTime);
+
+            //While the fly is alive, it will move towards the specified spot
+            yield return null;
+        }
     }
 
     //Normal swatter
