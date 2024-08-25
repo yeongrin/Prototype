@@ -44,8 +44,12 @@ public class TransitionVideoOfMiniGame2 : MonoBehaviour
         {
             _cs.showCursor = CursorState.CursorShowing.Invisible;
         }
-        else 
+        else
+        {
             _cs.showCursor = CursorState.CursorShowing.Visible;
+        }
+            
+        
 
         
      
@@ -69,7 +73,7 @@ public class TransitionVideoOfMiniGame2 : MonoBehaviour
         }
         else
             yield return null;
-        new WaitForSeconds(3f);
+        //new WaitForSeconds(3f);
         nextBackground.SetActive(true);
         game2.SetActive(true);
     }

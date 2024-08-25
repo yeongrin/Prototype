@@ -10,7 +10,7 @@ public class CursorState : MonoBehaviour
 
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     

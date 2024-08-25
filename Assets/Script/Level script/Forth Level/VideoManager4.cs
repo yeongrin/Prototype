@@ -22,7 +22,7 @@ public class VideoManager4 : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
         vid.Play();
         audioSource.Play();
     }

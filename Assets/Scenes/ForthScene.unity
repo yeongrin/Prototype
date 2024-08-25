@@ -4271,7 +4271,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
@@ -8188,7 +8188,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
@@ -14812,7 +14812,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
@@ -22416,7 +22416,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
@@ -22994,6 +22994,10 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 8400000, guid: 9681c798fa63bc84292c4c8a62ff5c6c, type: 2}
+    - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
+      propertyPath: m_TimeUpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 655483087801557139, guid: 1ef95ef6d018fc745bf115ca6f707370, type: 3}
       propertyPath: m_AudioOutputMode
       value: 0
@@ -28533,7 +28537,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
@@ -29318,16 +29322,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1306100021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4102841236704b84a83d502eee8779e4, type: 3}
+  m_Script: {fileID: 11500000, guid: cace510f686729947adb867444009e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionVid: {fileID: 1744501217}
-  transitionVidOb: {fileID: 1306100021}
-  game2: {fileID: 1955262293}
-  lastMinigame: {fileID: 1993232567}
-  nextBackground: {fileID: 885247963}
-  gameThingy: {fileID: 1955262293}
-  cursor: 1
+  video: {fileID: 1744501217}
+  videoOb: {fileID: 1306100021}
+  miniGame3: {fileID: 1955262293}
+  miniGame2: {fileID: 1863681485}
+  miniGame2Background: {fileID: 1960427001}
+  carTime: 1
 --- !u!1 &1308892991
 GameObject:
   m_ObjectHideFlags: 0
@@ -30748,7 +30751,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
@@ -37340,7 +37343,7 @@ RectTransform:
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1993232568}
+  m_Father: {fileID: 1863681486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -38708,6 +38711,7 @@ MonoBehaviour:
   miniGame3: {fileID: 375950342}
   miniGame2: {fileID: 1994948758}
   miniGame2Background: {fileID: 287080875}
+  carTime: 0
 --- !u!1 &1712179627
 GameObject:
   m_ObjectHideFlags: 0
@@ -39216,7 +39220,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
@@ -39961,7 +39965,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
@@ -40287,6 +40291,7 @@ Transform:
   - {fileID: 465832354}
   - {fileID: 1906222477}
   - {fileID: 1984394804}
+  - {fileID: 1629336694}
   m_Father: {fileID: 1993232568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1869504514
@@ -42490,9 +42495,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1863681486}
-  - {fileID: 1960427002}
-  - {fileID: 1629336694}
   - {fileID: 306227689}
+  - {fileID: 1960427002}
   - {fileID: 568328737}
   - {fileID: 800991663}
   m_Father: {fileID: 1990624803}
@@ -42525,7 +42529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   transitionVideo3: {fileID: 1306100021}
-  minigame: {fileID: 1863681485}
+  minigame: {fileID: 0}
   thisMinigame: {fileID: 1863681485}
 --- !u!1 &1994948758
 GameObject:

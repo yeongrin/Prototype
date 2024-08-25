@@ -5,6 +5,8 @@ using UnityEngine.Video;
 
 public class TransitionVideoOfMiniGame3 : MonoBehaviour
 {
+    public enum CarTime { First, Second}
+
     public VideoPlayer video; //Transition video
     public GameObject videoOb;
     public GameObject miniGame3;
@@ -12,6 +14,8 @@ public class TransitionVideoOfMiniGame3 : MonoBehaviour
     public GameObject miniGame2Background;
 
     CursorState _cs;
+
+    public CarTime carTime;
 
     void Start()
     {
@@ -30,13 +34,19 @@ public class TransitionVideoOfMiniGame3 : MonoBehaviour
     IEnumerator Delay()
     {
         miniGame2.SetActive(false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         miniGame2Background.SetActive(false);
     }
 
     void VideoCheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        //videoOb.SetActive(false);
+        if (carTime == CarTime.Second)
+        {
+            videoOb.SetActive(false);
+        }
+        else
+            videoOb.SetActive(true);
+
         miniGame3.SetActive(true);
         _cs.showCursor = CursorState.CursorShowing.Visible;
 
